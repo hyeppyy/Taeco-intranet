@@ -1,6 +1,7 @@
 # Toy Project 1 template
 
-이 프로젝트는 토이 프로젝트 1 을 위한 템플릿 프로젝트입니다.
+Dev-FE 토이 프로젝트 1조의 git 연습을 위한 레포지토리입니다.
+
 템플릿에는 vite 기반 프론트앤드 프로젝트 구조와 express 기반 node 서버를 포함하고 있습니다.
 
 ## 설치
@@ -21,4 +22,3 @@ npm run server
 ```
 npm run dev 
 ```
-

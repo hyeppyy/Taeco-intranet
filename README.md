@@ -1,8 +1,8 @@
-# Toy Project 1 template
+# Toy_Project_Team-1
 
-Dev-FE 토이 프로젝트 1조의 git 연습을 위한 레포지토리입니다.
+토이 프로젝트 1_사내 인트라넷 시스템 개발을 위한 1팀의 레포지토리입니다.
 
-템플릿에는 vite 기반 프론트앤드 프로젝트 구조와 express 기반 node 서버를 포함하고 있습니다.
+vite 기반 프론트앤드 프로젝트 구조와 express 기반 node 서버를 포함하고 있습니다.
 
 ## 설치
 ```

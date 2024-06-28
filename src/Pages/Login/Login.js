@@ -8,6 +8,7 @@ const login = (container) => {
       <div class="${styles.loginContainer}">
         <img src="/public/images/company_logo_user.png" alt="logo img" />
         <form class="${styles.loginContainer__form}">
+        <h5>아이디</h5>
           <input
             type="text"
             id="username"
@@ -17,6 +18,7 @@ const login = (container) => {
             autocomplete="off"
             required
           />
+        <h5>비밀번호</h5>
           <input
             type="password"
             id="password"

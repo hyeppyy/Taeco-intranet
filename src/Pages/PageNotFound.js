@@ -1,3 +1,5 @@
-export function pageNotFound() {
-  return `Page Not Found`;
-}
+const renderPageNotFound = (container) => {
+  container.innerHTML = `Page Not Found`;
+};
+
+export default renderPageNotFound;

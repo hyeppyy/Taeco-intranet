@@ -1,5 +1,5 @@
 import route from './Router/Router';
-import renderLayout from './Components/Layout/Layout';
+import renderLayout from './Layout/Layout';
 import renderLogin from './Pages/Login/Login';
 
 const navigate = (event) => {
@@ -14,7 +14,6 @@ const navigate = (event) => {
 
 const initApp = () => {
   const root = document.querySelector('#root');
-  // root.innerHTML = renderLayout();
 
   document.querySelector('body').addEventListener('click', navigate);
   window.addEventListener('popstate', route);

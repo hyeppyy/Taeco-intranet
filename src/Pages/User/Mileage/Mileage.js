@@ -85,16 +85,7 @@ const renderUserMileage = (container) => {
         <div class="${styles['mileage-list']}"></div>
       </div>
   `;
-  // detail();
+  fetchMileageData();
 };
 
-document.addEventListener('DOMContentLoaded', fetchMileageData);
 export default renderUserMileage;
-
-// const detail = () => {
-//   const btn = document.querySelector('.mileage-approve__request');
-//   btn.addEventListener('click', () => {
-//     history.pushState(null, null, '/user/mileage/history');
-//     route();
-//   });
-// };

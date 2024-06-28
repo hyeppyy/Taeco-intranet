@@ -1,5 +1,4 @@
 import route from './Router/Router';
-import renderLayout from './Layout/Layout';
 import renderLogin from './Pages/Login/Login';
 
 const navigate = (event) => {

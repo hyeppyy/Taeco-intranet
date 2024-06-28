@@ -187,10 +187,11 @@ button[data-color='neutral'][data-shape='line']:hover {
   justify-content: space-between;
 }
 
-.modal__header>img:hover {
+.modal__header > img:hover {
   transition: 0.2s;
   cursor: pointer;
-  filter: invert(69%) sepia(12%) saturate(193%) hue-rotate(193deg) brightness(92%) contrast(89%);
+  filter: invert(69%) sepia(12%) saturate(193%) hue-rotate(193deg)
+    brightness(92%) contrast(89%);
 }
 
 .modal__content {
@@ -226,4 +227,10 @@ button[data-color='neutral'][data-shape='line']:hover {
   height: 100%;
   flex: 1;
   padding: 16px 24px;
+}
+
+@media screen and (max-width: 600px) {
+  #contents {
+    padding: 16px;
+  }
 }

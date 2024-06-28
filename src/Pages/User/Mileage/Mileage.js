@@ -1,6 +1,5 @@
 import styles from './Mileage.module.css';
-import route from '/src/Router/Router';
-import fetchMileageData from './Mileage2';
+import fetchMileageData from './FetchMileageData';
 
 const renderUserMileage = (container) => {
   container.innerHTML = `

@@ -227,6 +227,7 @@ button[data-color='neutral'][data-shape='line']:hover {
   height: 100%;
   flex: 1;
   padding: 16px 24px;
+  overflow: auto;
 }
 
 @media screen and (max-width: 600px) {

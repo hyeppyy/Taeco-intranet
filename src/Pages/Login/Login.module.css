@@ -16,21 +16,20 @@
   justify-content: space-between;
   flex-direction: column;
   width: 400px;
-  height: 250px;
   padding: 36px;
 }
 
 .loginContainer img {
   height: 60px;
   width: auto;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
-.loginContainer>a {
+.loginContainer > a {
   width: 100%;
 }
 
-.loginContainer>a>h4 {
+.loginContainer > a > h4 {
   width: 100%;
   text-align: end;
 }
@@ -42,11 +41,7 @@
   width: 100%;
 }
 
-.loginContainer__form>input {
+.loginContainer__form > input {
   width: 100%;
   box-sizing: border-box;
-}
-
-.loginContainer__form>a>button {
-  width: 100%;
 }

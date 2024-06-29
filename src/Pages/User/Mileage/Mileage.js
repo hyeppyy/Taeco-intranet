@@ -1,3 +1,4 @@
+import route from '/src/Router/Router';
 import styles from './Mileage.module.css';
 import fetchMileageData from './FetchMileageData';
 
@@ -84,11 +85,19 @@ const renderUserMileage = (container) => {
             <option value="latest">최신순</option>
             <option value="old">오래된순</option>
           </select>
-          <h6>총 <span id="total-item">20</span>개의 게시글</h6>
+          <h6>총 <span id="total-item"></span>개의 게시글</h6>
         </div>
         <div class="${styles['mileage-list']}"></div>
       </div>
   `;
+
+  // 마일리지 적립목록 페이지로 라우팅
+  document
+  .querySelector(`.${styles['mileage-approve__save-list']}`)
+  .addEventListener('click', () => {
+    history.pushState(null, null, '/user/mileage/history');
+    route();
+  });
 
   fetchMileageData();
 };

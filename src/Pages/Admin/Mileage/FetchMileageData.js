@@ -1,13 +1,20 @@
 import styles from './Mileage.module.css';
+import toggle_styles from '/src/Components/ToggleSwitch/ToggleSwitch.module.css';
 
 const fetchMileageData = async () => {
   const response = await fetch('/server/data/mileage.json');
   const data = await response.json();
-  fillMileageList(data);
+  filterByToggle(data);
 };
 
-const fillMileageList = (data) => {
-  const mileageList = document.querySelector(`.${styles['mileage-list']}`);
+const renderMileageList = (data) => {
+  // 게시 마일리지 아이템 총 개수 표시
+  const totalItem = document.querySelector('#total-item');
+  totalItem.textContent = `${data.length}`;
+
+  const container = document.querySelector(`.${styles['mileage-list']}`);
+  // 함수 호출마다, 기존 렌더링 초기화
+  container.innerHTML = '';
 
   data.forEach((item) => {
     const div = document.createElement('div');
@@ -18,7 +25,28 @@ const fillMileageList = (data) => {
         <h5>${item.date}</h5>
       </div>`;
 
-    mileageList.appendChild(div);
+    container.appendChild(div);
+  });
+};
+
+const filterByToggle = (data) => {
+  const undetermined = data.filter((item) => item.isApprove === null);
+  renderMileageList(undetermined);
+
+  const toggleSwitch = document.querySelector(`.${toggle_styles.switch}`);
+
+  let filteredData = data.slice();
+
+  toggleSwitch.addEventListener('click', () => {
+    const toggleState = document.querySelector('#toggleText').textContent;
+
+    if (toggleState === '미확인')
+      filteredData = data.filter((item) => item.isApprove === null);
+    else if (toggleState === '확인')
+      filteredData = data.filter((item) => item.isApprove !== null);
+    else return;
+
+    renderMileageList(filteredData);
   });
 };
 

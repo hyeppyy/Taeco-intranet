@@ -1,5 +1,5 @@
 import styles from './Login.module.css';
-import ValidateLogin from './ValidateLogin';
+import validateLogin from './ValidateLogin';
 
 const login = (container) => {
   // return으로 하면, 바로 종료가 되므로 추가 로직 구현 불가능

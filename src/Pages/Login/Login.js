@@ -1,5 +1,5 @@
-import route from '../../Router/Router';
 import styles from './Login.module.css';
+import ValidateLogin from './ValidateLogin';
 
 const login = (container) => {
   // return으로 하면, 바로 종료가 되므로 추가 로직 구현 불가능
@@ -41,44 +41,9 @@ const login = (container) => {
     </section>
   `;
 
-  SUBMIT_LOGIN_FORM();
-};
-
-const SUBMIT_LOGIN_FORM = () => {
   document
     .querySelector('#login__button')
     .addEventListener('click', validateLogin);
-};
-
-const validateLogin = () => {
-  const username = document.querySelector('#username').value;
-  const password = document.querySelector('#password').value;
-
-  const userCredentials = {
-    username: 'user',
-    password: '1234',
-  };
-  const adminCredentials = {
-    username: 'admin',
-    password: '1234',
-  };
-
-  // Check credentials
-  if (
-    username === userCredentials.username &&
-    password === userCredentials.password
-  ) {
-    window.history.pushState(null, null, '/user/dashboard');
-    route();
-  } else if (
-    username === adminCredentials.username &&
-    password === adminCredentials.password
-  ) {
-    window.history.pushState(null, null, '/admin/dashboard');
-    route();
-  } else {
-    alert('잘못된 아이디 또는 비밀번호입니다.');
-  }
 };
 
 export default login;

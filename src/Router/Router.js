@@ -5,6 +5,7 @@ import renderAdminNavBar from '../Components/NavBar/Admin/NavBar';
 import renderUserNavBar from '../Components/NavBar/User/NavBar';
 import renderUserDashboard from '../Pages/User/Dashboard/Dashboard';
 import renderUserMileage from '../Pages/User/Mileage/Mileage';
+import renderUserMileageHistory from '../Pages/User/Mileage/History/History';
 import renderUserMypage from '../Pages/User/Mypage/Mypage';
 import renderUserNotices from '../Pages/User/Notices/Notices';
 import renderUserApproval from '../Pages/User/Approval/Approval';
@@ -59,6 +60,9 @@ const route = () => {
       break;
     case '/user/mileage':
       renderUserMileage(contents);
+      break;
+    case '/user/mileage/history':
+      renderUserMileageHistory(contents);
       break;
     case '/user/mypage':
       renderUserMypage(contents);

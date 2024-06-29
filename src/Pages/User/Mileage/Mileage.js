@@ -45,14 +45,19 @@ const renderUserMileage = (container) => {
         <div class="${styles['mileage-approve']}">
           <div class="${styles['mileage-approve__tabs']}">
             <button
+              id = "undetermined"
               class="${styles['mileage-approve__tab']} ${styles['mileage-approve__tab--undetermined']}"
             >
               심사중
             </button>
-            <button class="${styles['mileage-approve__tab']} ${styles['mileage-approve__tab--approved']}">
+            <button 
+              id = "approved"
+              class="${styles['mileage-approve__tab']} ${styles['mileage-approve__tab--approved']}">
               승인
             </button>
-            <button class="${styles['mileage-approve__tab']} ${styles['mileage-approve__tab--rejected']}">
+            <button 
+              id = "rejected"
+              class="${styles['mileage-approve__tab']} ${styles['mileage-approve__tab--rejected']}">
               반려
             </button>
           </div>
@@ -76,14 +81,15 @@ const renderUserMileage = (container) => {
         </div>
         <div class="${styles['mileage__filter']}">
           <select id="filter">
-            <option value="option1">최신순</option>
-            <option value="option2">오래된순</option>
+            <option value="latest">최신순</option>
+            <option value="old">오래된순</option>
           </select>
-          <h6>총 20개의 게시글</h6>
+          <h6>총 <span id="total-item">20</span>개의 게시글</h6>
         </div>
         <div class="${styles['mileage-list']}"></div>
       </div>
   `;
+
   fetchMileageData();
 };
 

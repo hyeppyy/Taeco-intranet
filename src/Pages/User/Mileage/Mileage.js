@@ -45,7 +45,7 @@ const renderUserMileage = (container) => {
         <div class="${styles['mileage-approve']}">
           <div class="${styles['mileage-approve__tabs']}">
             <button
-              id = "ongoing"
+              id = "undetermined"
               class="${styles['mileage-approve__tab']} ${styles['mileage-approve__tab--undetermined']}"
             >
               심사중
@@ -56,7 +56,7 @@ const renderUserMileage = (container) => {
               승인
             </button>
             <button 
-              id = "denied"
+              id = "rejected"
               class="${styles['mileage-approve__tab']} ${styles['mileage-approve__tab--rejected']}">
               반려
             </button>
@@ -89,7 +89,7 @@ const renderUserMileage = (container) => {
         <div class="${styles['mileage-list']}"></div>
       </div>
   `;
-  
+
   fetchMileageData();
 };
 

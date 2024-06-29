@@ -9,15 +9,32 @@ const filterByTabs = (data) => {
 
   let state = null; // 초기 상태는 심사중
   let filteredData = data.filter((item) => item.isApprove === state);
+  document.getElementById('undetermined').classList.add(styles.active); // 초기 상태에서 심사중 탭 활성화
   renderMileageList(filteredData); // 초기 렌더링
   filterBySelect(filteredData); // 초기 탭 필터 후 날짜 필터 적용
 
-  // 탭 클릭에 따른 조건 렌더링
   tabsFilter.addEventListener('click', (event) => {
-    if (event.target.id === 'ongoing') state = null;
-    else if (event.target.id === 'approved') state = true;
-    else if (event.target.id === 'denied') state = false;
-    else return;
+    const targetId = event.target.id;
+
+    // 모든 탭의 활성화 클래스 제거
+    document
+      .querySelectorAll(`.${styles['mileage-approve__tab']}`)
+      .forEach((tab) => {
+        tab.classList.remove(styles.active);
+      });
+
+    // 탭 클릭에 따른 조건 렌더링
+    if (targetId === 'undetermined') {
+      // 활성화 탭만 스타일 부여
+      event.target.classList.add(styles.active);
+      state = null;
+    } else if (targetId === 'approved') {
+      event.target.classList.add(styles.active);
+      state = true;
+    } else if (targetId === 'rejected') {
+      event.target.classList.add(styles.active);
+      state = false;
+    } else return;
 
     filteredData = data.filter((item) => item.isApprove === state);
     renderMileageList(filteredData);

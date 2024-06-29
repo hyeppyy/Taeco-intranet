@@ -2,7 +2,7 @@ import styles from './Mileage.module.css';
 
 // 필터링된 데이터 렌더링 [input: 필터링된 데이터]
 const renderMileageList = (data) => {
-  // 총 게시글 개수 표시
+  // 게시 마일리지 아이템 총 개수 표시
   const totalItem = document.querySelector('#total-item');
   totalItem.textContent = `${data.length}`;
 

@@ -34,7 +34,7 @@ div.contents {
 .tab-content.active {
   display: block;
 }
-.tab-link {
+.tablink {
   flex: none;
   padding: 10px 20px;
   cursor: pointer;
@@ -45,7 +45,7 @@ div.contents {
   justify-content: center;
   align-items: center;
 }
-.tab-link.active {
+.tablink.active {
   color: var(--color-pri-light, #64c99c);
   border-bottom: 4px solid var(--color-pri-light, #64c99c);
 }
@@ -67,8 +67,7 @@ div.contents {
   background-color: var(--pri-dark, #39a374);
   cursor: pointer;
 }
-.filter {
-}
+
 .close__btn {
   padding: 10px 20px;
   font-size: 16px;
@@ -145,7 +144,7 @@ textarea {
   background-color: var(--pri-dark, #39a374);
   cursor: pointer;
 }
-.tab-content {
+.tab_content {
   width: 100%;
 }
 table {
@@ -176,7 +175,7 @@ table thead {
 table tr {
   width: 100%;
 }
-.menu__tpye {
+.menu__type {
   width: 120px;
 }
 .menu__title {
@@ -240,7 +239,7 @@ tbody td:last-child {
   background: none;
   border: none;
 }
-.pagination #pageNumber {
+.pageNumber__btn.active {
   /*width: 32px;
   padding: var(--none, 6px) var(--none, 0px);*/
   background: var(--pri-normal, #40b883);
@@ -256,6 +255,9 @@ tbody td:last-child {
   height: 38px;
   border-radius: var(--borderRadius, 4px);
   border: var(--none, 1px) solid var(--gray-06);
+}
+.modalHidden {
+  display: none;
 }
 /* 미디어 쿼리 */
 @media (max-width: 600px) {

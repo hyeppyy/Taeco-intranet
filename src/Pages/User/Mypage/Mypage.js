@@ -1,11 +1,12 @@
 import styles from "./Mypage.module.css";
+import renderEditPage from "./Editpage"; // 새로운 파일에서 함수 가져오기
 
 const renderUserMypage = (container) => {
   container.innerHTML = `
   <h1>마이 페이지</h1>
   <div class="${styles.page__header}">
     <h2>내정보</h2>
-    <button data-color='positive' data-shape='block'>정보수정</button>
+    <button id="editButton" data-color="positive" data-shape="block">정보 수정</button>
   </div>
   <div class="${styles.page__body}">
     <div class="page__body-img">
@@ -27,9 +28,13 @@ const renderUserMypage = (container) => {
         </div>
       </div>
   </div>
-  
-  
   `;
+  const editButton = document.getElementById("editButton");
+  if (editButton) {
+    editButton.addEventListener("click", () => {
+      renderEditPage(container); // 정보 수정 페이지로 이동
+    });
+  }
 };
 
 export default renderUserMypage;

@@ -1,9 +1,17 @@
+h1 {
+  margin-bottom: 16px;
+}
+
+.page {
+  background-color: var(--gray-08);
+}
+
 .page__header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   align-self: stretch;
-  margin-bottom: 4px;
+  margin-bottom: 16px;
 }
 
 .page__body {

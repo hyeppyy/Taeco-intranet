@@ -146,6 +146,10 @@ textarea {
 }
 .tab_content {
   width: 100%;
+  display: none;
+}
+.tab_content.active {
+  display: block;
 }
 table {
   display: flex;

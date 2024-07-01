@@ -8,8 +8,7 @@
     "submitreason": "병원 방문",
     "refusereason": "",
     "submitdate": "2023-12-15",
-    "status": true,
-    "check": false
+    "isApprove": true
   },
   {
     "user": "박영희",
@@ -20,8 +19,7 @@
     "submitreason": "가족 모임",
     "refusereason": "",
     "submitdate": "2023-12-20",
-    "status": true,
-    "check": false
+    "isApprove": null
   },
   {
     "user": "이민수",
@@ -32,8 +30,7 @@
     "submitreason": "개인 사유",
     "refusereason": "업무 일정 상 조퇴 불가",
     "submitdate": "2024-02-20",
-    "status": false,
-    "check": false
+    "isApprove": null
   },
   {
     "user": "최수지",
@@ -44,8 +41,7 @@
     "submitreason": "친구 결혼식 참석",
     "refusereason": "",
     "submitdate": "2024-03-30",
-    "status": true,
-    "check": false
+    "isApprove": true
   },
   {
     "user": "한상우",
@@ -56,8 +52,7 @@
     "submitreason": "집안일 처리",
     "refusereason": "",
     "submitdate": "2024-04-20",
-    "status": true,
-    "check": false
+    "isApprove": null
   },
   {
     "user": "오현주",
@@ -68,8 +63,7 @@
     "submitreason": "여행 계획",
     "refusereason": "",
     "submitdate": "2024-05-25",
-    "status": true,
-    "check": false
+    "isApprove": false
   },
   {
     "user": "김미영",
@@ -80,8 +74,7 @@
     "submitreason": "개인 용무",
     "refusereason": "업무 마감 기한 문제",
     "submitdate": "2024-07-05",
-    "status": false,
-    "check": false
+    "isApprove": null
   },
   {
     "user": "박준형",
@@ -92,8 +85,7 @@
     "submitreason": "자원봉사 활동",
     "refusereason": "",
     "submitdate": "2024-07-30",
-    "status": true,
-    "check": false
+    "isApprove": null
   },
   {
     "user": "이지은",
@@ -104,8 +96,7 @@
     "submitreason": "병원 예약",
     "refusereason": "",
     "submitdate": "2024-08-15",
-    "status": true,
-    "check": true
+    "isApprove": true
   },
   {
     "user": "황민호",
@@ -116,8 +107,7 @@
     "submitreason": "가족 여행",
     "refusereason": "",
     "submitdate": "2024-09-20",
-    "status": true,
-    "check": true
+    "isApprove": null
   },
   {
     "user": "정유진",
@@ -128,8 +118,7 @@
     "submitreason": "급한 용무",
     "refusereason": "",
     "submitdate": "2024-11-01",
-    "status": true,
-    "check": true
+    "isApprove": null
   },
   {
     "user": "문지환",
@@ -140,8 +129,7 @@
     "submitreason": "은행 업무",
     "refusereason": "",
     "submitdate": "2024-11-20",
-    "status": true,
-    "check": true
+    "isApprove": true
   },
   {
     "user": "신혜수",
@@ -152,8 +140,7 @@
     "submitreason": "이사 준비",
     "refusereason": "",
     "submitdate": "2023-12-25",
-    "status": true,
-    "check": true
+    "isApprove": false
   },
   {
     "user": "서지훈",
@@ -164,8 +151,7 @@
     "submitreason": "친구 결혼식 참석",
     "refusereason": "",
     "submitdate": "2024-01-30",
-    "status": true,
-    "check": true
+    "isApprove": false
   },
   {
     "user": "김다은",
@@ -176,7 +162,6 @@
     "submitreason": "급한 약속",
     "refusereason": "회의 일정 충돌",
     "submitdate": "2024-03-10",
-    "status": false,
-    "check": true
+    "isApprove": false
   }
 ]

@@ -1,5 +1,6 @@
 import styles from "./Approval.module.css";
-import { populateTable } from "./PopulateTable";
+//import { populateTable } from "./PopulateTable";
+import fetchApprovalData from "./FetchApprovalData";
 
 const renderUserApproval = (container) => {
   container.innerHTML = `
@@ -8,14 +9,21 @@ const renderUserApproval = (container) => {
         <h1>전자결재</h1>
         <div class="${styles.content__row}">
           <!-- tap형식 버튼 -->
-          <div class="${styles.tabs}">
-            <button class="${styles.tablink} ${styles.active}" onclick="openTab(event,'심사중')">
+          <div class="${styles["approval-approve__tabs"]}">
+            <button
+              id = "undetermined"
+              class="${styles["approval-approve__tab"]} ${styles["approval-approve__tab--undetermined"]}"
+            >
               심사중
             </button>
-            <button class="${styles.tablink}" onclick="openTab(event,'승인')">
+            <button 
+              id = "approved"
+              class="${styles["approval-approve__tab"]} ${styles["approval-approve__tab--approved"]}">
               승인
             </button>
-            <button class="${styles.tablink}" onclick="openTab(event,'반려')">
+            <button 
+              id = "rejected"
+              class="${styles["approval-approve__tab"]} ${styles["approval-approve__tab--rejected"]}">
               반려
             </button>
           </div>
@@ -79,59 +87,19 @@ const renderUserApproval = (container) => {
         </div>
       
         <!-- 카테고리 selectbox -->
-        <div class="${styles.content}">
-          <div class="${styles.filter}">
-            <select>
-              <option value="all">카테고리 전체</option>
-              <option value="반차">반차</option>
-              <option value="연차">연차</option>
-              <option value="조퇴">조퇴</option>
-              <option value="기타">기타</option>
-            </select>
-          </div>
+        
+        <div class="${styles["approval__filter"]}">
+          <select id="filter">
+            <option value="all">카테고리 전체</option>
+            <option value="반차">반차</option>
+            <option value="연차">연차</option>
+            <option value="조퇴">조퇴</option>
+            <option value="기타">기타</option>
+          </select>
         </div>
 
         <div class="${styles.content}">
-          <div id="심사중" class="${styles.tab_content} ${styles.active}">
-            <table>
-              <thead>
-                <tr class="${styles.title}">
-                  <th class="${styles.menu__type}">종류</th>
-                  <th class="${styles.menu__title}">제목</th>
-                  <th class="${styles.menu__date}">신청일</th>
-                </tr>
-              </thead>
-                <tbody id="boardContent_check">
-                </tbody>
-            </table>
-          </div>
-          <div id="승인" class="${styles.tab_content}">
-            <table>
-              <thead>
-                <tr class="${styles.title}">
-                  <th class="${styles.menu__type}">종류</th>
-                  <th class="${styles.menu__title}">제목</th>
-                  <th class="${styles.menu__date}">신청일</th>
-                </tr>
-              </thead>
-              <tbody id="boardContent_true">
-              </tbody>
-            </table>
-          </div>
-          <div id="반려" class="${styles.tab_content}">
-            <table>
-              <thead>
-                <tr class="${styles.title}">
-                  <th class="${styles.menu__type}">종류</th>
-                  <th class="${styles.menu__title}">제목</th>
-                  <th class="${styles.menu__reason}">반려사유</th>
-                  <th class="${styles.menu__date}">신청일</th>
-                </tr>
-              </thead>
-              <tbody id="boardContent_false">
-              </tbody>
-            </table>
-          </div>
+          <div class="${styles["approval-list"]}"></div>
           <!-- 페이지네이션 구현하기 -->
           <div id="pagination" class="${styles.pagination}">
             <button id="prevBtn">&laquo;</button>
@@ -144,14 +112,7 @@ const renderUserApproval = (container) => {
         </div>
       </div>
 `;
-  // 심사중인 항목 추가
-  populateTable("boardContent_check", (item) => !item.check);
-
-  // 승인된 항목 추가
-  populateTable("boardContent_true", (item) => item.check && item.status);
-
-  // 반려된 항목 추가
-  populateTable("boardContent_false", (item) => item.check && !item.status);
+  fetchMileageData();
 };
 
 export default renderUserApproval;

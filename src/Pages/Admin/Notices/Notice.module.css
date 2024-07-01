@@ -1,0 +1,62 @@
+.noticeContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contents__newBtnWrap {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.contents__newBtnWrap > button {
+  width: 100px;
+}
+
+/* tab style */
+.notices__tabs {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.notices__tab {
+  flex: 1 0 30%;
+  border-radius: 0px;
+  border: 1px solid var(--gray-05);
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+  padding: 8px;
+}
+
+.notices__tab:hover {
+  background-color: var(--color-pri-dark);
+  color: var(--color-white);
+}
+
+.active {
+  background-color: var(--color-pri-normal);
+  color: var(--color-white);
+}
+
+/* 반응형 */
+/* 타블렛 */
+@media (min-width: 600px) and (max-width: 1023px) {
+  /* 공지페이지 */
+  .notices__tab {
+    flex: 1 0 40%;
+  }
+}
+/* 모바일 */
+@media (max-width: 599px) {
+  /* 공지페이지 */
+  .notices__tab {
+    flex: 1 0 40%;
+  }
+  .noticeContainer__filter {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+}

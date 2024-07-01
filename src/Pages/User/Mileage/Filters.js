@@ -6,7 +6,6 @@ const filterByTabs = (data) => {
   const tabsFilter = document.querySelector(
     `.${styles["mileage-approve__tabs"]}`
   );
-
   let state = null; // 초기 상태는 심사중
   let filteredData = data.filter((item) => item.isApprove === state);
   document.getElementById("undetermined").classList.add(styles.active); // 초기 상태에서 심사중 탭 활성화

@@ -1,6 +1,7 @@
 import renderPageNotFound from '../Pages/PageNotFound';
 import renderLogin from '../Pages/Login/Login';
 import renderLayout from '../Layout/Layout';
+import renderResponsiveNavBar from '../Components/ResponsiveNavBar/ResponsiveNavBar'
 import renderAdminNavBar from '../Components/NavBar/Admin/NavBar';
 import renderUserNavBar from '../Components/NavBar/User/NavBar';
 import renderUserDashboard from '../Pages/User/Dashboard/Dashboard';
@@ -22,8 +23,11 @@ const route = () => {
   // layout이 있어야 #nav, #contents가 생성
   renderLayout(root);
 
+  const responseNavBar = document.querySelector('#responsive-nav');
   const navBar = document.querySelector('#nav');
   const contents = document.querySelector('#contents');
+
+  renderResponsiveNavBar(responseNavBar);
 
   // 현재 url에 user/admin 포함 여부에 따른 NavBar 렌더링
   if (path.includes('user')) {

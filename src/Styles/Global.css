@@ -187,11 +187,10 @@ button[data-color='neutral'][data-shape='line']:hover {
   justify-content: space-between;
 }
 
-.modal__header > img:hover {
+.modal__header>img:hover {
   transition: 0.2s;
   cursor: pointer;
-  filter: invert(69%) sepia(12%) saturate(193%) hue-rotate(193deg)
-    brightness(92%) contrast(89%);
+  filter: invert(69%) sepia(12%) saturate(193%) hue-rotate(193deg) brightness(92%) contrast(89%);
 }
 
 .modal__content {
@@ -213,8 +212,23 @@ button[data-color='neutral'][data-shape='line']:hover {
   width: 100vw;
   height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+}
+
+/* 반응형 네비게이션 헤더 */
+#responsive-nav {
+  display: none;
+  justify-content: space-between;
+  width: 100%;
+  height: 44px;
+  background-color: var(--color-sec-normal);
+}
+
+/* 총 컨테이너 */
+#container {
+  display: flex;
+  height: 100%;
+  width: 100%;
 }
 
 #nav {
@@ -222,16 +236,20 @@ button[data-color='neutral'][data-shape='line']:hover {
 }
 
 #contents {
-  box-sizing: border-box;
-  width: 100%;
-  height: 100%;
+  /* box-sizing: border-box; */
   flex: 1;
   padding: 16px 24px;
-  overflow: auto;
+  /* overflow: auto; */
 }
 
 @media screen and (max-width: 600px) {
+  #responsive-nav {
+    display: flex;
+    z-index: 3;
+  }
+
   #contents {
     padding: 16px;
   }
 }
+

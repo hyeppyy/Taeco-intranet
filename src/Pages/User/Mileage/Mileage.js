@@ -1,10 +1,16 @@
 import route from '/src/Router/Router';
 import styles from './Mileage.module.css';
 import fetchMileageData from './FetchMileageData';
+import renderModal from '../../../Components/Modal/RenderModal';
+import handleModal from '../../../Components/Modal/HandleModal';
+import {
+  showMileageStandardContent,
+  showMileageApproveContent,
+} from './Modal/ModalContent';
 
 const renderUserMileage = (container) => {
   container.innerHTML = `
-        <div class="${styles.contents}">
+      <div class="${styles['mileage-contents']}">
         <h1 class="${styles.title}">마일리지</h1>
         <div class="${styles['mileage-score']}">
           <div class="${styles['mileage-score__left']}">
@@ -88,18 +94,33 @@ const renderUserMileage = (container) => {
           <h6>총 <span id="total-item"></span>개의 게시글</h6>
         </div>
         <div class="${styles['mileage-list']}"></div>
-      </div>
+    </div>
   `;
+
+  fetchMileageData(); // 마일리지 리스트 데이터 요청
 
   // 마일리지 적립목록 페이지로 라우팅
   document
-  .querySelector(`.${styles['mileage-approve__save-list']}`)
-  .addEventListener('click', () => {
-    history.pushState(null, null, '/user/mileage/history');
-    route();
-  });
+    .querySelector(`.${styles['mileage-approve__save-list']}`)
+    .addEventListener('click', () => {
+      history.pushState(null, null, '/user/mileage/history');
+      route();
+    });
 
-  fetchMileageData();
+  // 마일리기 기준 알아보기 모달: modal-1
+  renderModal(
+    showMileageStandardContent().modal_id, // 모달 번호
+    showMileageStandardContent().header, // 모달 헤더
+    showMileageStandardContent().content //모달 내용
+  );
+
+  // 마일리지 신청 모달: modal-2
+  renderModal(
+    showMileageApproveContent().modal_id, // 모달 번호
+    showMileageApproveContent().header, // 모달 헤더
+    showMileageApproveContent().content //모달 내용
+  );
+
 };
 
 export default renderUserMileage;

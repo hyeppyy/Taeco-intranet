@@ -1,5 +1,4 @@
 import styles from "./Approval.module.css";
-//import { populateTable } from "./PopulateTable";
 import fetchApprovalData from "./FetchApprovalData";
 
 const renderUserApproval = (container) => {
@@ -11,18 +10,18 @@ const renderUserApproval = (container) => {
           <!-- tap형식 버튼 -->
           <div class="${styles["approval-approve__tabs"]}">
             <button
-              id = "undetermined"
+              id="undetermined"
               class="${styles["approval-approve__tab"]} ${styles["approval-approve__tab--undetermined"]}"
             >
               심사중
             </button>
             <button 
-              id = "approved"
+              id="approved"
               class="${styles["approval-approve__tab"]} ${styles["approval-approve__tab--approved"]}">
               승인
             </button>
             <button 
-              id = "rejected"
+              id="rejected"
               class="${styles["approval-approve__tab"]} ${styles["approval-approve__tab--rejected"]}">
               반려
             </button>
@@ -65,7 +64,6 @@ const renderUserApproval = (container) => {
         </div>
         
         <!-- 게시글 상세 모달 -->
-        
         <div id="detailModal" class="${styles.modal} ${styles.modalHidden}">
           <div class="${styles.modal__background}"></div>
           <div class="${styles.modal__content}">
@@ -85,9 +83,8 @@ const renderUserApproval = (container) => {
             </div>
           </div>
         </div>
-      
-        <!-- 카테고리 selectbox -->
         
+        <!-- 카테고리 selectbox -->
         <div class="${styles["approval__filter"]}">
           <select id="filter">
             <option value="all">카테고리 전체</option>
@@ -98,21 +95,30 @@ const renderUserApproval = (container) => {
           </select>
         </div>
 
-        <div class="${styles.content}">
-          <div class="${styles["approval-list"]}"></div>
+        
+        <table class="${styles["approval-table"]}">
+          <thead class="${styles["approval-table__thead"]}">
+            <tr class="${styles["approval-table__tr"]}">
+              <th class="${styles["approval-th__category"]}">종류</th>
+              <th class="${styles["approval-th__title"]}">제목</th>
+              <th class="${styles["approval-th__submitdate"]}">신청일</th>
+            </tr>
+          </thead>
+        </table>
+        <div class="${styles["approval-list"]}"></div>
+
           <!-- 페이지네이션 구현하기 -->
-          <div id="pagination" class="${styles.pagination}">
-            <button id="prevBtn">&laquo;</button>
-            <button class = "${styles.pageNumber__btn} ${styles.active}">1</button>
-            <button class = "${styles.pageNumber__btn}" >2</button>
-            <button class = "${styles.pageNumber__btn}" >3</button>
-            <button class = "${styles.pageNumber__btn}" >4</button>
-            <button id="nextBtn">&raquo;</button>
-          </div>
+        <div id="pagination" class="${styles.pagination}">
+          <button id="prevBtn">&laquo;</button>
+          <button class="${styles.pageNumber__btn} ${styles.active}">1</button>
+          <button class="${styles.pageNumber__btn}">2</button>
+          <button class="${styles.pageNumber__btn}">3</button>
+          <button class="${styles.pageNumber__btn}">4</button>
+          <button id="nextBtn">&raquo;</button>
         </div>
       </div>
-`;
-  fetchMileageData();
+  `;
+  fetchApprovalData();
 };
 
 export default renderUserApproval;

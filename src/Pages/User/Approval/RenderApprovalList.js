@@ -1,22 +1,38 @@
 import styles from "./Approval.module.css";
 
-// 필터링된 데이터 렌더링 [input: 필터링된 데이터]
 const renderApprovalList = (data) => {
   const container = document.querySelector(`.${styles["approval-list"]}`);
-  // 함수 호출마다, 기존 렌더링 초기화
+
+  // Clear existing content
   container.innerHTML = "";
 
-  // 필터링된 데이터 렌더링
-  data.forEach((item) => {
-    const div = document.createElement("div");
-    div.className = styles["approval-list__item"];
-    div.innerHTML = `<div class="${styles["approval-list__title"]}">
-      <h3>${item.category}</h3>
-      <h5>${item.date}</h5>
-      </div>`;
+  // Create a table element
+  const table = document.createElement("table");
+  table.className = styles["approval-list__table"];
 
-    container.appendChild(div);
+  // Create table body
+  const tbody = document.createElement("tbody");
+  tbody.className = styles["approval-list__tbody"];
+
+  // Append table body to table
+  table.appendChild(tbody);
+
+  // Render each item in the data array
+  data.forEach((item) => {
+    const tr = document.createElement("tr");
+    tr.className = styles["approval-list__row"];
+    tr.innerHTML = `
+      <td class="${styles["approval-list__category"]}">${item.category}</td>
+      <td class="${styles["approval-list__title"]}">${item.title}</td>
+      <td class="${styles["approval-list__submitdate"]}">${item.submitdate}</td>
+    `;
+    // Add click event listener to show detail modal
+    tr.addEventListener("click", () => showDetailModal(item));
+    tbody.appendChild(tr);
   });
+
+  // Append table to container
+  container.appendChild(table);
 };
 
 export default renderApprovalList;

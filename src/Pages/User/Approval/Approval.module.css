@@ -1,18 +1,10 @@
-div.contents {
+.contents {
   display: flex;
   padding: 16px 24px;
   flex-direction: column;
   align-items: flex-start;
   gap: 12px;
   flex: 1 0 0;
-  align-self: stretch;
-}
-.content {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: var(--1, 8px);
-  align-items: flex-start;
   align-self: stretch;
 }
 .content__row {
@@ -22,32 +14,6 @@ div.contents {
   gap: var(--1, 8px);
   align-items: center;
   align-self: stretch;
-}
-.tabs {
-  display: flex;
-  width: var(--xs, 444px);
-  align-items: flex-start;
-}
-.tab-content {
-  display: none;
-}
-.tab-content.active {
-  display: block;
-}
-.tablink {
-  flex: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  border: none;
-  background-color: transparent !important;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.tablink.active {
-  color: var(--color-pri-light, #64c99c);
-  border-bottom: 4px solid var(--color-pri-light, #64c99c);
 }
 .paymentRequest {
   margin-left: outo;
@@ -67,15 +33,6 @@ div.contents {
   background-color: var(--pri-dark, #39a374);
   cursor: pointer;
 }
-
-.close__btn {
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-}
-label {
-  text-align: left;
-}
 .modal__content {
   margin: 15% auto;
   border: 1px solid var(--gray-07, #8a8d93);
@@ -85,6 +42,7 @@ label {
   padding: 20px;
 }
 .close__btn {
+  padding: 10px 20px;
   color: var(--gray-07, #8a8d93);
   float: right; /*오른쪽으로 정렬*/
   font-size: 28px;
@@ -144,21 +102,48 @@ textarea {
   background-color: var(--pri-dark, #39a374);
   cursor: pointer;
 }
-.tab_content {
+.approval-approve__tabs {
+  display: flex;
+}
+
+.approval-approve__tab {
+  font-size: 14px;
+  letter-spacing: 0.4px;
+  /********* 색 추가 *************/
+  color: rgba(0, 0, 0, 0.6);
+  background-color: var(--color-white);
+  display: flex;
+  border-radius: 0;
+  border: none;
+}
+
+.approval-approve__tab.active {
+  color: var(--color-pri-normal);
+  border-bottom: 2px solid var(--color-pri-normal);
+}
+
+.approval-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+  align-self: stretch;
+  cursor: pointer;
   width: 100%;
-  display: none;
 }
-.tab_content.active {
-  display: block;
-}
-table {
+.approval-table {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 12px;
   align-self: stretch;
+  width: 100%;
 }
-table thead {
+.approval-table tbody {
+  width: 100%;
+}
+
+.approval-table__thead {
   display: flex;
   height: 38px;
   padding: var(--none, 0px) 12px;
@@ -173,41 +158,20 @@ table thead {
   color: var(--gray-01, #fcfcfc);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.06);
 }
-.title {
-  display: flex;
-}
-table tr {
-  width: 100%;
-}
-.menu__type {
-  width: 120px;
-}
-.menu__title {
-  flex: 1 0 0;
-}
-.menu__reason {
-  flex: 1 0 0;
-}
-.menu__date {
-  width: 160px;
-}
-
-tbody {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  align-items: flex-start;
-  align-self: stretch;
-}
-
-tbody tr {
+.approval-table tr {
   display: flex;
   width: 100%;
-  gap: 12px;
-  align-items: center;
 }
-
-tbody tr.title {
+.approval-table th:first-child {
+  width: 20%;
+}
+.approval-table th:nth-child(2) {
+  width: 55%;
+}
+.approval-table th:last-child {
+  width: 25%;
+}
+.approval-list__row {
   display: flex;
   height: 38px;
   padding: 0px 12px;
@@ -217,20 +181,24 @@ tbody tr.title {
   border-radius: 6px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.06);
 }
-
-tbody td {
-  flex: 1 0 0;
+.approval-list__row td {
   padding: 12px;
-  border-bottom: 1px solid var(--gray-04);
 }
 
-tbody td:first-child {
-  flex: none;
-  width: 90px;
+.approval-list__table,
+approval-list__tbody {
+  width: 100%;
 }
-tbody td:last-child {
-  flex: none;
-  width: 160px;
+
+.approval-list__category {
+  width: 15%;
+}
+.approval-list__title {
+  width: 60%;
+}
+
+.approval-list__submitdate {
+  width: 25%;
 }
 
 .pagination {
@@ -265,16 +233,11 @@ tbody td:last-child {
 }
 /* 미디어 쿼리 */
 @media (max-width: 600px) {
-  .menu__date,
-  tbody td:last-child {
+  .approval-list__submitdate,
+  .approval-table th:last-child {
     display: none;
   }
-  tbody td {
-    border: none;
-  }
-  tbody tr {
-    border-bottom: 1px solid var(--gray-04);
-  }
+
   .pagination {
     justify-content: center;
   }

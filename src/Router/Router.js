@@ -18,7 +18,7 @@ import renderAdminNotices from '../Pages/Admin/Notices/Notices';
 
 const route = () => {
   const path = window.location.pathname;
-  const root = document.querySelector('#root');
+  const root = document.querySelector("#root");
   // App.js에서 renderLogin(root)로 renderLayout이 사라짐
   // layout이 있어야 #nav, #contents가 생성
   renderLayout(root);
@@ -30,61 +30,64 @@ const route = () => {
   renderResponsiveNavBar(responseNavBar);
 
   // 현재 url에 user/admin 포함 여부에 따른 NavBar 렌더링
-  if (path.includes('user')) {
+  if (path.includes("user")) {
     // input 인자 2가지 : 삽입할 요소, 내용
     renderUserNavBar(navBar, [
-      { path: '/user/dashboard', label: '대시보드' },
-      { path: '/user/approval', label: '전자결재' },
-      { path: '/user/notices', label: '공지사항' },
-      { path: '/user/mileage', label: '마일리지' },
-      { path: '/user/mypage', label: '마이페이지' },
+      { path: "/user/dashboard", label: "대시보드" },
+      { path: "/user/approval", label: "전자결재" },
+      { path: "/user/notices", label: "공지사항" },
+      { path: "/user/mileage", label: "마일리지" },
+      { path: "/user/mypage", label: "마이페이지" },
     ]);
-  } else if (path.includes('admin')) {
+  } else if (path.includes("admin")) {
     renderAdminNavBar(navBar, [
-      { path: '/admin/dashboard', label: '대시보드' },
-      { path: '/admin/approval', label: '전자결재 관리' },
-      { path: '/admin/employee', label: '직원 관리' },
-      { path: '/admin/mileage', label: '마일리지 관리' },
-      { path: '/admin/notices', label: '공지사항 관리' },
+      { path: "/admin/dashboard", label: "대시보드" },
+      { path: "/admin/approval", label: "전자결재 관리" },
+      { path: "/admin/employee", label: "직원 관리" },
+      { path: "/admin/mileage", label: "마일리지 관리" },
+      { path: "/admin/notices", label: "공지사항 관리" },
     ]);
   }
 
   switch (path) {
-    case '/':
+    case "/":
       renderLogin(root);
       break;
-    case '/user/dashboard':
+    case "/user/dashboard":
       renderUserDashboard(contents);
       break;
-    case '/user/approval':
+    case "/user/approval":
       renderUserApproval(contents);
       break;
-    case '/user/notices':
+    case "/user/notices":
       renderUserNotices(contents);
       break;
-    case '/user/mileage':
+    case "/user/notices/detail":
+      renderUserNoticesDetail(contents);
+      break;
+    case "/user/mileage":
       renderUserMileage(contents);
       break;
-    case '/user/mileage/history':
+    case "/user/mileage/history":
       renderUserMileageHistory(contents);
       break;
-    case '/user/mypage':
+    case "/user/mypage":
       renderUserMypage(contents);
       break;
     //admin
-    case '/admin/dashboard':
+    case "/admin/dashboard":
       renderAdminDashboard(contents);
       break;
-    case '/admin/approval':
+    case "/admin/approval":
       renderAdminApproval(contents);
       break;
-    case '/admin/employee':
+    case "/admin/employee":
       renderAdminEmployee(contents);
       break;
-    case '/admin/mileage':
+    case "/admin/mileage":
       renderAdminMileage(contents);
       break;
-    case '/admin/notices':
+    case "/admin/notices":
       renderAdminNotices(contents);
       break;
     default:

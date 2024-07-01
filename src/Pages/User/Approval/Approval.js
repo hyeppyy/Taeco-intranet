@@ -1,4 +1,5 @@
 import styles from "./Approval.module.css";
+import { populateTable } from "./PopulateTable";
 
 const renderUserApproval = (container) => {
   container.innerHTML = `
@@ -100,15 +101,8 @@ const renderUserApproval = (container) => {
                   <th class="${styles.menu__date}">신청일</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                    <td>반차</td>
-                    <td>반차 신청</td>
-                    <td>2021-01-01</td>
-                </tr>
-                <tbody id="boardContent">
+                <tbody id="boardContent_check">
                 </tbody>
-              </tbody>
             </table>
           </div>
           <div id="승인" class="${styles.tab_content}">
@@ -120,28 +114,7 @@ const renderUserApproval = (container) => {
                   <th class="${styles.menu__date}">신청일</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                    <td>연차</td>
-                    <td>연차 신청</td>
-                    <td>2021-01-01</td>
-                </tr>
-                <tr>
-                    <td>조퇴</td>
-                    <td>조퇴 신청</td>
-                    <td>2021-01-01</td>
-                </tr>
-                <tr>
-                    <td>기타</td>
-                    <td>병가 신청</td>
-                    <td>2021-01-01</td>
-                </tr>
-                <tr>
-                    <td>기타</td>
-                    <td>병가 신청</td>
-                    <td>2021-01-01</td>
-                </tr>
-                
+              <tbody id="boardContent_true">
               </tbody>
             </table>
           </div>
@@ -155,19 +128,7 @@ const renderUserApproval = (container) => {
                   <th class="${styles.menu__date}">신청일</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                    <td>기타</td>
-                    <td>병가 신청</td>
-                    <td> - </td>
-                    <td>2021-01-01</td>
-                </tr>
-                <tr>
-                    <td>기타</td>
-                    <td>병가 신청</td>
-                    <td> - </td>
-                    <td>2021-01-01</td>
-                </tr>
+              <tbody id="boardContent_false">
               </tbody>
             </table>
           </div>
@@ -183,6 +144,14 @@ const renderUserApproval = (container) => {
         </div>
       </div>
 `;
+  // 심사중인 항목 추가
+  populateTable("boardContent_check", (item) => !item.check);
+
+  // 승인된 항목 추가
+  populateTable("boardContent_true", (item) => item.check && item.status);
+
+  // 반려된 항목 추가
+  populateTable("boardContent_false", (item) => item.check && !item.status);
 };
 
 export default renderUserApproval;

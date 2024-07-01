@@ -105,7 +105,7 @@
     "refusereason": "",
     "submitdate": "2024-08-15",
     "status": true,
-    "check": false
+    "check": true
   },
   {
     "user": "황민호",
@@ -117,7 +117,7 @@
     "refusereason": "",
     "submitdate": "2024-09-20",
     "status": true,
-    "check": false
+    "check": true
   },
   {
     "user": "정유진",
@@ -129,7 +129,7 @@
     "refusereason": "",
     "submitdate": "2024-11-01",
     "status": true,
-    "check": false
+    "check": true
   },
   {
     "user": "문지환",
@@ -141,7 +141,7 @@
     "refusereason": "",
     "submitdate": "2024-11-20",
     "status": true,
-    "check": false
+    "check": true
   },
   {
     "user": "신혜수",
@@ -153,7 +153,7 @@
     "refusereason": "",
     "submitdate": "2023-12-25",
     "status": true,
-    "check": false
+    "check": true
   },
   {
     "user": "서지훈",
@@ -165,7 +165,7 @@
     "refusereason": "",
     "submitdate": "2024-01-30",
     "status": true,
-    "check": false
+    "check": true
   },
   {
     "user": "김다은",
@@ -177,6 +177,6 @@
     "refusereason": "회의 일정 충돌",
     "submitdate": "2024-03-10",
     "status": false,
-    "check": false
+    "check": true
   }
 ]

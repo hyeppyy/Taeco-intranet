@@ -1,0 +1,71 @@
+.page__event {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 8px;
+}
+
+.event__birthday h3 {
+  margin-right: 15px;
+}
+.page__event,
+.page__header {
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  flex: 1 0 0;
+}
+.page__event img {
+  width: 18px;
+  height: 18px;
+}
+
+.page__header {
+  padding: 16px 0;
+  justify-content: space-between;
+}
+
+.total {
+  color: var(--gray-07);
+  font-size: var(h5);
+}
+
+.table__container {
+  width: 100%;
+}
+
+/* .table__head {
+  background-color: var(--color-white);
+  position: sticky;
+}
+.userlist {
+  position: sticky;
+  top: 0;
+  background-color: var(--gray-01);
+  font-size: 14px;
+}
+
+.table__body {
+  text-align: center;
+  font-size: 14px;
+}
+
+.table__tr {
+  border-bottom: 1px solid var(--gray-05);
+  margin-bottom: 30px;
+}
+
+.profileimg,
+.name,
+.position,
+.email,
+.birthday,
+.joinday,
+.phonenumber,
+.button {
+  border-bottom: 1px solid var(--gray-05);
+  margin-bottom: 100px;
+  vertical-align: middle;
+} */

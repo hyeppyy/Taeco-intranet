@@ -1,7 +1,10 @@
 const renderLayout = (container) => {
   container.innerHTML = `
-      <nav id="nav"></nav>
-      <div id="contents"></div>
+      <div id="responsive-nav"></div>
+      <div id="container">
+        <nav id="nav"></nav>
+        <div id="contents"></div>
+      </div>
       `;
 };
 

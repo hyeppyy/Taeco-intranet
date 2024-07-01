@@ -1,19 +1,20 @@
-import renderPageNotFound from "../Pages/PageNotFound";
-import renderLogin from "../Pages/Login/Login";
-import renderLayout from "../Layout/Layout";
-import renderAdminNavBar from "../Components/NavBar/Admin/NavBar";
-import renderUserNavBar from "../Components/NavBar/User/NavBar";
-import renderUserDashboard from "../Pages/User/Dashboard/Dashboard";
-import renderUserMileage from "../Pages/User/Mileage/Mileage";
-import renderUserMileageHistory from "../Pages/User/Mileage/History/History";
-import renderUserMypage from "../Pages/User/Mypage/Mypage";
-import renderUserNotices from "../Pages/User/Notices/Notices";
-import renderUserApproval from "../Pages/User/Approval/Approval";
-import renderAdminDashboard from "../Pages/Admin/Dashboard/Dashboard";
-import renderAdminApproval from "../Pages/Admin/Approval/Approval";
-import renderAdminEmployee from "../Pages/Admin/Employee/Employee";
-import renderAdminMileage from "../Pages/Admin/Mileage/Mileage";
-import renderAdminNotices from "../Pages/Admin/Notices/Notices";
+import renderPageNotFound from '../Pages/PageNotFound';
+import renderLogin from '../Pages/Login/Login';
+import renderLayout from '../Layout/Layout';
+import renderResponsiveNavBar from '../Components/ResponsiveNavBar/ResponsiveNavBar'
+import renderAdminNavBar from '../Components/NavBar/Admin/NavBar';
+import renderUserNavBar from '../Components/NavBar/User/NavBar';
+import renderUserDashboard from '../Pages/User/Dashboard/Dashboard';
+import renderUserMileage from '../Pages/User/Mileage/Mileage';
+import renderUserMileageHistory from '../Pages/User/Mileage/History/History';
+import renderUserMypage from '../Pages/User/Mypage/Mypage';
+import renderUserNotices from '../Pages/User/Notices/Notices';
+import renderUserApproval from '../Pages/User/Approval/Approval';
+import renderAdminDashboard from '../Pages/Admin/Dashboard/Dashboard';
+import renderAdminApproval from '../Pages/Admin/Approval/Approval';
+import renderAdminEmployee from '../Pages/Admin/Employee/Employee';
+import renderAdminMileage from '../Pages/Admin/Mileage/Mileage';
+import renderAdminNotices from '../Pages/Admin/Notices/Notices';
 
 const route = () => {
   const path = window.location.pathname;
@@ -22,8 +23,11 @@ const route = () => {
   // layout이 있어야 #nav, #contents가 생성
   renderLayout(root);
 
-  const navBar = document.querySelector("#nav");
-  const contents = document.querySelector("#contents");
+  const responseNavBar = document.querySelector('#responsive-nav');
+  const navBar = document.querySelector('#nav');
+  const contents = document.querySelector('#contents');
+
+  renderResponsiveNavBar(responseNavBar);
 
   // 현재 url에 user/admin 포함 여부에 따른 NavBar 렌더링
   if (path.includes("user")) {

@@ -22,13 +22,13 @@ const renderAdminDashboard = (container) => {
   }">전자결재(승민)</div>
         </div>
         <div class="${styles.adminDashboard__mileage} ${styles.card}">
-          <div class="${styles.adminDashboard__mileageTitle}">
-            <div class="${styles.adminDashboard__mileageTitleLeft}">
+          <div class="${styles['adminDashboard__mileage-title']}">
+            <div class="${styles['adminDashboard__mileage-title--left']}">
               <h2>마일리지</h2>
               <h4>미확인 신청 내역만 보여집니다.</h4>
             </div>
-            <h4 class="${styles.adminDashboard__mileageTitleRight}">
-              <a href="/src/pages/admin/mileage/mileage.html">마일리지페이지로 이동</a>
+            <h4 class="${styles['adminDashboard__mileage-title--right']}">
+              <a href="/admin/mileage">마일리지페이지로 이동</a>
               <svg
                 width="20"
                 height="20"
@@ -45,7 +45,7 @@ const renderAdminDashboard = (container) => {
             <li class="${styles.mileage__header}">
               <div class="${styles.mileage__title}">제목</div>
               <div class="${styles.mileage__requester}">요청자</div>
-              <div class="${styles.mileage__requestDate}">요청일</div>
+              <div class="${styles['mileage__request-date']}">요청일</div>
             </li>
             ${Array(3)
               .fill()
@@ -54,7 +54,7 @@ const renderAdminDashboard = (container) => {
               <li class="${styles.mileage__row}" key="${idx}">
                 <div class="${styles.mileage__title}">제목입니다.</div>
                 <div class="${styles.mileage__requester}">홍길동</div>
-                <div class="${styles.mileage__requestDate}">2024.02.02</div>
+                <div class="${styles['mileage__request-date']}">2024.02.02</div>
               </li>
             `
               )

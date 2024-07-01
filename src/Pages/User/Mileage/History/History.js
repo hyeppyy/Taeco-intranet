@@ -1,4 +1,5 @@
 import styles from './History.module.css';
+import fetchMileageData from './FetchMileageData';
 
 const renderUserMileageHistory = (container) => {
   container.innerHTML = `
@@ -12,37 +13,6 @@ const renderUserMileageHistory = (container) => {
           <div class="${styles['details__registration-date']}">등록일</div>
           <div class="${styles['details__mileage']}">마일리지</div>
         </li>
-
-        <li class="${styles['details__row']}">
-          <div class="${styles['details__title']}">재사용 및 업사이클링</div>
-          <div class="${styles['details__registration-date']}">2024.02.02</div>
-          <div class="${styles['details__mileage']}">2</div>
-        </li>
-        <li class="${styles['details__row']}">
-          <div class="${styles['details__title']}">대중교통 및 자전거 이용</div>
-          <div class="${styles['details__registration-date']}">2024.02.02</div>
-          <div class="${styles['details__mileage']}">2</div>
-        </li>
-        <li class="${styles['details__row']}">
-          <div class="${styles['details__title']}">재활용 및 분리수거</div>
-          <div class="${styles['details__registration-date']}">2024.02.02</div>
-          <div class="${styles['details__mileage']}">2</div>
-        </li>
-        <li class="${styles['details__row']}">
-          <div class="${styles['details__title']}">재사용 및 업사이클링</div>
-          <div class="${styles['details__registration-date']}">2024.02.02</div>
-          <div class="${styles['details__mileage']}">2</div>
-        </li>
-        <li class="${styles['details__row']}">
-          <div class="${styles['details__title']}">대중교통 및 자전거 이용</div>
-          <div class="${styles['details__registration-date']}">2024.02.02</div>
-          <div class="${styles['details__mileage']}">2</div>
-        </li>
-        <li class="${styles['details__row']}">
-          <div class="${styles['details__title']}">재활용 및 분리수거</div>
-          <div class="${styles['details__registration-date']}">2024.02.02</div>
-          <div class="${styles['details__mileage']}">2</div>
-        </li>
       </ul>
 
       <div class="${styles.pagination}">
@@ -53,10 +23,12 @@ const renderUserMileageHistory = (container) => {
         <a href="#">4</a>
         <a href="#">5</a>
         <a href="#">6</a>
-        <a href="#">&raquo;</a>
+        <a href="#">&raquo;</a> 
       </div>
     </div>
   `;
+
+  fetchMileageData();
 };
 
 export default renderUserMileageHistory;

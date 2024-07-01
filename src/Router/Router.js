@@ -8,12 +8,14 @@ import renderUserMileage from "../Pages/User/Mileage/Mileage";
 import renderUserMileageHistory from "../Pages/User/Mileage/History/History";
 import renderUserMypage from "../Pages/User/Mypage/Mypage";
 import renderUserNotices from "../Pages/User/Notices/Notices";
+import renderUserNoticesDetail from "../Pages/User/Notices/Detail/Detail";
 import renderUserApproval from "../Pages/User/Approval/Approval";
 import renderAdminDashboard from "../Pages/Admin/Dashboard/Dashboard";
 import renderAdminApproval from "../Pages/Admin/Approval/Approval";
 import renderAdminEmployee from "../Pages/Admin/Employee/Employee";
 import renderAdminMileage from "../Pages/Admin/Mileage/Mileage";
 import renderAdminNotices from "../Pages/Admin/Notices/Notices";
+import renderAdminNoticesDetail from "../Pages/Admin/Notices/Detail/Detail";
 
 const route = () => {
   const path = window.location.pathname;
@@ -85,6 +87,9 @@ const route = () => {
       break;
     case "/admin/notices":
       renderAdminNotices(contents);
+      break;
+    case "/admin/notices/detail":
+      renderAdminNoticesDetail(contents);
       break;
     default:
       renderPageNotFound(root);

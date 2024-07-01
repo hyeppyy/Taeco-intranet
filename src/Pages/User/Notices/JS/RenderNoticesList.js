@@ -1,4 +1,4 @@
-import styles from "../../../Admin/Notices/Notice.module.css";
+import styles from "./../Notice.module.css";
 
 const renderNoticesList = (data) => {
   const tableBody = document.querySelector("table > tbody");
@@ -19,9 +19,9 @@ const renderNoticesList = (data) => {
   });
 
   //테이블 row 클릭시 상세페이지로 이동
-  const noticeTable = document.querySelector(`.${styles["adminNoticeTable"]}`);
+  const noticeTable = document.querySelector(`.${styles["userNoticeTable"]}`);
   noticeTable.addEventListener("click", (event) => {
-    window.location.href = "/admin/notices/detail";
+    window.location.href = "/user/notices/detail";
 
     // const row = event.target.closest("tr");
     // console.log(row);

@@ -54,6 +54,7 @@ div.contents {
   display: flex;
   align-items: center;
 }
+/*
 .tab_content {
   width: 100%;
 }
@@ -132,6 +133,7 @@ th .menu__date,
 td .menu__date {
   width: 15%;
 }
+  */
 .pagination {
   width: 100%;
   display: flex;

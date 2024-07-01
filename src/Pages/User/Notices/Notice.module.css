@@ -20,6 +20,55 @@
   align-items: center;
 }
 
+/* table style */
+.userNoticeTable > table {
+  width: 100%;
+  table-layout: fixed;
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+}
+
+.userNoticeTable > table > thead > tr,
+.userNoticeTable > table > tbody > tr {
+  border-bottom: 1px solid var(--gray-05);
+}
+
+.userNoticeTable > table > thead > tr > th,
+.userNoticeTable > table > tbody > tr > td {
+  text-align: left;
+  padding: 12px 8px;
+}
+
+th:first-child,
+td:first-child {
+  width: 10%;
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+  width: 35%;
+}
+
+th:nth-child(3),
+td:nth-child(3) {
+  width: 15%;
+}
+
+th:nth-child(4),
+td:nth-child(4) {
+  width: 15%;
+}
+
+th:nth-child(5),
+td:nth-child(5) {
+  width: 15%;
+}
+
+th:nth-child(6),
+td:nth-child(6) {
+  width: 10%;
+}
+
 /* tab style */
 .notices__tabs {
   width: 100%;
@@ -44,10 +93,6 @@
 .active {
   background-color: var(--color-pri-normal);
   color: var(--color-white);
-}
-
-.userNoticeTable {
-  color: black;
 }
 
 /* 반응형 */

@@ -65,7 +65,7 @@ const renderAdminNotices = (container) => {
             </div>
             <h5 id="noticeTotalPostsNum"></h5>
           </div>
-          <div>
+          <div class="${styles["adminNoticeTable"]}">
               <table>
                 <thead>
                   <tr>
@@ -77,7 +77,7 @@ const renderAdminNotices = (container) => {
                     <th>조회수</th>
                   </tr>
                 </thead>
-                <tbody class="${styles["adminNoticeTable"]}"></tbody>
+                <tbody></tbody>
               </table>   
           </div>
         </div>

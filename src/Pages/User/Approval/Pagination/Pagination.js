@@ -1,7 +1,6 @@
 // Pagination.js
-//import styles from "./Pagination.css";
-import renderApprovalList from "../RenderApprovalList";
 import styles from "../Approval.module.css";
+import renderApprovalList from "../RenderApprovalList";
 
 var currentPage = 1; // 현재 페이지 번호를 저장하는 변수
 const itemsPerPage = 5; // 한 페이지에 표시할 항목 수

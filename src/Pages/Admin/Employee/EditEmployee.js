@@ -4,18 +4,18 @@ import renderAdminEmployee from "./Employee"; // 돌아가기 위한 함수 가�
 const renderAddEmployeePage = (container) => {
   container.innerHTML = `
   <div class="${styles.page}">
-  <h1 class="${styles.page__title}">직원 관리 > 직원 추가</h1>
+  <h1 class="${styles.page__title}">직원 관리 > 직원 상세</h1>
 
   <!-- 상단 추가 버튼 부분입니다. -->
   <div class="${styles.page__content}">
     <div class="${styles.page__button}">
     <button id="backButton" data-color='warning' data-shape='block'>뒤로가기</button>
-    <button data-color='positive' data-shape='block'>추가하기</button>
+    <button data-color='positive' data-shape='block'>수정하기</button>
   </div>
 
   <!-- 직원 프로필 이미지 업로드 부분입니다. -->
   <div class="${styles.page__edit}">
-    <img src="/public/icons/user.svg" alt="profileimg">
+    <img src="/public/images/_Avatar_.png" alt="profileimg">
       <div class="${styles.edit__btn}">
           <button id="chooseFile"data-color='neutral' data-shape='line'>이미지 등록</button>
         <button id="changeFile" data-color='neutral' data-shape='line'>이미지 삭제</button>

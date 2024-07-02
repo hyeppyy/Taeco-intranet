@@ -6,14 +6,15 @@ import {
   showMileageStandardContent,
   showMileageApproveContent,
 } from './Modal/ModalContent';
+import hamburger from '../../../Components/ResponsiveNavBar/User/Hamburger';
 
 const renderUserMileage = (container) => {
   container.innerHTML = `
       <div class="${styles['mileage-contents']}">
-        <h1 class="${styles.title}">마일리지</h1>
-        <div class="${styles["mileage-score"]}">
-          <div class="${styles["mileage-score__left"]}">
-            <div class="${styles["mileage-icon"]}">
+        <h1 id="asdf" class="${styles.title}">마일리지</h1>
+        <div class="${styles['mileage-score']}">
+          <div class="${styles['mileage-score__left']}">
+            <div class="${styles['mileage-icon']}">
               <svg
                 width="28"
                 height="28"
@@ -25,15 +26,15 @@ const renderUserMileage = (container) => {
                 ></path>
               </svg>
             </div>
-            <div class="${styles["mileage-score__detail"]}">
-              <h3 class="${styles["mileage-score__total-score"]}">총 100 마일리지</h3>
-              <h4 class="${styles["mileage-score__message"]}">
+            <div class="${styles['mileage-score__detail']}">
+              <h3 class="${styles['mileage-score__total-score']}">총 100 마일리지</h3>
+              <h4 class="${styles['mileage-score__message']}">
                 새싹단계에요. 조금만 더 힘내보세요 :)
               </h4>
             </div>
           </div>
           <h4
-            class="${styles["mileage-score__right"]} open-modal"
+            class="${styles['mileage-score__right']} open-modal"
             data-modal-target="#modal-1"
           >
             마일리지 기준 알아보기<svg
@@ -48,35 +49,35 @@ const renderUserMileage = (container) => {
             </svg>
           </h4>
         </div>
-        <div class="${styles["mileage-approve"]}">
-          <div class="${styles["mileage-approve__tabs"]}">
+        <div class="${styles['mileage-approve']}">
+          <div class="${styles['mileage-approve__tabs']}">
             <button
               id = "undetermined"
-              class="${styles["mileage-approve__tab"]} ${styles["mileage-approve__tab--undetermined"]}"
+              class="${styles['mileage-approve__tab']} ${styles['mileage-approve__tab--undetermined']}"
             >
               심사중
             </button>
             <button 
               id = "approved"
-              class="${styles["mileage-approve__tab"]} ${styles["mileage-approve__tab--approved"]}">
+              class="${styles['mileage-approve__tab']} ${styles['mileage-approve__tab--approved']}">
               승인
             </button>
             <button 
               id = "rejected"
-              class="${styles["mileage-approve__tab"]} ${styles["mileage-approve__tab--rejected"]}">
+              class="${styles['mileage-approve__tab']} ${styles['mileage-approve__tab--rejected']}">
               반려
             </button>
           </div>
-          <div class="${styles["mileage-approve__btns"]}">
+          <div class="${styles['mileage-approve__btns']}">
             <button
               data-color="positive"
               data-shape="line"
-              class="${styles["mileage-approve__save-list"]}"
+              class="${styles['mileage-approve__save-list']}"
             >
               마일리지 적립목록
             </button>
             <button
-              class="${styles["mileage-approve__request"]} open-modal"
+              class="${styles['mileage-approve__request']} open-modal"
               data-modal-target="#modal-2"
               data-color="positive"
               data-shape="block"
@@ -85,7 +86,7 @@ const renderUserMileage = (container) => {
             </button>
           </div>
         </div>
-        <div class="${styles["mileage__filter"]}">
+        <div class="${styles['mileage__filter']}">
           <select id="filter">
             <option value="latest">최신순</option>
             <option value="old">오래된순</option>
@@ -119,7 +120,8 @@ const renderUserMileage = (container) => {
     showMileageApproveContent().header, // 모달 헤더
     showMileageApproveContent().content //모달 내용
   );
-
+  
+  hamburger();
 };
 
 export default renderUserMileage;

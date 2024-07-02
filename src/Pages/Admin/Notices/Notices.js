@@ -49,20 +49,23 @@ const renderAdminNotices = (container) => {
               기타
             </button>
           </div>
-          <div class="${styles.noticeContainer__filter}">
-            <input
+          <div class="${styles.noticeContainer__filterWrap}">
+            <div class="${styles.noticeContainer__filter}">
+              <input
               type="search"
               id="searchBox"
               name="q"
               placeholder="내용 또는 제목을 입력해주세요."
               data-shape="line"
             />
-            <select name="filter" id="filter">
+            <select name="noticeFilter" id="noticeFilter">
               <option value="latest">최신순</option>
               <option value="old">오래된순</option>
             </select>
+            </div>
+            <h5 id="noticeTotalPostsNum"></h5>
           </div>
-          <div>
+          <div class="${styles["adminNoticeTable"]}">
               <table>
                 <thead>
                   <tr>

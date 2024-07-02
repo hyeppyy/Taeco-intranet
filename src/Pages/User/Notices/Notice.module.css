@@ -45,33 +45,33 @@
   padding: 12px 8px;
 }
 
-th:first-child,
-td:first-child {
+.userNoticeTable > table > thead > tr > th:first-child,
+.userNoticeTable > table > thead > tr > td:first-child {
   width: 10%;
 }
 
-th:nth-child(2),
-td:nth-child(2) {
+.userNoticeTable > table > thead > tr > th:nth-child(2),
+.userNoticeTable > table > thead > tr > td:nth-child(2) {
   width: 35%;
 }
 
-th:nth-child(3),
-td:nth-child(3) {
+.userNoticeTable > table > thead > tr > th:nth-child(3),
+.userNoticeTable > table > thead > tr > td:nth-child(3) {
   width: 15%;
 }
 
-th:nth-child(4),
-td:nth-child(4) {
+.userNoticeTable > table > thead > tr > th:nth-child(4),
+.userNoticeTable > table > thead > tr > td:nth-child(4) {
   width: 15%;
 }
 
-th:nth-child(5),
-td:nth-child(5) {
+.userNoticeTable > table > thead > tr > th:nth-child(5),
+.userNoticeTable > table > thead > tr > td:nth-child(5) {
   width: 15%;
 }
 
-th:nth-child(6),
-td:nth-child(6) {
+.userNoticeTable > table > thead > tr > th:nth-child(6),
+.userNoticeTable > table > thead > tr > td:nth-child(6) {
   width: 10%;
 }
 

@@ -33,6 +33,12 @@
   border-bottom: 1px solid var(--gray-05);
 }
 
+.adminNoticeTable > table > tbody > tr:hover {
+  background-color: var(--gray-02);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
 .adminNoticeTable > table > thead > tr > th,
 .adminNoticeTable > table > tbody > tr > td {
   text-align: left;
@@ -93,10 +99,6 @@ td:nth-child(6) {
 .active {
   background-color: var(--color-pri-normal);
   color: var(--color-white);
-}
-
-.adminNoticeTable {
-  color: black;
 }
 
 /* 반응형 */

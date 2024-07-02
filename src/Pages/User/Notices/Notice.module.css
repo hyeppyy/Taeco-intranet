@@ -33,6 +33,12 @@
   border-bottom: 1px solid var(--gray-05);
 }
 
+.userNoticeTable > table > tbody > tr:hover {
+  background-color: var(--gray-02);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
 .userNoticeTable > table > thead > tr > th,
 .userNoticeTable > table > tbody > tr > td {
   text-align: left;

@@ -16,6 +16,8 @@ import renderAdminApproval from '../Pages/Admin/Approval/Approval';
 import renderAdminEmployee from '../Pages/Admin/Employee/Employee';
 import renderAdminMileage from '../Pages/Admin/Mileage/Mileage';
 import renderAdminNotices from '../Pages/Admin/Notices/Notices';
+import renderUserNoticesDetail from "../Pages/User/Notices/Detail/Detail";
+import renderAdminNoticesDetail from "../Pages/Admin/Notices/Detail/Detail";
 import hamburger from '../Components/ResponsiveNavBar/User/Hamburger';
 
 const route = () => {
@@ -25,9 +27,9 @@ const route = () => {
   // layout이 있어야 #nav, #contents가 생성
   renderLayout(root);
 
-  const responseNavBar = document.querySelector('#responsive-nav');
-  const navBar = document.querySelector('#nav');
-  const contents = document.querySelector('#contents');
+  const responseNavBar = document.querySelector("#responsive-nav");
+  const navBar = document.querySelector("#nav");
+  const contents = document.querySelector("#contents");
 
   // 현재 url에 user/admin 포함 여부에 따른 NavBar 렌더링
   if (path.includes('user')) {
@@ -95,6 +97,9 @@ const route = () => {
       break;
     case '/admin/notices':
       renderAdminNotices(contents);
+      break;
+    case "/admin/notices/detail":
+      renderAdminNoticesDetail(contents);
       break;
     default:
       renderPageNotFound(root);

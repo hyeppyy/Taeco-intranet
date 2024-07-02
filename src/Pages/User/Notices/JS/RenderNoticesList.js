@@ -44,7 +44,7 @@ const renderNoticesList = (data) => {
       };
 
       const queryString = new URLSearchParams(noticeData).toString();
-      window.location.href = `/admin/notices/detail?${queryString}`;
+      window.location.href = `/user/notices/detail?${queryString}`;
     });
 
     tableBody.appendChild(row);

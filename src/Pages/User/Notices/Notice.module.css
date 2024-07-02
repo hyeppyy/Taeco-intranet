@@ -21,26 +21,26 @@
 }
 
 /* table style */
-.adminNoticeTable > table {
+.userNoticeTable > table {
   width: 100%;
   table-layout: fixed;
   font-size: 1.4rem;
   line-height: 2.1rem;
 }
 
-.adminNoticeTable > table > thead > tr,
-.adminNoticeTable > table > tbody > tr {
+.userNoticeTable > table > thead > tr,
+.userNoticeTable > table > tbody > tr {
   border-bottom: 1px solid var(--gray-05);
 }
 
-.adminNoticeTable > table > tbody > tr:hover {
+.userNoticeTable > table > tbody > tr:hover {
   background-color: var(--gray-02);
   transition: 0.3s;
   cursor: pointer;
 }
 
-.adminNoticeTable > table > thead > tr > th,
-.adminNoticeTable > table > tbody > tr > td {
+.userNoticeTable > table > thead > tr > th,
+.userNoticeTable > table > tbody > tr > td {
   text-align: left;
   padding: 12px 8px;
 }

@@ -66,10 +66,10 @@
   margin-top: 10px;
 }
 
-input[type="text"],
+.modal input[type="text"],
 .modal select,
-textarea,
-input[type="date"] {
+.modal textarea,
+.modal input[type="date"] {
   width: 100%;
   padding: 10px;
   margin-top: 5px;
@@ -78,7 +78,7 @@ input[type="date"] {
   border-radius: 4px;
 }
 
-textarea {
+.modal textarea {
   resize: none;
 }
 
@@ -200,23 +200,6 @@ approval-list__tbody {
 .approval-list__submitdate {
   width: 25%;
 }
-
-.pagination {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-.pagination button {
-  background: none;
-  border: none;
-}
-.pageNumber__btn.active {
-  /*width: 32px;
-  padding: var(--none, 6px) var(--none, 0px);*/
-  background: var(--pri-normal, #40b883);
-  color: var(--gray-01, #fcfcfc);
-}
 .detailmodal__content {
   display: flex;
   padding: var(--none, 0px) 12px;
@@ -231,6 +214,21 @@ approval-list__tbody {
 .modalHidden {
   display: none;
 }
+.pagination {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.pagination button {
+  background: none;
+  border: none;
+}
+.pageNumber__btn.active {
+  background: var(--pri-normal, #40b883);
+  color: var(--gray-01, #fcfcfc);
+}
+
 /* 미디어 쿼리 */
 @media (max-width: 600px) {
   .approval-list__submitdate,

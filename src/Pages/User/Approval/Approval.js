@@ -106,16 +106,8 @@ const renderUserApproval = (container) => {
           </thead>
         </table>
         <div class="${styles["approval-list"]}"></div>
-
-          <!-- 페이지네이션 구현하기 -->
-        <div id="pagination" class="${styles.pagination}">
-          <button id="prevBtn">&laquo;</button>
-          <button class="${styles.pageNumber__btn} ${styles.active}">1</button>
-          <button class="${styles.pageNumber__btn}">2</button>
-          <button class="${styles.pageNumber__btn}">3</button>
-          <button class="${styles.pageNumber__btn}">4</button>
-          <button id="nextBtn">&raquo;</button>
-        </div>
+        <!-- 페이지네이션 구현하기 -->
+        <div id="pagination" class="${styles.pagination}"></div>
       </div>
   `;
   fetchApprovalData();

@@ -27,7 +27,7 @@ const renderApprovalList = (data) => {
       <td class="${styles["approval-list__submitdate"]}">${item.submitdate}</td>
     `;
     // Add click event listener to show detail modal
-    tr.addEventListener("click", () => showDetailModal(item));
+    //tr.addEventListener("click", () => showDetailModal(item));
     tbody.appendChild(tr);
   });
 

@@ -163,5 +163,192 @@
     "refusereason": "회의 일정 충돌",
     "submitdate": "2024-03-10",
     "isApprove": false
+  },
+  {
+    "user": "김다은",
+    "title": "조퇴 신청합니다",
+    "category": "조퇴",
+    "startdate": "2024-03-15",
+    "enddate": "2024-03-15",
+    "submitreason": "급한 약속",
+    "refusereason": "회의 일정 충돌",
+    "submitdate": "2024-03-10",
+    "isApprove": false
+  },
+  {
+    "user": "이영호",
+    "title": "병가 신청합니다",
+    "category": "병가",
+    "startdate": "2024-04-01",
+    "enddate": "2024-04-03",
+    "submitreason": "감기",
+    "refusereason": "없음",
+    "submitdate": "2024-03-29",
+    "isApprove": true
+  },
+  {
+    "user": "박민준",
+    "title": "휴가 신청합니다",
+    "category": "휴가",
+    "startdate": "2024-05-10",
+    "enddate": "2024-05-15",
+    "submitreason": "가족 여행",
+    "refusereason": "업무 과중",
+    "submitdate": "2024-05-01",
+    "isApprove": false
+  },
+  {
+    "user": "정수빈",
+    "title": "조퇴 신청합니다",
+    "category": "조퇴",
+    "startdate": "2024-06-05",
+    "enddate": "2024-06-05",
+    "submitreason": "병원 방문",
+    "refusereason": "회의 일정 충돌",
+    "submitdate": "2024-06-01",
+    "isApprove": true
+  },
+  {
+    "user": "한지은",
+    "title": "병가 신청합니다",
+    "category": "병가",
+    "startdate": "2024-07-20",
+    "enddate": "2024-07-22",
+    "submitreason": "치과 치료",
+    "refusereason": "없음",
+    "submitdate": "2024-07-15",
+    "isApprove": true
+  },
+  {
+    "user": "김철수",
+    "title": "휴가 신청합니다",
+    "category": "휴가",
+    "startdate": "2024-08-10",
+    "enddate": "2024-08-20",
+    "submitreason": "여름 휴가",
+    "refusereason": "업무 과중",
+    "submitdate": "2024-08-01",
+    "isApprove": false
+  },
+  {
+    "user": "박지성",
+    "title": "조퇴 신청합니다",
+    "category": "조퇴",
+    "startdate": "2024-09-15",
+    "enddate": "2024-09-15",
+    "submitreason": "아이 학교 행사",
+    "refusereason": "회의 일정 충돌",
+    "submitdate": "2024-09-10",
+    "isApprove": true
+  },
+  {
+    "user": "홍길동",
+    "title": "병가 신청합니다",
+    "category": "병가",
+    "startdate": "2024-10-01",
+    "enddate": "2024-10-03",
+    "submitreason": "독감",
+    "refusereason": "없음",
+    "submitdate": "2024-09-29",
+    "isApprove": true
+  },
+  {
+    "user": "이지은",
+    "title": "휴가 신청합니다",
+    "category": "휴가",
+    "startdate": "2024-11-10",
+    "enddate": "2024-11-15",
+    "submitreason": "해외 여행",
+    "refusereason": "업무 과중",
+    "submitdate": "2024-11-01",
+    "isApprove": false
+  },
+  {
+    "user": "최준혁",
+    "title": "조퇴 신청합니다",
+    "category": "조퇴",
+    "startdate": "2024-12-05",
+    "enddate": "2024-12-05",
+    "submitreason": "개인 사유",
+    "refusereason": "회의 일정 충돌",
+    "submitdate": "2024-12-01",
+    "isApprove": true
+  },
+  {
+    "user": "김서연",
+    "title": "병가 신청합니다",
+    "category": "병가",
+    "startdate": "2024-01-20",
+    "enddate": "2024-01-22",
+    "submitreason": "치료 필요",
+    "refusereason": "없음",
+    "submitdate": "2024-01-15",
+    "isApprove": true
+  },
+  {
+    "user": "박준영",
+    "title": "휴가 신청합니다",
+    "category": "휴가",
+    "startdate": "2024-02-10",
+    "enddate": "2024-02-20",
+    "submitreason": "가족 휴가",
+    "refusereason": "업무 과중",
+    "submitdate": "2024-02-01",
+    "isApprove": false
+  },
+  {
+    "user": "이서준",
+    "title": "조퇴 신청합니다",
+    "category": "조퇴",
+    "startdate": "2024-03-05",
+    "enddate": "2024-03-05",
+    "submitreason": "개인 용무",
+    "refusereason": "회의 일정 충돌",
+    "submitdate": "2024-03-01",
+    "isApprove": true
+  },
+  {
+    "user": "김수정",
+    "title": "병가 신청합니다",
+    "category": "병가",
+    "startdate": "2024-04-20",
+    "enddate": "2024-04-22",
+    "submitreason": "수술",
+    "refusereason": "없음",
+    "submitdate": "2024-04-15",
+    "isApprove": true
+  },
+  {
+    "user": "이상민",
+    "title": "휴가 신청합니다",
+    "category": "휴가",
+    "startdate": "2024-05-10",
+    "enddate": "2024-05-20",
+    "submitreason": "휴식 필요",
+    "refusereason": "업무 과중",
+    "submitdate": "2024-05-01",
+    "isApprove": false
+  },
+  {
+    "user": "박하린",
+    "title": "조퇴 신청합니다",
+    "category": "조퇴",
+    "startdate": "2024-06-05",
+    "enddate": "2024-06-05",
+    "submitreason": "개인 사정",
+    "refusereason": "회의 일정 충돌",
+    "submitdate": "2024-06-01",
+    "isApprove": true
+  },
+  {
+    "user": "최서현",
+    "title": "병가 신청합니다",
+    "category": "병가",
+    "startdate": "2024-07-01",
+    "enddate": "2024-07-03",
+    "submitreason": "병원 방문",
+    "refusereason": "없음",
+    "submitdate": "2024-06-28",
+    "isApprove": true
   }
 ]

@@ -1,5 +1,6 @@
-import renderApprovalList from "./RenderApprovalList";
+//import renderApprovalList from "./RenderApprovalList";
 import styles from "./Approval.module.css";
+import initPagination from "./Pagination/Pagination";
 
 // 탭(심사중, 승인, 반려) 필터 [input: 서버로부터 불러온 데이터]
 const filterByTabs = (data) => {
@@ -13,7 +14,8 @@ const filterByTabs = (data) => {
 
   let filteredData = data.filter((item) => item.isApprove === state);
   document.getElementById("undetermined").classList.add(styles.active); // 초기 상태에서 심사중 탭 활성화
-  renderApprovalList(filteredData); // 초기 렌더링
+  //renderApprovalList(filteredData); // 초기 렌더링
+  initPagination(filteredData); // Pagination 렌더링
 
   // 탭 필터링
   tabsFilter.addEventListener("click", (event) => {
@@ -56,7 +58,8 @@ const applyFilters = (data, state, category) => {
     filteredData = filteredData.filter((item) => item.category === category);
   }
 
-  renderApprovalList(filteredData);
+  initPagination(filteredData);
+  //renderApprovalList(filteredData);
 };
 
 export default filterByTabs;

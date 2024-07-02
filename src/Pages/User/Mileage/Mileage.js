@@ -11,10 +11,10 @@ import hamburger from '../../../Components/ResponsiveNavBar/User/Hamburger';
 const renderUserMileage = (container) => {
   container.innerHTML = `
       <div class="${styles['mileage-contents']}">
-        <h1 id="asdf" class="${styles.title}">마일리지</h1>
+        <h1 class="${styles.title}">마일리지</h1>
         <div class="${styles['mileage-score']}">
           <div class="${styles['mileage-score__left']}">
-            <div class="${styles['mileage-icon']}">
+            <div class="${styles['mileage-icon']}" id="total-mileage-icon">
               <svg
                 width="28"
                 height="28"
@@ -25,11 +25,12 @@ const renderUserMileage = (container) => {
                   d="M20.998 3V5C20.998 14.6274 15.6255 19 8.99805 19L5.24077 18.9999C5.0786 19.912 4.99805 20.907 4.99805 22H2.99805C2.99805 20.6373 3.11376 19.3997 3.34381 18.2682C3.1133 16.9741 2.99805 15.2176 2.99805 13C2.99805 7.47715 7.4752 3 12.998 3C14.998 3 16.998 4 20.998 3ZM12.998 5C8.57977 5 4.99805 8.58172 4.99805 13C4.99805 13.3624 5.00125 13.7111 5.00759 14.0459C6.26198 12.0684 8.09902 10.5048 10.5019 9.13176L11.4942 10.8682C8.6393 12.4996 6.74554 14.3535 5.77329 16.9998L8.99805 17C15.0132 17 18.8692 13.0269 18.9949 5.38766C17.6229 5.52113 16.3481 5.436 14.7754 5.20009C13.6243 5.02742 13.3988 5 12.998 5Z"
                 ></path>
               </svg>
+            </span>
             </div>
             <div class="${styles['mileage-score__detail']}">
-              <h3 class="${styles['mileage-score__total-score']}">총 100 마일리지</h3>
-              <h4 class="${styles['mileage-score__message']}">
-                새싹단계에요. 조금만 더 힘내보세요 :)
+              <h3 class="${styles['mileage-score__total-score']}">총 <span id="total-mileage-score">100</span> 마일리지</h3>
+              <h4 class="${styles['mileage-score__message']}" >
+                <span id="total-mileage-text">새싹단계에요. 조금만 더 힘내보세요 :)</span>
               </h4>
             </div>
           </div>
@@ -99,14 +100,6 @@ const renderUserMileage = (container) => {
 
   fetchMileageData(); // 마일리지 리스트 데이터 요청
 
-  // 마일리지 적립목록 페이지로 라우팅
-  document
-    .querySelector(`.${styles['mileage-approve__save-list']}`)
-    .addEventListener('click', () => {
-      history.pushState(null, null, '/user/mileage/history');
-      route();
-    });
-
   // 마일리기 기준 알아보기 모달: modal-1
   renderModal(
     showMileageStandardContent().modal_id, // 모달 번호
@@ -120,7 +113,15 @@ const renderUserMileage = (container) => {
     showMileageApproveContent().header, // 모달 헤더
     showMileageApproveContent().content //모달 내용
   );
-  
+
+  // 마일리지 적립목록 페이지로 라우팅
+  document
+    .querySelector(`.${styles['mileage-approve__save-list']}`)
+    .addEventListener('click', () => {
+      history.pushState(null, null, '/user/mileage/history');
+      route();
+    });
+    
   hamburger();
 };
 

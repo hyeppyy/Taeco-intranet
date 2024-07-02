@@ -76,7 +76,6 @@
 @media screen and (max-width: 600px) {
   .layout {
     display: none;
-    width: 180px;
     border-right: none;
     border-left: 1px solid var(--gray-04);
   }

@@ -25,13 +25,11 @@
 
 .mileage-icon {
     padding: 14px;
-    margin-right: 10px;
+    margin-right: 12px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50px;
-    fill: var(--color-orange-dark);
-    background: #f576001a;
 }
 
 .mileage-score__right {
@@ -298,6 +296,7 @@
 
     .mileage-score {
         flex-direction: column;
+        gap: 6px;
         padding: 12px;
         height: 75px;
     }

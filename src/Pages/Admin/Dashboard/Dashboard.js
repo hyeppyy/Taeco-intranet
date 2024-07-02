@@ -1,4 +1,5 @@
 import styles from './Dashboard.module.css';
+import fetchMileageData from './fetchMileageData';
 
 const renderAdminDashboard = (container) => {
   if (!container) {
@@ -47,22 +48,12 @@ const renderAdminDashboard = (container) => {
               <div class="${styles.mileage__requester}">요청자</div>
               <div class="${styles['mileage__request-date']}">요청일</div>
             </li>
-            ${Array(3)
-              .fill()
-              .map(
-                (_, idx) => `
-              <li class="${styles.mileage__row}" key="${idx}">
-                <div class="${styles.mileage__title}">제목입니다.</div>
-                <div class="${styles.mileage__requester}">홍길동</div>
-                <div class="${styles['mileage__request-date']}">2024.02.02</div>
-              </li>
-            `
-              )
-              .join('')}
           </ul>
         </div>
       </div>
     </div>`;
+
+  fetchMileageData();
 };
 
 export default renderAdminDashboard;

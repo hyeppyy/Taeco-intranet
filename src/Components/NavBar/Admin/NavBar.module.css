@@ -5,35 +5,6 @@
   font-weight: 500;
 }
 
-/*************** 모바일 버전 햄버거 ***************/
-header {
-  display: none;
-  justify-content: space-between;
-  width: 100%;
-  height: 44px;
-  background-color: var(--color-sec-normal);
-}
-
-header > .header__logo {
-  width: 188px;
-  height: 32px;
-  padding: 6px 16px;
-}
-
-header > .header__logo > img {
-  height: 14px;
-  padding: 9px;
-}
-
-header #hamburger {
-  background: none;
-  border: none;
-  color: var(--color-white);
-  font-size: 24px;
-  cursor: pointer;
-}
-
-/*************** 좌측 레이아웃 ***************/
 nav > .layout {
   width: 220px;
   height: 100%;
@@ -125,6 +96,13 @@ nav > .layout > .layout__bottom {
     display: none;
     width: 180px;
   }
+  nav > .layout.open {
+    display: flex !important;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+  }
 
   nav > .layout > .layout__top {
     padding-top: 34px;
@@ -134,11 +112,4 @@ nav > .layout > .layout__bottom {
     display: none;
   }
 
-  nav > .layout.open {
-    display: flex;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 2;
-  }
 }

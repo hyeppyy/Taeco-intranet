@@ -18,7 +18,7 @@ const renderAdminMileage = (container) => {
           <h4 id="toggleText">미확인</h4>
         </div>
 
-        <h6>총 20개의 게시글</h6>
+        <h6>총 <span id="total-item"></span>개의 게시글</h6>
       </div>
 
       <div class="${styles['mileage-list']}"></div>

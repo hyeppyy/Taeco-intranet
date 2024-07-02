@@ -99,7 +99,6 @@ const renderUserNavBar = (nav, menuList) => {
             >로그아웃
           </a>
         </div>
-      </div>
     `;
 };
 

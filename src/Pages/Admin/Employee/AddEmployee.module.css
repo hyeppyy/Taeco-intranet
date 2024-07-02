@@ -12,7 +12,7 @@
   padding: 16px;
   flex-direction: column;
   align-items: center;
-  gap: 24px;
+  gap: 15px;
   align-self: stretch;
   border-radius: 4px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -29,7 +29,7 @@
 
 .page__edit {
   display: flex;
-  padding-bottom: 16px;
+  padding-bottom: 12px;
   flex-direction: column;
   align-items: center;
   gap: 2px;

@@ -1,5 +1,6 @@
 import styles from "./Employee.module.css";
 import renderAddEmployeePage from "./AddEmployee"; // 새로운 페이지 렌더링 함수 가져오기
+import renderEditEmployeePage from "./EditEmployee"; //수정 페이지 렌더링 함수 가져오기
 import { fetchEmployeeData } from "./FetchEmployeeData"; // fetch 함수 가져오기
 
 const renderAdminEmployee = (container) => {
@@ -75,16 +76,16 @@ const loadEmployees = (employees) => {
       <td class="${styles.birthday}">${employee.birthday}</td>
       <td class="${styles.joinday}">${employee.joinday}</td>
       <td class="${styles.phonenumber}">${employee.phone}</td>
-      <td class="${styles.button}"><button data-color='neutral' data-shape='line'>수정</button></td>
+      <td class="${styles.button}"><button class="${styles.editbtn}" data-color='neutral' data-shape='line'>수정</button></td>
     `;
 
     tbody.appendChild(row);
 
     // '수정' 버튼 클릭 이벤트 핸들러 추가
-    const editButton = row.querySelector(`.${styles.button} button`);
+    const editButton = row.querySelector(`button.${styles.editbtn}`);
     if (editButton) {
       editButton.addEventListener("click", () => {
-        renderEditEmployeePage(container); // 직원 수정 페이지로 이동
+        renderEditEmployeePage(container, employee); // 직원 수정 페이지로 이동, 직원 데이터 전달
       });
     }
   });

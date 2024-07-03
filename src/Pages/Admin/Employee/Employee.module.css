@@ -38,24 +38,31 @@ div .page__header {
 }
 
 .table__container {
-  max-height: 535px; /*원하는 최대 높이 설정 */
   overflow-y: auto; /* 수직 스크롤바 추가 */
   width: 100%; /* 컨테이너의 너비를 100%로 설정 */
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 194px);
 }
 
 .table__head {
   position: sticky;
   height: 30px;
   vertical-align: middle;
+  top: 0;
+  width: 100%;
+  background-color: var(--color-white);
 }
 .head__userlist {
-  position: sticky;
-  top: 0;
+  /* position: sticky;
+  top: 0; */
   font-size: 14px;
   width: 100%;
+  height: 30px;
 }
 
 .table__body {
+  max-height: 400px; /*원하는 최대 높이 설정 */
   text-align: center;
   font-size: 14px;
 }
@@ -74,6 +81,7 @@ div .page__header {
 .head__phonenumber,
 .head__button {
   vertical-align: middle;
+  width: 100%;
 }
 
 .profileimg,
@@ -87,5 +95,38 @@ div .page__header {
   border-bottom: 1px solid var(--gray-05);
   margin: 100px 0;
   vertical-align: middle;
-  padding: 10px 0;
+  padding: 10px 5px;
+}
+
+.profileimg,
+.head__profileimg {
+  width: 15%;
+}
+.name,
+.head__name {
+  width: 7%;
+}
+.position,
+.head__position {
+  width: 5%;
+}
+.email,
+.head__email {
+  width: 20%;
+}
+.birthday,
+.head__birthday {
+  width: 12.5%;
+}
+.joinday,
+.head__joinday {
+  width: 12.5%;
+}
+.phonenumber,
+.head__phonenumber {
+  width: 18%;
+}
+.button,
+.head__button {
+  width: 10%;
 }

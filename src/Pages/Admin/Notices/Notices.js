@@ -1,5 +1,6 @@
 import fetchNoticesData from "./JS/FetchNoticesData";
 import styles from "../Notices/Notice.module.css";
+import paginationStyle from "./Pagination/Pagination.module.css";
 
 const renderAdminNotices = (container) => {
   container.innerHTML = `
@@ -52,12 +53,12 @@ const renderAdminNotices = (container) => {
           <div class="${styles.noticeContainer__filterWrap}">
             <div class="${styles.noticeContainer__filter}">
               <input
-              type="search"
-              id="searchBox"
-              name="q"
-              placeholder="내용 또는 제목을 입력해주세요."
-              data-shape="line"
-            />
+                type="search"
+                id="noticeSearchBox"
+                name="q"
+                placeholder="제목 또는 작성자를 입력해주세요."
+                data-shape="line"
+              />
             <select name="noticeFilter" id="noticeFilter">
               <option value="latest">최신순</option>
               <option value="old">오래된순</option>
@@ -78,7 +79,9 @@ const renderAdminNotices = (container) => {
                   </tr>
                 </thead>
                 <tbody></tbody>
-              </table>   
+              </table>
+              <!-- 페이지네이션 구현하기 -->
+              <div id="pagination" class="${paginationStyle.pagination}"></div>     
           </div>
         </div>
       </div>

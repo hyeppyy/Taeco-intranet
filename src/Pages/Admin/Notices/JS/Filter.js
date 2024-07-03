@@ -1,10 +1,15 @@
 import renderNoticesList from "./RenderNoticesList.js";
+import initPagination from "../Pagination/Pagination.js";
 import styles from "../Notice.module.css";
 
 const tabFilter = (data) => {
   const totalPostsNum = document.querySelector("#noticeTotalPostsNum");
   const tabsFilter = document.querySelector(`.${styles["notices__tabs"]}`);
   let filteredData = data.filter((item) => item.category === "event");
+  dataFilter(filteredData); // 초기 날짜 필터링
+  searchFilter(filteredData); // 초기 검색 필터링
+  initPagination(filteredData); // Pagination 렌더링
+
   document.getElementById("event").classList.add(styles.active); // 초기 상태에서 심사중 탭 활성화
   renderNoticesList(filteredData); // 초기 렌더링
   //초기상태 총 게시글 수
@@ -38,6 +43,8 @@ const tabFilter = (data) => {
 
     renderNoticesList(filteredData);
     dataFilter(filteredData); // 탭 필터 후 날짜 필터 적용
+    searchFilter(filteredData); // 탭 필터 후 검색 필터 적용
+    initPagination(filteredData);
     totalPostsNum.innerText = `총 게시글 수 ${filteredData.length}개`; //필터 후 총 게시글 수
   });
 };
@@ -58,6 +65,31 @@ const dataFilter = (filteredData) => {
     }
 
     renderNoticesList(sortedData);
+  });
+};
+
+// 검색 필터
+const searchFilter = (filteredData) => {
+  const searchInput = document.querySelector("#noticeSearchBox");
+
+  searchInput.addEventListener("input", () => {
+    // 입력된 검색어를 소문자로 변환하여 공백 제거
+    const searchQuery = searchInput.value.trim().toLowerCase();
+    // .slice()를 사용해 원본 데이터 변경하지 않고 복사본 사용
+    let filteredList = filteredData.slice();
+
+    // 검색어가 포함된 데이터만 필터링
+    if (searchQuery) {
+      filteredList = filteredList.filter((item) => {
+        // 검색어와 일치하는 열(여기서는 제목만 가정)을 찾음
+        return (
+          item.title.toLowerCase().includes(searchQuery) ||
+          item.author.toLowerCase().includes(searchQuery)
+        );
+      });
+    }
+
+    renderNoticesList(filteredList); // 필터링된 데이터를 테이블에 렌더링
   });
 };
 

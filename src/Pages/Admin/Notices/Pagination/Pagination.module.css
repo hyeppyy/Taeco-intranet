@@ -1,0 +1,21 @@
+.pagination {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.pagination button {
+  background: none;
+  border: none;
+}
+.pageNumber__btn.active {
+  background: var(--color-pri-normal);
+  color: var(--gray-01);
+}
+
+/* 반응형 */
+@media (max-width: 599px) {
+  .pagination {
+    justify-content: center;
+  }
+}

@@ -5,7 +5,10 @@
 }
 
 /*************** 모바일 버전 햄버거 ***************/
-.contents {
+.mileage-contents {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
   gap: 12px;
   display: flex;
   flex-direction: column;

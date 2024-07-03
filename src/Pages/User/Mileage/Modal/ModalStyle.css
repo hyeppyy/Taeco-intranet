@@ -12,7 +12,7 @@
 }
 
 .mileage-standard__icon {
-  padding: 14px;
+  padding: 18px;
   margin-right: 10px;
   display: flex;
   justify-content: center;
@@ -20,22 +20,22 @@
   border-radius: 50px;
 }
 
-#seed {
+.seed {
   fill: var(--color-yellow-normal);
   background: #ead6271a;
 }
 
-#sprout {
+.sprout {
   fill: var(--color-orange-dark);
   background: #f576001a;
 }
 
-#leaf {
+.leaf {
   fill: var(--color-purple-normal);
   background: #9261e11a;
 }
 
-#tree {
+.tree {
   fill: var(--color-pri-normal);
   background: #40b8831a;
 }

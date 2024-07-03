@@ -5,25 +5,19 @@ import renderAdminResponsiveNavBar from '../Components/ResponsiveNavBar/Admin/Re
 import renderUserResponsiveNavBar from '../Components/ResponsiveNavBar/User/ResponsiveNavBar';
 import renderAdminNavBar from '../Components/NavBar/Admin/NavBar';
 import renderUserNavBar from '../Components/NavBar/User/NavBar';
+import renderAdminDashboard from '../Pages/Admin/Dashboard/Dashboard';
 import renderUserDashboard from '../Pages/User/Dashboard/Dashboard';
+import renderAdminMileage from '../Pages/Admin/Mileage/Mileage';
 import renderUserMileage from '../Pages/User/Mileage/Mileage';
 import renderUserMileageHistory from '../Pages/User/Mileage/History/History';
-import renderUserMypage from '../Pages/User/Mypage/Mypage';
-import renderUserNotices from '../Pages/User/Notices/Notices';
-import renderUserApproval from '../Pages/User/Approval/Approval';
-import renderAdminDashboard from '../Pages/Admin/Dashboard/Dashboard';
-import renderAdminApproval from '../Pages/Admin/Approval/Approval';
 import renderAdminEmployee from '../Pages/Admin/Employee/Employee';
-import renderAdminMileage from '../Pages/Admin/Mileage/Mileage';
+import renderUserMypage from '../Pages/User/Mypage/Mypage';
 import renderAdminNotices from '../Pages/Admin/Notices/Notices';
-import renderUserNoticesDetail from "../Pages/User/Notices/Detail/Detail";
-import renderUserApproval from "../Pages/User/Approval/Approval";
-import renderAdminDashboard from "../Pages/Admin/Dashboard/Dashboard";
-import renderAdminApproval from "../Pages/Admin/Approval/Approval";
-import renderAdminEmployee from "../Pages/Admin/Employee/Employee";
-import renderAdminMileage from "../Pages/Admin/Mileage/Mileage";
-import renderAdminNotices from "../Pages/Admin/Notices/Notices";
+import renderUserNotices from '../Pages/User/Notices/Notices';
+import renderAdminApproval from '../Pages/Admin/Approval/Approval';
+import renderUserApproval from '../Pages/User/Approval/Approval';
 import renderAdminNoticesDetail from "../Pages/Admin/Notices/Detail/Detail";
+import renderUserNoticesDetail from "../Pages/User/Notices/Detail/Detail";
 import hamburger from '../Components/ResponsiveNavBar/User/Hamburger';
 
 const route = () => {

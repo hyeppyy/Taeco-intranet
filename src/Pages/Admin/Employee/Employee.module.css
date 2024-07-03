@@ -1,6 +1,9 @@
 :global(#contents) {
   overflow: hidden;
 }
+.mobilever {
+  display: none;
+}
 
 .page__event {
   display: flex;
@@ -10,7 +13,12 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 8px;
 }
-
+.birthdayinfo,
+.joindayinfo {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
 .event__birthday h3 {
   margin-right: 15px;
 }
@@ -32,9 +40,8 @@ div .page__header {
   height: 18px;
 }
 
-.total {
+.totalnum {
   color: var(--gray-07);
-  font-size: var(h5);
 }
 
 .table__container {
@@ -43,6 +50,8 @@ div .page__header {
   display: flex;
   flex-direction: column;
   height: calc(100% - 194px);
+  border-collapse: collapse; /* 테두리 겹침 방지 */
+  table-layout: fixed; /* 고정된 테이블 레이아웃 사용 */
 }
 
 .table__head {
@@ -50,38 +59,33 @@ div .page__header {
   height: 30px;
   vertical-align: middle;
   top: 0;
-  width: 100%;
   background-color: var(--color-white);
+  font-size: 14px;
 }
 .head__userlist {
-  /* position: sticky;
-  top: 0; */
   font-size: 14px;
   width: 100%;
   height: 30px;
 }
 
 .table__body {
-  max-height: 400px; /*원하는 최대 높이 설정 */
+  max-height: fit-content;
   text-align: center;
   font-size: 14px;
+}
+
+.table__head th,
+.table__body td {
+  padding: 10px;
+  text-align: center;
+  white-space: nowrap; /* 텍스트 줄 바꿈 방지 */
+  overflow: hidden; /* 내용이 넘칠 경우 숨김 */
+  text-overflow: ellipsis; /* 넘친 텍스트 생략 표시 */
 }
 
 .table__tr {
   border-bottom: 1px solid var(--gray-05);
   margin-bottom: 30px;
-}
-
-.head__profileimg,
-.head__name,
-.head__position,
-.head__email,
-.head__birthday,
-.head__joinday,
-.head__phonenumber,
-.head__button {
-  vertical-align: middle;
-  width: 100%;
 }
 
 .profileimg,
@@ -96,37 +100,81 @@ div .page__header {
   margin: 100px 0;
   vertical-align: middle;
   padding: 10px 5px;
+  white-space: nowrap;
 }
 
-.profileimg,
-.head__profileimg {
-  width: 15%;
+.head__profileimg,
+.profileimg {
+  width: 15.6%;
 }
-.name,
-.head__name {
+
+.head__name,
+.name {
   width: 7%;
 }
-.position,
-.head__position {
-  width: 5%;
+.head__position,
+.position {
+  width: 6%;
 }
-.email,
-.head__email {
-  width: 20%;
+.head__email,
+.email {
+  width: 21%;
 }
-.birthday,
-.head__birthday {
-  width: 12.5%;
+.head__birthday,
+.birthday {
+  width: 12.6%;
 }
-.joinday,
-.head__joinday {
-  width: 12.5%;
+.head__joinday,
+.joinday {
+  width: 12.6%;
 }
-.phonenumber,
-.head__phonenumber {
-  width: 18%;
+.head__phonenumber,
+.phonenumber {
+  width: 19.9%;
 }
-.button,
-.head__button {
-  width: 10%;
+.head__button,
+.button {
+  width: 15%;
+}
+
+/* 반응형 */
+/* 모바일 */
+@media (max-width: 599px) {
+  :global(input) {
+    width: auto;
+  }
+  .table__head {
+    display: none;
+  }
+
+  .page__event {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+    border-bottom: 2px solid var(--gray-05);
+  }
+
+  .event__birthday h3 {
+    margin-right: 0;
+  }
+
+  .birthdayinfo,
+  .joindayinfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px; /* 이미지와 텍스트 사이의 간격 */
+  }
+}
+/* 타블렛 */
+@media (min-width: 600px) and (max-width: 1023px) {
+  .table__body tr {
+    display: table-row;
+    width: auto;
+  }
+
+  .table__body td {
+    display: table-cell;
+    text-align: center;
+  }
 }

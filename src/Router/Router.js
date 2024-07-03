@@ -97,7 +97,7 @@ const route = () => {
     case "/admin/employee/add":
       renderAddEmployeePage(contents);
       break;
-    case "./admin/employee/edit":
+    case "/admin/employee/edit":
       renderEditEmployeePage(contents);
       break;
     case "/admin/mileage":

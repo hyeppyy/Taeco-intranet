@@ -63,7 +63,9 @@ form {
   width: 100%;
   /* justify-content: center; */
 }
-
+.user__info {
+  width: 100%;
+}
 .user__info input {
   color: var(--color-black);
 }
@@ -89,7 +91,7 @@ form {
 
 .info__birthday input,
 .info__joinday input {
-  width: 327px;
+  width: 327px !important;
   box-sizing: border-box;
 }
 
@@ -99,48 +101,31 @@ form {
   display: flex;
 }
 
-/* table {
-  width: 100%;
-}
+/* 반응형 */
+/* 모바일 */
+@media (max-width: 599px) {
+  .page__title {
+    margin-bottom: 5px;
+  }
+  .page__content {
+    gap: 0;
+  }
+  .user__info input,
+  .info__position select,
+  .info__birthday input,
+  .info__joinday input {
+    width: 100% !important; /* 모바일에서 input과 select 너비를 100%로 설정 */
+    box-sizing: border-box;
+  }
+  div .page {
+    overflow-y: auto; /* 수직 스크롤바 추가 */
+  }
 
-thead {
-  position: sticky;
-  top: 0;
-  background-color: var(--gray-01);
-}
+  .page__edit {
+    margin-top: 5px;
+  }
 
-th {
-  justify-content: center;
+  .page__button {
+    margin: 12px 8px;
+  }
 }
-
-tbody td {
-  display: flex;
-  justify-content: center;
-} */
-/* tr {
-  font-size: 14px;
-}
-
-th {
-  font-size: var(h5);
-  height: 10px;
-}
-
-tbody {
-  text-align: center;
-  font-size: var(h5);
-}
-
-tbody tr {
-  border-bottom: 1px solid var(--gray-05);
-  margin-bottom: 30px;
-}
-
-tbody td {
-  vertical-align: middle;
-  padding: 8px 0;
-}
-
-tbody img {
-  margin-right: 20px;
-} */

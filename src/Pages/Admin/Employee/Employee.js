@@ -1,6 +1,4 @@
 import styles from "./Employee.module.css";
-import renderAddEmployeePage from "./AddEmployee"; // 새로운 페이지 렌더링 함수 가져오기
-import renderEditEmployeePage from "./EditEmployee"; //수정 페이지 렌더링 함수 가져오기
 import { fetchEmployeeData } from "./FetchEmployeeData"; // fetch 함수 가져오기
 
 const renderAdminEmployee = (container) => {
@@ -8,10 +6,14 @@ const renderAdminEmployee = (container) => {
   <h1>직원 관리</h1>
   
   <div class="${styles.page__event}">
+    <div class="${styles.birthdayinfo}">
     <img src="/public/icons/cake.svg" alt="cake" />
     <span class="${styles.event__birthday}"><h3>금일의 생일자: 홍길동</h3></span>
+    </div>
+    <div class="${styles.joindayinfo}">
     <img src="/public/icons/seedling.svg" alt="seedling" />
     <span class="${styles.event__joinday}"><h3>금일의 입사자: 홍길동</h3></span>
+    </div>
   </div>
 
   <div class="${styles.page__header}">
@@ -19,6 +21,7 @@ const renderAdminEmployee = (container) => {
     <button id="addEmployeeButton" data-color="positive" data-shape="block">직원 추가</button>
   </div>
 
+  <h4 class="${styles.totalnum}">총 인원: 12명</h4>
 
   <table class="${styles.table__container}">
         <thead class="${styles.table__head}">
@@ -70,13 +73,13 @@ const loadEmployees = (employees) => {
 
     row.innerHTML = `
       <td class="${styles.profileimg}"><img src="${employee.img}" alt="profileimg"></td>
-      <td class="${styles.name}">${employee.name}</td>
-      <td class="${styles.position}">${employee.position}</td>
-      <td class="${styles.email}">${employee.email}</td>
-      <td class="${styles.birthday}">${employee.birthday}</td>
-      <td class="${styles.joinday}">${employee.joinday}</td>
-      <td class="${styles.phonenumber}">${employee.phone}</td>
-      <td class="${styles.button}"><button class="${styles.editbtn}" data-color='neutral' data-shape='line'>수정</button></td>
+      <td data-label="이름" class="${styles.name}">${employee.name}</td>
+      <td data-label="직함" class="${styles.position}">${employee.position}</td>
+      <td data-label="이메일" class="${styles.email}">${employee.email}</td>
+      <td data-label="생일" class="${styles.birthday}">${employee.birthday}</td>
+      <td data-label="입사일" class="${styles.joinday}">${employee.joinday}</td>
+      <td data-label="핸드폰번호" class="${styles.phonenumber}">${employee.phone}</td>
+      <td data-label="관리" class="${styles.button}"><button class="${styles.editbtn}" data-color='neutral' data-shape='line'>수정</button></td>
     `;
 
     tbody.appendChild(row);

@@ -15,7 +15,7 @@ const renderMileageList = (data) => {
     const div = document.createElement('div');
     div.className = styles['mileage-list__item'];
     div.classList.add('open-modal');
-    div.setAttribute('data-modal-target', `#modal-${item.id}`);
+    div.setAttribute('data-modal-target', `#modal-mileage_${item.id}`);
     div.style.backgroundImage = `url(${item.image})`;
     div.innerHTML = `<div class="${styles['mileage-list__title']}">
           <h3>${item.category}</h3>

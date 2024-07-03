@@ -41,7 +41,7 @@ const filterByTabs = (data) => {
     } else return;
 
     applyFilters(data, state, category);
-  });
+});
 
   // 카테고리 필터링
   selectFilter.addEventListener("change", (event) => {

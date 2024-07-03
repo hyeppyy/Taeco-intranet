@@ -1,6 +1,6 @@
 export const showMileageListContent = (item) => {
   return {
-    modal_id: `${item.id}`,
+    modal_id: `mileage_${item.id}`,
     header: `마일리지 심사`,
     content: `
     <div class="modal-box__form">

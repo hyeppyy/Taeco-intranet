@@ -36,7 +36,7 @@ const renderUserMileage = (container) => {
           </div>
           <h4
             class="${styles['mileage-score__right']} open-modal"
-            data-modal-target="#modal-1"
+            data-modal-target="#modal-mileage_1"
           >
             마일리지 기준 알아보기<svg
               width="20"
@@ -79,7 +79,7 @@ const renderUserMileage = (container) => {
             </button>
             <button
               class="${styles['mileage-approve__request']} open-modal"
-              data-modal-target="#modal-2"
+              data-modal-target="#modal-mileage_2"
               data-color="positive"
               data-shape="block"
             >

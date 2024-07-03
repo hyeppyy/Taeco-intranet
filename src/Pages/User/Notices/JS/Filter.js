@@ -1,4 +1,5 @@
 import renderNoticesList from "./RenderNoticesList.js";
+import initPagination from "../Pagination/Pagination.js";
 import styles from "../Notice.module.css";
 
 const tabFilter = (data) => {
@@ -10,6 +11,8 @@ const tabFilter = (data) => {
   //초기상태 총 게시글 수
   totalPostsNum.innerText = `총 게시글 수 ${filteredData.length}개`;
   totalPostsNum.style.color = `var(--gray-07)`;
+  initPagination(filteredData); // Pagination 렌더링
+
   // 탭 클릭에 따른 조건 렌더링
   tabsFilter.addEventListener("click", (event) => {
     const targetId = event.target.id;

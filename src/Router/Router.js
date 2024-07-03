@@ -14,6 +14,8 @@ import renderUserApproval from "../Pages/User/Approval/Approval";
 import renderAdminDashboard from "../Pages/Admin/Dashboard/Dashboard";
 import renderAdminApproval from "../Pages/Admin/Approval/Approval";
 import renderAdminEmployee from "../Pages/Admin/Employee/Employee";
+import renderAddEmployeePage from "../Pages/Admin/Employee/AddEmployee";
+import renderEditEmployeePage from "../Pages/Admin/Employee/EditEmployee";
 import renderAdminMileage from "../Pages/Admin/Mileage/Mileage";
 import renderAdminNotices from "../Pages/Admin/Notices/Notices";
 import renderAdminNoticesDetail from "../Pages/Admin/Notices/Detail/Detail";
@@ -85,6 +87,12 @@ const route = () => {
       break;
     case "/admin/employee":
       renderAdminEmployee(contents);
+      break;
+    case "/admin/employee/edit":
+      renderEditEmployeePage(contents);
+      break;
+    case "/admin/employee/add":
+      renderAddEmployeePage(contents);
       break;
     case "/admin/mileage":
       renderAdminMileage(contents);

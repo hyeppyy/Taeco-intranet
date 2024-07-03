@@ -42,7 +42,7 @@ const renderAdminEmployee = (container) => {
   const addEmployeeButton = document.getElementById("addEmployeeButton");
   if (addEmployeeButton) {
     addEmployeeButton.addEventListener("click", () => {
-      renderAddEmployeePage(container); // 직원 추가 페이지로 이동
+      window.location = "/admin/employee/add";
     });
   }
 
@@ -85,7 +85,7 @@ const loadEmployees = (employees) => {
     const editButton = row.querySelector(`button.${styles.editbtn}`);
     if (editButton) {
       editButton.addEventListener("click", () => {
-        renderEditEmployeePage(container, employee); // 직원 수정 페이지로 이동, 직원 데이터 전달
+        window.location = "/admin/employee/edit";
       });
     }
   });

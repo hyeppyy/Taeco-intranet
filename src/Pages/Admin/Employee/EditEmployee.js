@@ -1,7 +1,7 @@
 import styles from "./EditEmployee.module.css";
 import renderAdminEmployee from "./Employee"; // 돌아가기 위한 함수 가져오기
 
-const renderAddEmployeePage = (container) => {
+const renderEditEmployeePage = (container) => {
   container.innerHTML = `
   <div class="${styles.page}">
   <h1 class="${styles.page__title}">직원 관리 > 직원 상세</h1>
@@ -65,11 +65,9 @@ const renderAddEmployeePage = (container) => {
   `;
 
   const backButton = document.getElementById("backButton");
-  if (backButton) {
-    backButton.addEventListener("click", () => {
-      renderAdminEmployee(container); // 직원 관리 페이지로 돌아가기
-    });
-  }
+  backButton.addEventListener("click", () => {
+    history.back();
+  });
 };
 
-export default renderAddEmployeePage;
+export default renderEditEmployeePage;

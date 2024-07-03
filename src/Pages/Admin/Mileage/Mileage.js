@@ -5,7 +5,7 @@ import toggleSwitch from '/src/Components/ToggleSwitch/ToggleSwitch';
 
 const renderAdminMileage = (container) => {
   container.innerHTML = `
-     <div class="${styles.contents}">
+     <div class="${styles['mileage-contents']}">
       <h1 class="${styles.title}">마일리지 관리</h1>
 
       <div class="${styles.header}">

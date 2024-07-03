@@ -34,7 +34,6 @@
 
 /* 모달 박스 안 전체 컨테이너 */
 .modal-box__container {
-  width: 444px;
   background-color: var(--color-white);
   border-radius: 8px;
   z-index: 1;
@@ -44,7 +43,7 @@
 
 /* 모달 컨테이너 헤더*/
 .modal-box__header {
-  padding: 16px;
+  padding: 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -55,7 +54,7 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  padding: 0 16px 16px;
+  padding: 0 24px 24px;
 }
 
 /* 모달 비활성 버튼 */
@@ -95,8 +94,8 @@
   visibility: visible;
 }
 
-/* @media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
   .modal-box__container {
-    width: 360px;
+    width: 340px;
   }
-} */
+}

@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "category": "재사용 및 업사이클링t",
+    "category": "재사용 및 업사이클링",
     "score": 2,
     "employee": "최배달",
     "date": "2023-01-02",
@@ -10,7 +10,7 @@
   },
   {
     "id": 2,
-    "category": "대중교통 및 자전거 이용n",
+    "category": "대중교통 및 자전거 이용",
     "score": 3,
     "employee": "김철수",
     "date": "2024-02-02",
@@ -19,7 +19,7 @@
   },
   {
     "id": 3,
-    "category": "에너지 절약t",
+    "category": "에너지 절약",
     "score": 1,
     "employee": "홍길동",
     "date": "2024-04-02",
@@ -28,7 +28,7 @@
   },
   {
     "id": 4,
-    "category": "대중교통 및 자전거 이용n",
+    "category": "대중교통 및 자전거 이용",
     "score": 1,
     "employee": "홍길동",
     "date": "2023-02-02",
@@ -37,7 +37,7 @@
   },
   {
     "id": 5,
-    "category": "재활용 및 분리수거n",
+    "category": "재활용 및 분리수거",
     "score": 1,
     "employee": "홍길동",
     "date": "2024-01-02",
@@ -46,7 +46,7 @@
   },
   {
     "id": 6,
-    "category": "재사용 및 업사이클링t",
+    "category": "재사용 및 업사이클링",
     "score": 1,
     "employee": "홍길동",
     "date": "2024-01-04",
@@ -55,7 +55,7 @@
   },
   {
     "id": 7,
-    "category": "대중교통 및 자전거 이용f",
+    "category": "대중교통 및 자전거 이용",
     "score": 1,
     "employee": "홍길동",
     "date": "2024-01-07",
@@ -64,7 +64,7 @@
   },
   {
     "id": 8,
-    "category": "재사용 및 업사이클링f",
+    "category": "재사용 및 업사이클링",
     "score": 2,
     "employee": "최배달",
     "date": "2022-01-02",
@@ -73,7 +73,7 @@
   },
   {
     "id": 9,
-    "category": "대중교통 및 자전거 이용n",
+    "category": "대중교통 및 자전거 이용",
     "score": 3,
     "employee": "김철수",
     "date": "2023-11-02",
@@ -82,7 +82,7 @@
   },
   {
     "id": 10,
-    "category": "에너지 절약n",
+    "category": "에너지 절약",
     "score": 1,
     "employee": "홍길동",
     "date": "2024-02-12",
@@ -91,7 +91,7 @@
   },
   {
     "id": 11,
-    "category": "대중교통 및 자전거 이용f",
+    "category": "대중교통 및 자전거 이용",
     "score": 1,
     "employee": "홍길동",
     "date": "2021-01-02",
@@ -100,7 +100,7 @@
   },
   {
     "id": 11,
-    "category": "재사용 및 업사이클링f",
+    "category": "재사용 및 업사이클링",
     "score": 2,
     "employee": "최배달",
     "date": "2022-01-02",

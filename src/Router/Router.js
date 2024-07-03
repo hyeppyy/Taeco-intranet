@@ -1,22 +1,25 @@
 import renderPageNotFound from "../Pages/PageNotFound";
 import renderLogin from "../Pages/Login/Login";
 import renderLayout from "../Layout/Layout";
-import renderResponsiveNavBar from "../Components/ResponsiveNavBar/ResponsiveNavBar";
+import renderAdminResponsiveNavBar from "../Components/ResponsiveNavBar/Admin/ResponsiveNavBar";
+import renderUserResponsiveNavBar from "../Components/ResponsiveNavBar/User/ResponsiveNavBar";
 import renderAdminNavBar from "../Components/NavBar/Admin/NavBar";
 import renderUserNavBar from "../Components/NavBar/User/NavBar";
+import renderAdminDashboard from "../Pages/Admin/Dashboard/Dashboard";
 import renderUserDashboard from "../Pages/User/Dashboard/Dashboard";
+import renderAdminMileage from "../Pages/Admin/Mileage/Mileage";
 import renderUserMileage from "../Pages/User/Mileage/Mileage";
 import renderUserMileageHistory from "../Pages/User/Mileage/History/History";
-import renderUserMypage from "../Pages/User/Mypage/Mypage";
-import renderUserNotices from "../Pages/User/Notices/Notices";
-import renderUserNoticesDetail from "../Pages/User/Notices/Detail/Detail";
-import renderUserApproval from "../Pages/User/Approval/Approval";
-import renderAdminDashboard from "../Pages/Admin/Dashboard/Dashboard";
-import renderAdminApproval from "../Pages/Admin/Approval/Approval";
 import renderAdminEmployee from "../Pages/Admin/Employee/Employee";
-import renderAdminMileage from "../Pages/Admin/Mileage/Mileage";
+import renderUserMypage from "../Pages/User/Mypage/Mypage";
 import renderAdminNotices from "../Pages/Admin/Notices/Notices";
+import renderUserNotices from "../Pages/User/Notices/Notices";
+import renderAdminApproval from "../Pages/Admin/Approval/Approval";
+import renderUserApproval from "../Pages/User/Approval/Approval";
 import renderAdminNoticesDetail from "../Pages/Admin/Notices/Detail/Detail";
+import renderUserNoticesDetail from "../Pages/User/Notices/Detail/Detail";
+import renderAdminAddNotices from "../Pages/Admin/Notices/Add/Add";
+import hamburger from "../Components/ResponsiveNavBar/User/Hamburger";
 
 const route = () => {
   const path = window.location.pathname;
@@ -29,11 +32,10 @@ const route = () => {
   const navBar = document.querySelector("#nav");
   const contents = document.querySelector("#contents");
 
-  renderResponsiveNavBar(responseNavBar);
-
   // 현재 url에 user/admin 포함 여부에 따른 NavBar 렌더링
   if (path.includes("user")) {
-    // input 인자 2가지 : 삽입할 요소, 내용
+    // 네비게이션 바
+    // [input] 삽입할 요소, 내용
     renderUserNavBar(navBar, [
       { path: "/user/dashboard", label: "대시보드" },
       { path: "/user/approval", label: "전자결재" },
@@ -41,6 +43,8 @@ const route = () => {
       { path: "/user/mileage", label: "마일리지" },
       { path: "/user/mypage", label: "마이페이지" },
     ]);
+    renderUserResponsiveNavBar(responseNavBar);
+    // 모바일 버전 반응형 헤더
   } else if (path.includes("admin")) {
     renderAdminNavBar(navBar, [
       { path: "/admin/dashboard", label: "대시보드" },
@@ -49,11 +53,14 @@ const route = () => {
       { path: "/admin/mileage", label: "마일리지 관리" },
       { path: "/admin/notices", label: "공지사항 관리" },
     ]);
+    // 모바일 버전 반응형 헤더
+    renderAdminResponsiveNavBar(responseNavBar);
   }
 
   switch (path) {
     case "/":
       renderLogin(root);
+      hamburger();
       break;
     case "/user/dashboard":
       renderUserDashboard(contents);
@@ -94,6 +101,9 @@ const route = () => {
       break;
     case "/admin/notices/detail":
       renderAdminNoticesDetail(contents);
+      break;
+    case "/admin/notices/add":
+      renderAdminAddNotices(contents);
       break;
     default:
       renderPageNotFound(root);

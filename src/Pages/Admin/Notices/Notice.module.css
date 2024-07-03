@@ -75,6 +75,15 @@
   width: 10%;
 }
 
+.importantTag {
+  padding: 4px 6px;
+  border-radius: 50px;
+  color: var(--color-white);
+  background: var(--color-pri-normal);
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
 /* tab style */
 .notices__tabs {
   width: 100%;

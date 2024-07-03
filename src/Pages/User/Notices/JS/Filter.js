@@ -102,7 +102,6 @@ const moveImportantDataToTop = (filteredData) => {
   const importantData = filteredData.filter(
     (item) => item.isImportant === "true"
   );
-  console.log(importantData, "importantData");
 
   const normalData = filteredData.filter(
     (item) => item.isImportant === "false"

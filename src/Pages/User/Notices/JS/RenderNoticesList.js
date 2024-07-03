@@ -1,4 +1,5 @@
 import styles from "../Notice.module.css";
+
 const renderNoticesList = (data) => {
   const tableBody = document.querySelector("table > tbody");
 

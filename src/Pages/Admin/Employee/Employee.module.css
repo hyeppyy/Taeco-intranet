@@ -1,3 +1,7 @@
+:global(#contents) {
+  overflow: hidden;
+}
+
 .page__event {
   display: flex;
   flex-direction: row;
@@ -17,14 +21,15 @@
   align-self: stretch;
   flex: 1 0 0;
 }
+
+div .page__header {
+  padding: 30px 0;
+  justify-content: space-between;
+}
+
 .page__event img {
   width: 18px;
   height: 18px;
-}
-
-.page__header {
-  padding: 16px 0;
-  justify-content: space-between;
 }
 
 .total {
@@ -33,18 +38,21 @@
 }
 
 .table__container {
-  width: 100%;
+  max-height: 535px; /*원하는 최대 높이 설정 */
+  overflow-y: auto; /* 수직 스크롤바 추가 */
+  width: 100%; /* 컨테이너의 너비를 100%로 설정 */
 }
 
-/* .table__head {
-  background-color: var(--color-white);
+.table__head {
   position: sticky;
+  height: 30px;
+  vertical-align: middle;
 }
-.userlist {
+.head__userlist {
   position: sticky;
   top: 0;
-  background-color: var(--gray-01);
   font-size: 14px;
+  width: 100%;
 }
 
 .table__body {
@@ -57,6 +65,17 @@
   margin-bottom: 30px;
 }
 
+.head__profileimg,
+.head__name,
+.head__position,
+.head__email,
+.head__birthday,
+.head__joinday,
+.head__phonenumber,
+.head__button {
+  vertical-align: middle;
+}
+
 .profileimg,
 .name,
 .position,
@@ -66,6 +85,7 @@
 .phonenumber,
 .button {
   border-bottom: 1px solid var(--gray-05);
-  margin-bottom: 100px;
+  margin: 100px 0;
   vertical-align: middle;
-} */
+  padding: 10px 0;
+}

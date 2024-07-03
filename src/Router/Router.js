@@ -17,6 +17,12 @@ import renderAdminEmployee from '../Pages/Admin/Employee/Employee';
 import renderAdminMileage from '../Pages/Admin/Mileage/Mileage';
 import renderAdminNotices from '../Pages/Admin/Notices/Notices';
 import renderUserNoticesDetail from "../Pages/User/Notices/Detail/Detail";
+import renderUserApproval from "../Pages/User/Approval/Approval";
+import renderAdminDashboard from "../Pages/Admin/Dashboard/Dashboard";
+import renderAdminApproval from "../Pages/Admin/Approval/Approval";
+import renderAdminEmployee from "../Pages/Admin/Employee/Employee";
+import renderAdminMileage from "../Pages/Admin/Mileage/Mileage";
+import renderAdminNotices from "../Pages/Admin/Notices/Notices";
 import renderAdminNoticesDetail from "../Pages/Admin/Notices/Detail/Detail";
 import hamburger from '../Components/ResponsiveNavBar/User/Hamburger';
 
@@ -92,7 +98,7 @@ const route = () => {
     case '/admin/employee':
       renderAdminEmployee(contents);
       break;
-    case '/admin/mileage':
+    case "/admin/mileage":
       renderAdminMileage(contents);
       break;
     case '/admin/notices':

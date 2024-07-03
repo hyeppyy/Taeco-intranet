@@ -1,5 +1,4 @@
 import styles from "./AddEmployee.module.css";
-import renderAdminEmployee from "./Employee"; // 돌아가기 위한 함수 가져오기
 
 const renderAddEmployeePage = (container) => {
   container.innerHTML = `
@@ -18,7 +17,7 @@ const renderAddEmployeePage = (container) => {
     <img src="/public/icons/user.svg" alt="profileimg">
       <div class="${styles.edit__btn}">
           <button id="chooseFile"data-color='neutral' data-shape='line'>이미지 등록</button>
-        <button id="changeFile" data-color='neutral' data-shape='line'>이미지 변경</button>
+        <button id="changeFile" data-color='neutral' data-shape='line'>이미지 삭제</button>
       </div>
   </div>
 
@@ -67,7 +66,7 @@ const renderAddEmployeePage = (container) => {
   const backButton = document.getElementById("backButton");
   if (backButton) {
     backButton.addEventListener("click", () => {
-      renderAdminEmployee(container); // 직원 관리 페이지로 돌아가기
+      window.location = "/admin/employee";
     });
   }
 };

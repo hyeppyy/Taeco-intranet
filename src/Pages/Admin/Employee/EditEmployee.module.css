@@ -12,7 +12,7 @@
   padding: 16px;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
+  gap: 24px;
   align-self: stretch;
   border-radius: 4px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -29,7 +29,7 @@
 
 .page__edit {
   display: flex;
-  padding-bottom: 12px;
+  padding-bottom: 16px;
   flex-direction: column;
   align-items: center;
   gap: 2px;
@@ -98,49 +98,3 @@ form {
   width: 100%;
   display: flex;
 }
-
-/* table {
-  width: 100%;
-}
-
-thead {
-  position: sticky;
-  top: 0;
-  background-color: var(--gray-01);
-}
-
-th {
-  justify-content: center;
-}
-
-tbody td {
-  display: flex;
-  justify-content: center;
-} */
-/* tr {
-  font-size: 14px;
-}
-
-th {
-  font-size: var(h5);
-  height: 10px;
-}
-
-tbody {
-  text-align: center;
-  font-size: var(h5);
-}
-
-tbody tr {
-  border-bottom: 1px solid var(--gray-05);
-  margin-bottom: 30px;
-}
-
-tbody td {
-  vertical-align: middle;
-  padding: 8px 0;
-}
-
-tbody img {
-  margin-right: 20px;
-} */

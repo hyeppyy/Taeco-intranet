@@ -73,7 +73,9 @@ const renderUserNotices = (container) => {
                 </tr>
               </thead>
               <tbody></tbody>
-            </table>   
+            </table>
+            <!-- 페이지네이션 구현하기 -->
+          <div id="pagination" class="${styles.pagination}"></div>   
         </div>
       </div>
     </div>

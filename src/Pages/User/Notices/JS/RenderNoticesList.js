@@ -1,3 +1,4 @@
+import styles from "../Notice.module.css";
 const renderNoticesList = (data) => {
   const tableBody = document.querySelector("table > tbody");
 
@@ -7,9 +8,14 @@ const renderNoticesList = (data) => {
   data.forEach((dataItem) => {
     const row = document.createElement("tr");
     const hasAttachments = dataItem.attachments.length > 0;
+    const hasImportant = dataItem.isImportant === "true";
 
     row.innerHTML = `
-            <td >${dataItem.index}</td>
+            <td >${
+              hasImportant
+                ? `<span class="${styles.importantTag}">중요</span> `
+                : dataItem.index
+            }</td>
             <td>${dataItem.title}</td>
             <td>${dataItem.author}</td>
             <td>${dataItem.date}</td>

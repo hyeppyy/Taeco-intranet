@@ -8,7 +8,7 @@ const renderAdminNotices = (container) => {
         <h1>공지사항</h1>
         <div class="${styles.noticeContainer}">
         <div class="${styles.contents__newBtnWrap}">
-          <button  data-color="positive" data-shape="block">
+          <button class="${styles.movePageBtn}" data-color="positive" data-shape="block">
                 새 공지 등록
           </button>
         </div>
@@ -87,6 +87,15 @@ const renderAdminNotices = (container) => {
       </div>
   `;
   fetchNoticesData();
+  moveAddNoticePage();
+};
+
+const moveAddNoticePage = () => {
+  const movePageBtn = document.querySelector(`.${styles.movePageBtn}`);
+
+  movePageBtn.addEventListener("click", () => {
+    location.href = "/admin/notices/add";
+  });
 };
 
 export default renderAdminNotices;

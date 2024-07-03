@@ -47,21 +47,17 @@ const renderAdminAddNotices = (container) => {
             <textarea data-shape='transparent'placeholder="내용을 입력해주세요."></textarea>
         </section>
   `;
-  movePage();
+  moveBack();
   addFile();
   toggleSwitch();
 };
 
-const movePage = () => {
+const moveBack = () => {
   const cancel = document.querySelector(`.${styles.btnWrap__cancel}`);
   const add = document.querySelector(`.${styles.btnWrap__add}`);
 
   cancel.addEventListener("click", () => {
     history.back();
-  });
-
-  add.addEventListener("click", () => {
-    "";
   });
 };
 export default renderAdminAddNotices;

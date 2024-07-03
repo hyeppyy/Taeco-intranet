@@ -30,7 +30,7 @@ const renderUserApproval = (container) => {
             </button>
           </div>
           <!-- 결제신청 모달 버튼 -->
-          <button class="${styles.paymentRequest} open-modal" data-modal-target="#modal-1" >
+          <button class="${styles.paymentRequest} open-modal" data-modal-target="#modal-approval_1" >
             결제 신청
           </button>
         </div>        

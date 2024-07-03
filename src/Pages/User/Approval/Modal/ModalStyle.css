@@ -47,19 +47,3 @@
   background-color: var(--pri-dark, #39a374);
   cursor: pointer;
 }
-
-.modal-detail__title,
-.modal-detail__category,
-.modal-detail__date,
-.modal-detail__submitreason,
-.modal-detail__refusereason {
-  display: flex;
-  padding: var(--none, 0px) 12px;
-  flex-direction: column;
-  align-items: flex-start;
-  align-self: stretch;
-  gap: 12px;
-  height: 38px;
-  border-radius: var(--borderRadius, 4px);
-  border: var(--none, 1px) solid var(--gray-06);
-}

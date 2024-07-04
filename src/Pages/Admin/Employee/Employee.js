@@ -40,16 +40,7 @@ const renderAdminEmployee = (container) => {
       <tbody class="${styles.table__body}" id="employeeTableBody"></tbody>    
     </table>
   </div> 
-
   `;
-
-  // '직원 추가' 버튼 클릭 이벤트 핸들러 추가
-  const addEmployeeButton = document.getElementById("addEmployeeButton");
-  if (addEmployeeButton) {
-    addEmployeeButton.addEventListener("click", () => {
-      window.location = "/admin/employee/add";
-    });
-  }
 
   // 서버에서 JSON 데이터를 fetch하여 테이블에 직원 데이터를 추가
   initializeEmployeeData();
@@ -87,6 +78,14 @@ const loadEmployees = (employees) => {
     `;
 
     tbody.appendChild(row);
+
+    // '직원 추가' 버튼 클릭 이벤트 핸들러 추가
+    const addEmployeeButton = document.getElementById("addEmployeeButton");
+    if (addEmployeeButton) {
+      addEmployeeButton.addEventListener("click", () => {
+        window.location = "/admin/employee/add";
+      });
+    }
 
     // '수정' 버튼 클릭 이벤트 핸들러 추가
     const editButton = row.querySelector(`button.${styles.editbtn}`);

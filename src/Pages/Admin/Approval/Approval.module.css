@@ -245,7 +245,7 @@ textarea {
   display: none;
 }
 @media (max-width: 600px) {
-  thead th:nth-child(3),
+  /* thead th:nth-child(3),
   thead th:nth-child(4),
   thead th:last-child,
   tbody td:nth-child(3),
@@ -262,7 +262,7 @@ textarea {
   tbody td:nth-child(2) {
     width: 100%;
     flex: 1;
-  }
+  } */
   .pagination {
     justify-content: center;
   }

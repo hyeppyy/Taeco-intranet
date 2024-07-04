@@ -1,10 +1,9 @@
-// 마일리기 기준 알아보기 모달: modal-1
 export const showEmployeeEditCheck = () => {
   return {
-    modal_id: 1,
+    modal_id: `${employee_1}`,
     header: `직원 수정 확인`,
     content: `
-    <div class="Employee-edit"></div>
+    <div class="Employee-edit">
       <div class="Employee-edit__content">
         <div class="Employee-edit__header"><h4>직원 수정</h4> 
           <img
@@ -15,11 +14,11 @@ export const showEmployeeEditCheck = () => {
           />
         </div>
         <div>
-          <h5>홍길동님을 수정하시겠습니까 ?</h5>
-          <button data-color='warning' data-shape='block'>삭제</button>
+          <h5>홍길동님의 정보를 수정하시겠습니까 ?</h5>
+          <button data-color='positive' data-shape='block'>수정</button>
         </div>
       </div>
     </div>
-  `,
+    `,
   };
 };

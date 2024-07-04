@@ -69,7 +69,7 @@ const renderEditEmployeePage = (container) => {
     history.back();
   });
 
-  // 직원 수정
+  // 직원 수정 모달
   renderModel(
     showEmployeeEditCheck().modal_id, // 모달 번호
     showEmployeeEditCheck().header, // 모달 헤더

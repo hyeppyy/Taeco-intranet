@@ -1,3 +1,6 @@
+:global(#contents) {
+  overflow: auto;
+}
 .page {
   display: flex;
   flex-direction: column;

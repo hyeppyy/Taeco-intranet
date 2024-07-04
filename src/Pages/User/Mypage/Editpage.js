@@ -1,3 +1,4 @@
+import route from "/src/Router/Router";
 import styles from "./Editpage.module.css";
 import renderUserMypage from "./Mypage"; // renderUserMypage 함수 가져오기
 
@@ -11,13 +12,10 @@ const renderEditPage = (container) => {
 <div class="${styles.page__header}">
   <h2>내정보</h2>
   <!-- 모바일 버전 토스트 -->
-    <div class="${styles.toast__mobile}">
-      <img src="/public/icons/check.svg" alt="check">
-      <div class="text">
-        <h5>수정 완료</h5>
-      </div>
-    </div>
+  <div>
+  <button class="${styles.backButton}" data-color='warning' data-shape='block' id="save">뒤로가기</button>
   <button data-color='positive' data-shape='block' id="save">변경사항 저장</button>
+  </div>
 </div>
 
 <!-- 내 정보 사진 수정 부분입니다. -->
@@ -97,6 +95,13 @@ const renderEditPage = (container) => {
       renderUserMypage(container); // 마이페이지로 돌아가기
     });
   }
+
+  document
+    .querySelector(`.${styles.backButton}`)
+    .addEventListener("click", () => {
+      history.pushState(null, null, "/user/mypage");
+      route();
+    });
 };
 
 export default renderEditPage;

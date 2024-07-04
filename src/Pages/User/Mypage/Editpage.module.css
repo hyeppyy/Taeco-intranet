@@ -123,7 +123,7 @@ form {
   margin-left: 5px;
 }
 
-.toast__mobile {
+/* .toast__mobile {
   background-color: rgba(64, 184, 131, 0.2);
   color: var(--color-pri-dark);
   border-radius: 4px;
@@ -136,7 +136,7 @@ form {
   gap: 5px;
   position: relative;
   right: -26px;
-}
+} */
 
 /* 모바일 */
 @media (max-width: 599px) {
@@ -159,9 +159,9 @@ form {
     width: 100%;
   }
 
-  .page__footer .toast__message {
+  /* .page__footer .toast__message {
     display: none;
-  }
+  } */
 }
 
 /* 타블렛 */
@@ -171,14 +171,14 @@ form {
     margin-top: 10px;
   }
 
-  .toast__mobile {
+  /* .toast__mobile {
     display: none;
-  }
+  } */
 }
 
 /* 데스크탑 */
 @media (min-width: 1024px) {
-  .toast__mobile {
+  /* .toast__mobile {
     display: none;
-  }
+  } */
 }

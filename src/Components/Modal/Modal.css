@@ -1,11 +1,13 @@
 /* 이 안의 CSS 파일은 모달 박스의 템플릿이므로, 수정은 가급적 제한합니다.
 *  추가로 모달 박스 헤더와 내용 스타일을 주고 싶으면, 본인 작업 폴더에 모달 관련 CSS 생성 후, import 방식을 사용
 *  각 개인의 모달에는 다른 팀원 모달 스타일에 영향을 주지 않도록 클래스명을 지정합니다.
-*  import 후, 팀원을 위해 상단에 주석으로 간략한 설명 작성해주기 */ 
+*  import 후, 팀원을 위해 상단에 주석으로 간략한 설명 작성해주기 */
 
 /* u/mileage/마일리지 기준 알아보기 + 마일리지 신청 */
-@import url('/src/Pages/User/Mileage/Modal/ModalStyle.css');
+@import url("/src/Pages/User/Mileage/Modal/ModalStyle.css");
 
+/* u/approval/전자결제 신청버튼 + 상세게시글 모달1,2 */
+@import url("/src/Pages/User/Approval/Modal/ModalStyle.css");
 
 /***********************************************************/
 /* 모달 박스 */
@@ -67,7 +69,8 @@
 .close-modal:hover {
   transition: 0.2s;
   cursor: pointer;
-  filter: invert(69%) sepia(12%) saturate(193%) hue-rotate(193deg) brightness(92%) contrast(89%);
+  filter: invert(69%) sepia(12%) saturate(193%) hue-rotate(193deg)
+    brightness(92%) contrast(89%);
 }
 
 /* 모달 생성 시, 배경 오버레이 생성 */
@@ -96,4 +99,3 @@
     width: 340px;
   }
 }
-

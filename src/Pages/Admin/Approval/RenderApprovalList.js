@@ -1,10 +1,10 @@
 import styles from "./Approval.module.css";
-import { showApprovalDetailContent } from "./Modal/ModalContent";
+import { showApprovalDetailAdminContent } from "./Modal/ModalContent";
 import renderDynamicModal from "../../../Components/Modal/RenderDynamicModal";
 
 const renderApprovalList = (data) => {
   const container = document.querySelector(`.${styles["approval-list"]}`);
-console.log(data);
+
   // Clear existing content
   container.innerHTML = "";
 
@@ -24,10 +24,12 @@ console.log(data);
     const tr = document.createElement("tr");
     tr.className = styles["approval-list__row"];
     tr.classList.add(`open-modal`);
-    tr.setAttribute("data-modal-target", `#modal-approvalu_${item.id}`);
+    tr.setAttribute("data-modal-target", `#modal-approvala_${item.id}`);
     tr.innerHTML = `
       <td class="${styles["approval-list__category"]}">${item.category}</td>
       <td class="${styles["approval-list__title"]}">${item.title}</td>
+      <td class="${styles["approval-list__user"]}">${item.user}</td>
+      <td class="${styles["approval-list__refusereason"]}">${item.refusereason}</td>
       <td class="${styles["approval-list__submitdate"]}">${item.submitdate}</td>
       <td class="${styles["approval-list__meida"]}">
         <p>[${item.startdate} ~ ${item.enddate}] ${item.title}</p><br>
@@ -35,8 +37,7 @@ console.log(data);
         <p class="${styles["approval-tr__date"]}">${item.submitdate}</p>
       </td>
     `;
-    // Add click event listener to show detail modal
-    //tr.addEventListener("click", () => showDetailModal(item));
+
     tbody.appendChild(tr);
   });
 
@@ -44,7 +45,7 @@ console.log(data);
   container.appendChild(table);
 
   data.forEach((item) => {
-    const modalContent = showApprovalDetailContent(item);
+    const modalContent = showApprovalDetailAdminContent(item);
     renderDynamicModal(
       `.${styles["approval-list"]}`,
       modalContent.modal_id,

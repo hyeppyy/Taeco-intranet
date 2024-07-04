@@ -32,7 +32,27 @@ const renderUserDashboard = (container) => {
             </div>
           </div>
           <div class="${styles.userDashboard__attendance}">
-            <div class="${styles.userDashboard__todayAttendance} ${styles.card}">오늘의 출근</div>
+            <div class="${styles.userDashboard__todayAttendance} ${styles.card}">
+              <h2>오늘의 출근</h2>
+              <div class="${styles.userDashboard__todayAttendanceWrap}">
+                <h3 id="userDashboard__today"></h3>
+                <span class="${styles.userDashboard__currentTime}"></span>
+                <div class="${styles.userDashboard__stamp}">
+                  <span class="${styles.recordStartTimeBtn} open-modal"
+                    data-modal-target="#modal-dashboard_1"
+                  >
+                    <h3>출근하기</h3>
+                    <h2 id="userDashboard__startTime">-</h2>
+                  </span>
+                  <span class="${styles.recordEndTimeBtn} open-modal"
+                    data-modal-target="#modal-dashboard_2"
+                  >
+                    <h3>퇴근하기</h3>
+                    <h2 id="userDashboard__endTime">-</h2>
+                  </span>
+                </div>
+              </div>
+            </div>
             <div class="${styles.userDashboard__attendanceHistory} ${styles.card}">
               내출결내역확인
             </div>
@@ -64,6 +84,21 @@ const renderUserDashboard = (container) => {
   `;
 
   noticesData();
+  timer();
+
+  // 출근 체크 모달: dashboard_1
+  renderModal(
+    showCheckInTimeContent().modal_id, // 모달 번호
+    showCheckInTimeContent().header, // 모달 헤더
+    showCheckInTimeContent().content //모달 내용
+  );
+
+  // 퇴근 체크 모달: dashboard_2
+  renderModal(
+    showCheckOutTimeContent().modal_id, // 모달 번호
+    showCheckOutTimeContent().header, // 모달 헤더
+    showCheckOutTimeContent().content //모달 내용
+  );
 };
 
 export default renderUserDashboard;

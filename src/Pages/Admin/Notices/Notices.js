@@ -1,6 +1,7 @@
 import fetchNoticesData from "./JS/FetchNoticesData";
-import styles from "../Notices/Notice.module.css";
 import paginationStyle from "./Pagination/Pagination.module.css";
+import route from "./../../../Router/Router";
+import styles from "../Notices/Notice.module.css";
 
 const renderAdminNotices = (container) => {
   container.innerHTML = `
@@ -95,9 +96,8 @@ const moveAddNoticePage = () => {
 
   if (movePageBtn) {
     movePageBtn.addEventListener("click", (event) => {
-      event.stopPropagation(); // 이벤트 전파 중단
-      event.preventDefault(); // 기본 동작 중단
-      window.location.href = "/admin/notices/add";
+      history.pushState(null, null, "/admin/notices/add");
+      route();
     });
   }
 };

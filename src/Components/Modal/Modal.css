@@ -5,8 +5,7 @@
 
 /* u/mileage/마일리지 기준 알아보기 + 마일리지 신청 */
 @import url("/src/Pages/User/Mileage/Modal/ModalStyle.css");
-/* u/dashboard/출근 + 퇴근 */
-@import url("/src/Pages/User/Dashboard/Modal/dashboardModal.module.css");
+
 /* u/approval/전자결제 신청버튼 + 상세게시글 모달1,2 */
 @import url("/src/Pages/User/Approval/Modal/ModalStyle.css");
 

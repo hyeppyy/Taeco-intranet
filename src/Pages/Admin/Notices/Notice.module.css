@@ -116,8 +116,8 @@
   .notices__tab {
     flex: 1 0 40%;
   }
-  .userNoticeTable > table > thead > tr > th:nth-child(6),
-  .userNoticeTable > table > tbody > tr > td:nth-child(6) {
+  .adminNoticeTable > table > thead > tr > th:nth-child(6),
+  .adminNoticeTable > table > tbody > tr > td:nth-child(6) {
     display: none; /* 조회수 감추기 */
   }
 }
@@ -135,12 +135,12 @@
     flex-direction: column;
     align-items: flex-start;
   }
-  .userNoticeTable > table > thead > tr > th:nth-child(6),
-  .userNoticeTable > table > tbody > tr > td:nth-child(6) {
+  .adminNoticeTable > table > thead > tr > th:nth-child(6),
+  .adminNoticeTable > table > tbody > tr > td:nth-child(6) {
     display: none; /* 조회수 감추기 */
   }
-  .userNoticeTable > table > thead > tr > th:nth-child(5),
-  .userNoticeTable > table > tbody > tr > td:nth-child(5) {
+  .adminNoticeTable > table > thead > tr > th:nth-child(5),
+  .adminNoticeTable > table > tbody > tr > td:nth-child(5) {
     display: none; /* 첨부파일 감추기 */
   }
 }

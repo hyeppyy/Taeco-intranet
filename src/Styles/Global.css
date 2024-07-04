@@ -250,6 +250,8 @@ body {
   /* box-sizing: border-box; */
   flex: 1;
   padding: 16px 24px;
+  display: flex;
+  flex-direction: column;
   /* overflow: auto; */
 }
 

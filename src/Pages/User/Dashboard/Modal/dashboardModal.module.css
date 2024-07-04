@@ -2,7 +2,7 @@
 #modal-dashboard_2 > .modal-box__container {
   min-width: 360px;
 }
-/* /// */
+
 .checkTimeModal {
   display: flex;
   flex-direction: column;

@@ -68,6 +68,7 @@ const dataFilter = (filteredData) => {
     }
 
     renderNoticesList(sortedData);
+    initPagination(sortedData, renderNoticesList); // 필터 후 데이터를 페이지네이션에 전달ㄴ
   });
 };
 

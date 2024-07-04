@@ -24,10 +24,14 @@ const renderUserDashboard = (container) => {
                 <h4 class="${styles.infoFirst__position}">차장</h4>
               </div>
               <div class="${styles.infoSecond}">
+                <div class="${styles.emailInfo}">
                 <img src="/public/icons/email.svg" alt="email" />
                 <h4 class="${styles.email}">honggildong@google.com</h4>
+                </div>
+                <div class="${styles.callInfo}">
                 <img src="/public/icons/call.svg" alt="call" />
                 <h4 class="${styles.call}">010-1234-5678</h4>
+                </div>
               </div>
             </div>
           </div>

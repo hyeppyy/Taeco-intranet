@@ -188,6 +188,16 @@
   .userDashboard__todayAttendance {
     width: 100%;
   }
+
+  .infoSecond {
+    display: flex;
+    flex-direction: column;
+  }
+  .infoSecond > .emailInfo,
+  .infoSecond > .callInfo {
+    display: flex;
+    gap: 5px;
+  }
 }
 /* 타블렛 */
 @media (min-width: 600px) and (max-width: 1023px) {

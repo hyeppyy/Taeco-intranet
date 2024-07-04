@@ -11,6 +11,8 @@ import renderAdminMileage from "../Pages/Admin/Mileage/Mileage";
 import renderUserMileage from "../Pages/User/Mileage/Mileage";
 import renderUserMileageHistory from "../Pages/User/Mileage/History/History";
 import renderAdminEmployee from "../Pages/Admin/Employee/Employee";
+import renderAddEmployeePage from "../Pages/Admin/Employee/AddEmployee";
+import renderEditEmployeePage from "../Pages/Admin/Employee/EditEmployee";
 import renderUserMypage from "../Pages/User/Mypage/Mypage";
 import renderAdminNotices from "../Pages/Admin/Notices/Notices";
 import renderUserNotices from "../Pages/User/Notices/Notices";
@@ -92,6 +94,12 @@ const route = () => {
       break;
     case "/admin/employee":
       renderAdminEmployee(contents);
+      break;
+    case "/admin/employee/add":
+      renderAddEmployeePage(contents);
+      break;
+    case "/admin/employee/edit":
+      renderEditEmployeePage(contents);
       break;
     case "/admin/mileage":
       renderAdminMileage(contents);

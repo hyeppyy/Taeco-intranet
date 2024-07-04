@@ -1,5 +1,5 @@
 import styles from "./EditEmployee.module.css";
-import renderAdminEmployee from "./Employee"; // 돌아가기 위한 함수 가져오기
+import { showEmployeeEditCheck } from "./Modal/EditModal";
 
 const renderEditEmployeePage = (container) => {
   container.innerHTML = `
@@ -22,7 +22,7 @@ const renderEditEmployeePage = (container) => {
       </div>
   </div>
 
-  <form action="#" method="post">
+  <form class="infoform"action="#" method="post">
             <ul class="${styles.user__info}">
               <li class="${styles.info__name}">
                 <label for="name"><h5>이름</h5></label>
@@ -68,6 +68,13 @@ const renderEditEmployeePage = (container) => {
   backButton.addEventListener("click", () => {
     history.back();
   });
+
+  // 직원 수정 모달
+  renderModel(
+    showEmployeeEditCheck().modal_id, // 모달 번호
+    showEmployeeEditCheck().header, // 모달 헤더
+    showEmployeeEditCheck().content //모달 내용
+  );
 };
 
 export default renderEditEmployeePage;

@@ -1,7 +1,7 @@
 // 마일리기 기준 알아보기 모달: modal-1
 export const showMileageStandardContent = () => {
   return {
-    modal_id: 1,
+    modal_id: `mileage_1`,
     header: `마일리지 기준`,
     content: `
             <div class="mileage-standard">
@@ -77,10 +77,10 @@ export const showMileageStandardContent = () => {
 // 마일리지 신청 모달: modal-2
 export const showMileageApproveContent = () => {
   return {
-    modal_id: 2,
+    modal_id: `mileage_2`,
     header: `마일리지 신청`,
     content: `
-    <div class="modal-box__form">
+          <div class="modal-box__form">
             <div class="form-group">
               <h5>카테고리</h5>
               <select id="environment-category">
@@ -112,7 +112,7 @@ export const showMileageApproveContent = () => {
 
             <div class="form-group">
               <h5>신청일자</h5>
-              <input data-shape="line" type="date" />
+              <input id="mileage-date" data-shape="line" type="date" />
             </div>
 
             <div class="form-group">
@@ -120,7 +120,7 @@ export const showMileageApproveContent = () => {
               <input
                 data-shape="line"
                 type="file"
-                id=""
+                id="mileage-image"
                 name=""
                 accept="image/png, image/jpeg"
                 multiple
@@ -135,6 +135,7 @@ export const showMileageApproveContent = () => {
             data-shape="block"
           >
             신청하기
-          </button>`,
+          </button>
+          </div>`,
   };
 };

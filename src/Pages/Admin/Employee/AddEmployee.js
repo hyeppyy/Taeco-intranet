@@ -1,4 +1,5 @@
 import styles from "./AddEmployee.module.css";
+import { showEmployeeAddCheck } from "./Modal/AddModalContent";
 
 const renderAddEmployeePage = (container) => {
   container.innerHTML = `
@@ -13,13 +14,14 @@ const renderAddEmployeePage = (container) => {
   </div>
 
   <!-- 직원 프로필 이미지 업로드 부분입니다. -->
-  <div class="${styles.page__edit}">
-    <img src="/public/icons/user.svg" alt="profileimg">
-      <div class="${styles.edit__btn}">
-          <button id="chooseFile"data-color='neutral' data-shape='line'>이미지 등록</button>
-        <button id="changeFile" data-color='neutral' data-shape='line'>이미지 삭제</button>
-      </div>
-  </div>
+  <img src="/public/icons/user.svg" alt="profileimg">
+  <form method="post" enctype="multipart/form-data">
+    <button id="chooseFile"data-color='neutral' data-shape='line'><label for="chooseFile">이미지 등록</label></button>
+    <input type="file" id="chooseFile" name="chooseFile" accept="image/*" onchange="loadFile(this)">
+      
+    <button id="changeFile" data-color='neutral' data-shape='line'><label for="chooseFile">이미지 삭제 </label></button>
+    <input type="file" id="chooseFile" name="chooseFile" accept="image/*" onchange="loadFile(this)">
+</form>
 
   <form action="#" method="post">
             <ul class="${styles.user__info}">
@@ -69,6 +71,23 @@ const renderAddEmployeePage = (container) => {
       window.location = "/admin/employee";
     });
   }
+
+  // 직원 수정 모달
+  renderModel(
+    showEmployeeAddCheck().modal_id, // 모달 번호
+    showEmployeeAddCheck().header, // 모달 헤더
+    showEmployeeAddCheck().content //모달 내용
+  );
 };
 
 export default renderAddEmployeePage;
+
+// <div class="${styles.page__edit}">
+{
+  /* <img src="/public/icons/user.svg" alt="profileimg">
+<div class="${styles.edit__btn}">
+  <button id="chooseFile"data-color='neutral' data-shape='line'>이미지 등록</button>
+  <button id="changeFile" data-color='neutral' data-shape='line'>이미지 삭제</button>
+</div>
+</div> */
+}

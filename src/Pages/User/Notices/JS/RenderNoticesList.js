@@ -1,3 +1,4 @@
+import route from "/src/Router/Router";
 import styles from "../Notice.module.css";
 
 const renderNoticesList = (data) => {
@@ -51,7 +52,8 @@ const renderNoticesList = (data) => {
       };
 
       const queryString = new URLSearchParams(noticeData).toString();
-      window.location.href = `/user/notices/detail?${queryString}`;
+      history.pushState(null, null, `/user/notices/detail?${queryString}`);
+      route();
     });
 
     tableBody.appendChild(row);

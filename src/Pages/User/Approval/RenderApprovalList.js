@@ -4,7 +4,7 @@ import renderDynamicModal from "../../../Components/Modal/RenderDynamicModal";
 
 const renderApprovalList = (data) => {
   const container = document.querySelector(`.${styles["approval-list"]}`);
-
+console.log(data);
   // Clear existing content
   container.innerHTML = "";
 

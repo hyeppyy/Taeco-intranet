@@ -41,7 +41,7 @@ const filterByTabs = (data) => {
       event.target.classList.add(styles.active);
       state = false;
     } else return;
-
+    
     applyFilters(data, state, category, categoryDate);
   });
 

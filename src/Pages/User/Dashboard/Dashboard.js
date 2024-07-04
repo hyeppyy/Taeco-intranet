@@ -6,7 +6,7 @@ import {
   showCheckOutTimeContent,
 } from "./Modal/TimerModalContent";
 import timer from "./JS/Timer";
-
+///
 const renderUserDashboard = (container) => {
   container.innerHTML = `
     <div class="${styles.dashboardCon}">

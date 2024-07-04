@@ -1,5 +1,11 @@
 import styles from "./Dashboard.module.css";
 import noticesData from "./JS/NoticeData";
+import renderModal from "../../../Components/Modal/RenderModal";
+import {
+  showCheckInTimeContent,
+  showCheckOutTimeContent,
+} from "./Modal/TimerModalContent";
+import timer from "./JS/Timer";
 
 const renderUserDashboard = (container) => {
   container.innerHTML = `

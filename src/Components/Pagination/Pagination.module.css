@@ -1,0 +1,20 @@
+.pagination {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.pagination button {
+  background: none;
+  border: none;
+}
+.pageNumber__btn.active {
+  background: var(--pri-normal, #40b883);
+  color: var(--gray-01, #fcfcfc);
+}
+
+@media (max-width: 600px) {
+  .pagination {
+    justify-content: center;
+  }
+}

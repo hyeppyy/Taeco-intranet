@@ -8,9 +8,11 @@ const filterByTabs = (data) => {
     `.${styles["approval-approve__tabs"]}`
   );
   const selectFilter = document.querySelector("#filter");
+  const selectFilterDate = document.querySelector("#filter_date");
 
   let state = null; // 초기 상태는 심사중
   let category = "all"; // 초기 상태는 전체 카테고리
+  let categoryDate = "latest";
 
   let filteredData = data.filter((item) => item.isApprove === state);
   document.getElementById("undetermined").classList.add(styles.active); // 초기 상태에서 심사중 탭 활성화
@@ -40,7 +42,7 @@ const filterByTabs = (data) => {
       state = false;
     } else return;
 
-    applyFilters(data, state, category);
+    applyFilters(data, state, category, categoryDate);
   });
 
   // 카테고리 필터링
@@ -48,16 +50,28 @@ const filterByTabs = (data) => {
     category = event.target.value;
     applyFilters(data, state, category);
   });
+  selectFilterDate.addEventListener("change", (event) => {
+    categoryDate = event.target.value;
+    applyFilters(data, state, category, categoryDate);
+  });
 };
 
 // 필터링 로직
-const applyFilters = (data, state, category) => {
+const applyFilters = (data, state, category, categoryDate) => {
   let filteredData = data.filter((item) => item.isApprove === state);
 
   if (category !== "all") {
     filteredData = filteredData.filter((item) => item.category === category);
   }
-
+  if (categoryDate === "latest") {
+    filteredData.sort(
+      (pre, sub) => new Date(sub.submitdate) - new Date(pre.submitdate)
+    );
+  } else if (categoryDate === "old") {
+    filteredData.sort(
+      (pre, sub) => new Date(pre.submitdate) - new Date(sub.submitdate)
+    );
+  }
   initPagination(filteredData);
   //renderApprovalList(filteredData);
 };

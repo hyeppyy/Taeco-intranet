@@ -36,14 +36,23 @@ const renderUserApproval = (container) => {
         </div>        
 
         <!-- 카테고리 selectbox -->
-        <div class="${styles["approval__filter"]}">
-          <select id="filter">
-            <option value="all">카테고리 전체</option>
-            <option value="반차">반차</option>
-            <option value="연차">연차</option>
-            <option value="조퇴">조퇴</option>
-            <option value="기타">기타</option>
-          </select>
+        <div class="${styles.content__selectboxrow}">
+          <div class="${styles["approval-category__filter"]}">
+            <select id="filter">
+              <option value="all">카테고리 전체</option>
+              <option value="반차">반차</option>
+              <option value="연차">연차</option>
+              <option value="조퇴">조퇴</option>
+              <option value="기타">기타</option>
+            </select>
+          </div>
+
+          <div class="${styles["approval-date__filter"]}">
+            <select id="filter_date">
+              <option value="latest">최신순</option>
+              <option value="old">오래된순</option>
+            </select>
+          </div>
         </div>
 
         <table class="${styles["approval-table"]}">

@@ -41,7 +41,7 @@ const filterByTabs = (data) => {
       state = false;
     } else return;
 
-    applyFilters(data, state, category);
+    applyFilters(data, state, category, categoryDate);
   });
 
   // 카테고리 필터링
@@ -50,7 +50,7 @@ const filterByTabs = (data) => {
     applyFilters(data, state, category, categoryDate);
   });
   selectFilterDate.addEventListener("change", (event) => {
-    selectFilterDate = event.target.value;
+    categoryDate = event.target.value;
     applyFilters(data, state, category, categoryDate);
   });
 };

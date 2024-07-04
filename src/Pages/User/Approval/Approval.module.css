@@ -15,6 +15,13 @@
   align-items: center;
   align-self: stretch;
 }
+.content__selectboxrow {
+  display: flex;
+  flex-direction: row;
+  gap: var(--1, 8px);
+  align-items: center;
+  align-self: stretch;
+}
 .paymentRequest {
   margin-left: outo;
   display: flex;

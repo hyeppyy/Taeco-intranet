@@ -47,3 +47,16 @@
   background-color: var(--pri-dark, #39a374);
   cursor: pointer;
 }
+
+.modal-box__form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1.5px solid var(--gray-05);
+  border-radius: 4px;
+  height: 42px;
+}
+@media screen and (max-width: 600px) {
+  .modal-box__form textarea {
+    width: 292px;
+  }
+}

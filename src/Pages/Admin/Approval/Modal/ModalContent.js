@@ -46,12 +46,7 @@ export const showApprovalDetailAdminContent = (item) => {
             
             <div class="form-group">
               <h5>거절사유</h5>
-              <select id="">
-                <option disabled selected>거절사유 선택</option>
-                <option value="recycling">점수 작성 오류</option>
-                <option value="recycling">카테고리 작성 오류</option>
-                <option value="recycling">증빙자료 누락</option>
-              </select>
+              <textarea placeholder="내용을 입력해 주세요" maxlength="100"></textarea>
             </div>
           </div>
 

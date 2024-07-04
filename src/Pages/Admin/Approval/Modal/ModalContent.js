@@ -1,7 +1,7 @@
-export const showMileageListContent = (item) => {
+export const showApprovalDetailAdminContent = (item) => {
   return {
-    modal_id: `${item.id}`,
-    header: `마일리지 심사`,
+    modal_id: `approvala_${item.id}`,
+    header: `${item.title}`,
     content: `
     <div class="modal-box__form">
             <div class="form-group">
@@ -15,13 +15,13 @@ export const showMileageListContent = (item) => {
             </div>
 
             <div class="form-group">
-              <h5>점수</h5>
-              <input data-shape="line" type="text" value='${item.score}' readonly />
+              <h5>신청날짜</h5>
+              <input data-shape="line" type="text" value='${item.startdate} - ${item.enddate}' readonly />
             </div>
 
             <div class="form-group">
               <h5>신청자</h5>
-              <input data-shape="line" type="text" value='${item.employee}' readonly />
+              <input data-shape="line" type="text" value='${item.user}' readonly />
             </div>
 
             <div class="form-group">
@@ -29,19 +29,24 @@ export const showMileageListContent = (item) => {
               <input
                 data-shape="line"
                 type="text"
-                value='${item.date}'
+                value='${item.submitdate}'
                 readonly
               />
             </div>
 
             <div class="form-group">
+              <h5>신청사유</h5>
+              <input
+                data-shape="line"
+                type="text"
+                value='${item.submitreason}'
+                readonly
+              />
+            </div>
+            
+            <div class="form-group">
               <h5>거절사유</h5>
-              <select id="">
-                <option disabled selected>거절사유 선택</option>
-                <option value="recycling">점수 작성 오류</option>
-                <option value="recycling">카테고리 작성 오류</option>
-                <option value="recycling">증빙자료 누락</option>
-              </select>
+              <textarea placeholder="내용을 입력해 주세요" maxlength="100"></textarea>
             </div>
           </div>
 
@@ -63,6 +68,6 @@ export const showMileageListContent = (item) => {
               수락하기
             </button>
           </div>
-    `,
+        </div>`,
   };
 };

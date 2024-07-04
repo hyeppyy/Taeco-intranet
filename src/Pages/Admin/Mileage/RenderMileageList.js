@@ -1,4 +1,6 @@
 import styles from './Mileage.module.css';
+import { showMileageListContent } from './Modal/ModalContent';
+import renderDynamicModal from '../../../Components/Modal/RenderDynamicModal';
 
 const renderMileageList = (data) => {
   // 게시 마일리지 아이템 총 개수 표시
@@ -12,6 +14,8 @@ const renderMileageList = (data) => {
   data.forEach((item) => {
     const div = document.createElement('div');
     div.className = styles['mileage-list__item'];
+    div.classList.add('open-modal');
+    div.setAttribute('data-modal-target', `#modal-${item.id}`);
     div.style.backgroundImage = `url(${item.image})`;
     div.innerHTML = `<div class="${styles['mileage-list__title']}">
           <h3>${item.category}</h3>
@@ -19,6 +23,16 @@ const renderMileageList = (data) => {
         </div>`;
 
     container.appendChild(div);
+  });
+
+  data.forEach((item) => {
+    const modalContent = showMileageListContent(item); // 각 아이템의 모달 내용 생성
+    renderDynamicModal(
+      `.${styles['mileage-list']}`,
+      modalContent.modal_id,
+      modalContent.header,
+      modalContent.content
+    );
   });
 };
 

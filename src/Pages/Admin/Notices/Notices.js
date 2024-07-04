@@ -1,5 +1,6 @@
 import fetchNoticesData from "./JS/FetchNoticesData";
 import styles from "../Notices/Notice.module.css";
+import paginationStyle from "./Pagination/Pagination.module.css";
 
 const renderAdminNotices = (container) => {
   container.innerHTML = `
@@ -7,7 +8,7 @@ const renderAdminNotices = (container) => {
         <h1>공지사항</h1>
         <div class="${styles.noticeContainer}">
         <div class="${styles.contents__newBtnWrap}">
-          <button  data-color="positive" data-shape="block">
+          <button id="moveNewNoticeBtn" data-color="positive" data-shape="block">
                 새 공지 등록
           </button>
         </div>
@@ -52,12 +53,12 @@ const renderAdminNotices = (container) => {
           <div class="${styles.noticeContainer__filterWrap}">
             <div class="${styles.noticeContainer__filter}">
               <input
-              type="search"
-              id="searchBox"
-              name="q"
-              placeholder="내용 또는 제목을 입력해주세요."
-              data-shape="line"
-            />
+                type="search"
+                id="noticeSearchBox"
+                name="q"
+                placeholder="제목 또는 작성자를 입력해주세요."
+                data-shape="line"
+              />
             <select name="noticeFilter" id="noticeFilter">
               <option value="latest">최신순</option>
               <option value="old">오래된순</option>
@@ -78,12 +79,27 @@ const renderAdminNotices = (container) => {
                   </tr>
                 </thead>
                 <tbody></tbody>
-              </table>   
+              </table>
+              <!-- 페이지네이션 구현하기 -->
+              <div id="pagination" class="${paginationStyle.pagination}"></div>     
           </div>
         </div>
       </div>
   `;
   fetchNoticesData();
+  moveAddNoticePage();
+};
+
+const moveAddNoticePage = () => {
+  const movePageBtn = document.querySelector("#moveNewNoticeBtn");
+
+  if (movePageBtn) {
+    movePageBtn.addEventListener("click", (event) => {
+      event.stopPropagation(); // 이벤트 전파 중단
+      event.preventDefault(); // 기본 동작 중단
+      window.location.href = "/admin/notices/add";
+    });
+  }
 };
 
 export default renderAdminNotices;

@@ -19,7 +19,6 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  overflow-y: auto;
 }
 
 .userDashboard__profileCard {
@@ -64,11 +63,6 @@
 
 .infoSecond .email {
   margin-right: 24px;
-}
-
-.userDashboard__attendanceHistory,
-.userDashboard__todayAttendance {
-  width: calc((100% - 24px) / 2);
 }
 
 /* 공지사항 영역 */
@@ -140,61 +134,4 @@
 .noticeTable > thead > tr > th:nth-child(6),
 .noticeTable > thead > tr > td:nth-child(6) {
   width: 10%;
-}
-
-/* 오늘의 출근 영역 */
-.userDashboard__todayAttendanceWrap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-}
-
-.userDashboard__stamp {
-  display: flex;
-  gap: 16px;
-  width: 100%;
-}
-
-.userDashboard__stamp > span {
-  width: 50%;
-  text-align: center;
-}
-
-.userDashboard__stamp > span > h3 {
-  color: var(--gray-07);
-}
-
-.userDashboard__stamp > span:hover {
-  border: 2px solid var(--color-pri-normal);
-  transition: 0.3s;
-  cursor: pointer;
-  background: var(--gray-02);
-}
-
-.recordStartTimeBtn,
-.recordEndTimeBtn {
-  border-radius: 12px;
-  padding: 12px;
-  border: 2px solid var(--gray-05);
-}
-
-.userDashboard__currentTime {
-  font-size: 6.4rem;
-  font-weight: 600;
-}
-
-/* 반응형 */
-/* 모바일 */
-@media (max-width: 599px) {
-  .userDashboard__attendance {
-    flex-direction: column;
-  }
-  .userDashboard__attendanceHistory,
-  .userDashboard__todayAttendance {
-    width: 100%;
-  }
-}
-/* 타블렛 */
-@media (min-width: 600px) and (max-width: 1023px) {
 }

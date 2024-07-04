@@ -1,5 +1,5 @@
 import styles from "../Dashboard.module.css";
-///
+
 const timer = () => {
   const startTimeElement = document.querySelector("#userDashboard__startTime");
   const endTimeElement = document.querySelector("#userDashboard__endTime");

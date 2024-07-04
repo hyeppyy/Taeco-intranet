@@ -1,6 +1,6 @@
 import route from "/src/Router/Router";
 import styles from "./Editpage.module.css";
-import renderUserMypage from "./Mypage"; // renderUserMypage 함수 가져오기
+import { loadFile, resetToDefaultImage } from "./ProfileEdit";
 
 const renderEditPage = (container) => {
   container.innerHTML = `
@@ -11,7 +11,6 @@ const renderEditPage = (container) => {
 
 <div class="${styles.page__header}">
   <h2>내정보</h2>
-  <!-- 모바일 버전 토스트 -->
   <div>
   <button class="${styles.backButton}" data-color='warning' data-shape='block' id="save">뒤로가기</button>
   <button data-color='positive' data-shape='block' id="save">변경사항 저장</button>
@@ -21,13 +20,19 @@ const renderEditPage = (container) => {
 <!-- 내 정보 사진 수정 부분입니다. -->
 <div class="${styles.page__body}">
   <div class="${styles.body__img}">
-    <img src="/public/images/_Avatar_.png" 
-    alt="profileimg" 
-    class="${styles.profileimg}"
-    >
+  <img src="/public/images/_Avatar_.png" alt="Image preview" id="previewImage" style="max-width: 300px; height: auto;">
+
     <div class="${styles.imgbtn}">
-    <button data-color='neutral' data-shape='line'>이미지 변경</button>
-    <button data-color='neutral' data-shape='line'>이미지 삭제</button>
+    <!--이미지 업로드 버튼 -->
+    <form method="post" enctype="multipart/form-data">
+      <div class="button">
+          <button type="button" id="chooseFileButton" data-color="neutral" data-shape="line">이미지 변경</button>
+      </div>
+      <input type="file" id="chooseFile" name="chooseFile" accept="image/*" style="display: none;" onchange="loadFile(this)">
+    </form>
+
+    <!--이미지 삭제 버튼 -->
+    <button data-color='neutral' id="resetImageButton" data-shape='line'>이미지 삭제</button>
     </div>
   </div>
 
@@ -84,24 +89,29 @@ const renderEditPage = (container) => {
       </div>
     </div>
     </div>
-
 </div>
-
   `;
 
-  const backButton = document.getElementById("backButton");
-  if (backButton) {
-    backButton.addEventListener("click", () => {
-      renderUserMypage(container); // 마이페이지로 돌아가기
-    });
-  }
-
+  // 마이페이지로 돌아가기 라우팅 방식
   document
     .querySelector(`.${styles.backButton}`)
     .addEventListener("click", () => {
       history.pushState(null, null, "/user/mypage");
       route();
     });
+
+  // 이미지 파일 업로드 부분
+  document.getElementById("chooseFileButton").addEventListener("click", () => {
+    document.getElementById("chooseFile").click();
+  });
+
+  document.getElementById("chooseFile").addEventListener("change", function () {
+    loadFile(this);
+  });
+
+  document.getElementById("resetImageButton").addEventListener("click", () => {
+    resetToDefaultImage();
+  });
 };
 
 export default renderEditPage;

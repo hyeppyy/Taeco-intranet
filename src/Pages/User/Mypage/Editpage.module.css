@@ -95,9 +95,9 @@ form {
   height: 24px;
 }
 
-.pageFooter .toastMessage {
+.toastMessage {
   visibility: hidden;
-  background-color: rgba(64, 184, 131, 0.2);
+  background-color: rgba(20, 225, 136, 0.2);
   color: var(--color-pri-dark);
   border-radius: 4px;
   display: flex;
@@ -113,7 +113,7 @@ form {
   opacity: 0;
 }
 
-.toastMessage .text {
+.toastText {
   display: flex;
   flex-direction: column;
   align-items: flex-start;

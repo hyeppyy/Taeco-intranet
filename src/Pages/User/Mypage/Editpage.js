@@ -84,7 +84,7 @@ const renderUserEditPage = (container) => {
 <div class="${styles.pageFooter}">
     <div class="${styles.toastMessage}" id="toastMessage">
       <img src="/public/icons/check.svg" alt="check">
-      <div class="${styles.text}" id="toastText">
+      <div class="${styles.toastText}" id="toastText">
         <h4>정보 수정</h4>
         <h5>수정이 완료되었습니다.</h5>
       </div>

@@ -141,7 +141,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 16px;
 }
 
 .userDashboard__stamp {
@@ -150,20 +150,35 @@
   width: 100%;
 }
 
-.userDashboard__stamp > span {
+.userDashboard__stamp > button {
   width: 50%;
   text-align: center;
+  background: 0;
 }
 
-.userDashboard__stamp > span > h3 {
-  color: var(--gray-07);
-}
-
-.userDashboard__stamp > span:hover {
+.userDashboard__stamp > button:hover {
   border: 2px solid var(--color-pri-normal);
   transition: 0.3s;
   cursor: pointer;
-  background: var(--gray-02);
+  background: var(--gray-01);
+}
+
+.userDashboard__stamp > button > h3 {
+  color: var(--gray-07);
+}
+
+.userDashboard__today {
+  color: var(--gray-07);
+  font-size: 3.8rem;
+  font-weight: 500;
+  line-height: 4.5rem;
+}
+
+.userDashboard__todayTag {
+  padding: 4px 12px;
+  border-radius: 50px;
+  color: var(--color-white);
+  background: var(--color-pri-normal, #40b883);
 }
 
 .recordStartTimeBtn,

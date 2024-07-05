@@ -19,7 +19,6 @@ const renderAdminDashboard = (container) => {
               <div class="${styles.userDashboard__approvalTitle}">
                 <h2> 전자결제 </h2>
                 <h4> 미처리 결재만 보여집니다. </h4>
-                <h4> 전자결제페이지로 이동> </h4>
               </div>
             </div>
             <table class="${styles.approvalTable}">

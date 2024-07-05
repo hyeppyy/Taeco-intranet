@@ -1,6 +1,6 @@
 import styles from "./Dashboard.module.css";
 import fetchMileageData from "./fetchMileageData";
-
+import approvalData from "./JS/ApprovalData";
 const renderAdminDashboard = (container) => {
   if (!container) {
     console.error("container element not found");
@@ -67,6 +67,7 @@ const renderAdminDashboard = (container) => {
     </div>`;
 
   fetchMileageData();
+  approvalData();
 };
 
 export default renderAdminDashboard;

@@ -44,6 +44,7 @@
 
 .imgbtn {
   margin-top: 20px;
+  display: flex;
 }
 form {
   display: flex;
@@ -89,17 +90,18 @@ form {
   font-size: 16px;
 }
 
-.page__footer img {
+.pageFooter img {
   width: 24px;
   height: 24px;
 }
 
-.page__footer .toast__message {
+.pageFooter .toastMessage {
+  visibility: hidden;
   background-color: rgba(64, 184, 131, 0.2);
   color: var(--color-pri-dark);
   border-radius: 4px;
   display: flex;
-  width: 280px;
+  width: 250px;
   padding: 6px 16px;
   align-items: flex-start;
   position: absolute;
@@ -107,15 +109,12 @@ form {
   bottom: 24px;
   box-sizing: border-box;
   gap: 5px;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out; /* opacity와 visibility가 부드럽게 변하도록 추가 */
+  opacity: 0;
 }
 
-.toast-message img {
-  padding: 6px 0;
-}
-
-.toast-message .text {
+.toastMessage .text {
   display: flex;
-  padding: 8px 0;
   flex-direction: column;
   align-items: flex-start;
   gap: 4px;
@@ -123,20 +122,13 @@ form {
   margin-left: 5px;
 }
 
-/* .toast__mobile {
-  background-color: rgba(64, 184, 131, 0.2);
-  color: var(--color-pri-dark);
-  border-radius: 4px;
-  display: flex;
-  width: 110px;
-  height: 32px;
-  padding: 6px 10px;
-  align-items: center;
-  box-sizing: border-box;
-  gap: 5px;
-  position: relative;
-  right: -26px;
-} */
+.active {
+  visibility: visible;
+  right: 31px;
+  bottom: 24px;
+  opacity: 1;
+  z-index: 999;
+}
 
 /* 모바일 */
 @media (max-width: 599px) {
@@ -158,27 +150,16 @@ form {
   li input {
     width: 100%;
   }
-
-  /* .page__footer .toast__message {
-    display: none;
-  } */
 }
 
 /* 타블렛 */
 @media (min-width: 600px) and (max-width: 1023px) {
-  .page__footer .toast__message {
+  /* .page__footer .toast__message {
     bottom: auto;
     margin-top: 10px;
-  }
-
-  /* .toast__mobile {
-    display: none;
   } */
 }
 
 /* 데스크탑 */
 @media (min-width: 1024px) {
-  /* .toast__mobile {
-    display: none;
-  } */
 }

@@ -1,19 +1,20 @@
 import route from "/src/Router/Router";
 import styles from "./Editpage.module.css";
 import { loadFile, resetToDefaultImage } from "./ProfileEdit";
+import { toastPopUp } from "/src/Components/Toast/Toast"; // 토스트 함수 불러오기
 
-const renderEditPage = (container) => {
+const renderUserEditPage = (container) => {
   container.innerHTML = `
   <div class="${styles.page}">
   <!-- 페이지 타이틀 -->
-<h1 class="${styles.page__title}">마이 페이지</h1>
+<h1 class=${styles.page__title}">마이 페이지</h1>
 
 
 <div class="${styles.page__header}">
   <h2>내정보</h2>
   <div>
-  <button class="${styles.backButton}" data-color='warning' data-shape='block' id="save">뒤로가기</button>
-  <button data-color='positive' data-shape='block' id="save">변경사항 저장</button>
+  <button class="${styles.backButton}" data-color='warning' data-shape='block' id="backButton">뒤로가기</button>
+  <button class="${styles.saveButton}" data-color='positive' data-shape='block' id="saveButton">변경사항 저장</button>
   </div>
 </div>
 
@@ -80,10 +81,10 @@ const renderEditPage = (container) => {
 </div>
 
 <!-- 정보 수정 완료 토스트 부분입니다. -->
-<div class="${styles.page__footer}">
-    <div class="${styles.toast__message}">
+<div class="${styles.pageFooter}">
+    <div class="${styles.toastMessage}" id="toastMessage">
       <img src="/public/icons/check.svg" alt="check">
-      <div class="${styles.text}">
+      <div class="${styles.text}" id="toastText">
         <h4>정보 수정</h4>
         <h5>수정이 완료되었습니다.</h5>
       </div>
@@ -93,6 +94,7 @@ const renderEditPage = (container) => {
   `;
 
   // 마이페이지로 돌아가기 라우팅 방식
+
   document
     .querySelector(`.${styles.backButton}`)
     .addEventListener("click", () => {
@@ -112,6 +114,16 @@ const renderEditPage = (container) => {
   document.getElementById("resetImageButton").addEventListener("click", () => {
     resetToDefaultImage();
   });
+
+  // 토스트 기능 구현
+  const saveButton = document.getElementById("saveButton");
+  if (saveButton) {
+    saveButton.addEventListener("click", () => {
+      toastPopUp();
+    });
+  } else {
+    console.error("save 버튼을 찾을 수 없습니다.");
+  }
 };
 
-export default renderEditPage;
+export default renderUserEditPage;

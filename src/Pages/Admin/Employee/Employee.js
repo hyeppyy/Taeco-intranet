@@ -1,5 +1,6 @@
 import styles from "./Employee.module.css";
 import { fetchEmployeeData } from "./FetchEmployeeData"; // fetch 함수 가져오기
+import route from "/src/Router/Router";
 
 const renderAdminEmployee = (container) => {
   container.innerHTML = `
@@ -73,27 +74,27 @@ const loadEmployees = (employees) => {
         <td data-label="생일" class="${styles.birthday}">${employee.birthday}</td>
         <td data-label="입사일" class="${styles.joinday}">${employee.joinday}</td>
         <td data-label="핸드폰번호" class="${styles.contact}">${employee.phone}</td>
-        <td data-label="관리" class="${styles.button}"><button class="${styles.editbtn}" data-color='neutral' data-shape='line'>수정</button></td>
+        <td data-label="관리" class="${styles.button}"><button class="${styles.editbtn}" data-color='neutral' data-shape='line' id="editEmployeeButton">수정</button></td>
       </tr>
     `;
 
     tbody.appendChild(row);
 
     // '직원 추가' 버튼 클릭 이벤트 핸들러 추가
-    const addEmployeeButton = document.getElementById("addEmployeeButton");
-    if (addEmployeeButton) {
-      addEmployeeButton.addEventListener("click", () => {
-        window.location = "/admin/employee/add";
+    document
+      .getElementById("addEmployeeButton")
+      .addEventListener("click", () => {
+        history.pushState(null, null, "/admin/employee/add");
+        route();
       });
-    }
 
     // '수정' 버튼 클릭 이벤트 핸들러 추가
-    const editButton = row.querySelector(`button.${styles.editbtn}`);
-    if (editButton) {
-      editButton.addEventListener("click", () => {
-        window.location = "/admin/employee/edit";
+    document
+      .getElementById("editEmployeeButton")
+      .addEventListener("click", () => {
+        history.pushState(null, null, "/admin/employee/edit");
+        route();
       });
-    }
   });
 };
 

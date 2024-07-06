@@ -1,5 +1,6 @@
 import styles from "./EditEmployee.module.css";
 import { showEmployeeEditCheck } from "./Modal/EditModal";
+import route from "/src/Router/Router";
 
 const renderEditEmployeePage = (container) => {
   container.innerHTML = `
@@ -64,9 +65,9 @@ const renderEditEmployeePage = (container) => {
           </form>
   `;
 
-  const backButton = document.getElementById("backButton");
-  backButton.addEventListener("click", () => {
-    history.back();
+  document.getElementById("backButton").addEventListener("click", () => {
+    history.pushState(null, null, "/admin/employee");
+    route();
   });
 
   // 직원 수정 모달

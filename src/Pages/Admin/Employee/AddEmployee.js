@@ -1,5 +1,6 @@
 import styles from "./AddEmployee.module.css";
 import { showEmployeeAddCheck } from "./Modal/AddModalContent";
+import route from "/src/Router/Router";
 
 const renderAddEmployeePage = (container) => {
   container.innerHTML = `
@@ -65,12 +66,10 @@ const renderAddEmployeePage = (container) => {
           </form>
   `;
 
-  const backButton = document.getElementById("backButton");
-  if (backButton) {
-    backButton.addEventListener("click", () => {
-      window.location = "/admin/employee";
-    });
-  }
+  document.getElementById("backButton").addEventListener("click", () => {
+    history.pushState(null, null, "/admin/employee");
+    route();
+  });
 
   // 직원 수정 모달
   renderModel(
@@ -81,13 +80,3 @@ const renderAddEmployeePage = (container) => {
 };
 
 export default renderAddEmployeePage;
-
-// <div class="${styles.page__edit}">
-{
-  /* <img src="/public/icons/user.svg" alt="profileimg">
-<div class="${styles.edit__btn}">
-  <button id="chooseFile"data-color='neutral' data-shape='line'>이미지 등록</button>
-  <button id="changeFile" data-color='neutral' data-shape='line'>이미지 삭제</button>
-</div>
-</div> */
-}

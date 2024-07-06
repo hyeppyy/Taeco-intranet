@@ -41,7 +41,12 @@
   width: 200px;
   height: 200px;
 }
-
+.profileImg {
+  width: 200px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 50%;
+}
 .imgbtn {
   margin-top: 20px;
   display: flex;

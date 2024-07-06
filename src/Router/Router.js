@@ -21,6 +21,7 @@ import renderUserApproval from "../Pages/User/Approval/Approval";
 import renderAdminNoticesDetail from "../Pages/Admin/Notices/Detail/Detail";
 import renderUserNoticesDetail from "../Pages/User/Notices/Detail/Detail";
 import renderAdminAddNotices from "../Pages/Admin/Notices/Add/Add";
+import renderAdminTest from "../Pages/Admin/TestServer/TestServer";
 import hamburger from "../Components/ResponsiveNavBar/User/Hamburger";
 
 const route = () => {
@@ -112,6 +113,9 @@ const route = () => {
       break;
     case "/admin/notices/add":
       renderAdminAddNotices(contents);
+      break;
+    case "/admin/testserver":
+      renderAdminTest(contents);
       break;
     default:
       renderPageNotFound(root);

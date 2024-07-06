@@ -16,9 +16,25 @@ export const showApprovalContent = () => {
       <input type="text" id="title" placeholder="내용을 입력해 주세요" />
       <label for="startDate"><h4>날짜</h4></label>
       <div class="approval-data__container">
-        <input type="date" id="startDate"/> 
-        <span> - </span>
-        <input type="date" id="endDate"/>        
+        <input type="date" id="startDate"/>
+        <select id="ampm">
+          <option value="am">am</option>
+          <option value="pm">pm</option>
+        </select>
+        <select id="detailtime">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>          
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>          
+          <option value="11">11</option>
+          <option value="12">12</option>
+        </select>
       </div>
       <label for="description"><h4>사유작성</h4></label>
         <textarea

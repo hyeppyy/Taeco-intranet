@@ -14,6 +14,7 @@ import renderAdminEmployee from "../Pages/Admin/Employee/Employee";
 import renderAddEmployeePage from "../Pages/Admin/Employee/AddEmployee";
 import renderEditEmployeePage from "../Pages/Admin/Employee/EditEmployee";
 import renderUserMypage from "../Pages/User/Mypage/Mypage";
+import renderUserEditpage from "../Pages/User/Mypage/Editpage";
 import renderAdminNotices from "../Pages/Admin/Notices/Notices";
 import renderUserNotices from "../Pages/User/Notices/Notices";
 import renderAdminApproval from "../Pages/Admin/Approval/Approval";
@@ -85,6 +86,9 @@ const route = () => {
       break;
     case "/user/mypage":
       renderUserMypage(contents);
+      break;
+    case "/user/mypage/editpage":
+      renderUserEditpage(contents);
       break;
     //admin
     case "/admin/dashboard":

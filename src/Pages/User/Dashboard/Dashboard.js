@@ -1,5 +1,6 @@
 import styles from "./Dashboard.module.css";
 import noticesData from "./JS/NoticeData";
+import approvalData from "./JS/ApprovalData";
 import renderModal from "../../../Components/Modal/RenderModal";
 import {
   showCheckInTimeContent,
@@ -61,7 +62,32 @@ const renderUserDashboard = (container) => {
               내출결내역확인
             </div>
           </div>
-          <div class="${styles.userDashboard__approval} ${styles.card}">전자결재영역(승민)</div>
+          <div class="${styles.userDashboard__approval} ${styles.card}">
+            <div class="${styles.userDashboard__approvalContainer}">
+              <div class="${styles.userDashboard__approvalTitle}">
+                <h2>전자결제</h2>
+                <h4>최근 3개만 보여집니다.</h4>
+              </div>
+            </div>
+            <div class="${styles.userDashboard__approvalFilter}">
+              <select id="approvalFilter">
+                <option value="진행중">진행중</option>
+                <option value="승인">승인</option>
+                <option value="반려">반려</option>
+              </select>
+            </div>
+            <table class="${styles.approvalTable}">
+              <thead>
+                <tr>
+                  <th>종류</th>
+                  <th>제목</th>
+                  <th>신청일</th>
+                  <th>내용</th>
+                </tr>
+              </thead>
+              <tbody class="${styles.approvalTable__tbody}"></tbody>
+            </table> 
+          </div>
           <div class="${styles.userDashboard__notice} ${styles.card}">
             <div class="${styles.userDashboard__noticeContainer}">
               <div class="${styles.userDashboard__noticeTitle}">
@@ -88,7 +114,12 @@ const renderUserDashboard = (container) => {
   `;
 
   noticesData();
+<<<<<<< HEAD
+  approvalData();
+  timer();
+=======
   renderTime();
+>>>>>>> 18cafea8e670b8ff03187691af9d78e1924daa71
 
   // 출근 체크 모달: dashboard_1
   renderModal(

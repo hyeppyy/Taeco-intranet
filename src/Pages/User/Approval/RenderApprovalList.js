@@ -1,10 +1,13 @@
 import styles from "./Approval.module.css";
-import { showApprovalDetailContent } from "./Modal/ModalContent";
+import {
+  showApprovalDetailContent,
+  showApprovalDetailContentFalse,
+} from "./Modal/ModalContent";
 import renderDynamicModal from "../../../Components/Modal/RenderDynamicModal";
 
 const renderApprovalList = (data) => {
   const container = document.querySelector(`.${styles["approval-list"]}`);
-console.log(data);
+  console.log(data);
   // Clear existing content
   container.innerHTML = "";
 
@@ -24,7 +27,14 @@ console.log(data);
     const tr = document.createElement("tr");
     tr.className = styles["approval-list__row"];
     tr.classList.add(`open-modal`);
-    tr.setAttribute("data-modal-target", `#modal-approvalu_${item.id}`);
+    if (item.isApprove === false) {
+      tr.setAttribute("data-modal-target", `#modal-approvaluser_${item.id}`);
+    } else {
+      tr.setAttribute(
+        "data-modal-target",
+        `#modal-approvaluserfalse_${item.id}`
+      );
+    }
     tr.innerHTML = `
       <td class="${styles["approval-list__category"]}">${item.category}</td>
       <td class="${styles["approval-list__title"]}">${item.title}</td>
@@ -45,6 +55,15 @@ console.log(data);
 
   data.forEach((item) => {
     const modalContent = showApprovalDetailContent(item);
+    renderDynamicModal(
+      `.${styles["approval-list"]}`,
+      modalContent.modal_id,
+      modalContent.header,
+      modalContent.content
+    );
+  });
+  data.forEach((item) => {
+    const modalContent = showApprovalDetailContentFalse(item);
     renderDynamicModal(
       `.${styles["approval-list"]}`,
       modalContent.modal_id,

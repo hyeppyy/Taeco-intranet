@@ -18,7 +18,7 @@ const renderAdminEmployee = (container) => {
   </div>
 
   <div class="${styles.page__header}">
-    <input type="search" id="search" name="search" placeholder="검색" />
+    <input type="search" id="employeeSearchBox" name="search" placeholder="이름 또는 직함을 입력해주세요." />
     <button id="addEmployeeButton" data-color="positive" data-shape="block">직원 추가</button>
   </div>
 
@@ -74,7 +74,7 @@ const loadEmployees = (employees) => {
         <td data-label="생일" class="${styles.birthday}">${employee.birthday}</td>
         <td data-label="입사일" class="${styles.joinday}">${employee.joinday}</td>
         <td data-label="핸드폰번호" class="${styles.contact}">${employee.phone}</td>
-        <td data-label="관리" class="${styles.button}"><button class="${styles.editbtn}" data-color='neutral' data-shape='line' id="editEmployeeButton">수정</button></td>
+        <td data-label="관리" class="${styles.button}"><button class="${styles.editbtn}" data-color='neutral' data-shape='line' data-employee-id="${employee.id}">수정</button></td>
       </tr>
     `;
 
@@ -88,14 +88,72 @@ const loadEmployees = (employees) => {
         route();
       });
 
-    // '수정' 버튼 클릭 이벤트 핸들러 추가
-    document
-      .getElementById("editEmployeeButton")
-      .addEventListener("click", () => {
-        history.pushState(null, null, "/admin/employee/edit");
-        route();
-      });
+    tbody.addEventListener("click", (event) => {
+      if (event.target.classList.contains(styles.editbtn)) {
+        const employeeId = event.target.getAttribute("data-employee-id");
+        if (employeeId) {
+          history.pushState(
+            null,
+            null,
+            `/admin/employee/edit?id=${employeeId}`
+          );
+          route();
+        }
+      }
+    });
   });
 };
+
+// 검색 기능 구현
+let employeeData = [];
+
+// JSON 파일에서 직원 데이터 불러오기
+fetch("/server/data/users.json")
+  .then((response) => response.json())
+  .then((data) => {
+    employeeData = data;
+    initializeSearch();
+  })
+  .catch((error) => console.error("Error loading employee data:", error));
+
+// 검색 필터
+function initializeSearch() {
+  const searchInput = document.querySelector("#employeeSearchBox");
+
+  searchInput.addEventListener("input", () => {
+    const searchQuery = searchInput.value.trim().toLowerCase();
+    const filteredList = employeeData.filter((employee) => {
+      return (
+        employee.name.toLowerCase().includes(searchQuery) ||
+        employee.position.toLowerCase().includes(searchQuery)
+      );
+    });
+
+    renderEmployeeList(filteredList);
+  });
+
+  // 초기 전체 목록 렌더링
+  renderEmployeeList(employeeData);
+}
+
+function renderEmployeeList(employees) {
+  const tableBody = document.querySelector("#employeeTableBody");
+  tableBody.innerHTML = "";
+
+  employees.forEach((employee) => {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+    <td class="${styles.profileimg}"><img src="${employee.img}" alt="profileimg"></td>
+    <td data-label="이름" class="${styles.name}">${employee.name}</td>
+    <td data-label="직함" class="${styles.position}">${employee.position}</td>
+    <td data-label="이메일" class="${styles.email}">${employee.email}</td>
+    <td data-label="생일" class="${styles.birthday}">${employee.birthday}</td>
+    <td data-label="입사일" class="${styles.joinday}">${employee.joinday}</td>
+    <td data-label="핸드폰번호" class="${styles.contact}">${employee.phone}</td>
+    <td data-label="관리" class="${styles.button}"><button class="${styles.editbtn}" data-color='neutral' data-shape='line' data-employee-id="${employee.id}">수정</button></td>
+    `;
+    tableBody.appendChild(row);
+  });
+}
 
 export default renderAdminEmployee;

@@ -23,7 +23,7 @@ const renderUserEditPage = (container) => {
   <div class="${styles.body__img}">
   <img class="${styles.profileImg}"src="/public/images/_Avatar_.png" alt="Image preview" id="previewImage" style="max-width: 300px; height: auto;">
 
-    <div class="${styles.imgbtn}">
+  <div class="${styles.imgbtn}">
     <!--이미지 업로드 버튼 -->
     <form method="post" enctype="multipart/form-data">
       <div class="button">

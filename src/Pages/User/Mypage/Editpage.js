@@ -21,13 +21,13 @@ const renderUserEditPage = (container) => {
 <!-- 내 정보 사진 수정 부분입니다. -->
 <div class="${styles.page__body}">
   <div class="${styles.body__img}">
-  <img src="/public/images/_Avatar_.png" alt="Image preview" id="previewImage" style="max-width: 300px; height: auto;">
+  <img class="${styles.profileImg}"src="/public/images/_Avatar_.png" alt="Image preview" id="previewImage" style="max-width: 300px; height: auto;">
 
     <div class="${styles.imgbtn}">
     <!--이미지 업로드 버튼 -->
     <form method="post" enctype="multipart/form-data">
       <div class="button">
-          <button type="button" id="chooseFileButton" data-color="neutral" data-shape="line">이미지 변경</button>
+          <button type="button" id="chooseFileButton" data-color="neutral" data-shape="line" >이미지 변경</button>
       </div>
       <input type="file" id="chooseFile" name="chooseFile" accept="image/*" style="display: none;" onchange="loadFile(this)">
     </form>
@@ -84,7 +84,7 @@ const renderUserEditPage = (container) => {
 <div class="${styles.pageFooter}">
     <div class="${styles.toastMessage}" id="toastMessage">
       <img src="/public/icons/check.svg" alt="check">
-      <div class="${styles.text}" id="toastText">
+      <div class="${styles.toastText}" id="toastText">
         <h4>정보 수정</h4>
         <h5>수정이 완료되었습니다.</h5>
       </div>

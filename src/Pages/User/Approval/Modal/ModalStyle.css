@@ -22,7 +22,18 @@
   border: 1px solid var(--gray-04);
   border-radius: 4px;
 }
-
+#startDate {
+  width: 350px;
+}
+#endDate {
+  width: 350px;
+}
+#ampm {
+  width: 150px;
+}
+#deailtime {
+  width: 150px;
+}
 .approval-modalbox__form {
   resize: none;
 }

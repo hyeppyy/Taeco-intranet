@@ -1,6 +1,5 @@
 .contents {
   display: flex;
-  padding: 16px 24px;
   flex-direction: column;
   align-items: flex-start;
   gap: 12px;

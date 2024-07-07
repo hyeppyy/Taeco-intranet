@@ -41,7 +41,12 @@
   width: 200px;
   height: 200px;
 }
-
+.profileImg {
+  width: 200px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 50%;
+}
 .imgbtn {
   margin-top: 20px;
   display: flex;
@@ -97,7 +102,7 @@ form {
 
 .toastMessage {
   visibility: hidden;
-  background-color: rgba(64, 184, 131, 0.2);
+  background-color: rgba(20, 225, 136, 0.2);
   color: var(--color-pri-dark);
   border-radius: 4px;
   display: flex;
@@ -113,7 +118,7 @@ form {
   opacity: 0;
 }
 
-.toastMessage .text {
+.toastText {
   display: flex;
   flex-direction: column;
   align-items: flex-start;

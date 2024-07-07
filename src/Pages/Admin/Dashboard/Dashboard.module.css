@@ -88,6 +88,62 @@
   align-items: center;
 }
 
+/*전자결제페이지*/
+.userDashboard__approvalFilter {
+  padding: 12px 0px;
+}
+.userDashboard__approvalContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.userDashboard__approvalTitle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.userDashboard__approvalTitle > h4 {
+  color: var(--gray-06);
+}
+.approvalTable {
+  width: 100%;
+}
+.approvalTable__tbody {
+  color: var(--gray-09);
+}
+.approvalTable > thead > tr > th {
+  color: var(--gray-01);
+  background-color: var(--color-sec-light);
+}
+.approvalTable > thead > tr > th,
+.approvalTable > tbody > tr > td {
+  text-align: left;
+  padding: 12px 8px;
+}
+.approvalTable > tbody > tr {
+  border-bottom: 1px solid var(--gray-04);
+}
+.approvalTable > thead > tr > th:first-child,
+.approvalTable > tbody > tr > td:first-child {
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+  width: 20%;
+}
+.approvalTable > thead > tr > th:nth-child(2),
+.approvalTable > tbody > tr > td:nth-child(2) {
+  width: 50%;
+}
+.approvalTable > thead > tr > th:nth-child(3),
+.approvalTable > tbody > tr > td:nth-child(3) {
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+  width: 30%;
+}
+.approvalTable > thead > tr > th:nth-child(4),
+.approvalTable > tbody > tr > td:nth-child(4) {
+  display: none;
+}
+
 /* 테블릿 버전 */
 @media screen and (max-width: 900px) {
   .mileage__requester {
@@ -108,5 +164,19 @@
   }
   .adminDashboard__mileage-title--left h4 {
     display: none;
+  }
+
+  .approvalTable > thead > tr > th:nth-child(2),
+  .approvalTable > tbody > tr > td:nth-child(2),
+  .approvalTable > thead > tr > th:nth-child(3),
+  .approvalTable > tbody > tr > td:nth-child(3) {
+    display: none;
+  }
+  .approvalTable > thead > tr > th:nth-child(4),
+  .approvalTable > tbody > tr > td:nth-child(4) {
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+    width: 100%;
+    display: block;
   }
 }

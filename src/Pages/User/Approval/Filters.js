@@ -41,14 +41,14 @@ const filterByTabs = (data) => {
       event.target.classList.add(styles.active);
       state = false;
     } else return;
-    
+
     applyFilters(data, state, category, categoryDate);
   });
 
   // 카테고리 필터링
   selectFilter.addEventListener("change", (event) => {
     category = event.target.value;
-    applyFilters(data, state, category);
+    applyFilters(data, state, category, categoryDate);
   });
   selectFilterDate.addEventListener("change", (event) => {
     categoryDate = event.target.value;

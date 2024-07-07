@@ -1,5 +1,5 @@
 import styles from "./Mypage.module.css";
-import renderUserEditPage from "./Editpage"; // 새로운 파일에서 함수 가져오기
+import route from "/src/Router/Router";
 
 const renderUserMypage = (container) => {
   container.innerHTML = `
@@ -30,19 +30,10 @@ const renderUserMypage = (container) => {
   </div>
   `;
 
-  // document
-  //   .querySelector(`.${styles.editButton}`)
-  //   .addEventListener("click", () => {
-  //     history.pushState(null, null, "/user/editpage");
-  //     route();
-  //   });
-
-  const editButton = document.getElementById("editButton");
-  if (editButton) {
-    editButton.addEventListener("click", () => {
-      renderUserEditPage(container); // 정보 수정 페이지로 이동
-    });
-  }
+  document.getElementById("editButton").addEventListener("click", () => {
+    history.pushState(null, null, "/user/mypage/editpage");
+    route();
+  });
 };
 
 export default renderUserMypage;

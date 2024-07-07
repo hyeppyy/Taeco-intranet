@@ -79,7 +79,7 @@ const renderAdminNotices = (container) => {
                     <th>조회수</th>
                   </tr>
                 </thead>
-                <tbody></tbody>
+                <tbody data-n-table-body></tbody>
               </table>
               <!-- 페이지네이션 구현하기 -->
               <div id="pagination" class="${paginationStyle.pagination}"></div>     

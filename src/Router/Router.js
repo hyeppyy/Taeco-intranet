@@ -1,7 +1,7 @@
 import renderPageNotFound from '../Pages/PageNotFound/PageNotFound';
+import renderLayout from '../Layout/Layout';
 import renderLogin from '../Pages/Login/Login';
 import { isLoggedIn, getUserRole } from '../Pages/Login/ValidateLogin';
-import renderLayout from '../Layout/Layout';
 import renderAdminResponsiveNavBar from '../Components/ResponsiveNavBar/Admin/ResponsiveNavBar';
 import renderUserResponsiveNavBar from '../Components/ResponsiveNavBar/User/ResponsiveNavBar';
 import renderAdminNavBar from '../Components/NavBar/Admin/NavBar';
@@ -15,6 +15,7 @@ import renderAdminEmployee from '../Pages/Admin/Employee/Employee';
 import renderAddEmployeePage from '../Pages/Admin/Employee/AddEmployee';
 import renderEditEmployeePage from '../Pages/Admin/Employee/EditEmployee';
 import renderUserMypage from '../Pages/User/Mypage/Mypage';
+import renderUserEditpage from '../Pages/User/Mypage/Editpage';
 import renderAdminNotices from '../Pages/Admin/Notices/Notices';
 import renderUserNotices from '../Pages/User/Notices/Notices';
 import renderAdminApproval from '../Pages/Admin/Approval/Approval';
@@ -22,6 +23,7 @@ import renderUserApproval from '../Pages/User/Approval/Approval';
 import renderAdminNoticesDetail from '../Pages/Admin/Notices/Detail/Detail';
 import renderUserNoticesDetail from '../Pages/User/Notices/Detail/Detail';
 import renderAdminAddNotices from '../Pages/Admin/Notices/Add/Add';
+import renderAdminTest from '../Pages/Admin/TestServer/TestServer';
 
 const route = () => {
   let path = window.location.pathname;
@@ -96,6 +98,9 @@ const route = () => {
     case '/user/mypage':
       renderUserMypage(contents);
       break;
+    case '/user/mypage/editpage':
+      renderUserEditpage(contents);
+      break;
     //admin
     case '/admin/dashboard':
       renderAdminDashboard(contents);
@@ -124,9 +129,11 @@ const route = () => {
     case '/admin/notices/add':
       renderAdminAddNotices(contents);
       break;
+    case '/admin/testserver':
+      renderAdminTest(contents);
+      break;
     case '/unauthorized':
       renderPageNotFound(root);
-      break;
     default:
       renderPageNotFound(root);
       break;

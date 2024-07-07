@@ -1,10 +1,9 @@
-// import styles from './NavBar.module.css';
 import styles from './NavBar.module.css';
 import { logout } from '/src/Pages/Login/ValidateLogin';
 
 const renderUserNavBar = (nav, menuList) => {
   if (!nav) {
-    console.error('navBar element not found');
+    console.error("navBar element not found");
     return;
   }
   nav.innerHTML = `
@@ -86,6 +85,7 @@ const renderUserNavBar = (nav, menuList) => {
               alt="logout-icon"
               width="24"
               height="24"
+              class="${styles.layout__profile}"
             />홍길동
           </div>
           <a class="${styles.layout__item}" href="#" id="logout">

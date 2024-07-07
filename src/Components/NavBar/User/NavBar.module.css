@@ -65,6 +65,10 @@
   margin-bottom: 12px;
 }
 
+.layout > .layout__bottom > .layout__item > .layout__profile {
+  border-radius: 50%;
+}
+
 /*************** 테블릿 버전 ***************/
 @media screen and (max-width: 1024px) {
   .layout {

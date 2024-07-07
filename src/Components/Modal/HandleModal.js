@@ -1,3 +1,4 @@
+import setTimeout from "./../../Pages/User/Approval/Modal/ModalContentDetail";
 import renderTime from "./../../Pages/User/Dashboard/JS/RenderTime";
 import { stopTimeUpdate } from "./../../Pages/User/Dashboard/Modal/TimerModalContent";
 
@@ -18,6 +19,7 @@ const handleModal = () => {
     button.addEventListener("click", () => {
       const modal = document.querySelector(button.dataset.modalTarget);
       toggleModal(modal);
+      setTimeout();
       renderTime(); // 출퇴근 기록 함수
     });
   });

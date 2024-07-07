@@ -4,7 +4,7 @@ import renderApprovalList from "../RenderApprovalList";
 
 let currentPage = 1; // 현재 페이지 번호를 저장하는 변수
 const itemsPerPage = 5; // 한 페이지에 표시할 항목 수
-let totalPages = 0; // 총 페이지 수를 저장하는 변수
+let totalPages = 1; // 총 페이지 수를 저장하는 변수
 let pageCount = 5; // 페이지네이션 갯수를 보여줄 변수
 
 // 현재 페이지를 설정하고 페이지네이션과 현재 페이지 데이터를 렌더링하는 함수

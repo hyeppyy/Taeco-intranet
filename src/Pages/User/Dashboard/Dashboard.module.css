@@ -64,7 +64,62 @@
 .infoSecond .email {
   margin-right: 24px;
 }
+/* 전자결제 영역 */
 
+.userDashboard__approvalFilter {
+  padding: 12px 0px;
+}
+.userDashboard__approvalContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.userDashboard__approvalTitle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.userDashboard__approvalTitle > h4 {
+  color: var(--gray-06);
+}
+.approvalTable {
+  width: 100%;
+}
+.approvalTable__tbody {
+  color: var(--gray-09);
+}
+.approvalTable > thead > tr > th {
+  color: var(--gray-01);
+  background-color: var(--color-pri-light);
+}
+.approvalTable > thead > tr > th,
+.approvalTable > tbody > tr > td {
+  text-align: left;
+  padding: 12px 8px;
+}
+.approvalTable > tbody > tr {
+  border-bottom: 1px solid var(--gray-04);
+}
+.approvalTable > thead > tr > th:first-child,
+.approvalTable > tbody > tr > td:first-child {
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+  width: 20%;
+}
+.approvalTable > thead > tr > th:nth-child(2),
+.approvalTable > tbody > tr > td:nth-child(2) {
+  width: 50%;
+}
+.approvalTable > thead > tr > th:nth-child(3),
+.approvalTable > tbody > tr > td:nth-child(3) {
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+  width: 30%;
+}
+.approvalTable > thead > tr > th:nth-child(4),
+.approvalTable > tbody > tr > td:nth-child(4) {
+  display: none;
+}
 /* 공지사항 영역 */
 .userDashboard__notice {
   display: flex;
@@ -203,6 +258,20 @@
   .userDashboard__todayAttendance {
     width: 100%;
   }
+<<<<<<< HEAD
+  .approvalTable > thead > tr > th:nth-child(2),
+  .approvalTable > tbody > tr > td:nth-child(2),
+  .approvalTable > thead > tr > th:nth-child(3),
+  .approvalTable > tbody > tr > td:nth-child(3) {
+    display: none;
+  }
+  .approvalTable > thead > tr > th:nth-child(4),
+  .approvalTable > tbody > tr > td:nth-child(4) {
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+    width: 100%;
+    display: block;
+=======
 
   .infoSecond {
     display: flex;
@@ -212,6 +281,7 @@
   .infoSecond > .callInfo {
     display: flex;
     gap: 5px;
+>>>>>>> 18cafea8e670b8ff03187691af9d78e1924daa71
   }
 }
 /* 타블렛 */

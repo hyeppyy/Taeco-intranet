@@ -14,9 +14,6 @@ const getMileageScore = (data) => {
   else if (totalMileage >= 50) level = 'tree';
   else level = 'seed';
 
-  console.log(showTotalMileageText);
-  console.log(showTotalMileageIcon);
-
   // 마일리지 점수에 따른 메세지, 아이콘
   switch (level) {
     case 'seed':

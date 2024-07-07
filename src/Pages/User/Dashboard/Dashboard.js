@@ -1,11 +1,12 @@
-import styles from "./Dashboard.module.css";
-import noticesData from "./JS/NoticeData";
-import renderModal from "../../../Components/Modal/RenderModal";
+import styles from './Dashboard.module.css';
+import noticesData from './JS/NoticeData';
+import renderModal from '../../../Components/Modal/RenderModal';
 import {
   showCheckInTimeContent,
   showCheckOutTimeContent,
-} from "./Modal/TimerModalContent";
-import renderTime from "./JS/RenderTime";
+} from './Modal/TimerModalContent';
+import renderTime from './JS/RenderTime';
+import { stopTimeUpdate } from './Modal/TimerModalContent';
 
 const renderUserDashboard = (container) => {
   container.innerHTML = `
@@ -36,27 +37,48 @@ const renderUserDashboard = (container) => {
             </div>
           </div>
           <div class="${styles.userDashboard__attendance}">
+
+
+
+
             <div class="${styles.userDashboard__todayAttendance} ${styles.card}">
               <h2>오늘의 출근</h2>
               <div class="${styles.userDashboard__todayAttendanceWrap}">
                 <h4 class="${styles.userDashboard__todayTag}">TODAY</h4>
+
+                
                 <h3 class="${styles.userDashboard__today}"></h3>
+
+
                 <div class="${styles.userDashboard__stamp}">
+
+
                   <button class="${styles.recordStartTimeBtn} open-modal"
                     data-modal-target="#modal-dashboard_1"
                   >
                     <h3>출근하기</h3>
                     <h2 id="userDashboard__startTime">-</h2>
                   </button>
+
+
                   <button class="${styles.recordEndTimeBtn} open-modal"
                     data-modal-target="#modal-dashboard_2"
                   >
                     <h3>퇴근하기</h3>
                     <h2 id="userDashboard__endTime">-</h2>
                   </button>
+
+
+
                 </div>
               </div>
             </div>
+
+
+
+
+
+
             <div class="${styles.userDashboard__attendanceHistory} ${styles.card}">
               내출결내역확인
             </div>
@@ -94,14 +116,16 @@ const renderUserDashboard = (container) => {
   renderModal(
     showCheckInTimeContent().modal_id, // 모달 번호
     showCheckInTimeContent().header, // 모달 헤더
-    showCheckInTimeContent().content //모달 내용
+    showCheckInTimeContent().content, //모달 내용
+    { renderTime, stopTimeUpdate }
   );
 
   // 퇴근 체크 모달: dashboard_2
   renderModal(
     showCheckOutTimeContent().modal_id, // 모달 번호
     showCheckOutTimeContent().header, // 모달 헤더
-    showCheckOutTimeContent().content //모달 내용
+    showCheckOutTimeContent().content, //모달 내용
+    { renderTime, stopTimeUpdate }
   );
 };
 

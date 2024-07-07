@@ -9,7 +9,6 @@ const filterByToggle = (data) => {
   let filteredData = data.slice();
 
   toggleSwitch.addEventListener('click', () => {
-
     const toggleState = document.querySelector('#toggleText').textContent;
     if (toggleState === '미확인')
       filteredData = data.filter((item) => item.isApprove === null);

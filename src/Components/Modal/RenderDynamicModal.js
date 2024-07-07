@@ -7,10 +7,10 @@
 
 import handleModal from './HandleModal';
 
-const renderDynamicModal = (space, id, header, content) => {
-  const container = document.querySelector(space);
+const renderDynamicModal = (id, header, content) => {
+  const contents = document.querySelector('#contents');
 
-  container.innerHTML += `
+  contents.innerHTML += `
     <div id="modal-${id}" class="modal-box">
       <div class="modal-box__container">
         <div class="modal-box__header">

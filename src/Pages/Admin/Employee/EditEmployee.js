@@ -1,5 +1,6 @@
-import styles from "./EditEmployee.module.css";
-import { showEmployeeEditCheck } from "./Modal/EditModal";
+import styles from './EditEmployee.module.css';
+import { showEmployeeEditCheck } from './Modal/EditModal';
+import route from '/src/Router/Router';
 
 const renderEditEmployeePage = (container) => {
   container.innerHTML = `
@@ -64,17 +65,17 @@ const renderEditEmployeePage = (container) => {
           </form>
   `;
 
-  const backButton = document.getElementById("backButton");
-  backButton.addEventListener("click", () => {
+  const backButton = document.getElementById('backButton');
+  backButton.addEventListener('click', () => {
     history.back();
   });
 
   // 직원 수정 모달
-  renderModel(
-    showEmployeeEditCheck().modal_id, // 모달 번호
-    showEmployeeEditCheck().header, // 모달 헤더
-    showEmployeeEditCheck().content //모달 내용
-  );
+  // renderModel(
+  //   showEmployeeEditCheck().modal_id, // 모달 번호
+  //   showEmployeeEditCheck().header, // 모달 헤더
+  //   showEmployeeEditCheck().content //모달 내용
+  // );
 };
 
 export default renderEditEmployeePage;

@@ -1,6 +1,5 @@
 import styles from "./Approval.module.css";
 import fetchApprovalData from "./FetchApprovalData";
-
 import renderModal from "../../../Components/Modal/RenderModal";
 import { showApprovalContent } from "./Modal/ModalContent";
 
@@ -78,6 +77,7 @@ const renderUserApproval = (container) => {
     showApprovalContent().header, // 모달 헤더
     showApprovalContent().content //모달 내용
   );
+
 };
 
 export default renderUserApproval;

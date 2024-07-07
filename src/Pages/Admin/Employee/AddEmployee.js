@@ -1,5 +1,6 @@
-import styles from "./AddEmployee.module.css";
-import { showEmployeeAddCheck } from "./Modal/AddModalContent";
+import styles from './AddEmployee.module.css';
+import { showEmployeeAddCheck } from './Modal/AddModalContent';
+import route from '/src/Router/Router';
 
 const renderAddEmployeePage = (container) => {
   container.innerHTML = `
@@ -27,7 +28,7 @@ const renderAddEmployeePage = (container) => {
             <ul class="${styles.user__info}">
               <li class="${styles.info__name}">
                 <label for="name"><h5>이름</h5></label>
-                <input data-shape="line" type="name" id="name" placeholder="홍길동" required/>
+                <input autocomplete="off" data-shape="line" type="name" id="name" placeholder="홍길동" required/>
               </li>
 
               <li class="${styles.info__position}">
@@ -44,40 +45,44 @@ const renderAddEmployeePage = (container) => {
 
               <li class="${styles.info__email}">
                 <label for="email"><h5>이메일</h5></label>
-                <input data-shape="line" type="email" id="email" placeholder="eco@taeco.com" required/>
+                <input autocomplete="off"  data-shape="line" type="email" id="email" placeholder="eco@taeco.com" required/>
               </li>
 
               <li class="${styles.info__phonenumber}">
                 <label for="phone"><h5>전화번호</h5></label>
-                <input data-shape="line" type="number" id="phone" placeholder="010-0000-0000" required/>
+                <input  autocomplete="off" data-shape="line" type="number" id="phone" placeholder="010-0000-0000" required/>
               </li>
 
               <li class="${styles.info__birthday}">
                 <label for="birthday"><h5>생일</h5></label>
-                <input data-shape="line" type="date" id="birthday" required/>
+                <input autocomplete="off" data-shape="line" type="date" id="birthday" required/>
               </li>
               
               <li class="${styles.info__joinday}">
                 <label for="joinday"><h5>입사일</h5></label>
-                <input data-shape="line" type="date" id="joinday" required/>
+                <input autocomplete="off" data-shape="line" type="date" id="joinday" required/>
               </li>
             </ul>
           </form>
   `;
 
-  const backButton = document.getElementById("backButton");
+  const backButton = document.getElementById('backButton');
   if (backButton) {
-    backButton.addEventListener("click", () => {
-      window.location = "/admin/employee";
+    backButton.addEventListener('click', () => {
+      // window.location = "/admin/employee";
+      console.log('asdf');
+      // history.pushState(null, '', '/admin/employee');
+      history.back();
+      // route();
     });
   }
 
   // 직원 수정 모달
-  renderModel(
-    showEmployeeAddCheck().modal_id, // 모달 번호
-    showEmployeeAddCheck().header, // 모달 헤더
-    showEmployeeAddCheck().content //모달 내용
-  );
+  // renderModel(
+  //   showEmployeeAddCheck().modal_id, // 모달 번호
+  //   showEmployeeAddCheck().header, // 모달 헤더
+  //   showEmployeeAddCheck().content //모달 내용
+  // );
 };
 
 export default renderAddEmployeePage;

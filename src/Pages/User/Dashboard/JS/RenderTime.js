@@ -1,5 +1,4 @@
-import styles from "../Dashboard.module.css";
-
+import styles from '../Dashboard.module.css';
 const renderTime = () => {
   const recordStartTimeBtn = document.querySelector(
     `.${styles.recordStartTimeBtn}`
@@ -12,19 +11,23 @@ const renderTime = () => {
   );
 
   // 출퇴근 값의 초기값
-  let startTime = localStorage.getItem("startTime") || null;
-  let endTime = localStorage.getItem("endTime") || null;
+  let startTime = localStorage.getItem('startTime') || null;
+  let endTime = localStorage.getItem('endTime') || null;
+
+  // console.log(startTime, endTime); //01:10 01:10 -> 화면에는 04:15
 
   // 오늘 날짜를 반환하는 함수
   const getTodayDate = () => {
     const date = new Date();
     const year = date.getFullYear();
-    const month = ("0" + (date.getMonth() + 1)).slice(-2); // 월은 0부터 시작하므로 +1, 두 자리 수로 맞춤
-    const day = ("0" + date.getDate()).slice(-2); // 두 자리 수로 맞춤
+    const month = ('0' + (date.getMonth() + 1)).slice(-2); // 월은 0부터 시작하므로 +1, 두 자리 수로 맞춤
+    const day = ('0' + date.getDate()).slice(-2); // 두 자리 수로 맞춤
     const dayOfWeek = date.getDay();
 
+    // console.log(year, month, day, dayOfWeek);
+
     // 요일 이름
-    const dayOfWeekNames = ["일", "월", "화", "수", "목", "금", "토"];
+    const dayOfWeekNames = ['일', '월', '화', '수', '목', '금', '토'];
     const dayOfWeekName = dayOfWeekNames[dayOfWeek];
 
     return `${year}.${month}.${day}(${dayOfWeekName})`;
@@ -35,8 +38,8 @@ const renderTime = () => {
   // 현재 시간을 나타내는 함수
   const getCurrentTime = () => {
     const now = new Date();
-    const hours = now.getHours().toString().padStart(2, "0");
-    const minutes = now.getMinutes().toString().padStart(2, "0");
+    const hours = now.getHours().toString().padStart(2, '0');
+    const minutes = now.getMinutes().toString().padStart(2, '0');
 
     return `${hours}:${minutes}`;
   };
@@ -48,24 +51,24 @@ const renderTime = () => {
 
     // 로컬스토리지에 저장
     if (isStartTime) {
-      localStorage.setItem("startTime", currentTime);
-      localStorage.setItem("isStartTimeDisabled", "true");
-      disableButton(recordStartTimeBtn, "출근하기");
+      localStorage.setItem('startTime', currentTime);
+      localStorage.setItem('isStartTimeDisabled', 'true');
+      disableButton(recordStartTimeBtn, '출근하기');
     } else {
-      localStorage.setItem("endTime", currentTime);
-      localStorage.setItem("isEndTimeDisabled", "true");
-      disableButton(recordEndTimeBtn, "퇴근하기");
+      localStorage.setItem('endTime', currentTime);
+      localStorage.setItem('isEndTimeDisabled', 'true');
+      disableButton(recordEndTimeBtn, '퇴근하기');
     }
 
     // 모달 닫기
-    const modal = document.querySelector(".modal-box.active");
-    const modalBackground = document.querySelector("#modal__background");
+    const modal = document.querySelector('.modal-box.active');
+    const modalBackground = document.querySelector('#modal__background');
 
     if (modal) {
-      modal.classList.remove("active");
+      modal.classList.remove('active');
     }
     if (modalBackground) {
-      modalBackground.classList.remove("active");
+      modalBackground.classList.remove('active');
     }
 
     return true; // 성공적으로 기록되었음을 나타내는 true 반환
@@ -73,17 +76,17 @@ const renderTime = () => {
 
   // 출퇴근모달에서 버튼을 클릭하면 기록 시작
   const addModalEventListeners = () => {
-    const checkInBtn = document.querySelector("#checkInBtn");
-    const checkOutBtn = document.querySelector("#checkOutBtn");
-
+    const checkInBtn = document.querySelector('#checkInBtn');
+    const checkOutBtn = document.querySelector('#checkOutBtn');
+    // console.log(checkInBtn, checkOutBtn);
     if (checkInBtn) {
-      checkInBtn.addEventListener("click", () => {
+      checkInBtn.addEventListener('click', () => {
         recordTime((time) => (startTime = time), updateTime, true);
       });
     }
 
     if (checkOutBtn) {
-      checkOutBtn.addEventListener("click", () => {
+      checkOutBtn.addEventListener('click', () => {
         recordTime((time) => (endTime = time), updateTime, false);
       });
     }
@@ -92,35 +95,36 @@ const renderTime = () => {
   // 버튼 비활성화
   const disableButton = (button, text) => {
     button.disabled = true;
-    button.style.pointerEvents = "none";
-    button.style.opacity = "0.5";
-    button.removeAttribute("data-modal-target");
+    button.style.pointerEvents = 'none';
+    button.style.opacity = '0.5';
+    button.removeAttribute('data-modal-target');
     button.innerHTML = `<h3>${text}</h3><h2>${getCurrentTime()}</h2>`;
   };
 
   // 버튼 활성화
   const enableButton = (button, text, modalTarget) => {
     button.disabled = false;
-    button.style.pointerEvents = "auto";
-    button.style.opacity = "1";
-    button.setAttribute("data-modal-target", modalTarget);
+    button.style.pointerEvents = 'auto';
+    button.style.opacity = '1';
+    button.setAttribute('data-modal-target', modalTarget);
     button.innerHTML = `<h3>${text}</h3><h2>-</h2>`;
   };
 
   // startTime, endTime 값을 업데이트하는 함수
   const updateTime = () => {
     // startTime 값이 있으면 버튼 비활성화
-    if (localStorage.getItem("isStartTimeDisabled") === "true") {
-      disableButton(recordStartTimeBtn, "출근하기");
+    if (localStorage.getItem('isStartTimeDisabled') === 'true') {
+      disableButton(recordStartTimeBtn, '출근하기');
     } else {
-      enableButton(recordStartTimeBtn, "출근하기", "#modal-dashboard_1");
+      enableButton(recordStartTimeBtn, '출근하기', '#modal-dashboard_1');
     }
 
     // endTime 값이 있으면 버튼 비활성화
-    if (localStorage.getItem("isEndTimeDisabled") === "true") {
-      disableButton(recordEndTimeBtn, "퇴근하기");
+    if (localStorage.getItem('isEndTimeDisabled') === 'true') {
+      disableButton(recordEndTimeBtn, '퇴근하기');
+      localStorage.clear();
     } else {
-      enableButton(recordEndTimeBtn, "퇴근하기", "#modal-dashboard_2");
+      enableButton(recordEndTimeBtn, '퇴근하기', '#modal-dashboard_2');
     }
   };
 
@@ -128,15 +132,15 @@ const renderTime = () => {
   const resetTimes = () => {
     startTime = null;
     endTime = null;
-    localStorage.removeItem("startTime");
-    localStorage.removeItem("endTime");
-    localStorage.setItem("isStartTimeDisabled", "false");
-    localStorage.setItem("isEndTimeDisabled", "false");
+    localStorage.removeItem('startTime');
+    localStorage.removeItem('endTime');
+    localStorage.setItem('isStartTimeDisabled', 'false');
+    localStorage.setItem('isEndTimeDisabled', 'false');
     updateTime();
 
     // 버튼 다시 활성화
-    enableButton(recordStartTimeBtn, "출근하기", "#modal-dashboard_1");
-    enableButton(recordEndTimeBtn, "퇴근하기", "#modal-dashboard_2");
+    enableButton(recordStartTimeBtn, '출근하기', '#modal-dashboard_1');
+    enableButton(recordEndTimeBtn, '퇴근하기', '#modal-dashboard_2');
   };
 
   // 현재 날짜를 저장하고 이를 기준으로 날짜가 변경되었는지를 확인
@@ -160,20 +164,20 @@ const renderTime = () => {
   // 초기 버튼 상태 설정
   const initButtonState = () => {
     const isStartTimeDisabled =
-      localStorage.getItem("isStartTimeDisabled") === "true";
+      localStorage.getItem('isStartTimeDisabled') === 'true';
     const isEndTimeDisabled =
-      localStorage.getItem("isEndTimeDisabled") === "true";
+      localStorage.getItem('isEndTimeDisabled') === 'true';
 
     if (isStartTimeDisabled) {
-      disableButton(recordStartTimeBtn, "출근하기");
+      disableButton(recordStartTimeBtn, '출근하기');
     } else {
-      enableButton(recordStartTimeBtn, "출근하기", "#modal-dashboard_1");
+      enableButton(recordStartTimeBtn, '출근하기', '#modal-dashboard_1');
     }
 
     if (isEndTimeDisabled) {
-      disableButton(recordEndTimeBtn, "퇴근하기");
+      disableButton(recordEndTimeBtn, '퇴근하기');
     } else {
-      enableButton(recordEndTimeBtn, "퇴근하기", "#modal-dashboard_2");
+      enableButton(recordEndTimeBtn, '퇴근하기', '#modal-dashboard_2');
     }
   };
 

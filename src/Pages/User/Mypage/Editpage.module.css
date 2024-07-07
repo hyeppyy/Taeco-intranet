@@ -95,7 +95,7 @@ form {
   height: 24px;
 }
 
-.pageFooter .toastMessage {
+.toastMessage {
   visibility: hidden;
   background-color: rgba(64, 184, 131, 0.2);
   color: var(--color-pri-dark);

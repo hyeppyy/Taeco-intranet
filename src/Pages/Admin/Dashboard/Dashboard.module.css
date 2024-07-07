@@ -87,3 +87,26 @@
   display: flex;
   align-items: center;
 }
+
+/* 테블릿 버전 */
+@media screen and (max-width: 900px) {
+  .mileage__requester {
+    width: 80px;
+  }
+  .mileage__request-date {
+    width: 120px;
+  }
+}
+
+/* 모바일 버전 */
+@media screen and (max-width: 600px) {
+  .mileage__requester {
+    width: 50px;
+  }
+  .mileage__request-date {
+    width: 70px;
+  }
+  .adminDashboard__mileage-title--left h4 {
+    display: none;
+  }
+}

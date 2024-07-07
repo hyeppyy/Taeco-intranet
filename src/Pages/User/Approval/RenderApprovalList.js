@@ -1,10 +1,10 @@
 import styles from "./Approval.module.css";
 import { showApprovalDetailContent } from "./Modal/ModalContent";
-import renderDynamicModal from "../../../Components/Modal/RenderDynamicModal";
+import renderModal from "../../../Components/Modal/RenderModal";
 
 const renderApprovalList = (data) => {
   const container = document.querySelector(`.${styles["approval-list"]}`);
-console.log(data);
+
   // Clear existing content
   container.innerHTML = "";
 
@@ -45,8 +45,7 @@ console.log(data);
 
   data.forEach((item) => {
     const modalContent = showApprovalDetailContent(item);
-    renderDynamicModal(
-      `.${styles["approval-list"]}`,
+    renderModal(
       modalContent.modal_id,
       modalContent.header,
       modalContent.content

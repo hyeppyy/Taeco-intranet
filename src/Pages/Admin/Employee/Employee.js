@@ -1,5 +1,6 @@
-import styles from "./Employee.module.css";
-import { fetchEmployeeData } from "./FetchEmployeeData"; // fetch 함수 가져오기
+import styles from './Employee.module.css';
+import { fetchEmployeeData } from './FetchEmployeeData'; // fetch 함수 가져오기
+import route from '/src/Router/Router';
 
 const renderAdminEmployee = (container) => {
   container.innerHTML = `
@@ -52,17 +53,17 @@ const initializeEmployeeData = async () => {
     const data = await fetchEmployeeData();
     loadEmployees(data);
   } catch (error) {
-    console.error("initializeEmployeeData 함수에서 오류 발생:", error);
+    console.error('initializeEmployeeData 함수에서 오류 발생:', error);
   }
 };
 
 // 테이블에 직원 데이터를 추가하는 함수
 const loadEmployees = (employees) => {
-  const tbody = document.getElementById("employeeTableBody");
-  tbody.innerHTML = ""; // 기존 내용 초기화
+  const tbody = document.getElementById('employeeTableBody');
+  tbody.innerHTML = ''; // 기존 내용 초기화
 
   employees.forEach((employee) => {
-    const row = document.createElement("tr");
+    const row = document.createElement('tr');
 
     row.innerHTML = `
       <tr class="${styles.table__content}">
@@ -80,18 +81,22 @@ const loadEmployees = (employees) => {
     tbody.appendChild(row);
 
     // '직원 추가' 버튼 클릭 이벤트 핸들러 추가
-    const addEmployeeButton = document.getElementById("addEmployeeButton");
+    const addEmployeeButton = document.getElementById('addEmployeeButton');
     if (addEmployeeButton) {
-      addEmployeeButton.addEventListener("click", () => {
-        window.location = "/admin/employee/add";
+      addEmployeeButton.addEventListener('click', () => {
+        // window.location = '/admin/employee/add';
+        history.pushState(null, null, '/admin/employee/add');
+        route();
       });
     }
 
     // '수정' 버튼 클릭 이벤트 핸들러 추가
     const editButton = row.querySelector(`button.${styles.editbtn}`);
     if (editButton) {
-      editButton.addEventListener("click", () => {
-        window.location = "/admin/employee/edit";
+      editButton.addEventListener('click', () => {
+        // window.location = '/admin/employee/edit';
+        history.pushState(null, null, '/admin/employee/edit');
+        route();
       });
     }
   });

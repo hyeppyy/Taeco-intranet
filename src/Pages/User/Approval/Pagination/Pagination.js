@@ -22,7 +22,7 @@ const setCurrentPage = (page, data) => {
 
 // 현재 페이지의 데이터를 계산하고 렌더링하는 함수
 const renderCurrentPageData = (data) => {
-  const start = (currentPage - 1) * itemsPerPage; // 시작 인덱스 계산
+  const start = (currentPage) * itemsPerPage; // 시작 인덱스 계산
   const end = start + itemsPerPage; // 끝 인덱스 계산
   const currentPageData = data.slice(start, end); // 현재 페이지에 해당하는 데이터 추출
   renderApprovalList(currentPageData); // 데이터 렌더링 함수 호출

@@ -2,6 +2,7 @@ import route from '/src/Router/Router';
 import styles from './Mileage.module.css';
 import fetchMileageData from './FetchMileageData';
 import renderModal from '../../../Components/Modal/RenderModal';
+import renderDynamicModal from '../../../Components/Modal/RenderDynamicModal';
 import {
   showMileageStandardContent,
   showMileageApproveContent,
@@ -101,17 +102,19 @@ const renderUserMileage = (container) => {
   fetchMileageData(); // 마일리지 리스트 데이터 요청
 
   // 마일리기 기준 알아보기 모달: modal-1
-  renderModal(
+  renderDynamicModal(
     showMileageStandardContent().modal_id, // 모달 번호
     showMileageStandardContent().header, // 모달 헤더
-    showMileageStandardContent().content //모달 내용
+    showMileageStandardContent().content, //모달 내용
+    `styles['mileage-list']`
   );
 
   // 마일리지 신청 모달: modal-2
-  renderModal(
+  renderDynamicModal(
     showMileageApproveContent().modal_id, // 모달 번호
     showMileageApproveContent().header, // 모달 헤더
-    showMileageApproveContent().content //모달 내용
+    showMileageApproveContent().content, //모달 내용
+    `styles['mileage-list']`
   );
 
   // 마일리지 적립목록 페이지로 라우팅
@@ -121,8 +124,6 @@ const renderUserMileage = (container) => {
       history.pushState(null, null, '/user/mileage/history');
       route();
     });
-    
-  hamburger();
 };
 
 export default renderUserMileage;

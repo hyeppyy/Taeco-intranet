@@ -3,73 +3,70 @@ import initPagination from "/src/Components/Pagination/Pagination";
 import styles from "../Notice.module.css";
 
 const tabFilter = (data) => {
-  const totalPostsNum = document.querySelector("#noticeTotalPostsNum");
   const tabsFilter = document.querySelector(`.${styles["notices__tabs"]}`);
+  const selectFilter = document.querySelector("#noticeFilter");
+
+  // 초기 상태 설정 (event 카테고리)
   let filteredData = data.filter((item) => item.category === "event");
-  document.getElementById("event").classList.add(styles.active); // 초기 상태에서 심사중 탭 활성화
-  filteredData = moveImportantDataToTop(filteredData); // 중요 항목을 상단으로 이동
+  document.getElementById("event").classList.add(styles.active);
 
-  renderNoticesList(filteredData); // 초기 렌더링
-  dataFilter(filteredData); // 초기 날짜 필터링
-  searchFilter(filteredData); // 초기 검색 필터링
-  initPagination(filteredData, renderNoticesList); // Pagination 렌더링
+  // 초기 정렬 (기본값: 최신순)
+  const initialSortType = selectFilter.value || "latest";
+  dateFilter(filteredData, initialSortType);
+  updateTotalPostsNum(filteredData);
+  searchFilter(filteredData);
+  initPagination(filteredData, renderNoticesList);
 
-  //초기상태 총 게시글 수
-  totalPostsNum.innerText = `총 게시글 수 ${filteredData.length}개`;
-  totalPostsNum.style.color = `var(--gray-07)`;
-  // 탭 클릭에 따른 조건 렌더링
+  // 정렬 옵션 변경 이벤트 리스너
+  selectFilter.addEventListener("change", () => {
+    dateFilter(filteredData, selectFilter.value);
+  });
+
+  // filteredData = moveImportantDataToTop(filteredData); // 중요 항목을 상단으로 이동
+
   tabsFilter.addEventListener("click", (event) => {
-    const targetId = event.target.id;
+    const targetId = event.target.id; // 탭 클릭에 따른 조건 렌더링
 
-    // 모든 탭의 활성화 클래스 제거
     document.querySelectorAll(`.${styles["notices__tab"]}`).forEach((tab) => {
       tab.classList.remove(styles.active);
-    });
+    }); // 모든 탭의 활성화 클래스 제거
 
-    if (targetId === "event") {
-      event.target.classList.add(styles.active);
-    } else if (targetId === "mileage") {
-      event.target.classList.add(styles.active);
-    } else if (targetId === "approval") {
-      event.target.classList.add(styles.active);
-    } else if (targetId === "human-resource") {
-      event.target.classList.add(styles.active);
-    } else if (targetId === "education") {
-      event.target.classList.add(styles.active);
-    } else if (targetId === "etc") {
+    // 클릭된 탭에 활성화 클래스 추가
+    if (targetId) {
       event.target.classList.add(styles.active);
     }
 
-    //카테고리별 데이터 필터링
-    let filteredData = data.filter((item) => item.category === targetId);
-    filteredData = moveImportantDataToTop(filteredData); // 중요 항목을 상단으로 이동
+    // 카테고리별 데이터 필터링
+    filteredData = data.filter((item) => item.category === targetId);
 
     renderNoticesList(filteredData);
-    dataFilter(filteredData); // 탭 필터 후 날짜 필터 적용
-    searchFilter(filteredData); // 탭 필터 후 검색 필터 적용
+    updateTotalPostsNum(filteredData);
+    dateFilter(filteredData, selectFilter.value);
+    searchFilter(filteredData);
     initPagination(filteredData, renderNoticesList);
-    totalPostsNum.innerText = `총 게시글 수 ${filteredData.length}개`; //필터 후 총 게시글 수
+
+    // filteredData = moveImportantDataToTop(filteredData); // 중요 항목을 상단으로 이동
   });
 };
 
-//날짜별(최신순, 오래된순) 필터
-const dataFilter = (filteredData) => {
-  const selectFilter = document.querySelector("#noticeFilter");
+// 총 게시글 수 업데이트 함수
+const updateTotalPostsNum = (data) => {
+  const totalPostsNum = document.querySelector("#noticeTotalPostsNum");
+  totalPostsNum.innerText = `총 게시글 수 ${data.length}개`;
+  totalPostsNum.style.color = `var(--gray-07)`;
+};
 
-  selectFilter.addEventListener("change", () => {
-    //option을 선택했을때 실행됨
-    // .slice()를 사용해 원본 데이터 변경하지 않고 복사본 사용
-    let sortedData = filteredData.slice();
+// 날짜별(최신순, 오래된순) 필터
+const dateFilter = (data, sortType) => {
+  let sortedData = [...data]; // 원본 데이터 변경하지 않고 복사본 사용
 
-    if (selectFilter.value === "latest") {
-      sortedData.sort((pre, sub) => new Date(sub.date) - new Date(pre.date));
-    } else if (selectFilter.value === "old") {
-      sortedData.sort((pre, sub) => new Date(pre.date) - new Date(sub.date));
-    }
+  if (sortType === "latest") {
+    sortedData.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+  } else if (sortType === "old") {
+    sortedData.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
+  }
 
-    renderNoticesList(sortedData);
-    initPagination(sortedData, renderNoticesList); // 필터 후 데이터를 페이지네이션에 전달ㄴ
-  });
+  renderNoticesList(sortedData);
 };
 
 // 검색 필터
@@ -98,15 +95,15 @@ const searchFilter = (filteredData) => {
 };
 
 // 중요 태그가 있는 데이터를 상단으로 올리기
-const moveImportantDataToTop = (filteredData) => {
-  const importantData = filteredData.filter(
-    (item) => item.isImportant === "true"
-  );
+// const moveImportantDataToTop = (filteredData) => {
+//   const importantData = filteredData.filter(
+//     (item) => item.isImportant === "true"
+//   );
 
-  const normalData = filteredData.filter(
-    (item) => item.isImportant === "false"
-  );
-  return [...importantData, ...normalData]; //배열합치기:중요한 데이터가 먼저 나오고 그 뒤에 일반 데이터가 나오게 됨
-};
+//   const normalData = filteredData.filter(
+//     (item) => item.isImportant === "false"
+//   );
+//   return [...importantData, ...normalData]; //배열합치기:중요한 데이터가 먼저 나오고 그 뒤에 일반 데이터가 나오게 됨
+// };
 
 export default tabFilter;

@@ -5,10 +5,10 @@ const detailList = () => {
   const urlParams = new URLSearchParams(window.location.search);
   // 쿼리 파라미터에서 데이터 추출
   const noticeData = {
-    index: urlParams.get("index"),
+    id: urlParams.get("id"),
     title: urlParams.get("title"),
     author: urlParams.get("author"),
-    date: urlParams.get("date"),
+    createdAt: urlParams.get("createdAt"),
     attachments: urlParams.get("attachments"),
     views: urlParams.get("views"),
     description: urlParams.get("description"),
@@ -26,13 +26,13 @@ const detailList = () => {
   );
 
   //불러온 데이터 삽입
-  noticeTitle.innerHTML = noticeData.title;
-  registrationDate.innerHTML = noticeData.date;
-  writer.innerHTML = noticeData.author;
-  views.innerHTML = noticeData.views;
-  description.innerHTML = noticeData.description;
+  noticeTitle.textContent = noticeData.title;
+  registrationDate.textContent = noticeData.createdAt;
+  writer.textContent = noticeData.author;
+  views.textContent = noticeData.views;
+  description.textContent = noticeData.description;
   if (noticeData.attachments === "true") {
-    attachedFile.innerHTML = `
+    attachedFile.textContent = `
     <img
       src="/public/icons/textfile.svg"
       alt="file-icon"

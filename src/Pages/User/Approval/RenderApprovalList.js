@@ -5,6 +5,7 @@ import {
   showApprovalDetailContentFalse,
 } from './Modal/ModalContent';
 import renderModal from '../../../Components/Modal/RenderModal';
+import handleModal from '/src/Components/Modal/HandleModal';
 
 const renderApprovalList = (data) => {
   const container = document.querySelector(`.${styles['approval-list']}`);
@@ -60,7 +61,6 @@ const renderApprovalList = (data) => {
       modalContent.modal_id,
       modalContent.header,
       modalContent.content,
-      `.${styles['approval-list']}`,
     );
   });
   data.forEach((item) => {
@@ -69,7 +69,6 @@ const renderApprovalList = (data) => {
       modalContent.modal_id,
       modalContent.header,
       modalContent.content,
-      `.${styles['approval-list']}`,
     );
   });
 };

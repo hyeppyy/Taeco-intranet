@@ -5,7 +5,6 @@ import initPagination from '/src/Components/Pagination/Pagination';
 const fetchMileageData = async () => {
   const response = await fetch('/server/data/mileage.json');
   const data = await response.json();
-
   initPagination(data, renderMileageList);
 };
 

@@ -1,20 +1,24 @@
-.pagination {
+#pagination {
   width: 100%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  gap: 6px;
+  margin-top: 12px;
 }
-.pagination button {
+.pageNumber__btn {
   background: none;
   border: none;
 }
 .pageNumber__btn.active {
-  background: var(--pri-normal, #40b883);
-  color: var(--gray-01, #fcfcfc);
+  background-color: var(--color-pri-normal);
+  color: var(--color-white);
 }
 
-@media (max-width: 600px) {
-  .pagination {
+/* 테블릿 버전 */
+@media screen and (max-width: 900px) {
+  #pagination {
     justify-content: center;
+    outline: 1px solid red;
   }
 }

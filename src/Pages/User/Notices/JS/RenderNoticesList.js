@@ -1,63 +1,82 @@
-import route from "/src/Router/Router";
 import styles from "../Notice.module.css";
+import route from "/src/Router/Router";
 
 const renderNoticesList = (data) => {
-  const tableBody = document.querySelector("table > tbody");
+  const tableBody = document.querySelector("[data-n-table-body]");
 
   tableBody.innerHTML = ""; //초기화
 
-  //table 구조 생성
-  data.forEach((dataItem) => {
-    const row = document.createElement("tr");
-    const hasAttachments = dataItem.attachments.length > 0;
-    const hasImportant = dataItem.isImportant === "true";
+  if (data.length === 0) {
+    // 테이블에 데이터가 없을 때
+    const noticeTableRow = document.createElement("tr");
+    const noticeTableCell = document.createElement("td");
+    noticeTableCell.colSpan = 6;
+    noticeTableCell.textContent = "공지사항이 없습니다.";
+    noticeTableCell.style.textAlign = "center";
+    noticeTableCell.style.padding = "20px";
+    noticeTableRow.appendChild(noticeTableCell);
+    tableBody.appendChild(noticeTableRow);
+  } else {
+    // 테이블에 데이터가 있을 때
+    data.forEach((dataItem) => {
+      const noticeRow = document.createElement("tr");
+      const hasAttachments = dataItem.attachments !== null;
+      const hasImportant = dataItem.isImportant === 0;
+      const currentDate = new Date();
+      const yyyy = currentDate.getFullYear();
+      const mm = String(currentDate.getMonth() + 1).padStart(2, "0");
+      const dd = String(currentDate.getDate()).padStart(2, "0");
+      const hh = String(currentDate.getHours()).padStart(2, "0");
+      const min = String(currentDate.getMinutes()).padStart(2, "0");
+      const createdAt = `${yyyy}-${mm}-${dd} ${hh}:${min}`;
 
-    row.innerHTML = `
-            <td >${
-              hasImportant
-                ? `<span class="${styles.importantTag}">중요</span> `
-                : dataItem.index
-            }</td>
-            <td>${dataItem.title}</td>
-            <td>${dataItem.author}</td>
-            <td>${dataItem.date}</td>
-            <td>${
-              hasAttachments
-                ? `<img src="/public/icons/textfile.svg" alt="file-icon" width="20" height="20" />`
-                : ""
-            }</td>
-            <td>${dataItem.views}</td>
-      `;
+      noticeRow.innerHTML = `
+              <td >${
+                hasImportant
+                  ? `<span class="${styles.importantTag}">중요</span> `
+                  : dataItem.id
+              }</td>
+              <td>${dataItem.title}</td>
+              <td>${dataItem.author}</td>
+              <td>${createdAt}</td>
+              <td>${
+                hasAttachments
+                  ? `<img src="/public/icons/textfile.svg" alt="file-icon" width="20" height="20" />`
+                  : ""
+              }</td>
+              <td>${dataItem.views}</td>
+        `;
 
-    // 각 행에 데이터 속성 할당
-    row.dataset.index = dataItem.index;
-    row.dataset.title = dataItem.title;
-    row.dataset.author = dataItem.author;
-    row.dataset.date = dataItem.date;
-    row.dataset.attachments = hasAttachments;
-    row.dataset.views = dataItem.views;
-    row.dataset.description = dataItem.description;
+      tableBody.appendChild(noticeRow);
 
-    // 행 클릭 이벤트 리스너 추가
-    row.addEventListener("click", () => {
-      // 클릭한 행의 데이터를 URL 쿼리 파라미터로 변환
-      const noticeData = {
-        index: row.dataset.index,
-        title: row.dataset.title,
-        author: row.dataset.author,
-        date: row.dataset.date,
-        attachments: row.dataset.attachments,
-        views: row.dataset.views,
-        description: row.dataset.description,
-      };
+      // 각 행에 데이터 속성 할당
+      noticeRow.dataset.id = dataItem.id;
+      noticeRow.dataset.title = dataItem.title;
+      noticeRow.dataset.author = dataItem.author;
+      noticeRow.dataset.createdAt = createdAt;
+      noticeRow.dataset.attachments = dataItem.attachments ? "true" : "false";
+      noticeRow.dataset.views = dataItem.views;
+      noticeRow.dataset.description = dataItem.description;
 
-      const queryString = new URLSearchParams(noticeData).toString();
-      history.pushState(null, null, `/user/notices/detail?${queryString}`);
-      route();
+      // 행 클릭 이벤트 리스너 추가
+      noticeRow.addEventListener("click", () => {
+        // 클릭한 행의 데이터를 URL 쿼리 파라미터로 변환
+        const noticeData = {
+          id: noticeRow.dataset.id,
+          title: noticeRow.dataset.title,
+          author: noticeRow.dataset.author,
+          createdAt: noticeRow.dataset.createdAt,
+          attachments: noticeRow.dataset.attachments,
+          views: noticeRow.dataset.views,
+          description: noticeRow.dataset.description,
+        };
+
+        const queryString = new URLSearchParams(noticeData).toString();
+        history.pushState(null, null, `/user/notices/detail?${queryString}`);
+        route();
+      });
     });
-
-    tableBody.appendChild(row);
-  });
+  }
 };
 
 export default renderNoticesList;

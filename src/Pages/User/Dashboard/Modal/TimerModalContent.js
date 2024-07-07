@@ -2,18 +2,17 @@ import styles from "./dashboardModal.module.css";
 
 // 출근시간을 확인하는 모달 내용을 반환하는 함수
 export const showCheckInTimeContent = () => {
-  const currentTime = getCurrentTime();
-  const today = getTodayDate();
+  startTimeUpdate();
 
   return {
     modal_id: `dashboard_1`,
     header: `출근`,
     content: `
         <div class="${styles.checkTimeModal}">
-          <h4>${today}</h4>
-          <span>${currentTime}</span>
+          <h4>${getTodayDate()}</h4>
+          <span data-time-element>${getCurrentTime()}</span>
           <h3>출근하시겠습니까?</h3>
-          <button class="${styles.checkInBtn}" data-shape="block" data-color="positive">출근하기</button>
+          <button id="checkInBtn" data-shape="block" data-color="positive">출근하기</button>
         </div>
       `,
   };
@@ -21,21 +20,42 @@ export const showCheckInTimeContent = () => {
 
 // 퇴근시간을 확인하는 모달 내용을 반환하는 함수
 export const showCheckOutTimeContent = () => {
-  const currentTime = getCurrentTime();
-  const today = getTodayDate();
+  startTimeUpdate();
 
   return {
     modal_id: `dashboard_2`,
     header: `퇴근`,
     content: `
         <div class="${styles.checkTimeModal}">
-          <h4>${today}</h4>
-          <span>${currentTime}</span>
+          <h4>${getTodayDate()}</h4>
+          <span data-time-element>${getCurrentTime()}</span>
           <h3>퇴근하시겠습니까?</h3>
-          <button class="${styles.checkOutBtn}" data-shape="block" data-color="positive">퇴근하기</button>
+          <button id="checkOutBtn" data-shape="block" data-color="positive">퇴근하기</button>
         </div>
       `,
   };
+};
+
+// 1초마다 현재시간을 업데이트하는 함수
+let timeUpdateInterval;
+
+const startTimeUpdate = () => {
+  updateModalTime(); // 즉시 한 번 실행:현재시간을 넣어줌
+  timeUpdateInterval = setInterval(updateModalTime, 1000); // 1초마다 업데이트
+};
+
+const updateModalTime = () => {
+  const modalTimeElements = document.querySelectorAll("[data-time-element]");
+  modalTimeElements.forEach((element) => {
+    element.textContent = getCurrentTime();
+  });
+};
+
+// 현재시간 업데이트를 멈추는 함수
+export const stopTimeUpdate = () => {
+  if (timeUpdateInterval) {
+    clearInterval(timeUpdateInterval);
+  }
 };
 
 // 오늘 날짜를 반환하는 함수

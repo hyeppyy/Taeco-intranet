@@ -1,4 +1,6 @@
 import setTimeout from "./../../Pages/User/Approval/Modal/ModalContentDetail";
+import renderTime from "./../../Pages/User/Dashboard/JS/RenderTime";
+import { stopTimeUpdate } from "./../../Pages/User/Dashboard/Modal/TimerModalContent";
 
 const handleModal = () => {
   const openModalButtons = document.querySelectorAll(".open-modal");
@@ -18,6 +20,7 @@ const handleModal = () => {
       const modal = document.querySelector(button.dataset.modalTarget);
       toggleModal(modal);
       setTimeout();
+      renderTime(); // 출퇴근 기록 함수
     });
   });
 
@@ -26,6 +29,7 @@ const handleModal = () => {
     button.addEventListener("click", () => {
       const modal = document.querySelector(".modal-box.active");
       toggleModal(modal);
+      stopTimeUpdate(); // 모달을 닫으면 현재시간 업데이트 함수를 멈춤
     });
   });
 

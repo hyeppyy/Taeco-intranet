@@ -6,7 +6,7 @@ import {
   showCheckInTimeContent,
   showCheckOutTimeContent,
 } from "./Modal/TimerModalContent";
-import timer from "./JS/Timer";
+import renderTime from "./JS/RenderTime";
 
 const renderUserDashboard = (container) => {
   container.innerHTML = `
@@ -25,10 +25,14 @@ const renderUserDashboard = (container) => {
                 <h4 class="${styles.infoFirst__position}">차장</h4>
               </div>
               <div class="${styles.infoSecond}">
+                <div class="${styles.emailInfo}">
                 <img src="/public/icons/email.svg" alt="email" />
                 <h4 class="${styles.email}">honggildong@google.com</h4>
+                </div>
+                <div class="${styles.callInfo}">
                 <img src="/public/icons/call.svg" alt="call" />
                 <h4 class="${styles.call}">010-1234-5678</h4>
+                </div>
               </div>
             </div>
           </div>
@@ -36,21 +40,21 @@ const renderUserDashboard = (container) => {
             <div class="${styles.userDashboard__todayAttendance} ${styles.card}">
               <h2>오늘의 출근</h2>
               <div class="${styles.userDashboard__todayAttendanceWrap}">
-                <h3 id="userDashboard__today"></h3>
-                <span class="${styles.userDashboard__currentTime}"></span>
+                <h4 class="${styles.userDashboard__todayTag}">TODAY</h4>
+                <h3 class="${styles.userDashboard__today}"></h3>
                 <div class="${styles.userDashboard__stamp}">
-                  <span class="${styles.recordStartTimeBtn} open-modal"
+                  <button class="${styles.recordStartTimeBtn} open-modal"
                     data-modal-target="#modal-dashboard_1"
                   >
                     <h3>출근하기</h3>
                     <h2 id="userDashboard__startTime">-</h2>
-                  </span>
-                  <span class="${styles.recordEndTimeBtn} open-modal"
+                  </button>
+                  <button class="${styles.recordEndTimeBtn} open-modal"
                     data-modal-target="#modal-dashboard_2"
                   >
                     <h3>퇴근하기</h3>
                     <h2 id="userDashboard__endTime">-</h2>
-                  </span>
+                  </button>
                 </div>
               </div>
             </div>
@@ -110,8 +114,12 @@ const renderUserDashboard = (container) => {
   `;
 
   noticesData();
+<<<<<<< HEAD
   approvalData();
   timer();
+=======
+  renderTime();
+>>>>>>> 18cafea8e670b8ff03187691af9d78e1924daa71
 
   // 출근 체크 모달: dashboard_1
   renderModal(

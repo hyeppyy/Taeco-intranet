@@ -14,6 +14,7 @@ import renderAdminEmployee from "../Pages/Admin/Employee/Employee";
 import renderAddEmployeePage from "../Pages/Admin/Employee/AddEmployee";
 import renderEditEmployeePage from "../Pages/Admin/Employee/EditEmployee";
 import renderUserMypage from "../Pages/User/Mypage/Mypage";
+import renderUserEditpage from "../Pages/User/Mypage/Editpage";
 import renderAdminNotices from "../Pages/Admin/Notices/Notices";
 import renderUserNotices from "../Pages/User/Notices/Notices";
 import renderAdminApproval from "../Pages/Admin/Approval/Approval";
@@ -21,6 +22,7 @@ import renderUserApproval from "../Pages/User/Approval/Approval";
 import renderAdminNoticesDetail from "../Pages/Admin/Notices/Detail/Detail";
 import renderUserNoticesDetail from "../Pages/User/Notices/Detail/Detail";
 import renderAdminAddNotices from "../Pages/Admin/Notices/Add/Add";
+import renderAdminTest from "../Pages/Admin/TestServer/TestServer";
 import hamburger from "../Components/ResponsiveNavBar/User/Hamburger";
 
 const route = () => {
@@ -85,6 +87,9 @@ const route = () => {
     case "/user/mypage":
       renderUserMypage(contents);
       break;
+    case "/user/mypage/editpage":
+      renderUserEditpage(contents);
+      break;
     //admin
     case "/admin/dashboard":
       renderAdminDashboard(contents);
@@ -112,6 +117,9 @@ const route = () => {
       break;
     case "/admin/notices/add":
       renderAdminAddNotices(contents);
+      break;
+    case "/admin/testserver":
+      renderAdminTest(contents);
       break;
     default:
       renderPageNotFound(root);

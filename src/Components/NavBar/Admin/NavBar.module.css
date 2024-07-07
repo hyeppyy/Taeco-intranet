@@ -67,6 +67,9 @@ nav > .layout > .layout__top > .layout__nav > .layout__item:hover {
 nav > .layout > .layout__bottom {
   margin-bottom: 12px;
 }
+nav > .layout > .layout__bottom > .layout__item > .layout--profile {
+  border-radius: 50%;
+}
 
 /*************** 테블릿 버전 ***************/
 @media screen and (max-width: 1024px) {
@@ -110,5 +113,4 @@ nav > .layout > .layout__bottom {
   nav > .layout > .layout__top > .layout__logo {
     display: none;
   }
-
 }

@@ -1,5 +1,5 @@
 import renderNoticesList from "./RenderNoticesList.js";
-import initPagination from "../Pagination/Pagination.js";
+import initPagination from "/src/Components/Pagination/Pagination";
 import styles from "../Notice.module.css";
 
 const tabFilter = (data) => {
@@ -12,7 +12,7 @@ const tabFilter = (data) => {
   renderNoticesList(filteredData); // 초기 렌더링
   dataFilter(filteredData); // 초기 날짜 필터링
   searchFilter(filteredData); // 초기 검색 필터링
-  initPagination(filteredData); // Pagination 렌더링
+  initPagination(filteredData, renderNoticesList); // Pagination 렌더링
 
   //초기상태 총 게시글 수
   totalPostsNum.innerText = `총 게시글 수 ${filteredData.length}개`;
@@ -47,7 +47,7 @@ const tabFilter = (data) => {
     renderNoticesList(filteredData);
     dataFilter(filteredData); // 탭 필터 후 날짜 필터 적용
     searchFilter(filteredData); // 탭 필터 후 검색 필터 적용
-    initPagination(filteredData);
+    initPagination(filteredData, renderNoticesList);
     totalPostsNum.innerText = `총 게시글 수 ${filteredData.length}개`; //필터 후 총 게시글 수
   });
 };
@@ -68,6 +68,7 @@ const dataFilter = (filteredData) => {
     }
 
     renderNoticesList(sortedData);
+    initPagination(sortedData, renderNoticesList); // 필터 후 데이터를 페이지네이션에 전달ㄴ
   });
 };
 

@@ -114,12 +114,8 @@ const renderUserDashboard = (container) => {
   `;
 
   noticesData();
-<<<<<<< HEAD
   approvalData();
-  timer();
-=======
   renderTime();
->>>>>>> 18cafea8e670b8ff03187691af9d78e1924daa71
 
   // 출근 체크 모달: dashboard_1
   renderModal(

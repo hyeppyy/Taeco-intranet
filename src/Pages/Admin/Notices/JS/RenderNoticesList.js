@@ -19,7 +19,6 @@ const renderNoticesList = (data) => {
   } else {
     // 테이블에 데이터가 있을 때
     data.forEach((dataItem) => {
-      console.log(dataItem, "dataItem1");
       const noticeRow = document.createElement("tr");
       const hasAttachments = dataItem.attachments !== null;
       const hasImportant = dataItem.isImportant === 0;

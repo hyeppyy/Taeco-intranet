@@ -32,7 +32,7 @@ const detailList = () => {
   views.textContent = noticeData.views;
   description.textContent = noticeData.description;
   if (noticeData.attachments === "true") {
-    attachedFile.textContent = `
+    attachedFile.innerHTML = `
     <img
       src="/public/icons/textfile.svg"
       alt="file-icon"

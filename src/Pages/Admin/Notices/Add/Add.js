@@ -19,7 +19,7 @@ const renderAdminAddNotices = (container) => {
             <ul class="${styles.info}">
                 <li class="${styles.info__items}">
                     <h5>카테고리</h5>
-                    <select name="category" required>
+                    <select data-n-select name="category" required>
                         <option value="event">이벤트</option>
                         <option value="mileage">마일리지</option>
                         <option value="approval">전자결재</option>

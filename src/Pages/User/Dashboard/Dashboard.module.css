@@ -258,7 +258,6 @@
   .userDashboard__todayAttendance {
     width: 100%;
   }
-<<<<<<< HEAD
   .approvalTable > thead > tr > th:nth-child(2),
   .approvalTable > tbody > tr > td:nth-child(2),
   .approvalTable > thead > tr > th:nth-child(3),
@@ -271,7 +270,7 @@
     border-bottom-right-radius: 7px;
     width: 100%;
     display: block;
-=======
+  }
 
   .infoSecond {
     display: flex;
@@ -281,7 +280,6 @@
   .infoSecond > .callInfo {
     display: flex;
     gap: 5px;
->>>>>>> 18cafea8e670b8ff03187691af9d78e1924daa71
   }
 }
 /* 타블렛 */

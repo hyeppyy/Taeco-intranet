@@ -4,7 +4,6 @@ const renderModal = (
   id,
   header,
   content,
-  container = '#contents',
   event = null
 ) => {
   const contents = document.querySelector('#contents');
@@ -31,7 +30,7 @@ const renderModal = (
   const tempContainer = document.createElement('div');
   tempContainer.innerHTML = modalHTML;
 
-    contents.appendChild(tempContainer);
+  contents.appendChild(tempContainer)
 
   handleModal(event); // 모달 이벤트 전달 함수
 };

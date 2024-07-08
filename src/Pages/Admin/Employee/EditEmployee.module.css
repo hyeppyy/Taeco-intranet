@@ -101,6 +101,12 @@ form {
   display: flex;
 }
 
+.profileimg > img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
 /* 반응형 */
 /* 모바일 */
 @media (max-width: 599px) {

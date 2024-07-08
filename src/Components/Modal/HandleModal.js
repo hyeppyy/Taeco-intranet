@@ -1,9 +1,10 @@
-import setTimeout from './../../Pages/User/Approval/Modal/ModalContentDetail';
+import approvalType from './../../Pages/User/Approval/Modal/ModalContentDetail';
 import renderTime from './../../Pages/User/Dashboard/JS/RenderTime';
-import { stopTimeUpdate } from './../../Pages/User/Dashboard/Modal/TimerModalContent';
+import { startTimeUpdate, stopTimeUpdate } from './../../Pages/User/Dashboard/JS/UpdateTimer';
 
-const handleModal = () => {
+const handleModal = (fn) => {
   const contents = document.querySelector('#contents');
+  // console.log(event);
 
   const modalBackground =
     document.querySelector('#modal__background') ||
@@ -18,17 +19,30 @@ const handleModal = () => {
       if (modal && !modal.classList.contains('active')) {
         modal.classList.add('active');
         modalBackground.classList.add('active');
-        // renderTime();
+
+        switch (fn.name) {
+          case 'approvalType':
+            approvalType();
+            break;
+          case 'renderTime':
+            startTimeUpdate();
+            renderTime();
+            break;
+          default:
+            break;
+        }
       }
     } else if (
       event.target.closest('.close-modal') ||
-      event.target === modalBackground
+      event.target === modalBackground ||
+      event.target.closest('#checkInBtn') ||
+      event.target.closest('#checkOutBtn')
     ) {
       const modal = document.querySelector('.modal-box.active');
       if (modal && modal.classList.contains('active')) {
         modal.classList.remove('active');
         modalBackground.classList.remove('active');
-        // stopTimeUpdate();
+        stopTimeUpdate();
       }
     }
   });

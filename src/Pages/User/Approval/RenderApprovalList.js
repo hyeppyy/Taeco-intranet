@@ -5,7 +5,6 @@ import {
   showApprovalDetailContentFalse,
 } from './Modal/ModalContent';
 import renderModal from '../../../Components/Modal/RenderModal';
-import handleModal from '/src/Components/Modal/HandleModal';
 
 const renderApprovalList = (data) => {
   const container = document.querySelector(`.${styles['approval-list']}`);

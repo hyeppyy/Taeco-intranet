@@ -6,6 +6,7 @@
 
 .userDashboard__attendance {
   display: flex;
+  width: 100%;
   gap: 24px;
 }
 
@@ -77,7 +78,7 @@
 .userDashboard__approvalTitle {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 12px;
 }
 .userDashboard__approvalTitle > h4 {
   color: var(--gray-06);
@@ -120,6 +121,7 @@
 .approvalTable > tbody > tr > td:nth-child(4) {
   display: none;
 }
+
 /* 공지사항 영역 */
 .userDashboard__notice {
   display: flex;
@@ -135,7 +137,7 @@
 .userDashboard__noticeTitle {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 12px;
 }
 
 .userDashboard__noticeTitle > h4 {
@@ -192,6 +194,11 @@
 }
 
 /* 오늘의 출근 영역 */
+.userDashboard__todayAttendance {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
 .userDashboard__todayAttendanceWrap {
   display: flex;
   flex-direction: column;
@@ -229,8 +236,16 @@
   line-height: 4.5rem;
 }
 
+.userDashboard__state {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+}
+.userDashboard__attendanceHistory {
+  flex-grow: 1;
+}
 .userDashboard__todayTag {
-  padding: 4px 12px;
+  padding: 4px 8px;
   border-radius: 50px;
   color: var(--color-white);
   background: var(--color-pri-normal, #40b883);
@@ -253,6 +268,7 @@
 @media (max-width: 599px) {
   .userDashboard__attendance {
     flex-direction: column;
+    width: calc(100% - 32px);
   }
   .userDashboard__attendanceHistory,
   .userDashboard__todayAttendance {
@@ -279,6 +295,9 @@
   .infoSecond > .callInfo {
     display: flex;
     gap: 5px;
+  }
+  .userDashboard__notice{
+    margin-bottom: 80px;
   }
 }
 /* 타블렛 */

@@ -2,7 +2,6 @@ import route from '/src/Router/Router';
 import styles from './Mileage.module.css';
 import fetchMileageData from './FetchMileageData';
 import renderModal from '../../../Components/Modal/RenderModal';
-import renderDynamicModal from '../../../Components/Modal/RenderDynamicModal';
 import {
   showMileageStandardContent,
   showMileageApproveContent,

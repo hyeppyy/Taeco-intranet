@@ -1,5 +1,6 @@
 import styles from "./EditEmployee.module.css";
 import { showEmployeeEditCheck } from "./Modal/EditModal";
+import route from "/src/Router/Router";
 
 const renderEditEmployeePage = (container) => {
   container.innerHTML = `
@@ -9,7 +10,8 @@ const renderEditEmployeePage = (container) => {
   <!-- 상단 추가 버튼 부분입니다. -->
   <div class="${styles.page__content}">
     <div class="${styles.page__button}">
-    <button id="backButton" data-color='warning' data-shape='block'>뒤로가기</button>
+    <button id="backButton" data-color='neutral' data-shape='block'>뒤로가기</button>
+    <button id="deleteButton" data-color='warning' data-shape='block'>삭제하기</button>
     <button data-color='positive' data-shape='block'>수정하기</button>
   </div>
 
@@ -64,17 +66,24 @@ const renderEditEmployeePage = (container) => {
           </form>
   `;
 
-  const backButton = document.getElementById("backButton");
-  backButton.addEventListener("click", () => {
-    history.back();
+  document.getElementById("backButton").addEventListener("click", () => {
+    history.pushState(null, null, "/admin/employee");
+    route();
   });
 
-  // 직원 수정 모달
-  renderModel(
-    showEmployeeEditCheck().modal_id, // 모달 번호
-    showEmployeeEditCheck().header, // 모달 헤더
-    showEmployeeEditCheck().content //모달 내용
-  );
+  // document
+  //   .getElementById("deleteButton")
+  //   .addEventListener("click", async () => {
+  //     try {
+  //       await deleteEmployeeById(employeeId); // Call delete function
+  //       alert("직원이 성공적으로 삭제되었습니다.");
+  //       history.pushState(null, null, "/admin/employee");
+  //       route();
+  //     } catch (error) {
+  //       console.error("Error deleting employee:", error);
+  //       alert("직원 삭제 중 오류가 발생했습니다.");
+  //     }
+  //   });
 };
 
 export default renderEditEmployeePage;

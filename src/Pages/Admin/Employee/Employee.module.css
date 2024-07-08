@@ -106,6 +106,10 @@
     width: auto;
   }
 
+  .head__email,
+  .email {
+    display: none;
+  }
   .head__birthday,
   .birthday {
     display: none;

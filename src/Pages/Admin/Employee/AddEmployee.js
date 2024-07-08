@@ -84,13 +84,3 @@ const moveBack = () => {
 };
 
 export default renderAddEmployeePage;
-
-// <div class="${styles.page__edit}">
-{
-  /* <img src="/public/icons/user.svg" alt="profileimg">
-<div class="${styles.edit__btn}">
-  <button id="chooseFile"data-color='neutral' data-shape='line'>이미지 등록</button>
-  <button id="changeFile" data-color='neutral' data-shape='line'>이미지 삭제</button>
-</div>
-</div> */
-}

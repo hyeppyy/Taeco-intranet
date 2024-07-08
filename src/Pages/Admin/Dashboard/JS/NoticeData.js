@@ -1,7 +1,6 @@
 import styles from "./../Dashboard.module.css";
 
 //서버 데이터 요청 함수
-// 서버 데이터 요청 함수
 const noticesData = async () => {
   try {
     const response = await fetch("/api/notices");

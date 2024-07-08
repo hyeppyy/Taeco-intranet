@@ -101,6 +101,7 @@ const handleAddEmployee = async (event) => {
     const birthday = document.querySelector("[data-e-birthday]").value;
     const startDate = document.querySelector("[data-e-joinday]").value;
     const profileImage = document.querySelector("[data-e-add-img]").files[0];
+    console.log(profileImage, "profileImage");
 
     // 필수 필드 유효성 검사
     if (!name || !email || !position || !birthday || !startDate) {

@@ -112,6 +112,146 @@ database.serialize(() => {
       }
     }
   );
+  // Notices 테이블 생성
+  database.run(
+    `
+          CREATE TABLE IF NOT EXISTS Notices (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            title TEXT,
+            author TEXT,
+            description TEXT,
+            createdAt TEXT,
+            attachments TEXT,
+            views INTEGER DEFAULT 0,
+            isImportant INTEGER DEFAULT 0,
+            category TEXT
+          )`,
+    (err) => {
+      if (err) {
+        console.error("Error creating Notices table:", err.message);
+      } else {
+        console.log("Notices table created successfully");
+
+        const sampleNoticeData = [
+          {
+            id: 1,
+            title: "여름맞이 회사 피크닉",
+            author: "김민준",
+            description:
+              "이번 피크닉은 직원들 간의 소통을 증진하고 즐거운 시간을 보낼 수 있는 좋은 기회가 될 것입니다. 가족들도 함께 참여할 수 있는 행사이니 많은 참여 부탁드립니다. 궁금한 사항이 있으신 분은 인사부로 문의해 주세요. 감사합니다.",
+            createdAt: "2024-01-10",
+            attachments: "사장",
+            views: "9",
+            isImportant: "1",
+            category: "event",
+          },
+          {
+            id: 2,
+            title: "마일리지 적립 관련 공지사항",
+            author: "이서연",
+            description:
+              "안녕하세요, 모든 직원 여러분! 우리 회사에서는 직원들의 노고를 인정하고 사기를 증진시키기 위해 새로운 마일리지 적립 프로그램을 도입하게 되었습니다. 아래의 공지사항을 참고하시어 많은 참여와 관심 부탁드립니다. ",
+            createdAt: "2024-01-20",
+            attachments: "1",
+            views: "7",
+            isImportant: "0",
+            category: "mileage",
+          },
+          {
+            id: 3,
+            title: "전자결재 시스템 도입 및 사용 안내 공지",
+            author: "박지훈",
+            description:
+              "안녕하세요, 모든 직원 여러분! 우리 회사는 업무 효율성을 높이고 문서 관리의 편리성을 강화하기 위해 새로운 전자결재 시스템을 도입하게 되었습니다. 아래의 내용을 참고하시어 전자결재 시스템을 원활히 이용해 주시기 바랍니다.",
+            createdAt: "2024-01-25",
+            attachments: "0",
+            views: "1",
+            isImportant: "0",
+            category: "approval",
+          },
+          {
+            id: 4,
+            title: "인사행정 관련 공지사항",
+            author: "정하은",
+            description:
+              "안녕하세요, 모든 직원 여러분! 인사행정과 관련하여 몇 가지 중요한 사항을 안내드리고자 합니다. 아래의 내용을 참고하시어 인사행정 업무에 차질이 없도록 협조해 주시기 바랍니다.",
+            createdAt: "2024-02-08",
+            attachments: "0",
+            views: "12",
+            isImportant: "1",
+            category: "human-resource",
+          },
+          {
+            id: 5,
+            title: "하반기 교육 일정 및 프로그램",
+            author: "최지우",
+            description:
+              "안녕하세요, 모든 직원 여러분! 회사의 발전과 직원 여러분의 역량 강화를 위해 2024년 하반기 회사 교육 프로그램에 대해 안내드립니다. 아래의 내용을 참고하시어 적극적인 참여 부탁드립니다.",
+            createdAt: "2024-02-26",
+            attachments: "1",
+            views: "0",
+            isImportant: "0",
+            category: "education",
+          },
+          {
+            id: 6,
+            title: "사내 인트라넷 시스템 업데이트",
+            author: "강도윤",
+            description:
+              "안녕하세요, 모든 직원 여러분! 회사의 발전과 직원 여러분의 편의를 위해 몇 가지 중요한 공지 사항을 안내드리고자 합니다. 아래 내용을 꼭 확인해주시기 바랍니다.",
+            createdAt: "2024-03-09",
+            attachments: "1",
+            views: "124",
+            isImportant: "0",
+            category: "etc",
+          },
+          {
+            id: 7,
+            title: "사내 친목회 개최",
+            author: "윤서현",
+            description:
+              "안녕하세요, 모든 직원 여러분! 2024년 8월 20일 (목) 18:00 ~ 21:00, 본사 대강당에서 직원 간 친목 도모 및 소통을 위한 다양한 프로그램이 준비되어 있습니다. 많은 참여 부탁드리며, 참석이 어려운 직원은 미리 인사부에 알려주시기 바랍니다.",
+            createdAt: "2024-03-15",
+            attachments: "1",
+            views: "14",
+            isImportant: "0",
+            category: "event",
+          },
+        ];
+        let completedInserts = 0;
+        sampleNoticeData.forEach((item) => {
+          database.run(
+            `INSERT OR REPLACE INTO Notices (id, title, author, description, createdAt, attachments, views, isImportant, category)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+            [
+              item.id,
+              item.title,
+              item.author,
+              item.description,
+              item.createdAt,
+              item.attachments,
+              item.views,
+              item.isImportant,
+              item.category,
+            ],
+            (err) => {
+              if (err) {
+                console.error("Error inserting sample data:", err.message);
+              } else {
+                console.log(`Sample data inserted: ${item.id}`);
+                completedInserts++;
+                if (completedInserts === sampleNoticeData.length) {
+                  console.log(
+                    "Sample Approval data insertion process completed."
+                  );
+                }
+              }
+            }
+          );
+        });
+      }
+    }
+  );
   // Approval 테이블 생성
   database.run(
     `
@@ -265,13 +405,8 @@ database.serialize(() => {
       }
     }
   );
-  // Mileage 테이블 생성
-  // database.run(`DROP TABLE IF EXISTS Mileage`, (err) => {
-  //   if (err) {
-  //     console.error('Error dropping Mileage table:', err.message);
-  //   } else {
-  //     console.log('Mileage table dropped successfully');
 
+  // 마일리지 테이블 생성
   database.run(
     `
     CREATE TABLE IF NOT EXISTS Mileage (
@@ -414,3 +549,18 @@ database.serialize(() => {
 });
 
 export default database;
+
+//데이터 지우는 법:저장하고 서버 다시실행.
+// 삭제할 데이터의 ID를 배열에 담습니다.
+// const idsToDelete = [6, 7]; // 삭제할 데이터의 ID 목록
+
+// // 테이블 데이터 삭제
+// idsToDelete.forEach((id) => {
+//   database.run(`DELETE FROM Users WHERE id = ?`, [id], (err) => {
+//     if (err) {
+//       console.error(`Error deleting data with id ${id}:`, err.message);
+//     } else {
+//       console.log(`Data with id ${id} deleted successfully.`);
+//     }
+//   });
+// });

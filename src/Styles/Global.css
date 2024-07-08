@@ -166,6 +166,28 @@ button[data-color="neutral"][data-shape="line"]:hover {
   color: var(--color-white);
 }
 
+/* secondary button: 관리자 페이지 메인컬러 버튼 */
+button[data-color="secondary"][data-shape="block"] {
+  background-color: var(--color-sec-light);
+  border: 1px solid var(--color-sec-light);
+  color: var(--color-white);
+}
+
+button[data-color="secondary"][data-shape="block"]:hover {
+  background: var(--color-sec-normal);
+}
+
+button[data-color="secondary"][data-shape="line"] {
+  background-color: transparent;
+  border: 1px solid var(--color-sec-light);
+  color: var(--color-sec-light);
+}
+
+button[data-color="secondary"][data-shape="line"]:hover {
+  background: var(--color-sec-normal);
+  color: var(--color-white);
+}
+
 /* modal style */
 .modal {
   display: flex;

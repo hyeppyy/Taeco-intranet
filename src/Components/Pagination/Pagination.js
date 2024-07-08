@@ -1,5 +1,5 @@
 // Pagination.js
-import styles from './Pagination.module.css';
+import styles from "./Pagination.module.css";
 
 const ITEMS_PER_PAGE = 5; // 페이지네이션 버튼 개수
 const PAGE_COUNT = 5; // 한 페이지에 표시할 항목 수
@@ -28,12 +28,13 @@ const renderCurrentPageData = (data, renderFn) => {
 // 페이지네이션 버튼 렌더링 함수
 const renderPagination = (data, renderFn) => {
   totalPages = Math.ceil(data.length / ITEMS_PER_PAGE); // 총 페이지 수 계산
-  const paginationContainer = document.getElementById('pagination'); // 페이지네이션 컨테이너 요소 가져오기
-  paginationContainer.innerHTML = ''; // 기존 버튼 초기화
+  const paginationContainer = document.getElementById("pagination"); // 페이지네이션 컨테이너 요소 가져오기
+  paginationContainer.className = `${styles.pagination}`;
+  paginationContainer.innerHTML = ""; // 기존 버튼 초기화
 
   // 페이지네이션 버튼 생성 함수
-  const createPaginationBtn = (innerHTML, onClick, className = '') => {
-    const button = document.createElement('button');
+  const createPaginationBtn = (innerHTML, onClick, className = "") => {
+    const button = document.createElement("button");
     button.innerHTML = innerHTML;
     button.className = `${styles.pageNumber__btn} ${className}`;
     button.onclick = onClick;
@@ -42,11 +43,11 @@ const renderPagination = (data, renderFn) => {
 
   // 처음 페이지 버튼 생성
   paginationContainer.appendChild(
-    createPaginationBtn('&laquo;', () => setCurrentPage(1, data, renderFn))
+    createPaginationBtn("&laquo;", () => setCurrentPage(1, data, renderFn))
   );
   // 이전 페이지 버튼 생성
   paginationContainer.appendChild(
-    createPaginationBtn('&lt;', () =>
+    createPaginationBtn("&lt;", () =>
       setCurrentPage(currentPage - 1, data, renderFn)
     )
   );
@@ -57,7 +58,7 @@ const renderPagination = (data, renderFn) => {
 
   // 페이지 번호 버튼 생성
   for (let i = startPage; i <= endPage; i++) {
-    const className = i === currentPage ? styles.active : '';
+    const className = i === currentPage ? styles.active : "";
     paginationContainer.appendChild(
       createPaginationBtn(i, () => setCurrentPage(i, data, renderFn), className)
     );
@@ -65,13 +66,13 @@ const renderPagination = (data, renderFn) => {
 
   // 다음 페이지 버튼 생성
   paginationContainer.appendChild(
-    createPaginationBtn('&gt;', () =>
+    createPaginationBtn("&gt;", () =>
       setCurrentPage(currentPage + 1, data, renderFn)
     )
   );
   // 마지막 페이지 버튼 생성
   paginationContainer.appendChild(
-    createPaginationBtn('&raquo;', () =>
+    createPaginationBtn("&raquo;", () =>
       setCurrentPage(totalPages, data, renderFn)
     )
   );

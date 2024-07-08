@@ -56,9 +56,9 @@ const filter = (data) => {
         <td>${item.title}</td>
         <td>${item.submitdate}</td>
         <td>
-          <p>${item.title}</p><br>
-          <p>거절사유 : ${item.refusereason}</p><br>
-          <p>${item.submitdate}</p>
+            <p>${item.title}</p><br>
+            <p>거절사유 : ${item.refusereason}</p><br>
+            <p>${item.submitdate}</p>
         </td>
     `;
     tableBody.appendChild(approvalRow);

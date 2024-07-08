@@ -61,6 +61,10 @@
   box-shadow: 10px 10px 5px var(--gray-05);
 }
 
+.employeeTable__body > tr > td {
+  vertical-align: middle;
+}
+
 .head__profileimg,
 .head__name,
 .head__position,

@@ -5,16 +5,11 @@ const database = new sqlite3.Database(`./${databaseName}.db`);
 
 database.serialize(() => {
   // Users 테이블 생성
-  database.run(`DROP TABLE IF EXISTS Users`, (err) => {
-    if (err) {
-      console.error("Error dropping Users table:", err.message);
-    } else {
-      console.log("Users table dropped successfully");
-
-      database.run(
-        `
+  database.run(
+    `
         CREATE TABLE IF NOT EXISTS Users (
           id INTEGER PRIMARY KEY AUTOINCREMENT,
+          password TEXT,
           name TEXT NOT NULL,
           email TEXT NOT NULL,
           profileImage TEXT,
@@ -23,26 +18,18 @@ database.serialize(() => {
           startDate TEXT,
           phone TEXT
         )`,
-        (err) => {
-          if (err) {
-            console.error("Error creating Users table:", err.message);
-          } else {
-            console.log("Users table created successfully");
-          }
-        }
-      );
+    (err) => {
+      if (err) {
+        console.error("Error creating Users table:", err.message);
+      } else {
+        console.log("Users table created successfully");
+      }
     }
-  });
+  );
 
   // Notices 테이블 생성
-  database.run(`DROP TABLE IF EXISTS Notices`, (err) => {
-    if (err) {
-      console.error("Error dropping Notices table:", err.message);
-    } else {
-      console.log("Notices table dropped successfully");
-
-      database.run(
-        `
+  database.run(
+    `
         CREATE TABLE IF NOT EXISTS Notices (
           id INTEGER PRIMARY KEY AUTOINCREMENT,
           title TEXT,
@@ -54,16 +41,14 @@ database.serialize(() => {
           isImportant INTEGER DEFAULT 0,
           category TEXT
         )`,
-        (err) => {
-          if (err) {
-            console.error("Error creating Notices table:", err.message);
-          } else {
-            console.log("Notices table created successfully");
-          }
-        }
-      );
+    (err) => {
+      if (err) {
+        console.error("Error creating Notices table:", err.message);
+      } else {
+        console.log("Notices table created successfully");
+      }
     }
-  });
+  );
 });
 
 export default database;

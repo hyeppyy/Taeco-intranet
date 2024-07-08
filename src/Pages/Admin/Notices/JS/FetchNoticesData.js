@@ -12,7 +12,6 @@ const fetchNoticesData = async () => {
     const result = await response.json();
 
     if (result.status === "OK") {
-      console.log(result.data, "result.data");
       tabFilter(result.data); // 가져온 데이터로 필터링
     } else {
       console.error("Error fetching notices:", result.error);

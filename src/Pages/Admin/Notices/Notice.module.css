@@ -101,12 +101,12 @@
 }
 
 .notices__tab:hover {
-  background-color: var(--color-pri-dark);
+  background-color: var(--color-sec-normal);
   color: var(--color-white);
 }
 
 .active {
-  background-color: var(--color-pri-normal);
+  background-color: var(--color-sec-light);
   color: var(--color-white);
 }
 

@@ -85,6 +85,9 @@
 }
 .approvalTable {
   width: 100%;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 2.1rem;
 }
 .approvalTable__tbody {
   color: var(--gray-09);
@@ -146,6 +149,9 @@
 
 .noticeTable {
   width: 100%;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 2.1rem;
 }
 
 .noticeTable > thead > tr,
@@ -164,33 +170,43 @@
 }
 
 .noticeTable > thead > tr > th:first-child,
-.noticeTable > thead > tr > td:first-child {
+.noticeTable > tbody > tr > td:first-child {
   width: 10%;
 }
 
 .noticeTable > thead > tr > th:nth-child(2),
-.noticeTable > thead > tr > td:nth-child(2) {
+.noticeTable > tbody > tr > td:nth-child(2) {
   width: 35%;
 }
 
 .noticeTable > thead > tr > th:nth-child(3),
-.noticeTable > thead > tr > td:nth-child(3) {
+.noticeTable > tbody > tr > td:nth-child(3) {
   width: 15%;
 }
 
 .noticeTable > thead > tr > th:nth-child(4),
-.noticeTable > thead > tr > td:nth-child(4) {
+.noticeTable > tbody > tr > td:nth-child(4) {
   width: 15%;
 }
 
 .noticeTable > thead > tr > th:nth-child(5),
-.noticeTable > thead > tr > td:nth-child(5) {
+.noticeTable > tbody > tr > td:nth-child(5) {
   width: 15%;
 }
 
 .noticeTable > thead > tr > th:nth-child(6),
-.noticeTable > thead > tr > td:nth-child(6) {
+.noticeTable > tbody > tr > td:nth-child(6) {
   width: 10%;
+}
+
+.noticeTable > thead > tr > th:nth-child(7),
+.noticeTable > tbody > tr > td:nth-child(7) {
+  display: none;
+}
+
+.noticeResponsive {
+  display: flex;
+  width: 100%;
 }
 
 /* 오늘의 출근 영역 */
@@ -296,8 +312,26 @@
     display: flex;
     gap: 5px;
   }
-  .userDashboard__notice{
+  .userDashboard__notice {
     margin-bottom: 80px;
+  }
+  .noticeTable > thead {
+    display: none;
+  }
+  .noticeTable > tbody > tr > td:nth-child(1),
+  .noticeTable > tbody > tr > td:nth-child(2),
+  .noticeTable > tbody > tr > td:nth-child(3),
+  .noticeTable > tbody > tr > td:nth-child(4),
+  .noticeTable > tbody > tr > td:nth-child(5),
+  .noticeTable > tbody > tr > td:nth-child(6) {
+    display: none;
+  }
+  .noticeTable > tbody > tr > td:nth-child(7) {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+    border-top: 1px solid var(--gray-04);
   }
 }
 /* 타블렛 */

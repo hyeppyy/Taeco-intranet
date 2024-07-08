@@ -277,7 +277,7 @@ database.serialize(() => {
             id: 1,
             user: "user1", // 문자열로 변경
             title: "휴가 신청합니다",
-            category: "휴가",
+            category: "연차",
             startdate: "2024.07.08",
             enddate: "2024.08.08",
             submitdate: "2024.07.08",
@@ -289,7 +289,7 @@ database.serialize(() => {
             id: 2,
             user: "user2", // 문자열로 변경
             title: "휴가 신청합니다",
-            category: "휴가",
+            category: "연차",
             startdate: "2024.06.08",
             enddate: "2024.07.08",
             submitdate: "2024.06.08",
@@ -301,7 +301,7 @@ database.serialize(() => {
             id: 3,
             user: "user3", // 문자열로 변경
             title: "휴가 신청합니다",
-            category: "휴가",
+            category: "연차",
             startdate: "2024.05.08",
             enddate: "2024.06.08",
             submitdate: "2024.05.08",
@@ -312,8 +312,8 @@ database.serialize(() => {
           {
             id: 4,
             user: "user4", // 문자열로 변경
-            title: "휴가 신청합니다",
-            category: "휴가",
+            title: "연차 신청합니다",
+            category: "연차",
             startdate: "2024.07.03",
             enddate: "2024.08.03",
             submitdate: "2024.07.03",
@@ -325,7 +325,7 @@ database.serialize(() => {
             id: 5,
             user: "user1", // 문자열로 변경
             title: "반차 신청합니다",
-            category: "반차",
+            category: "연차",
             startdate: "2024.06.08",
             enddate: "2024.06.08",
             submitdate: "2024.06.05",
@@ -361,7 +361,7 @@ database.serialize(() => {
             id: 8,
             user: "user4", // 문자열로 변경
             title: "휴가 신청합니다",
-            category: "휴가",
+            category: "연차",
             startdate: "2024.09.11",
             enddate: "2024.09.21",
             submitdate: "2024.09.08",

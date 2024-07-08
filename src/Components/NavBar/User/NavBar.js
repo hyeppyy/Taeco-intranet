@@ -1,11 +1,14 @@
-import styles from './NavBar.module.css';
-import { logout } from '/src/Pages/Login/ValidateLogin';
+import styles from "./NavBar.module.css";
+import { logout } from "/src/Pages/Login/ValidateLogin";
 
 const renderUserNavBar = (nav, menuList) => {
   if (!nav) {
     console.error("navBar element not found");
     return;
   }
+  const userName = sessionStorage.getItem("userName") || "사용자"; // 기본값 설정
+  const userProfileImage =
+    sessionStorage.getItem("userProfileImage") || "/public/images/_Avatar_.png";
   nav.innerHTML = `
   <div class="${styles.layout}">
     <div class="${styles.layout__top}">
@@ -81,12 +84,12 @@ const renderUserNavBar = (nav, menuList) => {
         <div class="${styles.layout__bottom} ${styles.h4}">
           <div class="${styles.layout__item}">
             <img
-              src="/public/images/_Avatar_.png"
+              src="${userProfileImage}"
               alt="logout-icon"
               width="24"
               height="24"
               class="${styles.layout__profile}"
-            />홍길동
+            />${userName}
           </div>
           <a class="${styles.layout__item}" href="#" id="logout">
             <svg
@@ -103,7 +106,7 @@ const renderUserNavBar = (nav, menuList) => {
         </div>
     `;
 
-  document.querySelector('#logout').addEventListener('click', logout);
+  document.querySelector("#logout").addEventListener("click", logout);
 };
 
 export default renderUserNavBar;

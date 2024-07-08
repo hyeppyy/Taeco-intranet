@@ -26,6 +26,7 @@ const validateLogin = async () => {
         window.history.pushState(null, null, "/user/dashboard");
       }
       sessionStorage.setItem("userName", user.name);
+      sessionStorage.setItem("userProfileImage", user.profileImage);
       route();
       return true;
     } else {
@@ -43,6 +44,7 @@ export const logout = () => {
   sessionStorage.removeItem("userRole");
   sessionStorage.removeItem("isLoggedIn");
   sessionStorage.removeItem("userName");
+  sessionStorage.removeItem("userProfileImage");
   window.history.pushState(null, null, "/");
   route();
 };

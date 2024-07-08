@@ -12,11 +12,22 @@ const filterByTabs = (data) => {
 
   let state = null; // 초기 상태는 심사중
   let category = "all"; // 초기 상태는 전체 카테고리
-  let categoryDate = "latest";
+  let categoryDate = "latest"; //
 
   let filteredData = data.filter((item) => {
-    if (state === null) return item.isApprove !== 0 && item.isApprove !== 1;
-    return item.isApprove === (state ? 1 : 0);
+    if (state === null) {
+      // item.isApprove가 0이나 1이 아니고, 사용자 이름이 일치하는 경우
+      return (
+        item.isApprove !== 0 &&
+        item.isApprove !== 1 &&
+        item.user === sessionStorage.getItem("userName")
+      );
+    }
+    // state가 null이 아닌 경우, isApprove 상태와 사용자 이름 모두 확인
+    return (
+      item.isApprove === (state ? 1 : 0) &&
+      item.user === sessionStorage.getItem("userName")
+    );
   });
   document.getElementById("undetermined").classList.add(styles.active); // 초기 상태에서 심사중 탭 활성화
 
@@ -63,8 +74,19 @@ const filterByTabs = (data) => {
 const applyFilters = (data, state, category, categoryDate) => {
   //let filteredData = data.filter((item) => item.isApprove === state);
   let filteredData = data.filter((item) => {
-    if (state === null) return item.isApprove !== 0 && item.isApprove !== 1;
-    return item.isApprove === (state ? 1 : 0);
+    if (state === null) {
+      // item.isApprove가 0이나 1이 아니고, 사용자 이름이 일치하는 경우
+      return (
+        item.isApprove !== 0 &&
+        item.isApprove !== 1 &&
+        item.user === sessionStorage.getItem("userName")
+      );
+    }
+    // state가 null이 아닌 경우, isApprove 상태와 사용자 이름 모두 확인
+    return (
+      item.isApprove === (state ? 1 : 0) &&
+      item.user === sessionStorage.getItem("userName")
+    );
   });
 
   if (category !== "all") {

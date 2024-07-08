@@ -387,40 +387,7 @@ app.put("/api/mileage/:id/approve", (req, res) => {
     });
   });
 });
-
-/*
 //전자결제 목록 조회
-
-app.get("/api/approval", (req, res) => {
-  const userName = req.headers["username"];
-  const userPosition = req.headers["userposition"];
-
-  let sql;
-  let params;
-
-  if (userPosition === "사장") {
-    sql = "SELECT * FROM Approval ORDER BY submitdate DESC";
-    params = [];
-  } else {
-    sql = "SELECT * FROM Approval WHERE user = ? ORDER BY submitdate DESC";
-    params = [userName];
-  }
-
-  db.all(sql, params, (err, rows) => {
-    if (err) {
-      return res.status(500).json({
-        status: "Error",
-        error: err.message,
-      });
-    }
-
-    res.json({
-      status: "OK",
-      data: rows,
-    });
-  });
-});
-*/
 app.get("/api/approval", (req, res) => {
   const sql = "SELECT * FROM Approval ORDER BY submitdate DESC";
 

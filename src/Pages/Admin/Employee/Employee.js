@@ -74,7 +74,9 @@ const loadEmployees = (employees) => {
         <td data-label="생일" class="${styles.birthday}">${employee.birthday}</td>
         <td data-label="입사일" class="${styles.joinday}">${employee.joinday}</td>
         <td data-label="핸드폰번호" class="${styles.contact}">${employee.phone}</td>
-        <td data-label="관리" class="${styles.button}"><button class="${styles.editbtn}" data-color='neutral' data-shape='line' data-employee-id="${employee.id}">수정</button></td>
+        <td data-label="관리" class="${styles.button}">
+        <button class="${styles.editbtn}" data-color='neutral' data-shape='line' data-employee-id="${employee.id}">수정</button>
+        </td>
       </tr>
     `;
 

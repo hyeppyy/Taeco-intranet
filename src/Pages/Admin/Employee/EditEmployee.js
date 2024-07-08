@@ -70,6 +70,20 @@ const renderEditEmployeePage = (container) => {
     history.pushState(null, null, "/admin/employee");
     route();
   });
+
+  // document
+  //   .getElementById("deleteButton")
+  //   .addEventListener("click", async () => {
+  //     try {
+  //       await deleteEmployeeById(employeeId); // Call delete function
+  //       alert("직원이 성공적으로 삭제되었습니다.");
+  //       history.pushState(null, null, "/admin/employee");
+  //       route();
+  //     } catch (error) {
+  //       console.error("Error deleting employee:", error);
+  //       alert("직원 삭제 중 오류가 발생했습니다.");
+  //     }
+  //   });
 };
 
 export default renderEditEmployeePage;

@@ -72,11 +72,11 @@ const renderAddEmployeePage = (container) => {
   });
 
   // 직원 수정 모달
-  renderModel(
-    showEmployeeAddCheck().modal_id, // 모달 번호
-    showEmployeeAddCheck().header, // 모달 헤더
-    showEmployeeAddCheck().content //모달 내용
-  );
+  // renderModel(
+  //   showEmployeeAddCheck().modal_id, // 모달 번호
+  //   showEmployeeAddCheck().header, // 모달 헤더
+  //   showEmployeeAddCheck().content //모달 내용
+  // );
 };
 
 export default renderAddEmployeePage;

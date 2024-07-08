@@ -112,29 +112,159 @@ database.serialize(() => {
       }
     }
   );
-  // Notices 테이블 생성
+  // Approval 테이블 생성
   database.run(
     `
-      CREATE TABLE IF NOT EXISTS Notices (
+      CREATE TABLE IF NOT EXISTS Approval (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
+        user TEXT,
         title TEXT,
-        author TEXT,
-        description TEXT,
-        createdAt TEXT,
-        attachments TEXT,
-        views INTEGER DEFAULT 0,
-        isImportant INTEGER DEFAULT 0,
-        category TEXT
+        category TEXT,
+        startdate TEXT,
+        enddate TEXT,
+        submitdate TEXT,
+        submitreason TEXT,
+        refusereason TEXT,
+        isApprove INTEGER DEFAULT 0
       )`,
     (err) => {
       if (err) {
-        console.error("Error creating Notices table:", err.message);
+        console.error("Error creating Approval table:", err.message);
       } else {
-        console.log("Notices table created successfully");
+        console.log("Approval table created successfully");
+        const sampleApprovalData = [
+          {
+            id: 1,
+            user: "user1", // 문자열로 변경
+            title: "휴가 신청합니다",
+            category: "휴가",
+            startdate: "2024.07.08",
+            enddate: "2024.08.08",
+            submitdate: "2024.07.08",
+            submitreason: "여름휴가",
+            refusereason: "",
+            isApprove: null,
+          },
+          {
+            id: 2,
+            user: "user2", // 문자열로 변경
+            title: "휴가 신청합니다",
+            category: "휴가",
+            startdate: "2024.06.08",
+            enddate: "2024.07.08",
+            submitdate: "2024.06.08",
+            submitreason: "여름휴가",
+            refusereason: "",
+            isApprove: null,
+          },
+          {
+            id: 3,
+            user: "user3", // 문자열로 변경
+            title: "휴가 신청합니다",
+            category: "휴가",
+            startdate: "2024.05.08",
+            enddate: "2024.06.08",
+            submitdate: "2024.05.08",
+            submitreason: "여름휴가",
+            refusereason: "",
+            isApprove: null,
+          },
+          {
+            id: 4,
+            user: "user4", // 문자열로 변경
+            title: "휴가 신청합니다",
+            category: "휴가",
+            startdate: "2024.07.03",
+            enddate: "2024.08.03",
+            submitdate: "2024.07.03",
+            submitreason: "여름휴가",
+            refusereason: "",
+            isApprove: null,
+          },
+          {
+            id: 5,
+            user: "user1", // 문자열로 변경
+            title: "반차 신청합니다",
+            category: "반차",
+            startdate: "2024.06.08",
+            enddate: "2024.06.08",
+            submitdate: "2024.06.05",
+            submitreason: "병원 외진",
+            refusereason: "",
+            isApprove: true,
+          },
+          {
+            id: 6,
+            user: "user2", // 문자열로 변경
+            title: "병가 신청합니다",
+            category: "기타",
+            startdate: "2024.03.08",
+            enddate: "2024.03.21",
+            submitdate: "2024.03.07",
+            submitreason: "교통사고",
+            refusereason: "",
+            isApprove: true,
+          },
+          {
+            id: 7,
+            user: "user3", // 문자열로 변경
+            title: "병가 신청합니다",
+            category: "기타",
+            startdate: "2024.04.08",
+            enddate: "2024.04.13",
+            submitdate: "2024.07.08",
+            submitreason: "코로나",
+            refusereason: "진단서 미제출",
+            isApprove: false,
+          },
+          {
+            id: 8,
+            user: "user4", // 문자열로 변경
+            title: "휴가 신청합니다",
+            category: "휴가",
+            startdate: "2024.09.11",
+            enddate: "2024.09.21",
+            submitdate: "2024.09.08",
+            submitreason: "가을휴가",
+            refusereason: "사용가능연차없음",
+            isApprove: false,
+          },
+        ];
+        let completedInserts = 0;
+        sampleApprovalData.forEach((item) => {
+          database.run(
+            `INSERT OR REPLACE INTO Approval (id, user, title, category, startdate, enddate, submitdate, submitreason, refusereason, isApprove)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+            [
+              item.id,
+              item.user,
+              item.title,
+              item.category,
+              item.startdate,
+              item.enddate,
+              item.submitdate,
+              item.submitreason,
+              item.refusereason,
+              item.isApprove === true ? 1 : item.isApprove === false ? 0 : null,
+            ],
+            (err) => {
+              if (err) {
+                console.error("Error inserting sample data:", err.message);
+              } else {
+                console.log(`Sample data inserted: ${item.id}`);
+                completedInserts++;
+                if (completedInserts === sampleApprovalData.length) {
+                  console.log(
+                    "Sample Approval data insertion process completed."
+                  );
+                }
+              }
+            }
+          );
+        });
       }
     }
   );
-
   // Mileage 테이블 생성
   // database.run(`DROP TABLE IF EXISTS Mileage`, (err) => {
   //   if (err) {

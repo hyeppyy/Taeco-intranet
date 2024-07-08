@@ -13,7 +13,10 @@ const filterByTabs = (data) => {
   let category = "all"; // 초기 상태는 전체 카테고리
   let categoryDate = "latest";
 
-  let filteredData = data.filter((item) => item.isApprove === state);
+  let filteredData = data.filter((item) => {
+    if (state === null) return item.isApprove !== 0 && item.isApprove !== 1;
+    return item.isApprove === (state ? 1 : 0);
+  });
   document.getElementById("undetermined").classList.add(styles.active); // 초기 상태에서 심사중 탭 활성화
 
   initPagination(filteredData); // Pagination 렌더링
@@ -57,7 +60,10 @@ const filterByTabs = (data) => {
 
 // 필터링 로직
 const applyFilters = (data, state, category, categoryDate) => {
-  let filteredData = data.filter((item) => item.isApprove === state);
+  let filteredData = data.filter((item) => {
+    if (state === null) return item.isApprove !== 0 && item.isApprove !== 1;
+    return item.isApprove === (state ? 1 : 0);
+  });
 
   if (category !== "all") {
     filteredData = filteredData.filter((item) => item.category === category);

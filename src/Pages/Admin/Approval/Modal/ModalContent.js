@@ -1,6 +1,6 @@
-export const showApprovalDetailAdminContent = (item) => {
+export const showApprovalDetailAdminContentNull = (item) => {
   return {
-    modal_id: `approvala_${item.id}`,
+    modal_id: `approvaladminnull_${item.id}`,
     header: `${item.title}`,
     content: `
     <div class="modal-box__form">
@@ -67,6 +67,67 @@ export const showApprovalDetailAdminContent = (item) => {
               >
               수락하기
             </button>
+          </div>
+        </div>`,
+  };
+};
+
+export const showApprovalDetailAdminContent = (item) => {
+  return {
+    modal_id: `approvaladmin_${item.id}`,
+    header: `${item.title}`,
+    content: `
+    <div class="modal-box__form">
+            <div class="form-group">
+              <h5>카테고리</h5>
+                <input
+                data-shape="line"
+                type="text"
+                value='${item.category}'
+                readonly
+              />
+            </div>
+
+            <div class="form-group">
+              <h5>신청날짜</h5>
+              <input data-shape="line" type="text" value='${item.startdate} - ${item.enddate}' readonly />
+            </div>
+
+            <div class="form-group">
+              <h5>신청자</h5>
+              <input data-shape="line" type="text" value='${item.user}' readonly />
+            </div>
+
+            <div class="form-group">
+              <h5>신청일자</h5>
+              <input
+                data-shape="line"
+                type="text"
+                value='${item.submitdate}'
+                readonly
+              />
+            </div>
+
+            <div class="form-group">
+              <h5>신청사유</h5>
+              <input
+                data-shape="line"
+                type="text"
+                value='${item.submitreason}'
+                readonly
+              />
+            </div>
+            
+            <div class="form-group">
+              <h5>거절사유</h5>
+              <input
+                data-shape="line"
+                type="text"
+                value='${item.refusereason}'
+                readonly
+              />
+            </div>
+          </div>
           </div>
         </div>`,
   };

@@ -1,12 +1,24 @@
 import tabFilter from "./Filter";
 
-//서버 데이터 요청 함수
+// 서버 데이터 요청 함수
 const fetchNoticesData = async () => {
-  const response = await fetch("/server/data/notices.json");
+  try {
+    const response = await fetch("/api/notices");
 
-  const data = await response.json();
-  //가져온 데이터로 필터링
-  tabFilter(data);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const result = await response.json();
+
+    if (result.status === "OK") {
+      tabFilter(result.data); // 가져온 데이터로 필터링
+    } else {
+      console.error("Error fetching notices:", result.error);
+    }
+  } catch (error) {
+    console.error("Failed to fetch notices:", error);
+  }
 };
 
 export default fetchNoticesData;

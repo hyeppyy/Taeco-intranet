@@ -1,14 +1,23 @@
-// FetchEmployeeData.js
-export const fetchEmployeeData = async () => {
+import filter from "./Filter";
+
+const fetchEmployeeData = async () => {
   try {
-    const response = await fetch("/server/data/users.json");
+    const response = await fetch("/api/users");
+
     if (!response.ok) {
-      throw new Error("서버로부터 데이터를 가져오는데 실패했습니다.");
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
-    const data = await response.json();
-    return data;
+
+    const result = await response.json();
+
+    if (result.status === "OK") {
+      filter(result.data);
+    } else {
+      console.error("Error fetching notices:", result.error);
+    }
   } catch (error) {
-    console.error("fetchEmployeeData 함수에서 오류 발생:", error);
-    throw error;
+    console.error("Failed to fetch notices:", error);
   }
 };
+
+export default fetchEmployeeData;

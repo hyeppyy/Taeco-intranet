@@ -1,5 +1,4 @@
 import route from './Router/Router';
-import renderLogin from './Pages/Login/Login';
 
 const navigate = (event) => {
   const anchor = event.target.closest('a');
@@ -12,12 +11,10 @@ const navigate = (event) => {
 };
 
 const initApp = () => {
-  const root = document.querySelector('#root');
-
-  document.querySelector('body').addEventListener('click', navigate);
   window.addEventListener('popstate', route);
-  if (window.location.pathname === '/') renderLogin(root);
-  else route();
+  document.body.addEventListener('click', navigate);
+
+  route();
 };
 
 export default initApp;

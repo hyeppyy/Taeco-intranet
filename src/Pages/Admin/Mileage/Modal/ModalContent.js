@@ -1,3 +1,4 @@
+// 마일리지 심사
 export const showMileageListContent = (item) => {
   return {
     modal_id: `mileage_${item.id}`,

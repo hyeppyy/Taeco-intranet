@@ -6,7 +6,7 @@ import {
   showMileageStandardContent,
   showMileageApproveContent,
 } from './Modal/ModalContent';
-import hamburger from '../../../Components/ResponsiveNavBar/User/Hamburger';
+import handleModal from '/src/Components/Modal/HandleModal';
 
 const renderUserMileage = (container) => {
   container.innerHTML = `
@@ -94,7 +94,7 @@ const renderUserMileage = (container) => {
           </select>
           <h6>총 <span id="total-item"></span>개의 게시글</h6>
         </div>
-        <div class="${styles['mileage-list']}"></div>
+        <div class="${styles['mileage-list']}" id="mileage-list"></div>
     </div>
   `;
 
@@ -104,16 +104,17 @@ const renderUserMileage = (container) => {
   renderModal(
     showMileageStandardContent().modal_id, // 모달 번호
     showMileageStandardContent().header, // 모달 헤더
-    showMileageStandardContent().content //모달 내용
+    showMileageStandardContent().content, //모달 내용
+    '#mileage-list'
   );
-
   // 마일리지 신청 모달: modal-2
   renderModal(
     showMileageApproveContent().modal_id, // 모달 번호
     showMileageApproveContent().header, // 모달 헤더
-    showMileageApproveContent().content //모달 내용
+    showMileageApproveContent().content, //모달 내용
+    '#mileage-list'
   );
-
+  // handleModal();
   // 마일리지 적립목록 페이지로 라우팅
   document
     .querySelector(`.${styles['mileage-approve__save-list']}`)
@@ -121,8 +122,6 @@ const renderUserMileage = (container) => {
       history.pushState(null, null, '/user/mileage/history');
       route();
     });
-    
-  hamburger();
 };
 
 export default renderUserMileage;

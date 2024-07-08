@@ -1,4 +1,3 @@
-// 마일리기 기준 알아보기 모달: modal-1
 export const showApprovalContent = () => {
   return {
     modal_id: `approval_1`,
@@ -47,7 +46,6 @@ export const showApprovalContent = () => {
   };
 };
 
-// 마일리지 신청 모달: modal-2
 export const showApprovalDetailContent = (item) => {
   return {
     modal_id: `approvaluser_${item.id}`,

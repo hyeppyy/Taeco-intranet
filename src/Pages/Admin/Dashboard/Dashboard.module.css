@@ -144,10 +144,28 @@
   display: none;
 }
 
-/*반응형*/
+/* 테블릿 버전 */
+@media screen and (max-width: 900px) {
+  .mileage__requester {
+    width: 80px;
+  }
+  .mileage__request-date {
+    width: 120px;
+  }
+}
 
-/*모바일*/
-@media (max-width: 599px) {
+/* 모바일 버전 */
+@media screen and (max-width: 600px) {
+  .mileage__requester {
+    width: 50px;
+  }
+  .mileage__request-date {
+    width: 70px;
+  }
+  .adminDashboard__mileage-title--left h4 {
+    display: none;
+  }
+
   .approvalTable > thead > tr > th:nth-child(2),
   .approvalTable > tbody > tr > td:nth-child(2),
   .approvalTable > thead > tr > th:nth-child(3),
@@ -161,8 +179,4 @@
     width: 100%;
     display: block;
   }
-}
-
-/* 타블렛 */
-@media (min-width: 600px) and (max-width: 1023px) {
 }

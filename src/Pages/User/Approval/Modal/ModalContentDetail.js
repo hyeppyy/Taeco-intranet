@@ -1,13 +1,13 @@
-const setTimeout = () => {
-  const select = document.getElementById("category");
+const approvalType = () => {
+  const select = document.getElementById('category');
   const approvalDataContainer = document.querySelector(
-    ".approval-data__container"
+    '.approval-data__container'
   );
 
-  select.addEventListener("change", function () {
+  select.addEventListener('change', function () {
     const selectedValue = this.value;
 
-    if (selectedValue === "반차" || selectedValue === "조퇴") {
+    if (selectedValue === '반차' || selectedValue === '조퇴') {
       approvalDataContainer.innerHTML = `
       <input type="date" id="startDate"/>
         <select id="ampm">
@@ -37,4 +37,4 @@ const setTimeout = () => {
   });
 };
 
-export default setTimeout;
+export default approvalType;

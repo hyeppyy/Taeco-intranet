@@ -1,5 +1,5 @@
-// import styles from './NavBar.module.css';
-import styles from "./NavBar.module.css";
+import styles from './NavBar.module.css';
+import { logout } from '/src/Pages/Login/ValidateLogin';
 
 const renderUserNavBar = (nav, menuList) => {
   if (!nav) {
@@ -79,7 +79,7 @@ const renderUserNavBar = (nav, menuList) => {
 
         <!-- 하단 부분 -->
         <div class="${styles.layout__bottom} ${styles.h4}">
-          <div class="${styles.layout__item}" href="/">
+          <div class="${styles.layout__item}">
             <img
               src="/public/images/_Avatar_.png"
               alt="logout-icon"
@@ -88,7 +88,7 @@ const renderUserNavBar = (nav, menuList) => {
               class="${styles.layout__profile}"
             />홍길동
           </div>
-          <a class="${styles.layout__item}" href="/">
+          <a class="${styles.layout__item}" href="#" id="logout">
             <svg
               width="24"
               height="24"
@@ -102,6 +102,8 @@ const renderUserNavBar = (nav, menuList) => {
           </a>
         </div>
     `;
+
+  document.querySelector('#logout').addEventListener('click', logout);
 };
 
 export default renderUserNavBar;

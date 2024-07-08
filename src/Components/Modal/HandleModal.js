@@ -1,43 +1,67 @@
-import setTimeout from "./../../Pages/User/Approval/Modal/ModalContentDetail";
-import renderTime from "./../../Pages/User/Dashboard/JS/RenderTime";
-import { stopTimeUpdate } from "./../../Pages/User/Dashboard/Modal/TimerModalContent";
+import approvalType from './../../Pages/User/Approval/Modal/ModalContentDetail';
+import renderTime from './../../Pages/User/Dashboard/JS/RenderTime';
+import { startTimeUpdate, stopTimeUpdate } from './../../Pages/User/Dashboard/JS/UpdateTimer';
 
-const handleModal = () => {
-  const openModalButtons = document.querySelectorAll(".open-modal");
-  const closeModalButtons = document.querySelectorAll(".close-modal");
-  const modalBackground = document.querySelector("#modal__background");
+const handleModal = (fn) => {
+  const contents = document.querySelector('#contents');
+  // console.log(event);
 
-  // 모달 활성화/비활성화 토글 함수
-  const toggleModal = (modal) => {
-    if (!modal) return;
-    modal.classList.toggle("active");
-    modalBackground.classList.toggle("active");
-  };
+  const modalBackground =
+    document.querySelector('#modal__background') ||
+    document.createElement('div');
 
-  //모달 활성화 버튼 클릭 시, toggle로 모달 활성화
-  openModalButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const modal = document.querySelector(button.dataset.modalTarget);
-      toggleModal(modal);
-      setTimeout();
-      renderTime(); // 출퇴근 기록 함수
-    });
-  });
+  // 이벤트 위임을 사용한 모달 제어
+  contents.addEventListener('click', (event) => {
+    if (event.target.closest('.open-modal')) {
+      const button = event.target.closest('.open-modal');
+      const modalId = button.dataset.modalTarget;
+      const modal = document.querySelector(modalId);
+      if (modal && !modal.classList.contains('active')) {
+        modal.classList.add('active');
+        modalBackground.classList.add('active');
 
-  //모달 비활성화 버튼 클릭 시, toggle로 모달 비활성화
-  closeModalButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const modal = document.querySelector(".modal-box.active");
-      toggleModal(modal);
-      stopTimeUpdate(); // 모달을 닫으면 현재시간 업데이트 함수를 멈춤
-    });
-  });
-
-  //배경 클릭 시, toggle로 모달 비활성화
-  modalBackground.addEventListener("click", () => {
-    const modal = document.querySelector(".modal-box.active");
-    toggleModal(modal);
+        switch (fn.name) {
+          case 'approvalType':
+            approvalType();
+            break;
+          case 'renderTime':
+            startTimeUpdate();
+            renderTime();
+            break;
+          default:
+            break;
+        }
+      }
+    } else if (
+      event.target.closest('.close-modal') ||
+      event.target === modalBackground ||
+      event.target.closest('#checkInBtn') ||
+      event.target.closest('#checkOutBtn')
+    ) {
+      const modal = document.querySelector('.modal-box.active');
+      if (modal && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+        modalBackground.classList.remove('active');
+        stopTimeUpdate();
+      }
+    }
   });
 };
 
 export default handleModal;
+
+// import { initializeModalManager, setOpenCallback, setCloseCallback } from './ModalManager';
+
+// const handleModal = (events = {}) => {
+//   initializeModalManager();
+
+//   if (events.renderTime) {
+//     setOpenCallback(events.renderTime);
+//   }
+
+//   if (events.stopTimeUpdate) {
+//     setCloseCallback(events.stopTimeUpdate);
+//   }
+// };
+
+// export default handleModal;

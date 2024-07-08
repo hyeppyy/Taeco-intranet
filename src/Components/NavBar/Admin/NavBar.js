@@ -1,4 +1,5 @@
-import styles from "./NavBar.module.css";
+import styles from './NavBar.module.css';
+import { logout } from '/src/Pages/Login/ValidateLogin';
 
 const renderAdminNavBar = (nav, menuList) => {
   if (!nav) {
@@ -87,7 +88,7 @@ const renderAdminNavBar = (nav, menuList) => {
               class="${styles.layout__profile}"
             />홍길동
           </div>
-          <a class="${styles.layout__item}" href="/">
+          <a class="${styles.layout__item}" href="#" id="logout">
             <svg
               width="24"
               height="24"
@@ -102,6 +103,8 @@ const renderAdminNavBar = (nav, menuList) => {
         </div>
       </div>
     `;
+    
+  document.querySelector('#logout').addEventListener('click', logout);
 };
 
 export default renderAdminNavBar;

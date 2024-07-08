@@ -59,8 +59,8 @@
   background-color: var(--color-pri-normal);
   color: var(--color-white);
   fill: var(--color-white);
+  cursor: pointer;
 }
-
 .layout > .layout__bottom {
   margin-bottom: 12px;
 }

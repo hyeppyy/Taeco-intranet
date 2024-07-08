@@ -1,12 +1,10 @@
-import styles from "./Dashboard.module.css";
-import noticesData from "./JS/NoticeData";
-import approvalData from "./JS/ApprovalData";
-import renderModal from "../../../Components/Modal/RenderModal";
-import {
-  showCheckInTimeContent,
-  showCheckOutTimeContent,
-} from "./Modal/TimerModalContent";
-import renderTime from "./JS/RenderTime";
+import styles from './Dashboard.module.css';
+import noticesData from './JS/NoticeData';
+import approvalData from './JS/ApprovalData';
+import renderModal from '../../../Components/Modal/RenderModal';
+import { showCheckTimeContent } from './Modal/TimerModalContent';
+import renderTime from './JS/RenderTime';
+// import { stopTimeUpdate } from './JS/UpdateTimer';
 
 const renderUserDashboard = (container) => {
   container.innerHTML = `
@@ -37,10 +35,13 @@ const renderUserDashboard = (container) => {
             </div>
           </div>
           <div class="${styles.userDashboard__attendance}">
+
             <div class="${styles.userDashboard__todayAttendance} ${styles.card}">
-              <h2>오늘의 출근</h2>
+              <div class="${styles.userDashboard__state}">
+                <h2>오늘의 출근</h2>
+                <h4 class="${styles.userDashboard__todayTag}">출근 전</h4>
+              </div>
               <div class="${styles.userDashboard__todayAttendanceWrap}">
-                <h4 class="${styles.userDashboard__todayTag}">TODAY</h4>
                 <h3 class="${styles.userDashboard__today}"></h3>
                 <div class="${styles.userDashboard__stamp}">
                   <button class="${styles.recordStartTimeBtn} open-modal"
@@ -58,8 +59,9 @@ const renderUserDashboard = (container) => {
                 </div>
               </div>
             </div>
+
             <div class="${styles.userDashboard__attendanceHistory} ${styles.card}">
-              내출결내역확인
+              <h2>금주 근무 현황</h2>
             </div>
           </div>
           <div class="${styles.userDashboard__approval} ${styles.card}">
@@ -117,18 +119,20 @@ const renderUserDashboard = (container) => {
   approvalData();
   renderTime();
 
-  // 출근 체크 모달: dashboard_1
+  // 출근 체크 모달 id: dashboard_1
   renderModal(
-    showCheckInTimeContent().modal_id, // 모달 번호
-    showCheckInTimeContent().header, // 모달 헤더
-    showCheckInTimeContent().content //모달 내용
+    showCheckTimeContent('in').modal_id, // 모달 번호
+    showCheckTimeContent('in').header, // 모달 헤더
+    showCheckTimeContent('in').content, //모달 내용
+    renderTime
   );
 
-  // 퇴근 체크 모달: dashboard_2
+  // 퇴근 체크 모달 id: dashboard_2
   renderModal(
-    showCheckOutTimeContent().modal_id, // 모달 번호
-    showCheckOutTimeContent().header, // 모달 헤더
-    showCheckOutTimeContent().content //모달 내용
+    showCheckTimeContent('out').modal_id, // 모달 번호
+    showCheckTimeContent('out').header, // 모달 헤더
+    showCheckTimeContent('out').content, //모달 내용
+    renderTime
   );
 };
 

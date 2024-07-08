@@ -1,6 +1,6 @@
 import styles from './Mileage.module.css';
 import { showMileageListContent } from './Modal/ModalContent';
-import renderDynamicModal from '../../../Components/Modal/RenderDynamicModal';
+import renderModal from '../../../Components/Modal/RenderModal';
 
 const renderMileageList = (data) => {
   // 게시 마일리지 아이템 총 개수 표시
@@ -27,11 +27,11 @@ const renderMileageList = (data) => {
 
   data.forEach((item) => {
     const modalContent = showMileageListContent(item); // 각 아이템의 모달 내용 생성
-    renderDynamicModal(
-      `.${styles['mileage-list']}`,
+    renderModal(
       modalContent.modal_id,
       modalContent.header,
-      modalContent.content
+      modalContent.content,
+      `.${styles['mileage-list']}`
     );
   });
 };

@@ -46,7 +46,7 @@ const renderAddEmployeePage = (container) => {
 
               <li class="${styles.info__email}">
                 <label for="email"><h5>이메일</h5></label>
-                <input data-e-email data-shape="line" type="email" name="email" id="email" placeholder="eco@taeco.com" required/>
+<input data-e-email data-shape="line" type="email" name="email" id="email" placeholder="eco@taeco.com" required/>
               </li>
 
               <li class="${styles.info__phonenumber}">

@@ -335,9 +335,11 @@ const mileageStorage = multer.diskStorage({
 });
 
 const mileageUpload = multer({ storage: mileageStorage });
+
 // 1. 마일리지 목록 조회
 app.get("/api/mileage", (req, res) => {
-  const sql = "SELECT * FROM Mileage ORDER BY date DESC";
+  const sql = "SELECT * FROM Mileage ORDER BY date DESC"; //날짜 순서대로
+  // ASC: 오름차순 (1~), DESC: 내림차순 (~1)
 
   db.all(sql, [], (err, rows) => {
     if (err) {

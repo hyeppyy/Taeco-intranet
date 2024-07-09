@@ -5,7 +5,6 @@ import renderModal from "../../../Components/Modal/RenderModal";
 import { showCheckTimeContent } from "./Modal/TimerModalContent";
 import renderTime from "./JS/RenderTime";
 import fetchUserData from "/src/Pages/User/Mypage/FetchUserData";
-// import { stopTimeUpdate } from './JS/UpdateTimer';
 
 const renderUserDashboard = (container) => {
   container.innerHTML = `

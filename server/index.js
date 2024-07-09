@@ -456,30 +456,42 @@ app.post("/api/approval", uploadApprovalMiddleware.none(), (req, res) => {
     });
   });
 });
-// 전자결제 승인,거절
-app.put("/api/approval", uploadApprovalMiddleware.none(), (req, res) => {
-  const {
-    user,
-    title,
-    category,
-    startdate,
-    enddate,
-    submitdate,
-    submitreason,
-    refusereason,
-    isApprove,
-  } = req.body;
 
-  // 먼저 일치하는 레코드를 찾습니다.
-  const findSql = `SELECT * FROM Approval 
-                    WHERE user = ? AND title = ? AND category = ? 
-                    AND startdate = ? AND enddate = ? AND submitdate = ? 
-                    AND submitreason = ?`;
+// 전자결제 승인/거절 처리
+app.put("/api/approval/:id", uploadApprovalMiddleware.none(), (req, res) => {
+  const id = req.params.id;
+  const isApprove = req.body.isApprove === "true";
+  const refusereason = req.body.refusereason || "";
 
-  db.get(
-    findSql,
-    [user, title, category, startdate, enddate, submitdate, submitreason],
-    (err, row) => {
+  let sql, params;
+
+  if (isApprove) {
+    // 승인 처리
+    sql = `UPDATE Approval SET isApprove = 1 WHERE id = ?`;
+    params = [id];
+  } else {
+    // 거절 처리
+    sql = `UPDATE Approval SET isApprove = 0, refusereason = ? WHERE id = ?`;
+    params = [refusereason, id];
+  }
+
+  db.run(sql, params, function (err) {
+    if (err) {
+      return res.status(500).json({
+        status: "Error",
+        error: err.message,
+      });
+    }
+
+    if (this.changes === 0) {
+      return res.status(404).json({
+        status: "Error",
+        error: "해당 ID의 전자결제를 찾을 수 없습니다.",
+      });
+    }
+
+    // 업데이트된 데이터 조회
+    db.get(`SELECT * FROM Approval WHERE id = ?`, [id], (err, row) => {
       if (err) {
         return res.status(500).json({
           status: "Error",
@@ -487,38 +499,17 @@ app.put("/api/approval", uploadApprovalMiddleware.none(), (req, res) => {
         });
       }
 
-      if (!row) {
-        return res.status(404).json({
-          status: "Error",
-          error: "일치하는 승인 요청을 찾을 수 없습니다.",
-        });
-      }
-
-      // 일치하는 레코드를 찾았다면 업데이트합니다.
-      const updateSql = ` UPDATE Approval 
-                          SET refusereason = ?, isApprove = ? 
-                          WHERE id = ?`;
-
-      db.run(updateSql, [refusereason, isApprove, row.id], function (err) {
-        if (err) {
-          return res.status(500).json({
-            status: "Error",
-            error: err.message,
-          });
-        }
-
-        res.json({
-          status: "OK",
-          data: {
-            ...row,
-            refusereason,
-            isApprove,
-          },
-        });
+      res.json({
+        status: "OK",
+        message: isApprove
+          ? "전자결제가 승인되었습니다."
+          : "전자결제가 거절되었습니다.",
+        data: row,
       });
-    }
-  );
+    });
+  });
 });
+
 app.listen(port, () => {
   console.log(`ready to ${port}`);
 });

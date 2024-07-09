@@ -1,9 +1,11 @@
 import styles from "./Approval.module.css";
 import {
-  showApprovalDetailAdminContent,
+  showApprovalDetailAdminContent1,
+  showApprovalDetailAdminContent0,
   showApprovalDetailAdminContentNull,
 } from "./Modal/ModalContent";
 import renderModal from "../../../Components/Modal/RenderModal";
+import modalApprovalDenied from "./Modal/ModalApprovalDenied";
 
 const renderApprovalList = (data) => {
   const container = document.querySelector(`.${styles["approval-list"]}`);
@@ -32,8 +34,10 @@ const renderApprovalList = (data) => {
         "data-modal-target",
         `#modal-approvaladminnull_${item.id}`
       );
+    } else if (item.isApprove === 1) {
+      tr.setAttribute("data-modal-target", `#modal-approvaladmin1_${item.id}`);
     } else {
-      tr.setAttribute("data-modal-target", `#modal-approvaladmin_${item.id}`);
+      tr.setAttribute("data-modal-target", `#modal-approvaladmin0_${item.id}`);
     }
     tr.innerHTML = `
       <td class="${styles["approval-list__category"]}">${item.category}</td>
@@ -63,13 +67,22 @@ const renderApprovalList = (data) => {
     );
   });
   data.forEach((item) => {
-    const modalContent = showApprovalDetailAdminContent(item);
+    const modalContent = showApprovalDetailAdminContent1(item);
     renderModal(
       modalContent.modal_id,
       modalContent.header,
       modalContent.content
     );
   });
+  data.forEach((item) => {
+    const modalContent = showApprovalDetailAdminContent0(item);
+    renderModal(
+      modalContent.modal_id,
+      modalContent.header,
+      modalContent.content
+    );
+  });
+  modalApprovalDenied();
 };
 
 export default renderApprovalList;

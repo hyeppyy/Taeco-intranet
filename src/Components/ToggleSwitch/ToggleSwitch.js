@@ -3,7 +3,6 @@ const toggleSwitch = (text1, text2) => {
   const toggleText = document.querySelector('#toggleText');
 
   toggleSwitch.addEventListener('click', () => {
-    console.log('click!!');
     // this.checked
     toggleSwitch.checked
       ? (toggleText.textContent = text1)

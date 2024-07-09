@@ -1,5 +1,5 @@
-import styles from './Login.module.css';
-import validateLogin from './ValidateLogin';
+import styles from "./Login.module.css";
+import validateLogin from "./ValidateLogin";
 
 const login = (container) => {
   // return으로 하면, 바로 종료가 되므로 추가 로직 구현 불가능
@@ -30,6 +30,7 @@ const login = (container) => {
           />
           <button
             id="login__button"
+            class="${styles.loginBtn}"
             type="button"
             data-shape="block"
             data-color="positive"
@@ -42,8 +43,16 @@ const login = (container) => {
   `;
 
   document
-    .querySelector('#login__button')
-    .addEventListener('click', validateLogin);
+    .querySelector("#login__button")
+    .addEventListener("click", validateLogin);
+
+  const form = document.querySelector(`.${styles.loginContainer__form}`);
+  form.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      validateLogin();
+    }
+  });
 };
 
 export default login;

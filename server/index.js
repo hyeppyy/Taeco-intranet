@@ -32,6 +32,11 @@ if (!fs.existsSync(noticeUploadsDir)) {
   fs.mkdirSync(noticeUploadsDir, { recursive: true });
 }
 
+const mileageUploadsDir = path.join(process.cwd(), 'mileage_uploads');
+if (!fs.existsSync(mileageUploadsDir)) {
+  fs.mkdirSync(mileageUploadsDir, { recursive: true });
+}
+
 // Multer 설정: 프로필 이미지를 uploads/ 디렉토리에 저장
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -276,8 +281,8 @@ const mileageStorage = multer.diskStorage({
 const mileageUpload = multer({ storage: mileageStorage });
 
 // 마일리지 목록 조회
-app.get("/api/mileage", (req, res) => {
-  const sql = "SELECT * FROM Mileage ORDER BY date DESC";
+app.get('/api/mileage', (req, res) => {
+  const sql = 'SELECT * FROM Mileage ORDER BY date DESC';
 
   db.all(sql, [], (err, rows) => {
     if (err) {
@@ -295,29 +300,21 @@ app.get("/api/mileage", (req, res) => {
 });
 
 // 마일리지 추가
-app.post("/api/mileage", mileageUpload.single("image"), (req, res) => {
+app.post('/api/mileage', mileageUpload.single('image'), (req, res) => {
   const { category, score, employee, date, isApprove } = req.body;
   const image = req.file ? `/mileage_uploads/${req.file.filename}` : null;
 
   const sql = `INSERT INTO Mileage (category, score, employee, date, image, isApprove)
                VALUES (?, ?, ?, ?, ?, ?)`;
-  const params = [
-    category,
-    score,
-    employee,
-    date,
-    image,
-    isApprove === "true" ? 1 : 0,
-  ];
+  const params = [category, score, employee, date, image, null]; // isApprove를 null(미승인)으로 설정
 
   db.run(sql, params, function (err) {
     if (err) {
       return res.status(500).json({
-        status: "Error",
+        status: 'Error',
         error: err.message,
       });
     }
-
     res.status(201).json({
       status: "OK",
       data: {
@@ -327,63 +324,32 @@ app.post("/api/mileage", mileageUpload.single("image"), (req, res) => {
         employee,
         date,
         image,
-        isApprove: isApprove === "true" ? 1 : 0,
+        isApprove: null,
       },
     });
   });
 });
 
-// 마일리지 삭제
-app.delete("/api/mileage/:id", (req, res) => {
+// 3. 마일리지 승인/거절 (관리자용)
+app.put('/api/mileage/:id/approve', (req, res) => {
   const { id } = req.params;
+  const { isApprove, reason } = req.body;
 
-  const sql = "DELETE FROM Mileage WHERE id = ?";
-  db.run(sql, id, function (err) {
+  const sql = 'UPDATE Mileage SET isApprove = ?, rejectReason = ? WHERE id = ?';
+  db.run(sql, [isApprove ? 1 : 0, reason || null, id], function (err) {
     if (err) {
-      return res.status(500).json({
-        status: "Error",
-        error: err.message,
-      });
+      return res.status(500).json({ status: 'Error', error: err.message });
     }
 
     if (this.changes === 0) {
-      return res.status(404).json({
-        status: "Error",
-        message: "Mileage record not found",
-      });
+      return res
+        .status(404)
+        .json({ status: 'Error', message: 'Mileage record not found' });
     }
 
     res.status(200).json({
-      status: "OK",
-      message: "Mileage record deleted",
-    });
-  });
-});
-
-// 마일리지 승인 상태 변경
-app.put("/api/mileage/:id/approve", (req, res) => {
-  const { id } = req.params;
-  const { isApprove } = req.body;
-
-  const sql = "UPDATE Mileage SET isApprove = ? WHERE id = ?";
-  db.run(sql, [isApprove ? 1 : 0, id], function (err) {
-    if (err) {
-      return res.status(500).json({
-        status: "Error",
-        error: err.message,
-      });
-    }
-
-    if (this.changes === 0) {
-      return res.status(404).json({
-        status: "Error",
-        message: "Mileage record not found",
-      });
-    }
-
-    res.status(200).json({
-      status: "OK",
-      message: "Mileage approval status updated",
+      status: 'OK',
+      message: isApprove ? 'Mileage approved' : 'Mileage rejected',
     });
   });
 });

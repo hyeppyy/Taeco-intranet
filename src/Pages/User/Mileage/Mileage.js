@@ -6,7 +6,7 @@ import {
   showMileageStandardContent,
   showMileageApproveContent,
 } from './Modal/ModalContent';
-import handleModal from '/src/Components/Modal/HandleModal';
+import handleMileageSubmit from '/src/Pages/User/Mileage/HandleMileageSubmit';
 
 const renderUserMileage = (container) => {
   container.innerHTML = `
@@ -105,16 +105,16 @@ const renderUserMileage = (container) => {
     showMileageStandardContent().modal_id, // 모달 번호
     showMileageStandardContent().header, // 모달 헤더
     showMileageStandardContent().content, //모달 내용
-    '#mileage-list'
+    handleMileageSubmit
   );
   // 마일리지 신청 모달: modal-2
   renderModal(
     showMileageApproveContent().modal_id, // 모달 번호
     showMileageApproveContent().header, // 모달 헤더
     showMileageApproveContent().content, //모달 내용
-    '#mileage-list'
+    handleMileageSubmit
   );
-  // handleModal();
+
   // 마일리지 적립목록 페이지로 라우팅
   document
     .querySelector(`.${styles['mileage-approve__save-list']}`)

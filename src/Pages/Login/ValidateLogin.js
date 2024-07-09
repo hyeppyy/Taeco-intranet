@@ -25,6 +25,7 @@ const validateLogin = async () => {
         sessionStorage.setItem("isLoggedIn", "true");
         window.history.pushState(null, null, "/user/dashboard");
       }
+      sessionStorage.setItem("userId", user.id);
       sessionStorage.setItem("userName", user.name);
       sessionStorage.setItem("userProfileImage", user.profileImage);
       route();
@@ -43,6 +44,7 @@ const validateLogin = async () => {
 export const logout = () => {
   sessionStorage.removeItem("userRole");
   sessionStorage.removeItem("isLoggedIn");
+  sessionStorage.removeItem("userId");
   sessionStorage.removeItem("userName");
   sessionStorage.removeItem("userProfileImage");
   window.history.pushState(null, null, "/");
@@ -52,5 +54,7 @@ export const logout = () => {
 export const getUserRole = () => sessionStorage.getItem("userRole");
 
 export const isLoggedIn = () => sessionStorage.getItem("isLoggedIn") === "true";
+
+export const getUserId = () => sessionStorage.getItem("userId");
 
 export default validateLogin;

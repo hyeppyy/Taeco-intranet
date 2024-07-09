@@ -15,7 +15,7 @@ export const getTodayDate = () => {
 
 // 현재 시간을 형식화하는 함수 [return 01:32]
 export const getCurrentTime = () => {
-  const now = new Date(); //
+  const now = new Date();
   const hours = now.getHours();
   const minutes = now.getMinutes();
   const seconds = now.getSeconds();

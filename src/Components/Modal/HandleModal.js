@@ -1,3 +1,4 @@
+
 import approvalType from "./../../Pages/User/Approval/Modal/ModalContentDetail";
 import renderTime from "./../../Pages/User/Dashboard/JS/RenderTime";
 import {
@@ -5,7 +6,7 @@ import {
   stopTimeUpdate,
 } from "./../../Pages/User/Dashboard/JS/UpdateTimer";
 import registerApproval from "./../../Pages/User/Approval/Modal/RegisterApproval";
-
+import handleMileageSubmit from '/src/Pages/User/Mileage/HandleMileageSubmit';
 const handleModal = (fn) => {
   const contents = document.querySelector("#contents");
   // console.log(event);
@@ -24,14 +25,19 @@ const handleModal = (fn) => {
         modal.classList.add("active");
         modalBackground.classList.add("active");
 
-        switch (fn.name) {
-          case "approvalType":
+
+       
+        switch (fn && fn.name) {
+          case 'approvalType':
             approvalType();
             registerApproval();
             break;
           case "renderTime":
             startTimeUpdate();
             renderTime();
+            break;
+          case 'handleMileageSubmit':
+            handleMileageSubmit();
             break;
           default:
             break;
@@ -43,30 +49,15 @@ const handleModal = (fn) => {
       event.target.closest("#checkInBtn") ||
       event.target.closest("#checkOutBtn")
     ) {
-      const modal = document.querySelector(".modal-box.active");
-      if (modal && modal.classList.contains("active")) {
-        modal.classList.remove("active");
-        modalBackground.classList.remove("active");
-        stopTimeUpdate();
+
+      const modal = document.querySelector('.modal-box.active');
+      if (modal && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+        modalBackground.classList.remove('active');
+
       }
     }
   });
 };
 
 export default handleModal;
-
-// import { initializeModalManager, setOpenCallback, setCloseCallback } from './ModalManager';
-
-// const handleModal = (events = {}) => {
-//   initializeModalManager();
-
-//   if (events.renderTime) {
-//     setOpenCallback(events.renderTime);
-//   }
-
-//   if (events.stopTimeUpdate) {
-//     setCloseCallback(events.stopTimeUpdate);
-//   }
-// };
-
-// export default handleModal;

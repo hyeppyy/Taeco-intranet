@@ -8,6 +8,8 @@ const filterByToggle = (data) => {
 
   let filteredData = data.slice();
 
+  // data.forEach((ele) => console.log(ele.isApprove));
+
   toggleSwitch.addEventListener('click', () => {
     const toggleState = document.querySelector('#toggleText').textContent;
     if (toggleState === '미확인')
@@ -16,6 +18,7 @@ const filterByToggle = (data) => {
       filteredData = data.filter((item) => item.isApprove !== null);
     else return;
 
+    filteredData.forEach((ele) => console.log(ele.isApprove));
     renderMileageList(filteredData);
   });
 };

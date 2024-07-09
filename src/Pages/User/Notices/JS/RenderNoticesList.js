@@ -21,7 +21,7 @@ const renderNoticesList = (data) => {
     data.forEach((dataItem) => {
       const noticeRow = document.createElement("tr");
       const hasAttachments = dataItem.attachments !== null;
-      const hasImportant = dataItem.isImportant === 0;
+      const hasImportant = dataItem.isImportant === 1;
       const currentDate = new Date();
       const yyyy = currentDate.getFullYear();
       const mm = String(currentDate.getMonth() + 1).padStart(2, "0");

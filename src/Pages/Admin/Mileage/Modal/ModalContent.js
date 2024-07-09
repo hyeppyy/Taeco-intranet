@@ -8,58 +8,64 @@ export const showMileageListContent = (item) => {
             <div class="form-group">
               <h5>카테고리</h5>
                 <input
+                id="mileage-approve-category_${item.id}"
                 data-shape="line"
                 type="text"
                 value='${item.category}'
                 readonly
+                autocomplete="off"
               />
             </div>
 
             <div class="form-group">
               <h5>점수</h5>
-              <input data-shape="line" type="text" value='${item.score}' readonly />
+              <input id="mileage-approve-score_${item.id}" data-shape="line" type="text" value='${item.score}' readonly autocomplete="off"/>
             </div>
 
             <div class="form-group">
               <h5>신청자</h5>
-              <input data-shape="line" type="text" value='${item.employee}' readonly />
+              <input id="mileage-approve-employee_${item.id}" data-shape="line" type="text" value='${item.employee}' readonly autocomplete="off"/>
             </div>
 
             <div class="form-group">
               <h5>신청일자</h5>
               <input
+                id="mileage-approve-date_${item.id}"
                 data-shape="line"
                 type="text"
                 value='${item.date}'
                 readonly
+                autocomplete="off"
               />
             </div>
 
             <div class="form-group">
               <h5>거절사유</h5>
-              <select id="">
-                <option disabled selected>거절사유 선택</option>
-                <option value="recycling">점수 작성 오류</option>
-                <option value="recycling">카테고리 작성 오류</option>
-                <option value="recycling">증빙자료 누락</option>
+              <select id="rejection-reason">
+                <option disabled selected value="none">거절사유 선택</option>
+                <option value="점수 작성 오류">점수 작성 오류</option>
+                <option value="카테고리 작성 오류">카테고리 작성 오류</option>
+                <option value="증빙자료 누락">증빙자료 누락</option>
               </select>
             </div>
           </div>
 
           <div class="modal-box__review-btns">
             <button
-              id="reject-btn"
+              id="reject-btn-${item.id}"
               class="modal-box__button"
               data-color="positive"
               data-shape="line"
+              data-id="${item.id}"
             >
               거절하기
             </button>
             <button
-              id="approve-btn"
+              id="approve-btn-${item.id}"
               class="modal-box__button"
               data-color="positive"
               data-shape="block"
+              data-id="${item.id}"
               >
               수락하기
             </button>

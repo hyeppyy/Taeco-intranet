@@ -1,3 +1,5 @@
+/* 대시보드 영역 */
+
 .userDashboard {
   display: flex;
   flex-direction: column;
@@ -29,8 +31,6 @@
   flex-direction: row;
   padding: 8px;
   gap: 24px;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.12);
-  border-radius: 4px;
 }
 
 .profileImg {
@@ -65,8 +65,6 @@
 .infoSecond .email {
   margin-right: 24px;
 }
-
-/* 마이페이지 영역 */
 
 .emailInfo,
 .callInfo {

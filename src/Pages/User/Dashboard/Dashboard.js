@@ -20,17 +20,17 @@ const renderUserDashboard = (container) => {
             <div class="${styles.info}">
               <h2>Welcome Back,</h2>
               <div class="${styles.infoFirst}">
-                <h2 data-m-name class="${styles.infoFirst__name}">홍길동</h2>
-                <h4 data-m-position class="${styles.infoFirst__position}">차장</h4>
+                <h2 data-m-name class="${styles.infoFirst__name}"></h2>
+                <h4 data-m-position class="${styles.infoFirst__position}"></h4>
               </div>
               <div class="${styles.infoSecond}">
                 <div class="${styles.emailInfo}">
                 <img src="/public/icons/email.svg" alt="email" />
-                <h4 data-m-email class="${styles.email}">honggildong@google.com</h4>
+                <h4 data-m-email class="${styles.email}"></h4>
                 </div>
                 <div class="${styles.callInfo}">
                 <img src="/public/icons/call.svg" alt="call" />
-                <h4 data-m-phone class="${styles.call}">010-1234-5678</h4>
+                <h4 data-m-phone class="${styles.call}"></h4>
                 </div>
               </div>
             </div>
@@ -101,7 +101,7 @@ const renderUserDashboard = (container) => {
             <table class="${styles.noticeTable}">
               <thead>
                 <tr>
-                  <th>번호</th>
+                  <th>카테고리</th>
                   <th>제목</th>
                   <th>작성자</th>
                   <th>작성일</th>

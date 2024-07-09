@@ -39,6 +39,10 @@ const renderAdminEmployee = (container) => {
       </thead>
       <tbody class="${styles.employeeTable__body}" id="employeeTableBody"></tbody>    
     </table>
+    
+    <!-- 모바일 버전 -->
+    <div class="${styles.employeeList}"></div>
+
   </div> 
   `;
   addEmployee();

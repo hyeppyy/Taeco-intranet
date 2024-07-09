@@ -1,7 +1,7 @@
 import styles from "./EditEmployee.module.css";
-import { showEmployeeEditCheck } from "./Modal/EditModal";
 import route from "/src/Router/Router";
 
+// URL 쿼리 파라미터를 읽는 함수
 const getQueryParams = () => {
   const params = new URLSearchParams(window.location.search);
   return {
@@ -16,6 +16,7 @@ const getQueryParams = () => {
   };
 };
 
+// 폼을 채우는 함수
 const fillEditForm = () => {
   const employeeData = getQueryParams();
 
@@ -24,8 +25,21 @@ const fillEditForm = () => {
     document.getElementById("positions").value = employeeData.position;
     document.getElementById("email").value = employeeData.email;
     document.getElementById("phone").value = employeeData.phone;
-    document.getElementById("birthday").value = employeeData.birthday;
-    document.getElementById("joinday").value = employeeData.startDate;
+    // 날짜 형식 설정
+    const formatDate = (dateString) => {
+      const date = new Date(dateString);
+      const yyyy = date.getFullYear();
+      const mm = String(date.getMonth() + 1).padStart(2, "0");
+      const dd = String(date.getDate()).padStart(2, "0");
+      return `${yyyy}-${mm}-${dd}`;
+    };
+
+    document.getElementById("birthday").value = formatDate(
+      employeeData.birthday
+    );
+    document.getElementById("joinday").value = formatDate(
+      employeeData.startDate
+    );
     document.querySelector('img[alt="profileimg"]').src =
       employeeData.profileImage;
   }
@@ -40,17 +54,11 @@ const renderEditEmployeePage = (container) => {
   <div class="${styles.page__content}">
     <div class="${styles.page__button}">
     <button id="backButton" data-color='neutral' data-shape='block'>뒤로가기</button>
-    <button id="deleteButton" data-color='warning' data-shape='block'>삭제하기</button>
-    <button data-color='positive' data-shape='block'>수정하기</button>
   </div>
 
   <!-- 직원 프로필 이미지 업로드 부분입니다. -->
   <div class="${styles.page__edit}">
     <img src="/public/images/_Avatar_.png" alt="profileimg">
-      <div class="${styles.edit__btn}">
-          <button id="chooseFile"data-color='neutral' data-shape='line'>이미지 등록</button>
-        <button id="changeFile" data-color='neutral' data-shape='line'>이미지 삭제</button>
-      </div>
   </div>
 
   <form class="infoform"action="#" method="post">
@@ -100,25 +108,8 @@ const renderEditEmployeePage = (container) => {
     route();
   });
 
-  // document.getElementById("saveButton").addEventListener("click", () => {
-  //   showEmployeeEditCheck();
-  // });
-
-  document.addEventListener("DOMContentLoaded", fillEditForm);
-
-  // document
-  //   .getElementById("deleteButton")
-  //   .addEventListener("click", async () => {
-  //     try {
-  //       await deleteEmployeeById(employeeId); // Call delete function
-  //       alert("직원이 성공적으로 삭제되었습니다.");
-  //       history.pushState(null, null, "/admin/employee");
-  //       route();
-  //     } catch (error) {
-  //       console.error("Error deleting employee:", error);
-  //       alert("직원 삭제 중 오류가 발생했습니다.");
-  //     }
-  //   });
+  // 페이지 로드 시 폼 채우기
+  fillEditForm();
 };
 
 export default renderEditEmployeePage;

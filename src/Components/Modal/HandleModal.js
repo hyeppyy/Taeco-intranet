@@ -48,26 +48,9 @@ const handleModal = (fn) => {
       if (modal && modal.classList.contains('active')) {
         modal.classList.remove('active');
         modalBackground.classList.remove('active');
-        stopTimeUpdate();
       }
     }
   });
 };
 
 export default handleModal;
-
-// import { initializeModalManager, setOpenCallback, setCloseCallback } from './ModalManager';
-
-// const handleModal = (events = {}) => {
-//   initializeModalManager();
-
-//   if (events.renderTime) {
-//     setOpenCallback(events.renderTime);
-//   }
-
-//   if (events.stopTimeUpdate) {
-//     setCloseCallback(events.stopTimeUpdate);
-//   }
-// };
-
-// export default handleModal;

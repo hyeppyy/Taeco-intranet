@@ -2,6 +2,35 @@ import styles from "./EditEmployee.module.css";
 import { showEmployeeEditCheck } from "./Modal/EditModal";
 import route from "/src/Router/Router";
 
+const getQueryParams = () => {
+  const params = new URLSearchParams(window.location.search);
+  return {
+    id: params.get("id"),
+    name: params.get("name"),
+    position: params.get("position"),
+    email: params.get("email"),
+    birthday: params.get("birthday"),
+    startDate: params.get("startDate"),
+    phone: params.get("phone"),
+    profileImage: params.get("profileImage"),
+  };
+};
+
+const fillEditForm = () => {
+  const employeeData = getQueryParams();
+
+  if (employeeData.id) {
+    document.getElementById("name").value = employeeData.name;
+    document.getElementById("positions").value = employeeData.position;
+    document.getElementById("email").value = employeeData.email;
+    document.getElementById("phone").value = employeeData.phone;
+    document.getElementById("birthday").value = employeeData.birthday;
+    document.getElementById("joinday").value = employeeData.startDate;
+    document.querySelector('img[alt="profileimg"]').src =
+      employeeData.profileImage;
+  }
+};
+
 const renderEditEmployeePage = (container) => {
   container.innerHTML = `
   <div class="${styles.page}">
@@ -70,6 +99,12 @@ const renderEditEmployeePage = (container) => {
     history.pushState(null, null, "/admin/employee");
     route();
   });
+
+  // document.getElementById("saveButton").addEventListener("click", () => {
+  //   showEmployeeEditCheck();
+  // });
+
+  document.addEventListener("DOMContentLoaded", fillEditForm);
 
   // document
   //   .getElementById("deleteButton")

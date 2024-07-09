@@ -1,5 +1,6 @@
 import styles from "./Employee.module.css";
 import fetchEmployeeData from "./FetchEmployeeData";
+import route from "/src/Router/Router";
 
 const renderAdminEmployee = (container) => {
   container.innerHTML = `
@@ -34,7 +35,6 @@ const renderAdminEmployee = (container) => {
           <th class="${styles.head__birthday}">생일</th>
           <th class="${styles.head__joinday}">입사일</th>
           <th class="${styles.head__contact}">핸드폰 번호</th>
-          <th class="${styles.head__button}">관리</th>
         </tr>
       </thead>
       <tbody class="${styles.employeeTable__body}" id="employeeTableBody"></tbody>    
@@ -48,10 +48,10 @@ const renderAdminEmployee = (container) => {
 const addEmployee = () => {
   // '직원 추가' 버튼 클릭 이벤트 핸들러 추가
   const addEmployeeButton = document.getElementById("addEmployeeButton");
-
   if (addEmployeeButton) {
     addEmployeeButton.addEventListener("click", () => {
-      window.location = "/admin/employee/add";
+      history.pushState(null, null, "/admin/employee/add");
+      route();
     });
   }
 };

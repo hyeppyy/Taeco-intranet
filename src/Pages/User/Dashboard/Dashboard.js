@@ -4,6 +4,7 @@ import approvalData from "./JS/ApprovalData";
 import renderModal from "../../../Components/Modal/RenderModal";
 import { showCheckTimeContent } from "./Modal/TimerModalContent";
 import renderTime from "./JS/RenderTime";
+import fetchUserData from "/src/Pages/User/Mypage/FetchUserData";
 // import { stopTimeUpdate } from './JS/UpdateTimer';
 
 const renderUserDashboard = (container) => {
@@ -19,17 +20,17 @@ const renderUserDashboard = (container) => {
             <div class="${styles.info}">
               <h2>Welcome Back,</h2>
               <div class="${styles.infoFirst}">
-                <h2 class="${styles.infoFirst__name}">홍길동</h2>
-                <h4 class="${styles.infoFirst__position}">차장</h4>
+                <h2 data-m-name class="${styles.infoFirst__name}">홍길동</h2>
+                <h4 data-m-position class="${styles.infoFirst__position}">차장</h4>
               </div>
               <div class="${styles.infoSecond}">
                 <div class="${styles.emailInfo}">
                 <img src="/public/icons/email.svg" alt="email" />
-                <h4 class="${styles.email}">honggildong@google.com</h4>
+                <h4 data-m-email class="${styles.email}">honggildong@google.com</h4>
                 </div>
                 <div class="${styles.callInfo}">
                 <img src="/public/icons/call.svg" alt="call" />
-                <h4 class="${styles.call}">010-1234-5678</h4>
+                <h4 data-m-phone class="${styles.call}">010-1234-5678</h4>
                 </div>
               </div>
             </div>
@@ -118,6 +119,7 @@ const renderUserDashboard = (container) => {
   noticesData();
   approvalData();
   renderTime();
+  fetchUserData();
 
   // 출근 체크 모달 id: dashboard_1
   renderModal(

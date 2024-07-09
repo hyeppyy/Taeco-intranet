@@ -65,6 +65,15 @@
 .infoSecond .email {
   margin-right: 24px;
 }
+
+/* 마이페이지 영역 */
+
+.emailInfo,
+.callInfo {
+  display: flex;
+  gap: 5px;
+}
+
 /* 전자결제 영역 */
 
 .userDashboard__approvalFilter {
@@ -307,11 +316,7 @@
     display: flex;
     flex-direction: column;
   }
-  .infoSecond > .emailInfo,
-  .infoSecond > .callInfo {
-    display: flex;
-    gap: 5px;
-  }
+
   .userDashboard__notice {
     margin-bottom: 80px;
   }

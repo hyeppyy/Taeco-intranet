@@ -123,20 +123,7 @@
 .approval-list__meida {
   display: none;
 }
-.pagination {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-.pagination button {
-  background: none;
-  border: none;
-}
-.pageNumber__btn.active {
-  background: var(--color-sec-light);
-  color: var(--gray-01, #fcfcfc);
-}
+
 .approval-tr__date {
   color: var(--gray-06, #9fa1ab);
 }
@@ -166,8 +153,5 @@
   }
   .approval-list__row {
     height: 70px;
-  }
-  .pagination {
-    justify-content: center;
   }
 }

@@ -141,21 +141,6 @@
 .approval-tr__date {
   color: var(--gray-06, #9fa1ab);
 }
-.pagination {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-.pagination button {
-  background: none;
-  border: none;
-}
-.pageNumber__btn.active {
-  background: var(--pri-normal, #40b883);
-  color: var(--gray-01, #fcfcfc);
-}
-
 /* 미디어 쿼리 */
 @media (max-width: 600px) {
   .approval-list__submitdate,
@@ -169,8 +154,5 @@
   }
   .approval-list__row {
     height: 70px;
-  }
-  .pagination {
-    justify-content: center;
   }
 }

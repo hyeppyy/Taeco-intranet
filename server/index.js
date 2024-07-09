@@ -335,8 +335,7 @@ const mileageStorage = multer.diskStorage({
 });
 
 const mileageUpload = multer({ storage: mileageStorage });
-
-// 마일리지 목록 조회
+// 1. 마일리지 목록 조회
 app.get("/api/mileage", (req, res) => {
   const sql = "SELECT * FROM Mileage ORDER BY date DESC";
 
@@ -355,21 +354,18 @@ app.get("/api/mileage", (req, res) => {
   });
 });
 
-// 마일리지 추가
-app.post("/api/mileage", mileageUpload.single("image"), (req, res) => {
-  const { category, score, employee, date, isApprove } = req.body;
+// 2. 마일리지 신청 (사용자용)
+app.post("/api/mileage/apply", mileageUpload.single("image"), (req, res) => {
+  const { category, score, employee, date } = req.body;
   const image = req.file ? `/mileage_uploads/${req.file.filename}` : null;
 
   const sql = `INSERT INTO Mileage (category, score, employee, date, image, isApprove)
                VALUES (?, ?, ?, ?, ?, ?)`;
-  const params = [category, score, employee, date, image, null]; // isApprove를 null(미승인)으로 설정
+  const params = [category, score, employee, date, image, null]; // isApprove를 0(심사중)으로 설정
 
   db.run(sql, params, function (err) {
     if (err) {
-      return res.status(500).json({
-        status: "Error",
-        error: err.message,
-      });
+      return res.status(500).json({ status: "Error", error: err.message });
     }
     res.status(201).json({
       status: "OK",
@@ -409,8 +405,10 @@ app.put("/api/mileage/:id/approve", (req, res) => {
     });
   });
 });
+
 // 전자결제 multer
 const uploadApprovalMiddleware = multer();
+
 //전자결제 목록 조회
 app.get("/api/approval", (req, res) => {
   const sql = "SELECT * FROM Approval ORDER BY submitdate DESC";

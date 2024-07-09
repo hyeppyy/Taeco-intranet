@@ -1,6 +1,7 @@
-import handleModal from './HandleModal';
+import handleModal from "./HandleModal";
 
 const renderModal = (id, header, content, event = null) => {
+
   const contents = document.querySelector('#contents');
 
   const modalHTML = `
@@ -22,7 +23,7 @@ const renderModal = (id, header, content, event = null) => {
     <div id="modal__background"></div>
   `;
 
-  const tempContainer = document.createElement('div');
+  const tempContainer = document.createElement("div");
   tempContainer.innerHTML = modalHTML;
 
   contents.appendChild(tempContainer);
@@ -31,3 +32,4 @@ const renderModal = (id, header, content, event = null) => {
 };
 
 export default renderModal;
+

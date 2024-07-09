@@ -140,6 +140,14 @@
 .approval-tr__date {
   color: var(--gray-06, #9fa1ab);
 }
+.no-data-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 1.2em;
+  color: var(--gray-08);
+}
 
 /* 미디어 쿼리 */
 @media (max-width: 600px) {

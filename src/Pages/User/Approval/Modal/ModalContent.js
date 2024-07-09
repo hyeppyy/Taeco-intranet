@@ -5,22 +5,22 @@ export const showApprovalContent = () => {
     content: `
     <div class="approval-modalbox__form">
       <label for="category"><h4>카테고리</h4></label>
-      <select id="category">
+      <select data-a-select name="approvalcategory" id="category" required>
         <option value="반차">반차</option>
         <option value="연차">연차</option>
         <option value="조퇴">조퇴</option>
         <option value="기타">기타</option>
       </select>
       <label for="title"><h4>제목</h4></label>
-      <input type="text" id="title" placeholder="내용을 입력해 주세요" />
+      <input data-a-title data-shape='line' type="text" id="title" placeholder="내용을 입력해 주세요" />
       <label for="startDate"><h4>날짜</h4></label>
       <div class="approval-data__container">
-        <input type="date" id="startDate"/>
-        <select id="ampm">
+        <input data-approvalstart-day type="date" id="startDate"/>
+        <select data-a-select name="ampm" id="ampm" required>
           <option value="am">am</option>
           <option value="pm">pm</option>
         </select>
-        <select id="detailtime">
+        <select data-a-select name="time" id="detailtime" required>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -36,12 +36,12 @@ export const showApprovalContent = () => {
         </select>
       </div>
       <label for="description"><h4>사유작성</h4></label>
-        <textarea
+        <textarea data-a-reason data-shape='transparent'
           id="description"
           placeholder="내용을 입력해 주세요"
           maxlength="100"
         ></textarea>
-      <button class="modal-submit__btn" id="submitBtn">신청하기</button>
+      <button data-approvaladd-btn class="modal-submit__btn" id="submitBtn">신청하기</button>
     </div>`,
   };
 };

@@ -1,6 +1,8 @@
+
 import styles from '../Dashboard.module.css';
 import { getTodayDate, getCurrentTime } from '../JS/CurrentDate';
 import { startTimeUpdate, stopTimeUpdate } from '../JS/UpdateTimer';
+
 
 const renderTime = () => {
   const recordStartTimeBtn = document.querySelector(
@@ -29,17 +31,17 @@ const renderTime = () => {
   const ButtonManager = {
     disable: (button, time) => {
       button.disabled = true;
-      button.style.pointerEvents = 'none';
-      button.style.opacity = '0.5';
-      button.removeAttribute('data-modal-target');
-      button.querySelector('h2').textContent = time || '-';
+      button.style.pointerEvents = "none";
+      button.style.opacity = "0.5";
+      button.removeAttribute("data-modal-target");
+      button.querySelector("h2").textContent = time || "-";
     },
     enable: (button, modalTarget) => {
       button.disabled = false;
-      button.style.pointerEvents = 'auto';
-      button.style.opacity = '1';
-      button.setAttribute('data-modal-target', modalTarget);
-      button.querySelector('h2').textContent = '-';
+      button.style.pointerEvents = "auto";
+      button.style.opacity = "1";
+      button.setAttribute("data-modal-target", modalTarget);
+      button.querySelector("h2").textContent = "-";
     },
   };
 
@@ -59,6 +61,7 @@ const renderTime = () => {
   };
 
   const updateButtonStates = () => {
+
     const isCheckedIn = Storage.get('isCheckedIn') === 'true';
     const isCheckedOut = Storage.get('isCheckedOut') === 'true';
 
@@ -74,6 +77,7 @@ const renderTime = () => {
     }
     updateStatus();
   };
+
 
   const calculateWorkHours = () => {
     const checkInTime = Storage.get('checkInTime');
@@ -96,6 +100,7 @@ const renderTime = () => {
   const recordTime = (isCheckIn) => {
     const currentTime = getCurrentTime();
     if (isCheckIn) {
+
       Storage.set('checkInTime', currentTime);
       Storage.set('isCheckedIn', 'true');
       startTimeUpdate();
@@ -109,15 +114,17 @@ const renderTime = () => {
   };
 
   const addModalEventListeners = () => {
+
     document
       .querySelector('#checkInBtn')
       ?.addEventListener('click', () => recordTime(true));
     document
-      .querySelector('#checkOutBtn')
-      ?.addEventListener('click', () => recordTime(false));
+      .querySelector("#checkOutBtn")
+      ?.addEventListener("click", () => recordTime(false));
   };
 
   const resetTimes = () => {
+
     updateWeeklyWorkHours(); // 자정에 총 근무 시간 업데이트
     Storage.remove('checkInTime');
     Storage.remove('checkOutTime');

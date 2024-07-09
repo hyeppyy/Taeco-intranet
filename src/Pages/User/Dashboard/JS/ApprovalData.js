@@ -2,21 +2,28 @@ import styles from "./../Dashboard.module.css";
 
 // 서버 데이터 요청 함수
 const approvalData = async () => {
-  const response = await fetch("/server/data/approval.json");
-  const data = await response.json();
+  try {
+    const response = await fetch("/api/approval");
+    const data = await response.json();
+    console.log("Fetched approval data:", data);
+    if (data.status === "OK") {
+      ApprovalDashBoardFilter(data.data);
 
-  filter(data);
-
-  // select 박스에 change 이벤트 리스너 추가
-  const selectFilter = document.querySelector("#approvalFilter");
-  selectFilter.addEventListener("change", () => {
-    filter(data);
-  });
+      // select 박스에 change 이벤트 리스너 추가
+      const selectFilter = document.querySelector("#approvalFilter");
+      selectFilter.addEventListener("change", () => {
+        ApprovalDashBoardFilter(data.data);
+      });
+    } else {
+      console.error("Error in Approval DashBoard data:", data.error);
+    }
+  } catch (error) {
+    console.error("Failed to fetch Approval DashBoard data:", error);
+  }
 };
-
 export default approvalData;
 
-const filter = (data) => {
+const ApprovalDashBoardFilter = (data) => {
   const selectFilter = document.querySelector("#approvalFilter");
   const filterValue = selectFilter.value;
 
@@ -24,25 +31,33 @@ const filter = (data) => {
 
   switch (filterValue) {
     case "진행중":
-      filteredData = data.filter((item) => item.isApprove === null);
+      filteredData = data.filter(
+        (item) =>
+          item.isApprove !== 0 &&
+          item.isApprove !== 1 &&
+          item.user === sessionStorage.getItem("userName")
+      );
       break;
     case "승인":
-      filteredData = data.filter((item) => item.isApprove === true);
+      filteredData = data.filter(
+        (item) =>
+          item.isApprove === 1 &&
+          item.user === sessionStorage.getItem("userName")
+      );
       break;
     case "반려":
-      filteredData = data.filter((item) => item.isApprove === false);
+      filteredData = data.filter(
+        (item) =>
+          item.isApprove === 0 &&
+          item.user === sessionStorage.getItem("userName")
+      );
       break;
     default:
       filteredData = data;
   }
 
-  // 필터링된 데이터를 최신순으로 정렬
-  const sortedData = filteredData.sort(
-    (pre, sub) => new Date(sub.submitdate) - new Date(pre.submitdate)
-  );
-
   // 상위 3개의 항목 추출
-  const topThreeItems = sortedData.slice(0, 3);
+  const topThreeItems = filteredData.slice(0, 3);
   const tableBody = document.querySelector(`.${styles.approvalTable__tbody}`);
 
   // 테이블 본문 초기화

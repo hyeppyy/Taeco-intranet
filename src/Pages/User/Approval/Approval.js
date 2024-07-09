@@ -1,8 +1,8 @@
-import styles from './Approval.module.css';
-import fetchApprovalData from './FetchApprovalData';
-import renderModal from '../../../Components/Modal/RenderModal';
-import { showApprovalContent } from './Modal/ModalContent';
-import approvalType from './Modal/ModalContentDetail';
+import styles from "./Approval.module.css";
+import fetchApprovalData from "./FetchApprovalData";
+import renderModal from "../../../Components/Modal/RenderModal";
+import { showApprovalContent } from "./Modal/ModalContent";
+import approvalType from "./Modal/ModalContentDetail";
 
 const renderUserApproval = (container) => {
   container.innerHTML = `
@@ -11,21 +11,21 @@ const renderUserApproval = (container) => {
         <h1>전자결재</h1>
         <div class="${styles.content__row}">
           <!-- tap형식 버튼 -->
-          <div class="${styles['approval-approve__tabs']}">
+          <div class="${styles["approval-approve__tabs"]}">
             <button
               id="undetermined"
-              class="${styles['approval-approve__tab']} ${styles['approval-approve__tab--undetermined']}"
+              class="${styles["approval-approve__tab"]} ${styles["approval-approve__tab--undetermined"]}"
             >
               심사중
             </button>
             <button 
               id="approved"
-              class="${styles['approval-approve__tab']} ${styles['approval-approve__tab--approved']}">
+              class="${styles["approval-approve__tab"]} ${styles["approval-approve__tab--approved"]}">
               승인
             </button>
             <button 
               id="rejected"
-              class="${styles['approval-approve__tab']} ${styles['approval-approve__tab--rejected']}">
+              class="${styles["approval-approve__tab"]} ${styles["approval-approve__tab--rejected"]}">
               반려
             </button>
           </div>
@@ -37,7 +37,7 @@ const renderUserApproval = (container) => {
 
         <!-- 카테고리 selectbox -->
         <div class="${styles.content__selectboxrow}">
-          <div class="${styles['approval-category__filter']}">
+          <div class="${styles["approval-category__filter"]}">
             <select id="filter">
               <option value="all">카테고리 전체</option>
               <option value="반차">반차</option>
@@ -47,7 +47,7 @@ const renderUserApproval = (container) => {
             </select>
           </div>
 
-          <div class="${styles['approval-date__filter']}">
+          <div class="${styles["approval-date__filter"]}">
             <select id="filter_date">
               <option value="latest">최신순</option>
               <option value="old">오래된순</option>
@@ -55,17 +55,17 @@ const renderUserApproval = (container) => {
           </div>
         </div>
 
-        <table class="${styles['approval-table']}">
-          <thead class="${styles['approval-table__thead']}">
-            <tr class="${styles['approval-table__tr']}">
-              <th class="${styles['approval-th__category']}">종류</th>
-              <th class="${styles['approval-th__title']}">제목</th>
-              <th class="${styles['approval-th__submitdate']}">신청일</th>
+        <table class="${styles["approval-table"]}">
+          <thead class="${styles["approval-table__thead"]}">
+            <tr class="${styles["approval-table__tr"]}">
+              <th class="${styles["approval-th__category"]}">종류</th>
+              <th class="${styles["approval-th__title"]}">제목</th>
+              <th class="${styles["approval-th__submitdate"]}">신청일</th>
             </tr>
           </thead>
         </table>
         
-        <div class="${styles['approval-list']}" id="approval-list"></div>
+        <div class="${styles["approval-list"]}" id="approval-list"></div>
         
         <!-- 페이지네이션 구현하기 -->
         <div id="pagination" class="${styles.pagination}"></div>

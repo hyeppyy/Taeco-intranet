@@ -387,6 +387,8 @@ app.put("/api/mileage/:id/approve", (req, res) => {
     });
   });
 });
+// 전자결제 multer
+const uploadApprovalMiddleware = multer();
 //전자결제 목록 조회
 app.get("/api/approval", (req, res) => {
   const sql = "SELECT * FROM Approval ORDER BY submitdate DESC";
@@ -404,6 +406,118 @@ app.get("/api/approval", (req, res) => {
       data: rows,
     });
   });
+});
+
+//전자결제 목록 추가
+app.post("/api/approval", uploadApprovalMiddleware.none(), (req, res) => {
+  const { user, title, category, startdate, enddate, submitreason } = req.body;
+  const currentDate = new Date();
+  const yyyy = currentDate.getFullYear();
+  const mm = String(currentDate.getMonth() + 1).padStart(2, "0");
+  const dd = String(currentDate.getDate()).padStart(2, "0");
+  const submitdate = `${yyyy}-${mm}-${dd}`;
+
+  const sql = ` INSERT INTO Approval (user, title, category, startdate, enddate, submitdate, submitreason, refusereason, isApprove)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+  const params = [
+    user,
+    title,
+    category,
+    startdate,
+    enddate,
+    submitdate,
+    submitreason,
+    "", // refusereason
+    null, // isApprove
+  ];
+
+  db.run(sql, params, function (err) {
+    if (err) {
+      return res.status(500).json({
+        status: "Error",
+        error: err.message,
+      });
+    }
+
+    res.status(201).json({
+      status: "OK",
+      data: {
+        id: this.lastID,
+        user,
+        title,
+        category,
+        startdate,
+        enddate,
+        submitdate,
+        submitreason,
+        refusereason: "",
+        isApprove: null,
+      },
+    });
+  });
+});
+// 전자결제 승인,거절
+app.put("/api/approval", uploadApprovalMiddleware.none(), (req, res) => {
+  const {
+    user,
+    title,
+    category,
+    startdate,
+    enddate,
+    submitdate,
+    submitreason,
+    refusereason,
+    isApprove,
+  } = req.body;
+
+  // 먼저 일치하는 레코드를 찾습니다.
+  const findSql = `SELECT * FROM Approval 
+                    WHERE user = ? AND title = ? AND category = ? 
+                    AND startdate = ? AND enddate = ? AND submitdate = ? 
+                    AND submitreason = ?`;
+
+  db.get(
+    findSql,
+    [user, title, category, startdate, enddate, submitdate, submitreason],
+    (err, row) => {
+      if (err) {
+        return res.status(500).json({
+          status: "Error",
+          error: err.message,
+        });
+      }
+
+      if (!row) {
+        return res.status(404).json({
+          status: "Error",
+          error: "일치하는 승인 요청을 찾을 수 없습니다.",
+        });
+      }
+
+      // 일치하는 레코드를 찾았다면 업데이트합니다.
+      const updateSql = ` UPDATE Approval 
+                          SET refusereason = ?, isApprove = ? 
+                          WHERE id = ?`;
+
+      db.run(updateSql, [refusereason, isApprove, row.id], function (err) {
+        if (err) {
+          return res.status(500).json({
+            status: "Error",
+            error: err.message,
+          });
+        }
+
+        res.json({
+          status: "OK",
+          data: {
+            ...row,
+            refusereason,
+            isApprove,
+          },
+        });
+      });
+    }
+  );
 });
 app.listen(port, () => {
   console.log(`ready to ${port}`);

@@ -178,9 +178,9 @@
 
 // export default renderTime;
 
-import styles from '../Dashboard.module.css';
-import { getTodayDate, getCurrentTime } from '../JS/CurrentDate';
-import { startTimeUpdate } from '../JS/UpdateTimer';
+import styles from "../Dashboard.module.css";
+import { getTodayDate, getCurrentTime } from "../JS/CurrentDate";
+import { startTimeUpdate } from "../JS/UpdateTimer";
 
 const renderTime = () => {
   localStorage.clear();
@@ -204,67 +204,67 @@ const renderTime = () => {
   const ButtonManager = {
     disable: (button, time) => {
       button.disabled = true;
-      button.style.pointerEvents = 'none';
-      button.style.opacity = '0.5';
-      button.removeAttribute('data-modal-target');
-      button.querySelector('h2').textContent = time || '-';
+      button.style.pointerEvents = "none";
+      button.style.opacity = "0.5";
+      button.removeAttribute("data-modal-target");
+      button.querySelector("h2").textContent = time || "-";
     },
     enable: (button, modalTarget) => {
       button.disabled = false;
-      button.style.pointerEvents = 'auto';
-      button.style.opacity = '1';
-      button.setAttribute('data-modal-target', modalTarget);
-      button.querySelector('h2').textContent = '-';
+      button.style.pointerEvents = "auto";
+      button.style.opacity = "1";
+      button.setAttribute("data-modal-target", modalTarget);
+      button.querySelector("h2").textContent = "-";
     },
   };
 
   const updateButtonStates = () => {
-    const isCheckedIn = Storage.get('isCheckedIn') === 'true';
+    const isCheckedIn = Storage.get("isCheckedIn") === "true";
     // const isCheckedOut = Storage.get('isCheckedOut') === 'true';
-    const isCheckedOut = Storage.get('isCheckedIn') === 'false';
+    const isCheckedOut = Storage.get("isCheckedIn") === "false";
 
     if (isCheckedIn) {
-      ButtonManager.disable(recordStartTimeBtn, Storage.get('checkInTime'));
-      ButtonManager.enable(recordEndTimeBtn, '#modal-dashboard_2');
+      ButtonManager.disable(recordStartTimeBtn, Storage.get("checkInTime"));
+      ButtonManager.enable(recordEndTimeBtn, "#modal-dashboard_2");
     } else {
       // ButtonManager.enable(recordStartTimeBtn, '#modal-dashboard_1');
       ButtonManager.disable(recordEndTimeBtn);
     }
 
     if (isCheckedOut) {
-      ButtonManager.disable(recordEndTimeBtn, Storage.get('checkOutTime'));
+      ButtonManager.disable(recordEndTimeBtn, Storage.get("checkOutTime"));
     }
   };
 
   const recordTime = (isCheckIn) => {
     const currentTime = getCurrentTime();
     if (isCheckIn) {
-      Storage.set('checkInTime', currentTime);
-      Storage.set('isCheckedIn', 'true');
+      Storage.set("checkInTime", currentTime);
+      Storage.set("isCheckedIn", "true");
     } else {
-      Storage.set('checkOutTime', currentTime);
+      Storage.set("checkOutTime", currentTime);
       // Storage.set('isCheckedOut', 'true');
       // Storage.set('isCheckedIn', 'false');
-      Storage.get('isCheckedIn', 'false');
+      Storage.get("isCheckedIn", "false");
     }
     updateButtonStates();
   };
 
   const addModalEventListeners = () => {
-    document.querySelector('#checkInBtn')?.addEventListener('click', () => {
+    document.querySelector("#checkInBtn")?.addEventListener("click", () => {
       recordTime(true);
       startTimeUpdate();
     });
     document
-      .querySelector('#checkOutBtn')
-      ?.addEventListener('click', () => recordTime(false));
+      .querySelector("#checkOutBtn")
+      ?.addEventListener("click", () => recordTime(false));
   };
 
   const resetTimes = () => {
-    Storage.remove('checkInTime');
-    Storage.remove('checkOutTime');
-    Storage.remove('isCheckedIn');
-    Storage.remove('isCheckedOut');
+    Storage.remove("checkInTime");
+    Storage.remove("checkOutTime");
+    Storage.remove("isCheckedIn");
+    Storage.remove("isCheckedOut");
     updateButtonStates();
   };
 

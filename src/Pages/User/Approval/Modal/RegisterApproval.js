@@ -1,3 +1,4 @@
+import fetchApprovalData from "./../FetchApprovalData";
 // registerApproval.js
 
 const registerApproval = () => {
@@ -66,7 +67,7 @@ const registerApproval = () => {
           modalBackground.classList.remove("active");
         }
         // 필요한 경우 페이지 새로고침 또는 다른 작업 수행
-        window.location.reload();
+        fetchApprovalData();
       } else {
         alert(
           `전자결제 등록에 실패했습니다: ${result.error || "알 수 없는 오류"}`

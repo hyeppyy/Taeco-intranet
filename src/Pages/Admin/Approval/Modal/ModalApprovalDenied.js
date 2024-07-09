@@ -1,3 +1,5 @@
+import fetchApprovalData from "./../FetchApprovalData";
+
 const modalApprovalDenied = () => {
   const submitBtn = document.querySelector("[data-approvalapproval-btn]");
   const refuseBtn = document.querySelector("[data-approvalreject-btn]");
@@ -38,6 +40,7 @@ const modalApprovalDenied = () => {
       }
       // 여기에 UI 업데이트 로직을 추가할 수 있습니다.
       closeModal();
+      fetchApprovalData();
     } catch (error) {
       console.error("Error updating approval:", error);
       alert("승인/거절 처리 중 오류가 발생했습니다.");

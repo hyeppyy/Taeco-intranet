@@ -13,7 +13,7 @@ const renderUserDashboard = (container) => {
         <!-- 페이지 타이틀 -->
         <h1>대시보드</h1>
         <div class="${styles.userDashboard}">
-          <div class="${styles.userDashboard__profileCard}">
+          <div class="${styles.userDashboard__profileCard}  ${styles.card}">
             <div class="${styles.profileImg}">
               <img src="/public/images/_Avatar_.png" alt="profileimg" />
             </div>

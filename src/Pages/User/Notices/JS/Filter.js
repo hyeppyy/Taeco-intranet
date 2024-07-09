@@ -12,6 +12,8 @@ const tabFilter = (data) => {
 
   // 초기 정렬 (기본값: 최신순)
   const initialSortType = selectFilter.value || "latest";
+  filteredData = moveImportantDataToTop(filteredData);
+
   dateFilter(filteredData, initialSortType);
   updateTotalPostsNum(filteredData);
   searchFilter(filteredData);
@@ -21,8 +23,6 @@ const tabFilter = (data) => {
   selectFilter.addEventListener("change", () => {
     dateFilter(filteredData, selectFilter.value);
   });
-
-  // filteredData = moveImportantDataToTop(filteredData); // 중요 항목을 상단으로 이동
 
   tabsFilter.addEventListener("click", (event) => {
     const targetId = event.target.id; // 탭 클릭에 따른 조건 렌더링
@@ -38,14 +38,13 @@ const tabFilter = (data) => {
 
     // 카테고리별 데이터 필터링
     filteredData = data.filter((item) => item.category === targetId);
+    filteredData = moveImportantDataToTop(filteredData);
 
     renderNoticesList(filteredData);
     updateTotalPostsNum(filteredData);
     dateFilter(filteredData, selectFilter.value);
     searchFilter(filteredData);
     initPagination(filteredData, renderNoticesList);
-
-    // filteredData = moveImportantDataToTop(filteredData); // 중요 항목을 상단으로 이동
   });
 };
 
@@ -95,15 +94,11 @@ const searchFilter = (filteredData) => {
 };
 
 // 중요 태그가 있는 데이터를 상단으로 올리기
-// const moveImportantDataToTop = (filteredData) => {
-//   const importantData = filteredData.filter(
-//     (item) => item.isImportant === "true"
-//   );
+const moveImportantDataToTop = (filteredData) => {
+  const importantData = filteredData.filter((item) => item.isImportant === 1);
+  const normalData = filteredData.filter((item) => item.isImportant === 0);
 
-//   const normalData = filteredData.filter(
-//     (item) => item.isImportant === "false"
-//   );
-//   return [...importantData, ...normalData]; //배열합치기:중요한 데이터가 먼저 나오고 그 뒤에 일반 데이터가 나오게 됨
-// };
+  return [...importantData, ...normalData]; //배열합치기:중요한 데이터가 먼저 나오고 그 뒤에 일반 데이터가 나오게 됨
+};
 
 export default tabFilter;

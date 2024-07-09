@@ -5,10 +5,12 @@ const AddEmployee = () => {
   const addButton = container.querySelector("[data-e-add]");
   const fileInput = document.querySelector(`.${styles.info__fileInput}`);
   const deleteButton = container.querySelector("[data-e-delete]"); // 이미지 삭제 버튼
+  const backButton = container.querySelector("[data-e-back]");
 
   addButton.addEventListener("click", handleAddEmployee); //최종 폼 제출
   fileInput.addEventListener("change", handleFileSelect); //프로필 이미지 변경
   deleteButton.addEventListener("click", handleFileDelete); // 이미지 삭제
+  backButton.addEventListener("click", moveBack); //뒤로가기
 
   // 페이지 로드 시 로컬 저장소에서 이미지 로드
   loadPreviewImage();
@@ -16,8 +18,15 @@ const AddEmployee = () => {
 
 export default AddEmployee;
 
+// 뒤로가기
+const moveBack = () => {
+  localStorage.removeItem("profileImage");
+  history.pushState(null, null, "/admin/employee");
+  route();
+};
+
 //프로필 이미지 선택 함수
-const handleFileSelect = () => {
+const handleFileSelect = (event) => {
   const file = event.target.files[0];
   const imageContainer = document.querySelector(
     `.${styles.imageContainer__image}`
@@ -100,8 +109,8 @@ const handleAddEmployee = async (event) => {
     const phone = document.querySelector("[data-e-phone]").value;
     const birthday = document.querySelector("[data-e-birthday]").value;
     const startDate = document.querySelector("[data-e-joinday]").value;
-    const profileImage = document.querySelector("[data-e-add-img]").files[0];
-    console.log(profileImage, "profileImage");
+    const profileImageInput = document.querySelector("[data-e-input]");
+    const profileImage = profileImageInput.files[0];
 
     // 필수 필드 유효성 검사
     if (!name || !email || !position || !birthday || !startDate) {
@@ -141,8 +150,8 @@ const handleAddEmployee = async (event) => {
       if (result.status === "OK") {
         // 성공 모달 표시
         alert("직원 추가에 성공했습니다.");
-
-        // 잠시 후 직원 목록 페이지로 이동
+        // 로컬 저장소에서 이미지 데이터 제거
+        localStorage.removeItem("profileImage");
         setTimeout(() => {
           history.pushState(null, null, "/admin/employee");
           route();

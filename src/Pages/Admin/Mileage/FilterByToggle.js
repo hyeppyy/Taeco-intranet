@@ -18,7 +18,6 @@ const filterByToggle = (data) => {
       filteredData = data.filter((item) => item.isApprove !== null);
     else return;
 
-    filteredData.forEach((ele) => console.log(ele.isApprove));
     renderMileageList(filteredData);
   });
 };

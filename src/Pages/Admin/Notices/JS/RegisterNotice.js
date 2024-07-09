@@ -48,11 +48,6 @@ const registerNotice = () => {
     return true;
   };
 
-  // 토글 스위치에 이벤트 리스너 추가
-  isImportantToggle.addEventListener("change", (event) => {
-    console.log("토글 상태 변경:", event.target.checked);
-  });
-
   //파일 선택 버튼을 누르면 모달창이 열림
   uploadButton.addEventListener("click", (e) => {
     e.preventDefault();

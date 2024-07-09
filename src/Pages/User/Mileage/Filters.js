@@ -7,11 +7,8 @@ const filterByTabs = (data) => {
     `.${styles['mileage-approve__tabs']}`
   );
   let state = null; // 초기 상태는 심사중
-  // let filteredData = data.filter((item) => item.isApprove === state);
-  let filteredData = data.filter((item) => {
-    if (state === null) return item.isApprove === 0;
-    return item.isApprove === (state ? 1 : 0);
-  });
+  let filteredData = data.filter((item) => item.isApprove === state);
+
   document.getElementById('undetermined').classList.add(styles.active); // 초기 상태에서 심사중 탭 활성화
   renderMileageList(filteredData); // 초기 렌더링
   filterBySelect(filteredData); // 초기 탭 필터 후 날짜 필터 적용
@@ -39,11 +36,8 @@ const filterByTabs = (data) => {
       state = false;
     } else return;
 
-    // filteredData = data.filter((item) => item.isApprove === state);
-    filteredData = data.filter((item) => {
-      if (state === null) return item.isApprove === 0;
-      return item.isApprove === (state ? 1 : 0);
-    });
+    filteredData = data.filter((item) => item.isApprove == state); // isApprove: null, 0, 1
+
     renderMileageList(filteredData);
     filterBySelect(filteredData); // 탭 필터 후 날짜 필터 적용
   });

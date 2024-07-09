@@ -51,12 +51,6 @@ database.serialize(() => {
   );
 
   // Mileage 테이블 생성
-  // database.run(`DROP TABLE IF EXISTS Mileage`, (err) => {
-  //   if (err) {
-  //     console.error('Error dropping Mileage table:', err.message);
-  //   } else {
-  //     console.log('Mileage table dropped successfully');
-
   database.run(
     `
     CREATE TABLE IF NOT EXISTS Mileage (

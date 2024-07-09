@@ -1,5 +1,6 @@
 import styles from "./Mypage.module.css";
 import route from "/src/Router/Router";
+import fetchUserData from "./FetchUserData";
 
 const renderUserMypage = (container) => {
   container.innerHTML = `
@@ -14,21 +15,22 @@ const renderUserMypage = (container) => {
     </div>
     <div class="${styles.info}">
       <div class="${styles.info__first}">
-        <h2 class="${styles.info__name}">홍길동</h2> 
-        <h4 class="${styles.info__position}">차장</h4>
+        <h2 data-m-name class="${styles.info__name}"></h2> 
+        <h4 data-m-position class="${styles.info__position}"></h4>
       </div>
       <div class="${styles.info__second}">
         <div class="${styles.section1}">
           <img src="/public/icons/email.svg" alt="email">
-          <h4 class="${styles.email}">honggildong@google.com</h4>
+          <h4 data-m-email class="${styles.email}"></h4>
         </div>
         <div class="${styles.section2}">
           <img src="/public/icons/call.svg" alt="call">
-          <h4 class="${styles.call}">010-1234-5678</h4>
+          <h4 data-m-phone class="${styles.phone}"></h4>
         </div>
       </div>
   </div>
   `;
+  fetchUserData(); //사용자에 따라 다른 정보 랜더링
 
   document.getElementById("editButton").addEventListener("click", () => {
     history.pushState(null, null, "/user/mypage/editpage");

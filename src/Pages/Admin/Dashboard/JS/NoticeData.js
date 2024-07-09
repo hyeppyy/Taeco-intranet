@@ -1,6 +1,6 @@
 import styles from "./../Dashboard.module.css";
 
-//서버 데이터 요청 함수
+// 서버 데이터 요청 함수
 const noticesData = async () => {
   try {
     const response = await fetch("/api/notices");
@@ -38,8 +38,35 @@ const filter = (data) => {
     const noticerow = document.createElement("tr");
     const hasAttachments = item.attachments === 1;
 
+    const category = item.category;
+    let categoryContent = "";
+
+    switch (category) {
+      case "event":
+        categoryContent = "이벤트";
+        break;
+      case "mileage":
+        categoryContent = "마일리지";
+        break;
+      case "education":
+        categoryContent = "교육";
+        break;
+      case "approval":
+        categoryContent = "전자결재";
+        break;
+      case "etc":
+        categoryContent = "기타";
+        break;
+      case "human-resource":
+        categoryContent = "인사행정";
+        break;
+      default:
+        categoryContent = "Unknown category.";
+        break;
+    }
+
     noticerow.innerHTML = `
-        <td>${item.id}</td>
+        <td>${categoryContent}</td>
         <td>${item.title}</td>
         <td>${item.author}</td>
         <td>${item.createdAt}</td>
@@ -50,7 +77,7 @@ const filter = (data) => {
         }</td>
         <td>${item.views}</td>
         <td>
-            <p>제목:${item.title}</p>
+            <p>[${categoryContent}] ${item.title}</p>
               <div class="${styles.noticeResponsive}">
                   <p>작성자:${item.author} / </p>
                   <p>작성일:${item.createdAt} / </p>

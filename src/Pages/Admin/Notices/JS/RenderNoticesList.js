@@ -3,6 +3,7 @@ import route from "/src/Router/Router";
 
 const renderNoticesList = (data) => {
   const tableBody = document.querySelector("[data-n-table-body]");
+  const currentUserName = sessionStorage.getItem("userName") || "";
 
   tableBody.innerHTML = ""; //초기화
 
@@ -21,7 +22,7 @@ const renderNoticesList = (data) => {
     data.forEach((dataItem) => {
       const noticeRow = document.createElement("tr");
       const hasAttachments = dataItem.attachments !== null;
-      const hasImportant = dataItem.isImportant === 0;
+      const hasImportant = dataItem.isImportant === 1;
       const currentDate = new Date();
       const yyyy = currentDate.getFullYear();
       const mm = String(currentDate.getMonth() + 1).padStart(2, "0");
@@ -37,7 +38,7 @@ const renderNoticesList = (data) => {
                   : dataItem.id
               }</td>
               <td>${dataItem.title}</td>
-              <td>${dataItem.author}</td>
+              <td>${currentUserName}</td>
               <td>${createdAt}</td>
               <td>${
                 hasAttachments
@@ -52,7 +53,7 @@ const renderNoticesList = (data) => {
       // 각 행에 데이터 속성 할당
       noticeRow.dataset.id = dataItem.id;
       noticeRow.dataset.title = dataItem.title;
-      noticeRow.dataset.author = dataItem.author;
+      noticeRow.dataset.author = currentUserName;
       noticeRow.dataset.createdAt = createdAt;
       noticeRow.dataset.attachments = dataItem.attachments ? "true" : "false";
       noticeRow.dataset.views = dataItem.views;

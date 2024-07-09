@@ -4,7 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('/public/images/root_background.jpg');
+  background-image: url("/public/images/root_background.jpg");
   background-size: cover;
 }
 
@@ -44,4 +44,8 @@
 .loginContainer__form > input {
   width: 100%;
   box-sizing: border-box;
+}
+
+.loginBtn {
+  width: 100%;
 }

@@ -44,3 +44,22 @@ select[data-n-select] {
 .uploadButton {
   display: none;
 }
+
+button[data-n-remove-file] {
+  display: flex;
+  border: 0;
+  background: 0;
+}
+
+button[data-n-remove-file]:hover {
+  color: var(--color-tar-normal);
+}
+
+button[data-n-remove-file] > img {
+  width: 16px;
+  height: 16px;
+}
+
+[data-n-file-info] {
+  display: none;
+}

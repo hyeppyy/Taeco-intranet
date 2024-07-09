@@ -9,7 +9,7 @@ const renderAdminAddNotices = (container) => {
     return;
   }
   container.innerHTML = `
-        <h1>새 공자사항 등록</h1>
+        <h1>새 공지사항 등록</h1>
             <div class="${styles.btnWrap}">
                 <button data-cancel-btn class="${styles.btnWrap__cancel}" data-color="secondary" data-shape='line'>작성취소</button>
                 <button data-add-btn class="${styles.btnWrap__add}" data-color="secondary" data-shape='block'>등록</button>
@@ -29,10 +29,6 @@ const renderAdminAddNotices = (container) => {
                     </select>
                 </li>
                 <li class="${styles.info__items}">
-                    <h5>작성자</h5>
-                    <input data-n-author data-shape='transparent' type="text" placeholder="작성자를 입력해주세요."></input>
-                </li>
-                <li class="${styles.info__items}">
                     <h5>필수공지로 등록</h5>
                     <div class="${toggle_styles.header__toggle}">
                         <label class="${toggle_styles.switch}">
@@ -47,7 +43,10 @@ const renderAdminAddNotices = (container) => {
                     <div class="${styles.info__addFile}">
                         <button class="${styles.uploadButton}">파일선택</button>
                         <input data-n-file type="file" class="${styles.fileInput}" class="hidden">
-                        <div class="${styles.fileInfo}" id="fileInfo"></div>
+                        <div data-n-file-info></div>
+                        <button data-n-remove-file class="${styles.removeFileButton}" style="display:none;">파일 삭제
+                            <img src="/public/icons/close.svg" />
+                        </button>
                     </div>
                 </li>
             </ul>

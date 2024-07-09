@@ -1,3 +1,5 @@
+/* 대시보드 영역 */
+
 .userDashboard {
   display: flex;
   flex-direction: column;
@@ -29,8 +31,6 @@
   flex-direction: row;
   padding: 8px;
   gap: 24px;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.12);
-  border-radius: 4px;
 }
 
 .profileImg {
@@ -66,6 +66,12 @@
   margin-right: 24px;
 }
 
+.emailInfo,
+.callInfo {
+  display: flex;
+  gap: 5px;
+}
+
 /* 전자결제 영역 */
 
 .userDashboard__approvalFilter {
@@ -84,7 +90,7 @@
   gap: 12px;
 }
 
-.userDashboard__approvalTitle>h4 {
+.userDashboard__approvalTitle > h4 {
   color: var(--gray-06);
 }
 
@@ -99,42 +105,42 @@
   color: var(--gray-09);
 }
 
-.approvalTable>thead>tr>th {
+.approvalTable > thead > tr > th {
   color: var(--gray-01);
   background-color: var(--color-pri-light);
 }
 
-.approvalTable>thead>tr>th,
-.approvalTable>tbody>tr>td {
+.approvalTable > thead > tr > th,
+.approvalTable > tbody > tr > td {
   text-align: left;
   padding: 12px 8px;
 }
 
-.approvalTable>tbody>tr {
+.approvalTable > tbody > tr {
   border-bottom: 1px solid var(--gray-04);
 }
 
-.approvalTable>thead>tr>th:first-child,
-.approvalTable>tbody>tr>td:first-child {
+.approvalTable > thead > tr > th:first-child,
+.approvalTable > tbody > tr > td:first-child {
   border-top-left-radius: 7px;
   border-bottom-left-radius: 7px;
   width: 20%;
 }
 
-.approvalTable>thead>tr>th:nth-child(2),
-.approvalTable>tbody>tr>td:nth-child(2) {
+.approvalTable > thead > tr > th:nth-child(2),
+.approvalTable > tbody > tr > td:nth-child(2) {
   width: 50%;
 }
 
-.approvalTable>thead>tr>th:nth-child(3),
-.approvalTable>tbody>tr>td:nth-child(3) {
+.approvalTable > thead > tr > th:nth-child(3),
+.approvalTable > tbody > tr > td:nth-child(3) {
   border-top-right-radius: 7px;
   border-bottom-right-radius: 7px;
   width: 30%;
 }
 
-.approvalTable>thead>tr>th:nth-child(4),
-.approvalTable>tbody>tr>td:nth-child(4) {
+.approvalTable > thead > tr > th:nth-child(4),
+.approvalTable > tbody > tr > td:nth-child(4) {
   display: none;
 }
 
@@ -157,7 +163,7 @@
   gap: 12px;
 }
 
-.userDashboard__noticeTitle>h4 {
+.userDashboard__noticeTitle > h4 {
   color: var(--gray-06);
 }
 
@@ -168,8 +174,8 @@
   line-height: 2.1rem;
 }
 
-.noticeTable>thead>tr,
-.noticeTable>tbody>tr {
+.noticeTable > thead > tr,
+.noticeTable > tbody > tr {
   border-bottom: 1px solid var(--gray-04);
 }
 
@@ -177,8 +183,8 @@
   color: var(--gray-08);
 }
 
-.noticeTable>thead>tr>th,
-.noticeTable>tbody>tr>td {
+.noticeTable > thead > tr > th,
+.noticeTable > tbody > tr > td {
   text-align: left;
   padding: 12px 8px;
 }
@@ -244,20 +250,20 @@
   width: 100%;
 }
 
-.userDashboard__stamp>button {
+.userDashboard__stamp > button {
   width: 50%;
   text-align: center;
   background: 0;
 }
 
-.userDashboard__stamp>button:hover {
+.userDashboard__stamp > button:hover {
   border: 2px solid var(--color-pri-normal);
   transition: 0.3s;
   cursor: pointer;
   background: var(--gray-01);
 }
 
-.userDashboard__stamp>button>h3 {
+.userDashboard__stamp > button > h3 {
   color: var(--gray-07);
 }
 
@@ -278,7 +284,6 @@
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-
 }
 
 .userDashboard__attendanceTime {
@@ -324,15 +329,15 @@
     width: 100%;
   }
 
-  .approvalTable>thead>tr>th:nth-child(2),
-  .approvalTable>tbody>tr>td:nth-child(2),
-  .approvalTable>thead>tr>th:nth-child(3),
-  .approvalTable>tbody>tr>td:nth-child(3) {
+  .approvalTable > thead > tr > th:nth-child(2),
+  .approvalTable > tbody > tr > td:nth-child(2),
+  .approvalTable > thead > tr > th:nth-child(3),
+  .approvalTable > tbody > tr > td:nth-child(3) {
     display: none;
   }
 
-  .approvalTable>thead>tr>th:nth-child(4),
-  .approvalTable>tbody>tr>td:nth-child(4) {
+  .approvalTable > thead > tr > th:nth-child(4),
+  .approvalTable > tbody > tr > td:nth-child(4) {
     border-top-right-radius: 7px;
     border-bottom-right-radius: 7px;
     width: 100%;
@@ -344,8 +349,8 @@
     flex-direction: column;
   }
 
-  .infoSecond>.emailInfo,
-  .infoSecond>.callInfo {
+  .infoSecond > .emailInfo,
+  .infoSecond > .callInfo {
     display: flex;
     gap: 5px;
   }
@@ -373,4 +378,5 @@
 }
 
 /* 타블렛 */
-@media (min-width: 600px) and (max-width: 1023px) {}
+@media (min-width: 600px) and (max-width: 1023px) {
+}

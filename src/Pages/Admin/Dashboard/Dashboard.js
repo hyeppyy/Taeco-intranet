@@ -2,6 +2,7 @@ import styles from "./Dashboard.module.css";
 import fetchMileageData from "./fetchMileageData";
 import approvalData from "./JS/ApprovalData";
 import noticesData from "./JS/NoticeData";
+import fetchUserData from "/src/Pages/User/Mypage/FetchUserData";
 
 const renderAdminDashboard = (container) => {
   if (!container) {
@@ -11,6 +12,29 @@ const renderAdminDashboard = (container) => {
   container.innerHTML = `
   <div class="${styles.contents}">
       <h1 class="${styles.title}">대시보드</h1>
+      <div class="${styles.adminDashboard}">
+        <div class="${styles.adminDashboard__profileCard} ${styles.card}">
+          <div class="${styles.profileImg}">
+              <img src="/public/images/_Avatar_.png" alt="profileimg" />
+          </div>
+          <div class="${styles.info}">
+          <h2>Welcome Back,</h2>
+          <div class="${styles.infoFirst}">
+            <h2 data-m-name class="${styles.infoFirst__name}"></h2>
+            <h4 data-m-position class="${styles.infoFirst__position}"></h4>
+          </div>
+          <div class="${styles.infoSecond}">
+              <div class="${styles.emailInfo}">
+              <img src="/public/icons/email.svg" alt="email" />
+              <h4 data-m-email class="${styles.email}"></h4>
+              </div>
+              <div class="${styles.callInfo}">
+              <img src="/public/icons/call.svg" alt="call" />
+              <h4 data-m-phone class="${styles.call}"></h4>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="${styles.adminDashboard}">
         <h2>2024.06.14(금)</h2>
         <div class="${styles.adminDashboard__container}">
@@ -103,6 +127,7 @@ const renderAdminDashboard = (container) => {
   fetchMileageData();
   approvalData();
   noticesData();
+  fetchUserData();
 };
 
 export default renderAdminDashboard;

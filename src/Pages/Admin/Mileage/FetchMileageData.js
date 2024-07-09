@@ -3,7 +3,7 @@ import spinner from '/src/Components/Spinner/Spinner';
 
 const fetchMileageData = async () => {
   try {
-    const response = await fetch('/api/mileage');
+    const response = await fetch("/api/mileage");
     const data = await response.json();
     if (data.status === 'OK') {
       filterByToggle(data.data);

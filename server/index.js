@@ -1,9 +1,9 @@
-import express from 'express';
-import morgan from 'morgan';
-import fs from 'fs';
-import db from './database.js';
-import multer from 'multer'; // multer import 추가
-import path from 'path';
+import express from "express";
+import morgan from "morgan";
+import fs from "fs";
+import db from "./database.js";
+import multer from "multer"; // multer import 추가
+import path from "path";
 
 const THRESHOLD = 2000;
 const port = process.env.PORT || 8080;
@@ -17,17 +17,17 @@ app.use((req, res, next) => {
   }, delayTime);
 });
 
-app.use(morgan('dev'));
-app.use(express.static('dist'));
+app.use(morgan("dev"));
+app.use(express.static("dist"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const uploadsDir = path.join(process.cwd(), 'uploads');
+const uploadsDir = path.join(process.cwd(), "uploads");
 if (!fs.existsSync(uploadsDir)) {
   fs.mkdirSync(uploadsDir, { recursive: true });
 }
 
-const noticeUploadsDir = path.join(process.cwd(), 'notice_uploads');
+const noticeUploadsDir = path.join(process.cwd(), "notice_uploads");
 if (!fs.existsSync(noticeUploadsDir)) {
   fs.mkdirSync(noticeUploadsDir, { recursive: true });
 }
@@ -40,10 +40,10 @@ if (!fs.existsSync(mileageUploadsDir)) {
 // Multer 설정: 프로필 이미지를 uploads/ 디렉토리에 저장
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'uploads/');
+    cb(null, "uploads/");
   },
   filename: function (req, file, cb) {
-    cb(null, Date.now() + '-' + file.originalname);
+    cb(null, Date.now() + "-" + file.originalname);
   },
 });
 
@@ -51,36 +51,36 @@ const upload = multer({ storage: storage });
 
 const noticeStorage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'notice_uploads/');
+    cb(null, "notice_uploads/");
   },
   filename: function (req, file, cb) {
-    cb(null, Date.now() + '-' + file.originalname);
+    cb(null, Date.now() + "-" + file.originalname);
   },
 });
 
 const noticeUpload = multer({ storage: noticeStorage });
 
 // 유저 목록 조회
-app.get('/api/users', (req, res) => {
-  const sql = 'SELECT * FROM Users';
+app.get("/api/users", (req, res) => {
+  const sql = "SELECT * FROM Users";
 
   db.all(sql, [], (err, rows) => {
     if (err) {
       return res.status(500).json({
-        status: 'Error',
+        status: "Error",
         error: err.message,
       });
     }
 
     res.json({
-      status: 'OK',
+      status: "OK",
       data: rows,
     });
   });
 });
 
 // 유저 추가
-app.post('/api/users', upload.single('profileImage'), (req, res) => {
+app.post("/api/users", upload.single("profileImage"), (req, res) => {
   const { name, email, position, birthday, startDate, phone } = req.body;
   const profileImage = req.file ? `/uploads/${req.file.filename}` : null; // Get uploaded image path if available
 
@@ -99,13 +99,13 @@ app.post('/api/users', upload.single('profileImage'), (req, res) => {
   db.run(sql, params, function (err) {
     if (err) {
       return res.status(500).json({
-        status: 'Error',
+        status: "Error",
         error: err.message,
       });
     }
 
     res.status(201).json({
-      status: 'OK',
+      status: "OK",
       data: {
         id: this.lastID,
         name,
@@ -121,60 +121,60 @@ app.post('/api/users', upload.single('profileImage'), (req, res) => {
 });
 
 // 유저 삭제
-app.delete('/api/users/:id', (req, res) => {
+app.delete("/api/users/:id", (req, res) => {
   const { id } = req.params;
 
-  const sql = 'DELETE FROM Users WHERE id = ?';
+  const sql = "DELETE FROM Users WHERE id = ?";
   db.run(sql, id, function (err) {
     if (err) {
       return res.status(500).json({
-        status: 'Error',
+        status: "Error",
         error: err.message,
       });
     }
 
     if (this.changes === 0) {
       return res.status(404).json({
-        status: 'Error',
-        message: 'User not found',
+        status: "Error",
+        message: "User not found",
       });
     }
 
     res.status(200).json({
-      status: 'OK',
-      message: 'User deleted',
+      status: "OK",
+      message: "User deleted",
     });
   });
 });
 
 // 공지사항 목록 조회
-app.get('/api/notices', (req, res) => {
+app.get("/api/notices", (req, res) => {
   //Notices 테이블의 모든 데이터를 가져오되, 생성일(createdAt)을 기준으로 최신순으로 정렬
-  const sql = 'SELECT * FROM Notices ORDER BY createdAt DESC';
+  const sql = "SELECT * FROM Notices ORDER BY createdAt DESC";
 
   db.all(sql, [], (err, rows) => {
     if (err) {
       return res.status(500).json({
-        status: 'Error',
+        status: "Error",
         error: err.message,
       });
     }
 
     res.json({
-      status: 'OK',
+      status: "OK",
       data: rows,
     });
   });
 });
 
 // 공지사항 생성
-app.post('/api/notices', noticeUpload.single('attachments'), (req, res) => {
+app.post("/api/notices", noticeUpload.single("attachments"), (req, res) => {
   const { category, title, author, isImportant, description } = req.body;
   const attachments = req.file ? `/notice_uploads/${req.file.filename}` : null;
   const currentDate = new Date();
   const yyyy = currentDate.getFullYear();
-  const mm = String(currentDate.getMonth() + 1).padStart(2, '0');
-  const dd = String(currentDate.getDate()).padStart(2, '0');
+  const mm = String(currentDate.getMonth() + 1).padStart(2, "0");
+  const dd = String(currentDate.getDate()).padStart(2, "0");
   const createdAt = `${yyyy}-${mm}-${dd}`;
 
   const sql = `INSERT INTO Notices (category, title, author, createdAt, attachments, isImportant, description)
@@ -185,20 +185,20 @@ app.post('/api/notices', noticeUpload.single('attachments'), (req, res) => {
     author,
     createdAt,
     attachments,
-    isImportant === '1' ? 1 : 0,
+    isImportant === "1" ? 1 : 0,
     description,
   ];
 
   db.run(sql, params, function (err) {
     if (err) {
       return res.status(500).json({
-        status: 'Error',
+        status: "Error",
         error: err.message,
       });
     }
 
     res.status(201).json({
-      status: 'OK',
+      status: "OK",
       data: {
         id: this.lastID,
         category,
@@ -207,7 +207,7 @@ app.post('/api/notices', noticeUpload.single('attachments'), (req, res) => {
         createdAt,
         attachments,
         views: 0,
-        isImportant: isImportant === '1' ? 1 : 0,
+        isImportant: isImportant === "1" ? 1 : 0,
         description,
       },
     });
@@ -215,55 +215,55 @@ app.post('/api/notices', noticeUpload.single('attachments'), (req, res) => {
 });
 
 // 공지사항 삭제
-app.delete('/api/notices/:id', (req, res) => {
+app.delete("/api/notices/:id", (req, res) => {
   const { id } = req.params;
 
-  const sql = 'DELETE FROM Notices WHERE id = ?';
+  const sql = "DELETE FROM Notices WHERE id = ?";
   db.run(sql, id, function (err) {
     if (err) {
       return res.status(500).json({
-        status: 'Error',
+        status: "Error",
         error: err.message,
       });
     }
 
     if (this.changes === 0) {
       return res.status(404).json({
-        status: 'Error',
-        message: 'Notice not found',
+        status: "Error",
+        message: "Notice not found",
       });
     }
 
     res.status(200).json({
-      status: 'OK',
-      message: 'Notice deleted',
+      status: "OK",
+      message: "Notice deleted",
     });
   });
 });
 
 // 공지사항 조회수 증가
-app.put('/api/notices/:id/view', (req, res) => {
+app.put("/api/notices/:id/view", (req, res) => {
   const { id } = req.params;
 
-  const sql = 'UPDATE Notices SET views = views + 1 WHERE id = ?';
+  const sql = "UPDATE Notices SET views = views + 1 WHERE id = ?";
   db.run(sql, id, function (err) {
     if (err) {
       return res.status(500).json({
-        status: 'Error',
+        status: "Error",
         error: err.message,
       });
     }
 
     if (this.changes === 0) {
       return res.status(404).json({
-        status: 'Error',
-        message: 'Notice not found',
+        status: "Error",
+        message: "Notice not found",
       });
     }
 
     res.status(200).json({
-      status: 'OK',
-      message: 'View count increased',
+      status: "OK",
+      message: "View count increased",
     });
   });
 });
@@ -271,58 +271,37 @@ app.put('/api/notices/:id/view', (req, res) => {
 // 마일리지 이미지를 위한 Multer 설정
 const mileageStorage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'mileage_uploads/');
+    cb(null, "mileage_uploads/");
   },
   filename: function (req, file, cb) {
-    cb(null, Date.now() + '-' + file.originalname);
+    cb(null, Date.now() + "-" + file.originalname);
   },
 });
 
 const mileageUpload = multer({ storage: mileageStorage });
 
-// 1. 마일리지 내역 조회 (사용자 및 관리자용)
+// 마일리지 목록 조회
 app.get('/api/mileage', (req, res) => {
   const sql = 'SELECT * FROM Mileage ORDER BY date DESC';
 
   db.all(sql, [], (err, rows) => {
     if (err) {
       return res.status(500).json({
-        status: 'Error',
+        status: "Error",
         error: err.message,
       });
     }
 
     res.json({
-      status: 'OK',
+      status: "OK",
       data: rows,
     });
   });
 });
 
-// app.get('/api/mileage', (req, res) => {
-//   const { userId, isAdmin } = req.query; // 사용자 ID와 관리자 여부를 쿼리로 받음
-//   let sql = 'SELECT * FROM Mileage';
-//   let params = [];
-
-//   if (!isAdmin) {
-//     // 관리자가 아닌 경우, 해당 사용자의 데이터만 조회
-//     sql += ' WHERE employee = ?';
-//     params.push(userId);
-//   }
-
-//   sql += ' ORDER BY date DESC';
-
-//   db.all(sql, params, (err, rows) => {
-//     if (err) {
-//       return res.status(500).json({ status: 'Error', error: err.message });
-//     }
-//     res.json({ status: 'OK', data: rows });
-//   });
-// });
-
-// 2. 마일리지 신청 (사용자용)
-app.post('/api/mileage/apply', mileageUpload.single('image'), (req, res) => {
-  const { category, score, employee, date } = req.body;
+// 마일리지 추가
+app.post('/api/mileage', mileageUpload.single('image'), (req, res) => {
+  const { category, score, employee, date, isApprove } = req.body;
   const image = req.file ? `/mileage_uploads/${req.file.filename}` : null;
 
   const sql = `INSERT INTO Mileage (category, score, employee, date, image, isApprove)
@@ -331,10 +310,13 @@ app.post('/api/mileage/apply', mileageUpload.single('image'), (req, res) => {
 
   db.run(sql, params, function (err) {
     if (err) {
-      return res.status(500).json({ status: 'Error', error: err.message });
+      return res.status(500).json({
+        status: 'Error',
+        error: err.message,
+      });
     }
     res.status(201).json({
-      status: 'OK',
+      status: "OK",
       data: {
         id: this.lastID,
         category,
@@ -371,7 +353,24 @@ app.put('/api/mileage/:id/approve', (req, res) => {
     });
   });
 });
+//전자결제 목록 조회
+app.get("/api/approval", (req, res) => {
+  const sql = "SELECT * FROM Approval ORDER BY submitdate DESC";
 
+  db.all(sql, [], (err, rows) => {
+    if (err) {
+      return res.status(500).json({
+        status: "Error",
+        error: err.message,
+      });
+    }
+
+    res.json({
+      status: "OK",
+      data: rows,
+    });
+  });
+});
 app.listen(port, () => {
   console.log(`ready to ${port}`);
 });

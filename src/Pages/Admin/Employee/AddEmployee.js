@@ -15,7 +15,7 @@ const renderAddEmployeePage = (container) => {
   </div>
   <form id="employeeForm" enctype="multipart/form-data">
     <div class="${styles.imageContainer}">
-      <span class="${styles.imageContainer__image}"></span>
+      <span data-e-add-img class="${styles.imageContainer__image}"></span>
     </div>
 
       <div data-e-form>

@@ -11,8 +11,8 @@ const renderAdminAddNotices = (container) => {
   container.innerHTML = `
         <h1>새 공자사항 등록</h1>
             <div class="${styles.btnWrap}">
-                <button data-cancel-btn class="${styles.btnWrap__cancel}" data-color="positive" data-shape='line'>작성취소</button>
-                <button data-add-btn class="${styles.btnWrap__add}" data-color="positive" data-shape='block'>등록</button>
+                <button data-cancel-btn class="${styles.btnWrap__cancel}" data-color="secondary" data-shape='line'>작성취소</button>
+                <button data-add-btn class="${styles.btnWrap__add}" data-color="secondary" data-shape='block'>등록</button>
             </div>
         <section class="${styles.contents}">
             <input data-n-title data-shape='underline' type="text" placeholder="제목을 입력해주세요." style="width: 100%;"></input>

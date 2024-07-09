@@ -1,9 +1,9 @@
-import styles from './Dashboard.module.css';
-import noticesData from './JS/NoticeData';
-import approvalData from './JS/ApprovalData';
-import renderModal from '../../../Components/Modal/RenderModal';
-import { showCheckTimeContent } from './Modal/TimerModalContent';
-import renderTime from './JS/RenderTime';
+import styles from "./Dashboard.module.css";
+import noticesData from "./JS/NoticeData";
+import approvalData from "./JS/ApprovalData";
+import renderModal from "../../../Components/Modal/RenderModal";
+import { showCheckTimeContent } from "./Modal/TimerModalContent";
+import renderTime from "./JS/RenderTime";
 // import { stopTimeUpdate } from './JS/UpdateTimer';
 
 const renderUserDashboard = (container) => {
@@ -124,17 +124,17 @@ const renderUserDashboard = (container) => {
 
   // 출근 체크 모달 id: dashboard_1
   renderModal(
-    showCheckTimeContent('in').modal_id, // 모달 번호
-    showCheckTimeContent('in').header, // 모달 헤더
-    showCheckTimeContent('in').content, //모달 내용
+    showCheckTimeContent("in").modal_id, // 모달 번호
+    showCheckTimeContent("in").header, // 모달 헤더
+    showCheckTimeContent("in").content, //모달 내용
     renderTime
   );
 
   // 퇴근 체크 모달 id: dashboard_2
   renderModal(
-    showCheckTimeContent('out').modal_id, // 모달 번호
-    showCheckTimeContent('out').header, // 모달 헤더
-    showCheckTimeContent('out').content, //모달 내용
+    showCheckTimeContent("out").modal_id, // 모달 번호
+    showCheckTimeContent("out").header, // 모달 헤더
+    showCheckTimeContent("out").content, //모달 내용
     renderTime
   );
 };

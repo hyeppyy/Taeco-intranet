@@ -1,6 +1,8 @@
 import styles from "./Dashboard.module.css";
 import fetchMileageData from "./fetchMileageData";
 import approvalData from "./JS/ApprovalData";
+import noticesData from "./JS/NoticeData";
+
 const renderAdminDashboard = (container) => {
   if (!container) {
     console.error("container element not found");
@@ -11,7 +13,6 @@ const renderAdminDashboard = (container) => {
       <h1 class="${styles.title}">대시보드</h1>
       <div class="${styles.adminDashboard}">
         <h2>2024.06.14(금)</h2>
-        <div class="${styles.adminDashboard__attendance} ${styles.card}">출결요약</div>
         <div class="${styles.adminDashboard__container}">
           <div class="${styles.adminDashboard__schedule} ${styles.card}">세부 일정</div>
           <div class="${styles.adminDashboard__approval} ${styles.card}">
@@ -62,11 +63,46 @@ const renderAdminDashboard = (container) => {
             </li>
           </ul>
         </div>
+        <div class="${styles.adminDashboard__notice} ${styles.card}">
+          <div class="${styles["adminDashboard__notice-title"]}">
+              <div class="${styles["adminDashboard__notice-title--left"]}">
+                <h2>공지사항</h2>
+                <h4>최근 3개만 보여집니다.</h4>
+              </div>
+              <h4 class="${styles["adminDashboard__notice-title--right"]}">
+                <a href="/admin/notices">공지사항 페이지로 이동</a>
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 16 16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8.78112 8.00047L5.48126 4.70062L6.42408 3.75781L10.6667 8.00047L6.42408 12.2431L5.48126 11.3003L8.78112 8.00047Z"
+                  />
+                </svg>
+              </h4>
+            </div>
+            <table class="${styles.noticeTable}">
+              <thead>
+                <tr>
+                  <th>번호</th>
+                  <th>제목</th>
+                  <th>작성자</th>
+                  <th>작성일</th>
+                  <th>첨부파일</th>
+                  <th>조회수</th>
+                </tr>
+              </thead>
+              <tbody class="${styles.noticeTable__tbody}"></tbody>
+            </table>  
+        </div>
       </div>
     </div>`;
 
   fetchMileageData();
   approvalData();
+  noticesData();
 };
 
 export default renderAdminDashboard;

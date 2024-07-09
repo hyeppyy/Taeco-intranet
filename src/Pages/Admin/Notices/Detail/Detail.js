@@ -1,6 +1,5 @@
 import detailList from "../JS/DetailList.js";
 import deleteNotice from "../JS/DeleteNotice";
-import editNotice from "../JS/EditNotice";
 import styles from "../Detail/Detail.module.css";
 
 const renderAdminNoticesDetail = (container) => {
@@ -8,7 +7,6 @@ const renderAdminNoticesDetail = (container) => {
        <div data-edit-dom class="${styles.noticeDetail}">
         <div class="${styles.noticeDetail__btnContainer}">
           <button data-n-delete data-color="warning" data-shape="line" class="${styles.noticeDetail__deleteBtn}">삭제하기</button>
-          <button data-n-edit data-color="positive" data-shape="block" class="${styles.noticeDetail__editBtn}">수정하기</button>
           <button data-color="neutral" data-shape="line" class="${styles.noticeDetail__backBtn}">뒤로가기</button>
         </div>
         <h2 class="${styles.noticeTitle}"></h2>
@@ -35,7 +33,6 @@ const renderAdminNoticesDetail = (container) => {
   `;
   detailList();
   deleteNotice();
-  editNotice();
   moveBack();
 };
 

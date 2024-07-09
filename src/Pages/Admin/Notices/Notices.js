@@ -1,5 +1,5 @@
 import fetchNoticesData from "./JS/FetchNoticesData";
-import paginationStyle from "./Pagination/Pagination.module.css";
+import paginationStyle from "/src/Components/Pagination/Pagination.module.css";
 import route from "./../../../Router/Router";
 import styles from "../Notices/Notice.module.css";
 
@@ -9,7 +9,7 @@ const renderAdminNotices = (container) => {
         <h1>공지사항</h1>
         <div class="${styles.noticeContainer}">
         <div class="${styles.contents__newBtnWrap}">
-          <button id="moveNewNoticeBtn" data-color="positive" data-shape="block">
+          <button id="moveNewNoticeBtn" data-color="secondary" data-shape="block">
                 새 공지 등록
           </button>
         </div>

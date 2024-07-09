@@ -66,6 +66,14 @@
   border-radius: 4px;
   height: 42px;
 }
+.no-data-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 1.2em;
+  color: var(--gray-08);
+}
 @media screen and (max-width: 600px) {
   .modal-box__form textarea {
     width: 292px;

@@ -1,6 +1,7 @@
 //import renderApprovalList from "./RenderApprovalList";
 import styles from "./Approval.module.css";
-import initPagination from "./Pagination/Pagination";
+import initPagination from "/src/Components/Pagination/Pagination";
+import renderApprovalList from "./RenderApprovalList";
 
 // 탭(심사중, 승인, 반려) 필터 [input: 서버로부터 불러온 데이터]
 const filterByTabs = (data) => {
@@ -19,7 +20,7 @@ const filterByTabs = (data) => {
   });
   document.getElementById("undetermined").classList.add(styles.active); // 초기 상태에서 심사중 탭 활성화
 
-  initPagination(filteredData); // Pagination 렌더링
+  initPagination(filteredData, renderApprovalList); // Pagination 렌더링
 
   // 탭 필터링
   tabsFilter.addEventListener("click", (event) => {
@@ -78,7 +79,7 @@ const applyFilters = (data, state, category, categoryDate) => {
       (pre, sub) => new Date(pre.submitdate) - new Date(sub.submitdate)
     );
   }
-  initPagination(filteredData);
+  initPagination(filteredData, renderApprovalList);
 };
 
 export default filterByTabs;

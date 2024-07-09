@@ -1,20 +1,20 @@
 const approvalType = () => {
-  const select = document.getElementById('category');
+  const select = document.getElementById("category");
   const approvalDataContainer = document.querySelector(
-    '.approval-data__container'
+    ".approval-data__container"
   );
 
-  select.addEventListener('change', function () {
+  select.addEventListener("change", function () {
     const selectedValue = this.value;
 
-    if (selectedValue === '반차' || selectedValue === '조퇴') {
+    if (selectedValue === "반차" || selectedValue === "조퇴") {
       approvalDataContainer.innerHTML = `
-      <input type="date" id="startDate"/>
-        <select id="ampm">
+      <input data-approvalstart-day type="date" id="startDate"/>
+        <select data-a-select name="ampm" id="ampm" required>
           <option value="am">am</option>
           <option value="pm">pm</option>
         </select>
-        <select id="detailtime">
+        <select data-a-select name="time" id="detailtime" required>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -30,9 +30,9 @@ const approvalType = () => {
         </select>`;
     } else {
       approvalDataContainer.innerHTML = `
-          <input type="date" id="startDate"/> 
+          <input data-approvalstart-day type="date" id="startDate"/>
           <span> - </span>
-          <input type="date" id="endDate"/>`;
+          <input data-approvalend-day type="date" id="endDate"/>`;
     }
   });
 };

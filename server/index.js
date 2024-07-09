@@ -350,6 +350,9 @@ app.put("/api/mileage/:id/approve", (req, res) => {
   });
 });
 
+// 전자결제 multer
+const uploadApprovalMiddleware = multer();
+
 //전자결제 목록 조회
 app.get("/api/approval", (req, res) => {
   const sql = "SELECT * FROM Approval ORDER BY submitdate DESC";
@@ -368,6 +371,109 @@ app.get("/api/approval", (req, res) => {
     });
   });
 });
+
+//전자결제 목록 추가
+app.post("/api/approval", uploadApprovalMiddleware.none(), (req, res) => {
+  const { user, title, category, startdate, enddate, submitreason } = req.body;
+  const currentDate = new Date();
+  const yyyy = currentDate.getFullYear();
+  const mm = String(currentDate.getMonth() + 1).padStart(2, "0");
+  const dd = String(currentDate.getDate()).padStart(2, "0");
+  const submitdate = `${yyyy}-${mm}-${dd}`;
+
+  const sql = ` INSERT INTO Approval (user, title, category, startdate, enddate, submitdate, submitreason, refusereason, isApprove)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+  const params = [
+    user,
+    title,
+    category,
+    startdate,
+    enddate,
+    submitdate,
+    submitreason,
+    "", // refusereason
+    null, // isApprove
+  ];
+
+  db.run(sql, params, function (err) {
+    if (err) {
+      return res.status(500).json({
+        status: "Error",
+        error: err.message,
+      });
+    }
+
+    res.status(201).json({
+      status: "OK",
+      data: {
+        id: this.lastID,
+        user,
+        title,
+        category,
+        startdate,
+        enddate,
+        submitdate,
+        submitreason,
+        refusereason: "",
+        isApprove: null,
+      },
+    });
+  });
+});
+
+// 전자결제 승인/거절 처리
+app.put("/api/approval/:id", uploadApprovalMiddleware.none(), (req, res) => {
+  const id = req.params.id;
+  const isApprove = req.body.isApprove === "true";
+  const refusereason = req.body.refusereason || "";
+
+  let sql, params;
+
+  if (isApprove) {
+    // 승인 처리
+    sql = `UPDATE Approval SET isApprove = 1 WHERE id = ?`;
+    params = [id];
+  } else {
+    // 거절 처리
+    sql = `UPDATE Approval SET isApprove = 0, refusereason = ? WHERE id = ?`;
+    params = [refusereason, id];
+  }
+
+  db.run(sql, params, function (err) {
+    if (err) {
+      return res.status(500).json({
+        status: "Error",
+        error: err.message,
+      });
+    }
+
+    if (this.changes === 0) {
+      return res.status(404).json({
+        status: "Error",
+        error: "해당 ID의 전자결제를 찾을 수 없습니다.",
+      });
+    }
+
+    // 업데이트된 데이터 조회
+    db.get(`SELECT * FROM Approval WHERE id = ?`, [id], (err, row) => {
+      if (err) {
+        return res.status(500).json({
+          status: "Error",
+          error: err.message,
+        });
+      }
+
+      res.json({
+        status: "OK",
+        message: isApprove
+          ? "전자결제가 승인되었습니다."
+          : "전자결제가 거절되었습니다.",
+        data: row,
+      });
+    });
+  });
+});
+
 app.listen(port, () => {
   console.log(`ready to ${port}`);
 });

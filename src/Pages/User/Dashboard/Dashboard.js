@@ -63,6 +63,9 @@ const renderUserDashboard = (container) => {
 
             <div class="${styles.userDashboard__attendanceHistory} ${styles.card}">
               <h2>금주 근무 현황</h2>
+              <div class="${styles.userDashboard__attendanceTime}">
+                  <h3>총 4시간 근무</h3>
+              </div>
             </div>
           </div>
           <div class="${styles.userDashboard__approval} ${styles.card}">

@@ -406,7 +406,7 @@ database.serialize(() => {
     }
   );
 
-  // 마일리지 테이블 생성
+  // Mileage 테이블 생성
   database.run(
     `
     CREATE TABLE IF NOT EXISTS Mileage (

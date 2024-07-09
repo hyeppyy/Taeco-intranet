@@ -1,10 +1,13 @@
 import approvalType from './../../Pages/User/Approval/Modal/ModalContentDetail';
 import renderTime from './../../Pages/User/Dashboard/JS/RenderTime';
-import { startTimeUpdate, stopTimeUpdate } from './../../Pages/User/Dashboard/JS/UpdateTimer';
+import {
+  startTimeUpdate,
+  stopTimeUpdate,
+} from './../../Pages/User/Dashboard/JS/UpdateTimer';
+import handleMileageSubmit from '/src/Pages/User/Mileage/HandleMileageSubmit';
 
 const handleModal = (fn) => {
   const contents = document.querySelector('#contents');
-  // console.log(event);
 
   const modalBackground =
     document.querySelector('#modal__background') ||
@@ -20,13 +23,16 @@ const handleModal = (fn) => {
         modal.classList.add('active');
         modalBackground.classList.add('active');
 
-        switch (fn.name) {
+        switch (fn && fn.name) {
           case 'approvalType':
             approvalType();
             break;
           case 'renderTime':
             startTimeUpdate();
             renderTime();
+            break;
+          case 'handleMileageSubmit':
+            handleMileageSubmit();
             break;
           default:
             break;
@@ -42,26 +48,9 @@ const handleModal = (fn) => {
       if (modal && modal.classList.contains('active')) {
         modal.classList.remove('active');
         modalBackground.classList.remove('active');
-        stopTimeUpdate();
       }
     }
   });
 };
 
 export default handleModal;
-
-// import { initializeModalManager, setOpenCallback, setCloseCallback } from './ModalManager';
-
-// const handleModal = (events = {}) => {
-//   initializeModalManager();
-
-//   if (events.renderTime) {
-//     setOpenCallback(events.renderTime);
-//   }
-
-//   if (events.stopTimeUpdate) {
-//     setCloseCallback(events.stopTimeUpdate);
-//   }
-// };
-
-// export default handleModal;

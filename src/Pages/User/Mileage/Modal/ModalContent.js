@@ -84,14 +84,12 @@ export const showMileageApproveContent = () => {
             <div class="form-group">
               <h5>카테고리</h5>
               <select id="environment-category">
-                <option disabled selected>카테고리를 선택하세요.</option>
-                <option value="recycling">재활용 및 분리수거</option>
-                <option value="public-transport">
-                  대중교통 및 자전거 이용
-                </option>
-                <option value="energy-saving">에너지 절약</option>
-                <option value="reuse-upcycling">재사용 및 업사이클링</option>
-                <option value="eco-friendly-products">친환경 제품 구매</option>
+                <option disabled selected value="">카테고리를 선택하세요.</option>
+                <option>재활용 및 분리수거</option>
+                <option>대중교통 및 자전거 이용</option>
+                <option>에너지 절약</option>
+                <option>재사용 및 업사이클링</option>
+                <option>친환경 제품 구매</option>
               </select>
             </div>
 
@@ -99,9 +97,9 @@ export const showMileageApproveContent = () => {
               <h5>점수</h5>
               <select id="score">
                 <option value="" disabled selected>점수를 선택하세요.</option>
-                <option value="">1점</option>
-                <option value="">2점</option>
-                <option value="">3점</option>
+                <option value="1">1점</option>
+                <option value="2">2점</option>
+                <option value="3">3점</option>
               </select>
             </div>
 
@@ -129,7 +127,6 @@ export const showMileageApproveContent = () => {
           </div>
 
           <button
-            type="submit"
             class="modal-box__button"
             data-color="positive"
             data-shape="block"

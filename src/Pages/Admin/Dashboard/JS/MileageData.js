@@ -30,7 +30,7 @@ const renderMileage = (data) => {
     div.className = styles.mileage__header;
     div.innerHTML = `
         <div class="${styles.mileage__title}">${item.category}</div>
-        <div class="${styles.mileage__requester}">${item.employee}</div>
+        <div class="${styles.mileage__requester}">${item.user}</div>
         <div class="${styles["mileage__request-date"]}">${item.date.replaceAll(
       "-",
       "."

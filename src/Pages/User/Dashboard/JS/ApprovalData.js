@@ -66,9 +66,9 @@ const ApprovalDashBoardFilter = (data) => {
     noDataMessage.className = styles["no-data-message"];
     noDataMessage.innerHTML = `
         <td>!!</td>
-        <td>전자결제 내역이</td>
+        <td>전자결재 내역이</td>
         <td>없습니다.</td>
-        <td> 전자결제 내역이 없습니다 </td>`;
+        <td> 전자결재 내역이 없습니다 </td>`;
     tableBody.appendChild(noDataMessage);
   } else {
     topThreeItems.forEach((item) => {

@@ -34,7 +34,7 @@ const renderUserApproval = (container) => {
           </div>
           <!-- 결제신청 모달 버튼 -->
           <button class="${styles.paymentRequest} open-modal" data-modal-target="#modal-approval_1" >
-            결제 신청
+            결재 신청
           </button>
         </div>        
 

@@ -1,7 +1,7 @@
 export const showApprovalContent = () => {
   return {
     modal_id: `approval_1`,
-    header: `결제 신청`,
+    header: `결재 신청`,
     content: `
     <div class="approval-modalbox__form">
       <label for="category"><h4>카테고리</h4></label>

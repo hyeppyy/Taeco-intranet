@@ -3,7 +3,7 @@ import styles from "./Pagination.module.css";
 
 const ITEMS_PER_PAGE = 5; // 페이지네이션 버튼 개수
 const PAGE_COUNT = 5; // 한 페이지에 표시할 항목 수
-let currentPage = 1; // 현재 페이지 번호
+export let currentPage = 1; // 현재 페이지 번호
 let totalPages = 0; // 총 페이지 수
 
 // 현재 페이지를 설정하고 페이지네이션과 현재 페이지 데이터를 렌더링하는 함수
@@ -81,6 +81,10 @@ const renderPagination = (data, renderFn) => {
 const initPagination = (data, renderFn) => {
   renderCurrentPageData(data, renderFn); // 페이지네이션 버튼 렌더링
   renderPagination(data, renderFn); // 현재 페이지의 데이터 렌더링
+};
+
+export const resetCurrentPage = () => {
+  currentPage = 1;
 };
 
 export default initPagination;

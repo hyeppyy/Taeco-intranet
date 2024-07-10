@@ -1,6 +1,8 @@
 //import renderApprovalList from "./RenderApprovalList";
 import styles from "./Approval.module.css";
-import initPagination from "/src/Components/Pagination/Pagination";
+import initPagination, {
+  resetCurrentPage,
+} from "/src/Components/Pagination/Pagination";
 import renderApprovalList from "./RenderApprovalList";
 
 // 탭(심사중, 승인, 반려) 필터 [input: 서버로부터 불러온 데이터]
@@ -45,6 +47,7 @@ const filterByTabs = (data) => {
       state = false;
     } else return;
 
+    resetCurrentPage();
     applyFilters(data, state, category, categoryDate);
   });
 
@@ -79,6 +82,7 @@ const applyFilters = (data, state, category, categoryDate) => {
       (pre, sub) => new Date(pre.submitdate) - new Date(sub.submitdate)
     );
   }
+
   initPagination(filteredData, renderApprovalList);
 };
 

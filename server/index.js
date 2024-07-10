@@ -32,7 +32,7 @@ if (!fs.existsSync(noticeUploadsDir)) {
   fs.mkdirSync(noticeUploadsDir, { recursive: true });
 }
 
-const mileageUploadsDir = path.join(process.cwd(), 'mileage_uploads');
+const mileageUploadsDir = path.join(process.cwd(), "mileage_uploads");
 if (!fs.existsSync(mileageUploadsDir)) {
   fs.mkdirSync(mileageUploadsDir, { recursive: true });
 }
@@ -281,8 +281,8 @@ const mileageStorage = multer.diskStorage({
 const mileageUpload = multer({ storage: mileageStorage });
 
 // 마일리지 목록 조회
-app.get('/api/mileage', (req, res) => {
-  const sql = 'SELECT * FROM Mileage ORDER BY date DESC';
+app.get("/api/mileage", (req, res) => {
+  const sql = "SELECT * FROM Mileage ORDER BY date DESC";
 
   db.all(sql, [], (err, rows) => {
     if (err) {
@@ -300,7 +300,7 @@ app.get('/api/mileage', (req, res) => {
 });
 
 // 마일리지 추가
-app.post('/api/mileage', mileageUpload.single('image'), (req, res) => {
+app.post("/api/mileage", mileageUpload.single("image"), (req, res) => {
   const { category, score, employee, date, isApprove } = req.body;
   const image = req.file ? `/mileage_uploads/${req.file.filename}` : null;
 
@@ -311,7 +311,7 @@ app.post('/api/mileage', mileageUpload.single('image'), (req, res) => {
   db.run(sql, params, function (err) {
     if (err) {
       return res.status(500).json({
-        status: 'Error',
+        status: "Error",
         error: err.message,
       });
     }
@@ -331,25 +331,25 @@ app.post('/api/mileage', mileageUpload.single('image'), (req, res) => {
 });
 
 // 3. 마일리지 승인/거절 (관리자용)
-app.put('/api/mileage/:id/approve', (req, res) => {
+app.put("/api/mileage/:id/approve", (req, res) => {
   const { id } = req.params;
   const { isApprove, reason } = req.body;
 
-  const sql = 'UPDATE Mileage SET isApprove = ?, rejectReason = ? WHERE id = ?';
+  const sql = "UPDATE Mileage SET isApprove = ?, rejectReason = ? WHERE id = ?";
   db.run(sql, [isApprove ? 1 : 0, reason || null, id], function (err) {
     if (err) {
-      return res.status(500).json({ status: 'Error', error: err.message });
+      return res.status(500).json({ status: "Error", error: err.message });
     }
 
     if (this.changes === 0) {
       return res
         .status(404)
-        .json({ status: 'Error', message: 'Mileage record not found' });
+        .json({ status: "Error", message: "Mileage record not found" });
     }
 
     res.status(200).json({
-      status: 'OK',
-      message: isApprove ? 'Mileage approved' : 'Mileage rejected',
+      status: "OK",
+      message: isApprove ? "Mileage approved" : "Mileage rejected",
     });
   });
 });
@@ -425,23 +425,14 @@ app.post("/api/approval", uploadApprovalMiddleware.none(), (req, res) => {
 
 // 전자결제 승인/거절 처리
 app.put("/api/approval/:id", uploadApprovalMiddleware.none(), (req, res) => {
-  const id = req.params.id;
-  const isApprove = req.body.isApprove === "true";
-  const refusereason = req.body.refusereason || "";
+  const { id } = req.params;
+  const { isApprove, refusereason } = req.body;
 
-  let sql, params;
+  const sql = `UPDATE Approval 
+               SET isApprove = ?, refusereason = ? 
+               WHERE id = ?`;
 
-  if (isApprove) {
-    // 승인 처리
-    sql = `UPDATE Approval SET isApprove = 1 WHERE id = ?`;
-    params = [id];
-  } else {
-    // 거절 처리
-    sql = `UPDATE Approval SET isApprove = 0, refusereason = ? WHERE id = ?`;
-    params = [refusereason, id];
-  }
-
-  db.run(sql, params, function (err) {
+  db.run(sql, [isApprove, refusereason, id], function (err) {
     if (err) {
       return res.status(500).json({
         status: "Error",
@@ -452,30 +443,21 @@ app.put("/api/approval/:id", uploadApprovalMiddleware.none(), (req, res) => {
     if (this.changes === 0) {
       return res.status(404).json({
         status: "Error",
-        error: "해당 ID의 전자결제를 찾을 수 없습니다.",
+        error: "Approval request not found",
       });
     }
 
-    // 업데이트된 데이터 조회
-    db.get(`SELECT * FROM Approval WHERE id = ?`, [id], (err, row) => {
-      if (err) {
-        return res.status(500).json({
-          status: "Error",
-          error: err.message,
-        });
-      }
-
-      res.json({
-        status: "OK",
-        message: isApprove
-          ? "전자결제가 승인되었습니다."
-          : "전자결제가 거절되었습니다.",
-        data: row,
-      });
+    res.json({
+      status: "OK",
+      message: "Approval request updated successfully",
+      data: {
+        id,
+        isApprove,
+        refusereason,
+      },
     });
   });
 });
-
 app.listen(port, () => {
   console.log(`ready to ${port}`);
 });

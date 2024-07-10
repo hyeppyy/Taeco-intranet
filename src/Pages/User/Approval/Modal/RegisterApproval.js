@@ -1,12 +1,11 @@
 import fetchApprovalData from "./../FetchApprovalData";
-// registerApproval.js
 
 const registerApproval = () => {
   const addButton = document.querySelector("[data-approvaladd-btn]");
   const modal = document.querySelector(".modal-box.active");
   const modalBackground = document.querySelector("#modal__background");
 
-  addButton.addEventListener("click", async (event) => {
+  const eventListener = async (event) => {
     event.preventDefault();
 
     const titleInput = document.querySelector("[data-a-title]");
@@ -34,14 +33,6 @@ const registerApproval = () => {
     formData.append("enddate", endDate);
     formData.append("submitreason", submitReasonInput.value);
 
-    console.log(formData);
-    console.log(sessionStorage.getItem("userName"));
-    console.log(titleInput.value);
-    console.log(categorySelect.value);
-    console.log(startDateInput.value);
-    console.log(endDate);
-    console.log(submitReasonInput.value);
-
     try {
       const response = await fetch("/api/approval", {
         method: "POST",
@@ -66,6 +57,8 @@ const registerApproval = () => {
         if (modalBackground && modalBackground.classList.contains("active")) {
           modalBackground.classList.remove("active");
         }
+        // 이벤트 리스너 제거
+        addButton.removeEventListener("click", eventListener);
         // 필요한 경우 페이지 새로고침 또는 다른 작업 수행
         fetchApprovalData();
       } else {
@@ -77,7 +70,9 @@ const registerApproval = () => {
       console.error("Failed to register approval:", error);
       alert(`전자결제 등록 중 오류가 발생했습니다: ${error.message}`);
     }
-  });
+  };
+
+  addButton.addEventListener("click", eventListener);
 };
 
 export default registerApproval;

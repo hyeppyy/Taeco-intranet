@@ -77,6 +77,7 @@ const renderApprovalList = (data) => {
         modalContent.content
       );
     });
+
     data.forEach((item) => {
       const modalContent = showApprovalDetailAdminContent1(item);
       renderModal(

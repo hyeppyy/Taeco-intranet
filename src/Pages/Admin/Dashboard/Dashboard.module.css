@@ -151,18 +151,24 @@
 .userDashboard__approvalFilter {
   padding: 12px 0px;
 }
-.userDashboard__approvalContainer {
+.adminDashboard__approvalContainer {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.userDashboard__approvalTitle {
+.adminDashboard__approvalTitle {
   display: flex;
   align-items: center;
   gap: 4px;
 }
-.userDashboard__approvalTitle > h4 {
+.adminDashboard__approvalTitle > h4 {
   color: var(--gray-06);
+}
+.adminDashboard__approval-title--right a,
+.adminDashboard__approval-title--right a svg {
+  color: var(--gray-06);
+  text-decoration: none;
+  align-items: center;
 }
 .approvalTable {
   width: 100%;
@@ -201,6 +207,11 @@
 .approvalTable > thead > tr > th:nth-child(4),
 .approvalTable > tbody > tr > td:nth-child(4) {
   display: none;
+}
+.no-data-message {
+  text-align: center;
+  font-size: 1.2em;
+  color: var(--gray-08);
 }
 
 .noticeTable {

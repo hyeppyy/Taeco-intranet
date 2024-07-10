@@ -40,11 +40,24 @@ const renderAdminDashboard = (container) => {
         <div class="${styles.adminDashboard__container}">
           <div class="${styles.adminDashboard__schedule} ${styles.card}">세부 일정</div>
           <div class="${styles.adminDashboard__approval} ${styles.card}">
-            <div class="${styles.userDashboard__approvalContainer}">
-              <div class="${styles.userDashboard__approvalTitle}">
+            <div class="${styles.adminDashboard__approvalContainer}">
+              <div class="${styles.adminDashboard__approvalTitle}">
                 <h2> 전자결제 </h2>
                 <h4> 미처리 결재만 보여집니다. </h4>
               </div>
+              <h4 class="${styles["adminDashboard__approval-title--right"]}">
+                <a href="/admin/approval">전자결제페이지로 이동</a>
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 16 16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8.78112 8.00047L5.48126 4.70062L6.42408 3.75781L10.6667 8.00047L6.42408 12.2431L5.48126 11.3003L8.78112 8.00047Z"
+                  />
+                </svg>
+              </h4>
             </div>
             <table class="${styles.approvalTable}">
               <thead>

@@ -327,7 +327,8 @@ const mileageStorage = multer.diskStorage({
 });
 
 const mileageUpload = multer({ storage: mileageStorage });
-// 1. 마일리지 목록 조회
+
+// 마일리지 목록 조회
 app.get("/api/mileage", (req, res) => {
   const sql = "SELECT * FROM Mileage ORDER BY date DESC";
 
@@ -346,9 +347,9 @@ app.get("/api/mileage", (req, res) => {
   });
 });
 
-// 2. 마일리지 신청 (사용자용)
-app.post("/api/mileage/apply", mileageUpload.single("image"), (req, res) => {
-  const { category, score, employee, date } = req.body;
+// 마일리지 추가
+app.post("/api/mileage", mileageUpload.single("image"), (req, res) => {
+  const { category, score, employee, date, isApprove } = req.body;
   const image = req.file ? `/mileage_uploads/${req.file.filename}` : null;
 
   const sql = `INSERT INTO Mileage (category, score, employee, date, image, isApprove)
@@ -521,7 +522,6 @@ app.put("/api/approval/:id", uploadApprovalMiddleware.none(), (req, res) => {
     });
   });
 });
-
 app.listen(port, () => {
   console.log(`ready to ${port}`);
 });

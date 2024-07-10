@@ -25,6 +25,12 @@ h1 {
   padding: 8px;
 }
 
+.page__bodyProfile {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+}
+
 .page__body .info {
   display: flex;
   flex-direction: column;

@@ -3,7 +3,7 @@ import approvalData from "./JS/ApprovalData";
 import noticesData from "./JS/NoticeData";
 import mileageData from "./JS/MileageData";
 import fetchUserData from "/src/Pages/User/Mypage/FetchUserData";
-import { getTodayDate } from '/src/Pages/User/Dashboard/JS/CurrentDate';
+import { getTodayDate } from "/src/Pages/User/Dashboard/JS/CurrentDate";
 
 const renderAdminDashboard = (container) => {
   if (!container) {
@@ -16,7 +16,7 @@ const renderAdminDashboard = (container) => {
       <div class="${styles.adminDashboard}">
         <div class="${styles.adminDashboard__profileCard} ${styles.card}">
           <div class="${styles.profileImg}">
-              <img src="/public/images/_Avatar_.png" alt="profileimg" />
+              <img data-m-img alt="profileimg" />
           </div>
           <div class="${styles.info}">
           <h2>Welcome Back,</h2>

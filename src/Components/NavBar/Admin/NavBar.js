@@ -1,5 +1,6 @@
 import styles from "./NavBar.module.css";
 import { logout } from "/src/Pages/Login/ValidateLogin";
+import fetchUserNavBar from "/src/Components/NavBar/User/FetchNavUser";
 
 const renderAdminNavBar = (nav, menuList) => {
   if (!nav) {
@@ -85,12 +86,12 @@ const renderAdminNavBar = (nav, menuList) => {
         <div class="${styles.layout__bottom} ${styles.h4}">
           <div class="${styles.layout__item}" href="/">
             <img
-              src="${userProfileImage}"
+              data-nav-img
               alt="logout-icon"
               width="24"
               height="24"
               class="${styles.layout__profile}"
-            />${userName}
+            /><h4 data-nav-name><h4>
           </div>
           <a class="${styles.layout__item}" href="#" id="logout">
             <svg
@@ -107,7 +108,7 @@ const renderAdminNavBar = (nav, menuList) => {
         </div>
       </div>
     `;
-
+  fetchUserNavBar();
   document.querySelector("#logout").addEventListener("click", logout);
 };
 

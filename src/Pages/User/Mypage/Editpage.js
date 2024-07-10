@@ -1,15 +1,13 @@
 import route from "/src/Router/Router";
 import styles from "./Editpage.module.css";
-import { loadFile, resetToDefaultImage } from "./ProfileEdit";
-import { toastPopUp } from "/src/Components/Toast/Toast"; // 토스트 함수 불러오기
+import fetchUserList from "./FetchUserList";
 
 const renderUserEditPage = (container) => {
   container.innerHTML = `
-  <div class="${styles.page}">
   <!-- 페이지 타이틀 -->
-<h1 class=${styles.page__title}">마이 페이지</h1>
+<h1 class=${styles.page__title}">마이페이지</h1>
 
-
+<div class="${styles.page}">
 <div class="${styles.page__header}">
   <h2>내정보</h2>
   <div>
@@ -20,34 +18,28 @@ const renderUserEditPage = (container) => {
 
 <!-- 내 정보 사진 수정 부분입니다. -->
 <div class="${styles.page__body}">
-  <div class="${styles.body__img}">
-  <img class="${styles.profileImg}"src="/public/images/_Avatar_.png" alt="Image preview" id="previewImage" style="max-width: 300px; height: auto;">
-
-  <div class="${styles.imgbtn}">
-    <!--이미지 업로드 버튼 -->
-    <form method="post" enctype="multipart/form-data">
-      <div class="button">
-          <button type="button" id="chooseFileButton" data-color="neutral" data-shape="line" >이미지 변경</button>
-      </div>
-      <input type="file" id="chooseFile" name="chooseFile" accept="image/*" style="display: none;" onchange="loadFile(this)">
-    </form>
-
-    <!--이미지 삭제 버튼 -->
-    <button data-color='neutral' id="resetImageButton" data-shape='line'>이미지 삭제</button>
-    </div>
-  </div>
-
   <!-- 내 정보 입력 부분입니다. -->
+  <div class="${styles.imageContainer}">
+      <span data-profile-add-img class="${styles.imageContainer__image}"></span>
+    </div>
+    <div data-e-form>
+      <div class="${styles.imgBtnContainer}">
+        <button data-profile-delete data-shape="line" data-color="neutral" class="${styles.info__fileDelete}">이미지 삭제</button>
+        <label for="fileInput" class="${styles.info__fileLabel}">이미지 등록</label>
+      </div>
+    <input data-profile-input id="fileInput" class="${styles.info__fileInput}" type="file" name="profileImage" accept="image/*">
+  <button class="${styles.uploadProfile}" type="submit">이미지 업로드</button>
+  </div>
   <form action="/submit-user-info" method="post">
     <ul class="${styles.user__info}">
       <li class="${styles.info__name}">
         <label for="name"><span>이름</span></label>
-        <input data-shape="line" type="name" id="name" placeholder="홍길동"/>
+        <input data-profile-name data-shape="line" type="name" id="name" placeholder=""/>
       </li>
       
       <li class="${styles.info__position}">
         <label for="positions"><span>직함</span></label>
-        <select name="positions" id="positions" required>
+        <select data-profile-positions name="positions" id="positions" required>
           <option value="사장">사장</option>
           <option value="부장">부장</option>
           <option value="차장">차장</option>
@@ -59,22 +51,27 @@ const renderUserEditPage = (container) => {
       
       <li class="${styles.info__email}">
         <label for="email"><span>이메일</span></label>
-        <input data-shape="line" type="email" id="email" placeholder="eco@taeco.com"/>
+        <input data-profile-email data-shape="line" type="email" id="email" placeholder="taeco@gmail.com"/>
       </li>
       
+      <li class="${styles.info__password}">
+        <label for="password"><span>비밀번호</span></label>
+        <input data-profile-password data-shape="line" type="password" id="password" placeholder=""/>
+      </li>
+
       <li class="${styles.info__number}">
         <label for="phone"><span>전화 번호</span></label>
-        <input data-shape="line" type="number" id="phone" placeholder="010-0000-0000"/>
+        <input data-profile-phone data-shape="line" type="text" id="phone" placeholder="010-0000-0000"/>
       </li>
 
       <li class="${styles.info__birthday}">
         <label for="birthday"><span>생일</span></label>
-        <input data-shape="line" type="date" id="birthday" required/>
+        <input data-profile-birthday data-shape="line" type="date" id="birthday" required/>
       </li>
       
       <li class="${styles.info__joinday}">
         <label for="joinday"><span>입사일</span></label>
-        <input data-shape="line" type="date" id="joinday" required/>
+        <input data-profile-joinday data-shape="line" type="date" id="joinday" required/>
       </li>
     </ul>
   </form>
@@ -93,7 +90,7 @@ const renderUserEditPage = (container) => {
 </div>
   `;
 
-  // 마이페이지로 돌아가기 라우팅 방식
+  fetchUserList();
 
   document
     .querySelector(`.${styles.backButton}`)
@@ -101,29 +98,6 @@ const renderUserEditPage = (container) => {
       history.pushState(null, null, "/user/mypage");
       route();
     });
-
-  // 이미지 파일 업로드 부분
-  document.getElementById("chooseFileButton").addEventListener("click", () => {
-    document.getElementById("chooseFile").click();
-  });
-
-  document.getElementById("chooseFile").addEventListener("change", function () {
-    loadFile(this);
-  });
-
-  document.getElementById("resetImageButton").addEventListener("click", () => {
-    resetToDefaultImage();
-  });
-
-  // 토스트 기능 구현
-  const saveButton = document.getElementById("saveButton");
-  if (saveButton) {
-    saveButton.addEventListener("click", () => {
-      toastPopUp();
-    });
-  } else {
-    console.error("save 버튼을 찾을 수 없습니다.");
-  }
 };
 
 export default renderUserEditPage;

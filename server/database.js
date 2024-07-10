@@ -5,10 +5,10 @@ const database = new sqlite3.Database(`./${databaseName}.db`);
 
 database.serialize(() => {
   // 모든 테이블 드롭
-  // database.run("DROP TABLE IF EXISTS Users");
-  // database.run("DROP TABLE IF EXISTS Notices");
-  // database.run("DROP TABLE IF EXISTS Approval");
-  // database.run("DROP TABLE IF EXISTS Mileage");
+  database.run("DROP TABLE IF EXISTS Users");
+  database.run("DROP TABLE IF EXISTS Notices");
+  database.run("DROP TABLE IF EXISTS Approval");
+  database.run("DROP TABLE IF EXISTS Mileage");
 
   // Users 테이블 생성
   database.run(

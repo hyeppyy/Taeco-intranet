@@ -23,7 +23,7 @@
 /* table style */
 .userNoticeTable > table {
   width: 100%;
-  table-layout: fixed;
+  /* table-layout: fixed; */
   font-size: 1.4rem;
   line-height: 2.1rem;
 }
@@ -141,10 +141,7 @@
     flex-direction: column;
     align-items: flex-start;
   }
-  .pagination {
-    justify-content: center;
-  }
-  .userNoticeTable > thead {
+  .userNoticeTable > table > thead {
     display: none;
   }
   .userNoticeTable > table > tbody > tr > td {
@@ -164,5 +161,8 @@
     gap: 4px;
     width: 100%;
     border-top: 1px solid var(--gray-04);
+  }
+  .noticeResponsive__attachment {
+    display: flex;
   }
 }

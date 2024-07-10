@@ -4,13 +4,15 @@ const getMileageScore = (data) => {
   const showTotalMileageIcon = document.querySelector("#total-mileage-icon");
 
   // 마일리지 총합 점수
-  const loginedUserData = data.filter(
-    (item) => item.user === sessionStorage.getItem("userName")
+  const loginUserData = data.filter(
+    (item) =>
+      item.user === sessionStorage.getItem("userName") && item.isApprove == 1
   );
-  const totalMileage = loginedUserData.reduce((acc, cur) => acc + cur.score, 0);
+
+  const totalMileage = loginUserData.reduce((acc, cur) => acc + cur.score, 0);
   showTotalMileageScore.textContent = totalMileage;
   let level = "";
-  
+
   if (totalMileage <= 10) level = "seed";
   else if (totalMileage > 10 && totalMileage <= 30) level = "sprout";
   else if (totalMileage > 30 && totalMileage < 50) level = "leaf";

@@ -377,14 +377,32 @@ app.post("/api/mileage/apply", mileageUpload.single("image"), (req, res) => {
 
 // 3. 마일리지 승인/거절 (관리자용)
 app.put("/api/mileage/:id/approve", (req, res) => {
-  const { id } = req.params;
-  const { isApprove, reason } = req.body;
+  const id = parseInt(req.params.id, 10);
+  const { isApprove } = req.body;
 
-  const sql = "UPDATE Mileage SET isApprove = ?, rejectReason = ? WHERE id = ?";
-  db.run(sql, [isApprove ? 1 : 0, reason || null, id], function (err) {
+  console.log("Received request:", { id, isApprove }); // 요청 로깅
+
+  if (isNaN(id)) {
+    return res.status(400).json({ status: "Error", message: "Invalid ID" });
+  }
+
+  const sql = "UPDATE Mileage SET isApprove = ? WHERE id = ?";
+  const isApproveValue = isApprove === true || isApprove === 1 ? 1 : 0;
+  const params = [isApproveValue, id];
+
+  console.log("Executing SQL:", sql, "with params:", params); // SQL 쿼리 로깅
+
+  db.run(sql, params, function (err) {
     if (err) {
-      return res.status(500).json({ status: "Error", error: err.message });
+      console.error("Database error:", err);
+      return res.status(500).json({
+        status: "Error",
+        message: "Database operation failed",
+        error: err.message,
+      });
     }
+
+    console.log("SQL execution result:", { changes: this.changes }); // 실행 결과 로깅
 
     if (this.changes === 0) {
       return res
@@ -515,8 +533,8 @@ app.put("/api/approval/:id", uploadApprovalMiddleware.none(), (req, res) => {
       res.json({
         status: "OK",
         message: isApprove
-          ? "전자결제가 승인되었습니다."
-          : "전자결제가 거절되었습니다.",
+          ? "전자결재가 승인되었습니다."
+          : "전자결재가 거절되었습니다.",
         data: row,
       });
     });

@@ -14,7 +14,7 @@ const renderApprovalList = (data) => {
   container.innerHTML = "";
   if (data.length === 0) {
     const noDataMessage = document.createElement("p");
-    noDataMessage.textContent = "전자결제 내역이 없습니다";
+    noDataMessage.textContent = "전자결재 내역이 없습니다";
     noDataMessage.className = styles["no-data-message"];
     container.appendChild(noDataMessage);
   } else {

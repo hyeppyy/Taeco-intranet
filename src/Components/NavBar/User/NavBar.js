@@ -13,7 +13,9 @@ const renderUserNavBar = (nav, menuList) => {
   <div class="${styles.layout}">
     <div class="${styles.layout__top}">
       <div class="${styles.layout__logo}">
-        <img src="/public/images/company_logo_user.png" />
+        <a href="/user/dashboard">
+          <img src="/public/images/company_logo_user.png" />
+        <a>
       </div>
 
     <div class="${styles.layout__nav}">
@@ -83,14 +85,7 @@ const renderUserNavBar = (nav, menuList) => {
         <!-- 하단 부분 -->
         <div class="${styles.layout__bottom} ${styles.h4}">
           <div class="${styles.layout__item}">
-            <img
-              data-nav-img
-              alt="logout-icon"
-              width="24"
-              height="24"
-              class="${styles.layout__profile}"
-            />
-            <h4 data-nav-name></h4>
+            <h4><span data-nav-position></span> <span data-nav-name></span><h4>
           </div>
           <a class="${styles.layout__item}" href="#" id="logout">
             <svg

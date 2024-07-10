@@ -6,37 +6,50 @@ const handleMileageApprove = (item) => {
   const approveBtn = document.getElementById(`approve-btn-${item.id}`);
   const rejectBtn = document.getElementById(`reject-btn-${item.id}`);
 
-  if (approveBtn) {
-    approveBtn.addEventListener("click", async () => {
+  const approveHandler = async () => {
+    try {
       const success = await approveMileage(item.id);
       if (success) {
         document.querySelector(".modal-box.active").classList.remove("active");
         document.querySelector("#modal__background").classList.remove("active");
-        // location.reload();
-        fetchMileageData();
+        await fetchMileageData();
       }
-    });
-  }
+    } catch (error) {
+      console.error("승인 처리 중 오류 발생:", error);
+      alert("승인 처리 중 오류가 발생했습니다.");
+    }
+  };
 
-  if (rejectBtn) {
-    rejectBtn.addEventListener("click", async () => {
-      const reasonSelect = document.querySelector("#rejection-reason");
-      const reason = reasonSelect.value;
-      console.log(reason);
-      if (reason === "none") {
-        alert("거절 사유를 선택해주세요.");
-        return;
-      }
+  const rejectHandler = async () => {
+    const reasonSelect = document.querySelector("#rejection-reason");
+    const reason = reasonSelect.value;
 
-      console.log("선택된 이유:", reason);
+    // if (reason === "none") {
+    //   alert("거절 사유를 선택해주세요.");
+    //   return;
+    // }
 
+    try {
       const success = await rejectMileage(item.id, reason);
       if (success) {
         document.querySelector(".modal-box.active").classList.remove("active");
         document.querySelector("#modal__background").classList.remove("active");
-        fetchMileageData();
+        await fetchMileageData();
       }
-    });
+    } catch (error) {
+      console.error("거절 처리 중 오류 발생:", error);
+      alert("거절 처리 중 오류가 발생했습니다.");
+    }
+  };
+
+  if (approveBtn) {
+    approveBtn.removeEventListener("click", approveHandler);
+    approveBtn.addEventListener("click", approveHandler);
+  }
+
+  if (rejectBtn) {
+    rejectBtn.removeEventListener("click", rejectHandler);
+    rejectBtn.addEventListener("click", rejectHandler);
   }
 };
 

@@ -10,7 +10,9 @@
 
 .loginContainer {
   border-radius: 10px;
-  background-color: var(--color-white);
+  background: rgba(255, 255, 255, 0.1);
+  border: 0.5px solid var(--color-white);
+  backdrop-filter: blur(15px);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -41,9 +43,19 @@
   width: 100%;
 }
 
-.loginContainer__form > input {
+.loginContainer__form > input[data-shape="line"] {
   width: 100%;
   box-sizing: border-box;
+  color: var(--color-white);
+  border: 1px solid var(--gray-05);
+}
+
+.loginContainer__form > h5 {
+  color: var(--color-white);
+}
+
+.loginContainer__form > input::placeholder {
+  color: var(--gray-04);
 }
 
 .loginBtn {

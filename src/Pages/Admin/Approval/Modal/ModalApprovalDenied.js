@@ -34,9 +34,9 @@ const modalApprovalDenied = (modal) => {
       const result = await response.json();
       console.log(result.message);
       if (isApprove) {
-        alert("전자결제가 승인되었습니다.");
+        alert("전자결재가 승인되었습니다.");
       } else {
-        alert("전자결제가 거절되었습니다.");
+        alert("전자결재가 거절되었습니다.");
       }
       // 여기에 UI 업데이트 로직을 추가할 수 있습니다.
       closeModal();

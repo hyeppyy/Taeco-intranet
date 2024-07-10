@@ -1,6 +1,13 @@
 const spinner = () => {
+  const spinnerContainer = document.createElement("div");
+  spinnerContainer.className = "spinner-container";
+
   const spinnerElement = document.createElement("div");
   spinnerElement.className = "spinner";
+
+  spinnerContainer.appendChild(spinnerElement);
+  spinnerContainer.style.display = "none";
+
   spinnerElement.innerHTML = `
               <div class = "spinner__firstRow">
                 <svg
@@ -53,16 +60,15 @@ const spinner = () => {
               </div> 
                 `;
 
-  spinnerElement.style.display = "none";
-
-  document.body.append(spinnerElement);
+  spinnerContainer.style.display = "none";
+  document.body.append(spinnerContainer);
 
   return {
     show: () => {
-      spinnerElement.style.display = "block";
+      spinnerContainer.style.display = "flex";
     },
     hide: () => {
-      spinnerElement.style.display = "none";
+      spinnerContainer.style.display = "none";
     },
   };
 };

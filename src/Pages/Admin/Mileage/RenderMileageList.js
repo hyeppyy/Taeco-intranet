@@ -13,7 +13,6 @@ const renderMileageList = (data) => {
   container.innerHTML = '';
 
   data.forEach((item) => {
-    console.log(item);
     const div = document.createElement('div');
     div.className = styles['mileage-list__item'];
     div.classList.add('open-modal');

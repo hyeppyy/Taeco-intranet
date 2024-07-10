@@ -15,7 +15,9 @@ const renderAdminNavBar = (nav, menuList) => {
   <div class="${styles.layout}">
     <div class="${styles.layout__top}">
       <div class="${styles.layout__logo}">
-        <img src="/public/images/company_logo_admin.png" />
+        <a href="/admin/dashboard">
+          <img src="/public/images/company_logo_admin.png" />
+        <a>
       </div>
 
     <div class="${styles.layout__nav}">

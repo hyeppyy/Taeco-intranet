@@ -70,7 +70,7 @@ const renderNoticesList = (data) => {
                 <div class="${styles.noticeResponsive}">
                     <p>작성자:${dataItem.author} / </p>
                     <p>작성일:${dataItem.createdAt} / </p>
-                    <p>첨부파일:
+                    <p class="${styles.noticeResponsive__attachment}">첨부파일:
                     ${
                       hasAttachments
                         ? `<img src="/public/icons/textfile.svg" alt="file-icon" width="20" height="20" />`

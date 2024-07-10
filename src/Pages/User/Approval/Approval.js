@@ -11,20 +11,23 @@ const renderUserApproval = (container) => {
         <h1>전자결재</h1>
         <div class="${styles.content__row}">
           <!-- tap형식 버튼 -->
-          <div class="${styles["approval-approve__tabs"]}">
+          <div data-approve-tabs class="${styles["approval-approve__tabs"]}">
             <button
               id="undetermined"
+              data-approve-tab
               class="${styles["approval-approve__tab"]} ${styles["approval-approve__tab--undetermined"]}"
             >
               심사중
             </button>
             <button 
               id="approved"
+              data-approve-tab
               class="${styles["approval-approve__tab"]} ${styles["approval-approve__tab--approved"]}">
               승인
             </button>
             <button 
               id="rejected"
+              data-approve-tab
               class="${styles["approval-approve__tab"]} ${styles["approval-approve__tab--rejected"]}">
               반려
             </button>
@@ -80,6 +83,27 @@ const renderUserApproval = (container) => {
     showApprovalContent().content, //모달 내용,
     approvalType
   );
+
+  const tabs = document.querySelectorAll("[data-approve-tab]");
+  const tabContainer = document.querySelector("[data-approve-tabs]");
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      // 모든 탭에서 active 클래스 제거
+      tabs.forEach((t) => t.classList.remove("active"));
+
+      // 클릭된 탭에 active 클래스 추가
+      tab.classList.add("active");
+
+      // 탭 컨테이너의 클래스 업데이트
+      tabContainer.classList.remove(
+        styles["active-undetermined"],
+        styles["active-approved"],
+        styles["active-rejected"]
+      );
+      tabContainer.classList.add(styles[`active-${tab.id}`]);
+    });
+  });
 };
 
 export default renderUserApproval;

@@ -1,5 +1,7 @@
 import renderNoticesList from "./RenderNoticesList.js";
-import initPagination from "/src/Components/Pagination/Pagination";
+import initPagination, {
+  resetCurrentPage,
+} from "/src/Components/Pagination/Pagination";
 import styles from "../Notice.module.css";
 
 const tabFilter = (data) => {
@@ -40,6 +42,7 @@ const tabFilter = (data) => {
     filteredData = data.filter((item) => item.category === targetId);
     filteredData = moveImportantDataToTop(filteredData);
 
+    resetCurrentPage();
     renderNoticesList(filteredData);
     updateTotalPostsNum(filteredData);
     dateFilter(filteredData, selectFilter.value);

@@ -13,7 +13,9 @@ const renderUserNavBar = (nav, menuList) => {
   <div class="${styles.layout}">
     <div class="${styles.layout__top}">
       <div class="${styles.layout__logo}">
-        <img src="/public/images/company_logo_user.png" />
+        <a href="/user/dashboard">
+          <img src="/public/images/company_logo_user.png" />
+        <a>
       </div>
 
     <div class="${styles.layout__nav}">

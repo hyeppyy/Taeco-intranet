@@ -42,22 +42,47 @@
 
 .approval-approve__tabs {
   display: flex;
+  position: relative;
 }
 
 .approval-approve__tab {
-  font-size: 14px;
+  font-size: 1.4rem;
   letter-spacing: 0.4px;
-  /********* 색 추가 *************/
   color: rgba(0, 0, 0, 0.6);
   background-color: var(--color-white);
   display: flex;
   border-radius: 0;
   border: none;
+  padding: 10px 20px;
+  position: relative;
+  transition: color 0.3s ease;
 }
 
 .approval-approve__tab.active {
   color: var(--color-pri-normal);
-  border-bottom: 2px solid var(--color-pri-normal);
+}
+
+.approval-approve__tabs::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 33.33%; /* 탭의 개수에 따라 조정 */
+  height: 2px;
+  background-color: var(--color-pri-normal);
+  transition: transform 0.3s ease;
+}
+
+.approval-approve__tabs.active-undetermined::after {
+  transform: translateX(0);
+}
+
+.approval-approve__tabs.active-approved::after {
+  transform: translateX(100%);
+}
+
+.approval-approve__tabs.active-rejected::after {
+  transform: translateX(200%);
 }
 
 .approval-list {

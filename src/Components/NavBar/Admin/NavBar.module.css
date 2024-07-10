@@ -19,20 +19,19 @@ nav > .layout > .layout__top {
   margin-top: 10px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 4px;
 }
 
 nav > .layout > .layout__top > .layout__logo {
-  width: 188px;
-  height: 32px;
-  padding: 6px 16px;
+  padding: 6px 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-nav > .layout > .layout__top > .layout__logo > img {
-  height: 16px;
+nav > .layout > .layout__top > .layout__logo > a > img {
+  height: 24px;
+  width: auto;
   padding: 4px;
 }
 
@@ -95,7 +94,10 @@ nav > .layout > .layout__bottom > .layout__item > .layout--profile {
   }
 
   nav > .layout {
-    display: none;
+    position: fixed;
+    top: 0;
+    right: -180px; /* Sidebar is hidden initially */
+    transition: right 0.3s ease; /* Animation for sidebar */
     width: 180px;
   }
   nav > .layout.open {

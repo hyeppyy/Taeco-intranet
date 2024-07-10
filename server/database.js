@@ -5,10 +5,10 @@ const database = new sqlite3.Database(`./${databaseName}.db`);
 
 database.serialize(() => {
   // 모든 테이블 드롭
-  database.run("DROP TABLE IF EXISTS Users");
-  database.run("DROP TABLE IF EXISTS Notices");
-  database.run("DROP TABLE IF EXISTS Approval");
-  database.run("DROP TABLE IF EXISTS Mileage");
+  //database.run("DROP TABLE IF EXISTS Users");
+  //database.run("DROP TABLE IF EXISTS Notices");
+  //database.run("DROP TABLE IF EXISTS Approval");
+  //database.run("DROP TABLE IF EXISTS Mileage");
 
   // Users 테이블 생성
   database.run(
@@ -32,10 +32,10 @@ database.serialize(() => {
         const sampleUsersData = [
           {
             id: 1,
-            password: "1234",
+            password: "1",
             name: "admin",
-            email: "admin@gmail.com",
-            profileImage: "../public/images/_Avatar_.png",
+            email: "a",
+            profileImage: "/public/images/defaultProfile.png",
             position: "사장",
             birthday: "1987.05.24",
             startDate: "2004.07.08",
@@ -43,10 +43,10 @@ database.serialize(() => {
           },
           {
             id: 2,
-            password: "1234",
+            password: "1",
             name: "user1",
-            email: "user1@gmail.com",
-            profileImage: "../public/images/_Avatar_.png",
+            email: "u",
+            profileImage: "/public/images/defaultProfile.png",
             position: "차장",
             birthday: "1990.09.17",
             startDate: "2004.09.08",
@@ -57,7 +57,7 @@ database.serialize(() => {
             password: "1234",
             name: "user2",
             email: "user2@gmail.com",
-            profileImage: "../public/images/_Avatar_.png",
+            profileImage: "/public/images/defaultProfile.png",
             position: "과장",
             birthday: "1990.09.17",
             startDate: "2004.09.08",
@@ -68,7 +68,7 @@ database.serialize(() => {
             password: "1234",
             name: "user3",
             email: "user3@gmail.com",
-            profileImage: "../public/images/_Avatar_.png",
+            profileImage: "/public/images/defaultProfile.png",
             position: "대리",
             birthday: "1990.09.17",
             startDate: "2004.09.08",
@@ -79,7 +79,7 @@ database.serialize(() => {
             password: "1234",
             name: "user4",
             email: "user4@gmail.com",
-            profileImage: "../public/images/_Avatar_.png",
+            profileImage: "/public/images/defaultProfile.png",
             position: "사원",
             birthday: "1990.09.17",
             startDate: "2004.09.08",

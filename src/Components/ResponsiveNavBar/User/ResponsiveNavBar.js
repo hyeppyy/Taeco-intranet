@@ -1,12 +1,12 @@
-import styles from '../User/ResponsiveNavBar.module.css';
-import hamburger from './Hamburger';
+import styles from "../User/ResponsiveNavBar.module.css";
+import hamburger from "./Hamburger";
 
 const renderResponsiveNavBar = (container) => {
   container.innerHTML = `
-          <div class=${styles['responsive-nav__container']}>
-            <div class=${styles.logo}>
+          <div class=${styles["responsive-nav__container"]}>
+            <a href="/user/dashboard" class=${styles.logo}>
                 <img src="/public/images/company_logo_user.png" />
-            </div>
+            </a>
             <button class=${styles.hamburger}>&#9776;</button>
           </div>
             `;

@@ -1,8 +1,13 @@
 import renderUserList from "./RenderUserList";
 import { getUserId } from "/src/Pages/Login/ValidateLogin";
+import spinner from "/src/Components/Spinner/Spinner";
+
+// 로딩 스피너
+const loadingSpinner = spinner();
 
 const fetchUserData = async () => {
   try {
+    loadingSpinner.show();
     const userId = getUserId();
     if (!userId) {
       throw new Error("User not logged in");
@@ -25,6 +30,8 @@ const fetchUserData = async () => {
   } catch (error) {
     console.error("Failed to fetch user data:", error);
     renderUserList(null);
+  } finally {
+    loadingSpinner.hide();
   }
 };
 

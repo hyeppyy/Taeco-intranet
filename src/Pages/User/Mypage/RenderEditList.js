@@ -85,7 +85,8 @@ const renderEditList = (userdata) => {
   const handleFileDelete = (event) => {
     event.preventDefault();
     setDefaultImage();
-    selectedFile = null; // 선택된 파일 초기화
+    //selectedFile = null; // 선택된 파일 초기화
+    selectedFile = "/public/images/defaultProfile.png";
   };
 
   fileInput.addEventListener("change", handleFileSelect); //프로필 이미지 변경

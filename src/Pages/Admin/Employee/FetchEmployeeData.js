@@ -1,12 +1,7 @@
 import filter from "./Filter";
-import spinner from "/src/Components/Spinner/Spinner";
-
-// 로딩 스피너
-const loadingSpinner = spinner();
 
 const fetchEmployeeData = async () => {
   try {
-    loadingSpinner.show();
     const response = await fetch("/api/users");
 
     if (!response.ok) {
@@ -23,10 +18,8 @@ const fetchEmployeeData = async () => {
     }
   } catch (error) {
     console.error("Failed to fetch notices:", error);
-  } finally {
-    loadingSpinner.hide();
-    return []; // 에러 발생 시 빈 배열 반환
   }
+  return []; // 에러 발생 시 빈 배열 반환
 };
 
 export default fetchEmployeeData;

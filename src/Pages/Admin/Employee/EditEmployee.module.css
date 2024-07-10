@@ -58,28 +58,21 @@
   visibility: hidden;
 }
 
-.info__value {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: #f9f9f9;
-  display: inline-block;
-  width: 50%;
-  box-sizing: border-box;
-  font-size: 14px;
-}
-
 form {
   display: flex;
   width: 100%;
+  /* justify-content: center; */
 }
 .user__info {
   width: 100%;
 }
+.user__info input {
+  color: var(--color-black);
+}
 
 .user__info label {
   display: flex;
-  width: 170px;
+  width: 190.667px;
   padding: 16px;
   align-items: center;
   flex-direction: row;
@@ -89,6 +82,17 @@ form {
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+.info__position select {
+  width: 327px;
+  box-sizing: border-box;
+}
+
+.info__birthday input,
+.info__joinday input {
+  width: 327px !important;
+  box-sizing: border-box;
 }
 
 .table__container {
@@ -112,8 +116,15 @@ form {
   .page__content {
     gap: 0;
     overflow-y: auto;
-    margin-bottom: 20px;
   }
+  .user__info input,
+  .info__position select,
+  .info__birthday input,
+  .info__joinday input {
+    width: 100% !important; /* 모바일에서 input과 select 너비를 100%로 설정 */
+    box-sizing: border-box;
+  }
+
   div .page {
     overflow-y: auto; /* 수직 스크롤바 추가 */
   }
@@ -124,9 +135,5 @@ form {
 
   .page__button {
     margin: 12px 8px;
-  }
-
-  .user__info label {
-    width: 110px;
   }
 }

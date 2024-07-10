@@ -22,7 +22,7 @@ const renderAdminEmployee = (container) => {
     <button id="addEmployeeButton" data-color="positive" data-shape="block">직원 추가</button>
   </div>
 
-  <h4 class="${styles.total__info}">총 인원: 12명</h4>
+  <h4 class="${styles.total__info}" id="totalEmployeeCount">총 인원: 로딩 중 ...</h4>
 
   <div class="${styles.table}">
     <table class="${styles.table__container}">
@@ -46,7 +46,16 @@ const renderAdminEmployee = (container) => {
   </div> 
   `;
   addEmployee();
-  fetchEmployeeData();
+  fetchAndDisplayEmployeeData();
+};
+
+const fetchAndDisplayEmployeeData = async () => {
+  const data = await fetchEmployeeData();
+  if (data && data.length) {
+    document.getElementById(
+      "totalEmployeeCount"
+    ).innerText = `총 인원: ${data.length}명`;
+  }
 };
 
 const addEmployee = () => {

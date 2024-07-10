@@ -13,6 +13,7 @@ const renderMileageList = (data) => {
   container.innerHTML = '';
 
   data.forEach((item) => {
+    console.log(item);
     const div = document.createElement('div');
     div.className = styles['mileage-list__item'];
     div.classList.add('open-modal');
@@ -20,7 +21,7 @@ const renderMileageList = (data) => {
     div.style.backgroundImage = `url(${item.image})`;
     div.innerHTML = `<div class="${styles['mileage-list__title']}">
           <h3>${item.category}</h3>
-          <h5>${item.employee}</h5>
+          <h4>${item.user}</h4>
           <h5>${item.date}</h5>
         </div>`;
 

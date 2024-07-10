@@ -7,9 +7,13 @@ const filterByTabs = (data) => {
     `.${styles["mileage-approve__tabs"]}`
   );
   let state = null; // 초기 상태는 심사중
-  let filteredData = data.filter((item) => item.isApprove === state);
+  let filteredData = data.filter(
+    (item) =>
+      item.user === sessionStorage.getItem("userName") && // 로그인한 유저에 대한 정보만 보여줌
+      item.isApprove === state
+  );
 
-  document.getElementById('undetermined').classList.add(styles.active); // 초기 상태에서 심사중 탭 활성화
+  document.getElementById("undetermined").classList.add(styles.active); // 초기 상태에서 심사중 탭 활성화
   renderMileageList(filteredData); // 초기 렌더링
   filterBySelect(filteredData); // 초기 탭 필터 후 날짜 필터 적용
 
@@ -30,13 +34,17 @@ const filterByTabs = (data) => {
       state = null;
     } else if (targetId === "approved") {
       event.target.classList.add(styles.active);
-      state = true;
+      state = 1;
     } else if (targetId === "rejected") {
       event.target.classList.add(styles.active);
-      state = false;
+      state = 0;
     } else return;
 
-    filteredData = data.filter((item) => item.isApprove == state); // isApprove: null, 0, 1
+    filteredData = data.filter(
+      (item) =>
+        item.isApprove === state &&
+        item.user === sessionStorage.getItem("userName")
+    ); // isApprove: null, 0, 1
 
     renderMileageList(filteredData);
     filterBySelect(filteredData); // 탭 필터 후 날짜 필터 적용

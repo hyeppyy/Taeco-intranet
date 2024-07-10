@@ -24,7 +24,7 @@ export const showMileageListContent = (item) => {
 
             <div class="form-group">
               <h5>신청자</h5>
-              <input id="mileage-approve-employee_${item.id}" data-shape="line" type="text" value='${item.employee}' readonly autocomplete="off"/>
+              <input id="mileage-approve-employee_${item.id}" data-shape="line" type="text" value='${item.user}' readonly autocomplete="off"/>
             </div>
 
             <div class="form-group">

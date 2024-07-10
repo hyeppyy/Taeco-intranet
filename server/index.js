@@ -358,12 +358,11 @@ app.get("/api/mileage", (req, res) => {
 
 // 2. 마일리지 신청 (사용자용)
 app.post("/api/mileage/apply", mileageUpload.single("image"), (req, res) => {
-  const { category, score, employee, date } = req.body;
+  const { user, category, score, date } = req.body;
   const image = req.file ? `/mileage_uploads/${req.file.filename}` : null;
-
-  const sql = `INSERT INTO Mileage (category, score, employee, date, image, isApprove)
-               VALUES (?, ?, ?, ?, ?, ?)`;
-  const params = [category, score, employee, date, image, null]; // isApprove를 0(심사중)으로 설정
+  const sql = `INSERT INTO Mileage (user, category, score, date, image, isApprove)
+               VALUES (?, ?, ?, ?, ?, ?)`; // 순서에 맞게!
+  const params = [user, category, score, date, image, null]; // isApprove를 0(심사중)으로 설정
 
   db.run(sql, params, function (err) {
     if (err) {
@@ -373,9 +372,9 @@ app.post("/api/mileage/apply", mileageUpload.single("image"), (req, res) => {
       status: "OK",
       data: {
         id: this.lastID,
+        user,
         category,
         score,
-        employee,
         date,
         image,
         isApprove: null,

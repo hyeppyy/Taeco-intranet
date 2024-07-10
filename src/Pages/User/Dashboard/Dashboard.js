@@ -15,7 +15,7 @@ const renderUserDashboard = (container) => {
         <div class="${styles.userDashboard}">
           <div class="${styles.userDashboard__profileCard}  ${styles.card}">
             <div class="${styles.profileImg}">
-              <img src="/public/images/_Avatar_.png" alt="profileimg" />
+              <img data-m-img alt="profileimg" />
             </div>
             <div class="${styles.info}">
               <h2>Welcome Back,</h2>

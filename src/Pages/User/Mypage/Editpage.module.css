@@ -1,3 +1,8 @@
+.page {
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
 .page__title {
   margin-bottom: 12px;
 }
@@ -8,19 +13,16 @@
   align-items: center;
   align-self: stretch;
   margin-bottom: 12px;
-  border-radius: 4px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 16px;
 }
 
 .page__body {
   display: flex;
-  padding: 16px;
+  padding: 0 0 16px 0;
   flex-direction: column;
   align-items: center;
   align-self: stretch;
-  /* border-radius: 4px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+  gap: 16px;
 }
 .body__img {
   display: flex;
@@ -33,8 +35,8 @@
 }
 
 .profileimg {
-  width: 200px;
-  height: 200px;
+  min-width: 200px;
+  min-height: 200px;
 }
 
 #background {
@@ -133,6 +135,56 @@ form {
   bottom: 24px;
   opacity: 1;
   z-index: 999;
+}
+
+.imageContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.imageContainer__image {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  display: flex;
+  overflow: hidden;
+}
+
+.imageContainer img {
+  width: 100%;
+  height: 100%;
+}
+
+.info__fileInput {
+  display: none;
+}
+
+.imgBtnContainer {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+}
+
+.info__fileLabel {
+  border-radius: 4px;
+  padding: 6px 14px;
+  background-color: transparent;
+  border: 1px solid var(--gray-08);
+  color: var(--gray-08);
+  font-size: 1.4rem;
+}
+
+.info__fileLabel:hover {
+  cursor: pointer;
+  transition: 0.3s;
+  background: var(--gray-09);
+  color: var(--color-white);
+}
+
+.uploadProfile {
+  display: none;
 }
 
 /* 모바일 */

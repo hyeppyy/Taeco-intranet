@@ -4,14 +4,14 @@ import fetchUserData from "./FetchUserData";
 
 const renderUserMypage = (container) => {
   container.innerHTML = `
-  <h1>마이 페이지</h1>
+  <h1>마이페이지</h1>
   <div class="${styles.page__header}">
     <h2>내정보</h2>
     <button id="editButton" data-color="positive" data-shape="block">정보 수정</button>
   </div>
   <div class="${styles.page__body}">
     <div class="page__body-img">
-      <img src="/public/images/_Avatar_.png" alt="profileimg">
+      <img class="${styles.page__bodyProfile}" data-m-img alt="profileimg">
     </div>
     <div class="${styles.info}">
       <div class="${styles.info__first}">

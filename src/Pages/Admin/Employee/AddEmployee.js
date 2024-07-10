@@ -1,6 +1,5 @@
 import styles from "./AddEmployee.module.css";
 import AddEmployee from "./HandleAddEmployee";
-import route from "./../../../Router/Router";
 
 const renderAddEmployeePage = (container) => {
   container.innerHTML = `

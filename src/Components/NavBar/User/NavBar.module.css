@@ -79,7 +79,11 @@
 /*************** 모바일 버전/****************/
 @media screen and (max-width: 600px) {
   .layout {
-    display: none;
+    position: fixed;
+    top: 0;
+    right: -180px; /* Sidebar is hidden initially */
+    transition: right 0.3s ease; /* Animation for sidebar */
+    width: 180px;
     border-right: none;
     border-left: 1px solid var(--gray-04);
   }

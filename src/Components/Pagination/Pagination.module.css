@@ -22,9 +22,3 @@
     outline: 1px solid red;
   }
 }
-/* 미디어 쿼리 */
-@media (max-width: 600px) {
-  .pagination {
-    justify-content: center;
-  }
-}

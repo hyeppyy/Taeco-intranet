@@ -29,11 +29,20 @@ const ApprovalDashBoardFilter = (data) => {
 
   // 테이블 본문 초기화
   tableBody.innerHTML = "";
+  if (topThreeItems.length === 0) {
+    const noDataMessage = document.createElement("tr");
+    noDataMessage.className = styles["no-data-message"];
+    noDataMessage.innerHTML = `
+        <td>!!</td>
+        <td>미처리 전자결제가</td>
+        <td>없습니다.</td>
+        <td> 미처리 전자결제가 없습니다 </td>`;
+    tableBody.appendChild(noDataMessage);
+  } else {
+    topThreeItems.forEach((item) => {
+      const approvalRow = document.createElement("tr");
 
-  topThreeItems.forEach((item) => {
-    const approvalRow = document.createElement("tr");
-
-    approvalRow.innerHTML = `
+      approvalRow.innerHTML = `
         <td>${item.category}</td>
         <td>${item.title}</td>
         <td>${item.submitdate}</td>
@@ -43,6 +52,7 @@ const ApprovalDashBoardFilter = (data) => {
           <p>${item.submitdate}</p>
         </td>
     `;
-    tableBody.appendChild(approvalRow);
-  });
+      tableBody.appendChild(approvalRow);
+    });
+  }
 };

@@ -412,7 +412,6 @@ database.serialize(() => {
       }
     }
   );
-
   // Mileage 테이블 생성
   database.run(
     `

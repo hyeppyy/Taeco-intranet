@@ -148,7 +148,8 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
-<<<<<<< HEAD
->>>>>>> origin/main
-=======
->>>>>>> origin/main
+
+# multer 이미지 폴더
+uploads/
+mileage_uploads/
+notice_uploads/

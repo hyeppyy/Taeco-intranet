@@ -4,6 +4,12 @@ const databaseName = "toyprj1";
 const database = new sqlite3.Database(`./${databaseName}.db`);
 
 database.serialize(() => {
+  // 모든 테이블 드롭
+  // database.run("DROP TABLE IF EXISTS Users");
+  // database.run("DROP TABLE IF EXISTS Notices");
+  // database.run("DROP TABLE IF EXISTS Approval");
+  // database.run("DROP TABLE IF EXISTS Mileage");
+
   // Users 테이블 생성
   database.run(
     `
@@ -252,21 +258,22 @@ database.serialize(() => {
       }
     }
   );
+
   // Approval 테이블 생성
   database.run(
     `
-      CREATE TABLE IF NOT EXISTS Approval (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        user TEXT,
-        title TEXT,
-        category TEXT,
-        startdate TEXT,
-        enddate TEXT,
-        submitdate TEXT,
-        submitreason TEXT,
-        refusereason TEXT,
-        isApprove INTEGER DEFAULT 0
-      )`,
+        CREATE TABLE IF NOT EXISTS Approval (
+          id INTEGER PRIMARY KEY AUTOINCREMENT,
+          user TEXT,
+          title TEXT,
+          category TEXT,
+          startdate TEXT,
+          enddate TEXT,
+          submitdate TEXT,
+          submitreason TEXT,
+          refusereason TEXT,
+          isApprove INTEGER DEFAULT 0
+        )`,
     (err) => {
       if (err) {
         console.error("Error creating Approval table:", err.message);
@@ -275,7 +282,7 @@ database.serialize(() => {
         const sampleApprovalData = [
           {
             id: 1,
-            user: "user1", // 문자열로 변경
+            user: "user1",
             title: "휴가 신청합니다",
             category: "연차",
             startdate: "2024.07.08",
@@ -287,7 +294,7 @@ database.serialize(() => {
           },
           {
             id: 2,
-            user: "user2", // 문자열로 변경
+            user: "user2",
             title: "휴가 신청합니다",
             category: "연차",
             startdate: "2024.06.08",
@@ -299,7 +306,7 @@ database.serialize(() => {
           },
           {
             id: 3,
-            user: "user3", // 문자열로 변경
+            user: "user3",
             title: "휴가 신청합니다",
             category: "연차",
             startdate: "2024.05.08",
@@ -311,7 +318,7 @@ database.serialize(() => {
           },
           {
             id: 4,
-            user: "user4", // 문자열로 변경
+            user: "user4",
             title: "연차 신청합니다",
             category: "연차",
             startdate: "2024.07.03",
@@ -323,7 +330,7 @@ database.serialize(() => {
           },
           {
             id: 5,
-            user: "user1", // 문자열로 변경
+            user: "user1",
             title: "반차 신청합니다",
             category: "연차",
             startdate: "2024.06.08",
@@ -335,7 +342,7 @@ database.serialize(() => {
           },
           {
             id: 6,
-            user: "user2", // 문자열로 변경
+            user: "user2",
             title: "병가 신청합니다",
             category: "기타",
             startdate: "2024.03.08",
@@ -347,7 +354,7 @@ database.serialize(() => {
           },
           {
             id: 7,
-            user: "user3", // 문자열로 변경
+            user: "user3",
             title: "병가 신청합니다",
             category: "기타",
             startdate: "2024.04.08",
@@ -359,7 +366,7 @@ database.serialize(() => {
           },
           {
             id: 8,
-            user: "user4", // 문자열로 변경
+            user: "user4",
             title: "휴가 신청합니다",
             category: "연차",
             startdate: "2024.09.11",
@@ -374,7 +381,7 @@ database.serialize(() => {
         sampleApprovalData.forEach((item) => {
           database.run(
             `INSERT OR REPLACE INTO Approval (id, user, title, category, startdate, enddate, submitdate, submitreason, refusereason, isApprove)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+                  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
             [
               item.id,
               item.user,
@@ -410,9 +417,9 @@ database.serialize(() => {
     `
     CREATE TABLE IF NOT EXISTS Mileage (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
+      user TEXT,
       category TEXT NOT NULL,
       score INTEGER NOT NULL,
-      employee TEXT NOT NULL,
       date TEXT NOT NULL,
       image TEXT,
       isApprove INTEGER DEFAULT 0
@@ -427,9 +434,9 @@ database.serialize(() => {
         const sampleMileageData = [
           {
             id: 1,
+            user: "user2",
             category: "재사용 및 업사이클링",
             score: 2,
-            employee: "최배달",
             date: "2023-01-02",
             image:
               "https://www.koreaittimes.com/news/photo/202010/100899_46719_042.jpg",
@@ -437,9 +444,9 @@ database.serialize(() => {
           },
           {
             id: 2,
+            user: "user1",
             category: "대중교통 및 자전거 이용",
             score: 3,
-            employee: "김철수",
             date: "2024-02-02",
             image:
               "https://res.heraldm.com/content/image/2016/12/01/20161201000069_0.jpg",
@@ -447,29 +454,39 @@ database.serialize(() => {
           },
           {
             id: 3,
+            user: "user2",
             category: "에너지 절약",
             score: 1,
-            employee: "홍길동",
             date: "2024-04-02",
             image:
               "https://jpassets.jobplanet.co.kr/production/uploads/company_story/contents/2023/09/06/bdc946a8-7e6d-4767-b467-47763855c085.jpg",
             isApprove: true,
           },
           {
-            id: 5,
+            id: 4,
+            user: "user1",
             category: "재활용 및 분리수거",
             score: 1,
-            employee: "홍길동",
             date: "2024-01-02",
             image:
               "https://lh3.googleusercontent.com/proxy/oLcycr-SJ__AuukCJ6ry5f_4iKWij98LMzgm0885Q34zKnhEEUxbGFvRlQK5Ui52gzK4nIK6as0UXCbNcR8idp2crfdsN1Svjco98pHC141N-Q",
-            isApprove: null,
+            isApprove: true,
+          },
+          {
+            id: 5,
+            user: "user1",
+            category: "재활용 및 분리수거",
+            score: 3,
+            date: "2024-07-02",
+            image:
+              "https://lh3.googleusercontent.com/proxy/oLcycr-SJ__AuukCJ6ry5f_4iKWij98LMzgm0885Q34zKnhEEUxbGFvRlQK5Ui52gzK4nIK6as0UXCbNcR8idp2crfdsN1Svjco98pHC141N-Q",
+            isApprove: false,
           },
           {
             id: 6,
+            user: "user1",
             category: "재사용 및 업사이클링",
             score: 1,
-            employee: "홍길동",
             date: "2024-01-04",
             image:
               "https://www.koreaittimes.com/news/photo/202010/100899_46719_042.jpg",
@@ -477,9 +494,9 @@ database.serialize(() => {
           },
           {
             id: 7,
+            user: "user3",
             category: "대중교통 및 자전거 이용",
             score: 1,
-            employee: "홍길동",
             date: "2024-01-07",
             image:
               "https://res.heraldm.com/content/image/2016/12/01/20161201000069_0.jpg",
@@ -487,9 +504,9 @@ database.serialize(() => {
           },
           {
             id: 8,
+            user: "user3",
             category: "재사용 및 업사이클링",
             score: 2,
-            employee: "최배달",
             date: "2022-01-02",
             image:
               "https://www.koreaittimes.com/news/photo/202010/100899_46719_042.jpg",
@@ -497,19 +514,69 @@ database.serialize(() => {
           },
           {
             id: 9,
+            user: "user1",
             category: "대중교통 및 자전거 이용",
             score: 3,
-            employee: "김철수",
             date: "2023-11-02",
             image:
               "https://res.heraldm.com/content/image/2016/12/01/20161201000069_0.jpg",
-            isApprove: null,
+            isApprove: false,
           },
           {
             id: 10,
+            user: "user2",
             category: "에너지 절약",
             score: 1,
-            employee: "홍길동",
+            date: "2024-02-12",
+            image:
+              "https://jpassets.jobplanet.co.kr/production/uploads/company_story/contents/2023/09/06/bdc946a8-7e6d-4767-b467-47763855c085.jpg",
+            isApprove: null,
+          },
+          {
+            id: 11,
+            user: "user1",
+            category: "재사용 및 업사이클링",
+            score: 1,
+            date: "2024-01-04",
+            image:
+              "https://www.koreaittimes.com/news/photo/202010/100899_46719_042.jpg",
+            isApprove: true,
+          },
+          {
+            id: 12,
+            user: "user3",
+            category: "대중교통 및 자전거 이용",
+            score: 1,
+            date: "2024-01-07",
+            image:
+              "https://res.heraldm.com/content/image/2016/12/01/20161201000069_0.jpg",
+            isApprove: false,
+          },
+          {
+            id: 13,
+            user: "user3",
+            category: "재사용 및 업사이클링",
+            score: 2,
+            date: "2022-01-02",
+            image:
+              "https://www.koreaittimes.com/news/photo/202010/100899_46719_042.jpg",
+            isApprove: false,
+          },
+          {
+            id: 14,
+            user: "user1",
+            category: "대중교통 및 자전거 이용",
+            score: 3,
+            date: "2023-11-02",
+            image:
+              "https://res.heraldm.com/content/image/2016/12/01/20161201000069_0.jpg",
+            isApprove: false,
+          },
+          {
+            id: 15,
+            user: "user2",
+            category: "에너지 절약",
+            score: 1,
             date: "2024-02-12",
             image:
               "https://jpassets.jobplanet.co.kr/production/uploads/company_story/contents/2023/09/06/bdc946a8-7e6d-4767-b467-47763855c085.jpg",
@@ -520,13 +587,13 @@ database.serialize(() => {
         // 각 항목을 개별적으로 삽입
         sampleMileageData.forEach((item) => {
           database.run(
-            `INSERT OR REPLACE INTO Mileage (id, category, score, employee, date, image, isApprove)
+            `INSERT OR REPLACE INTO Mileage (id, user, category, score, date, image, isApprove)
              VALUES (?, ?, ?, ?, ?, ?, ?)`,
             [
               item.id,
+              item.user,
               item.category,
               item.score,
-              item.employee,
               item.date,
               item.image,
               item.isApprove === true ? 1 : item.isApprove === false ? 0 : null,

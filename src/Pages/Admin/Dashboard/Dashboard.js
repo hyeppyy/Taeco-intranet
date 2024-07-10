@@ -1,8 +1,9 @@
 import styles from "./Dashboard.module.css";
-import fetchMileageData from "./fetchMileageData";
 import approvalData from "./JS/ApprovalData";
 import noticesData from "./JS/NoticeData";
+import mileageData from "./JS/MileageData";
 import fetchUserData from "/src/Pages/User/Mypage/FetchUserData";
+import { getTodayDate } from '/src/Pages/User/Dashboard/JS/CurrentDate';
 
 const renderAdminDashboard = (container) => {
   if (!container) {
@@ -36,28 +37,34 @@ const renderAdminDashboard = (container) => {
         </div>
       </div>
       <div class="${styles.adminDashboard}">
-        <h2>2024.06.14(금)</h2>
+      <div class="${styles.adminDashboard__time}">
+        <h3 class="${styles.adminDashboard__today}">c</h3>
+      </div>
+
         <div class="${styles.adminDashboard__container}">
-          <div class="${styles.adminDashboard__schedule} ${styles.card}">세부 일정</div>
           <div class="${styles.adminDashboard__approval} ${styles.card}">
-            <div class="${styles.adminDashboard__approvalContainer}">
-              <div class="${styles.adminDashboard__approvalTitle}">
-                <h2> 전자결제 </h2>
-                <h4> 미처리 결재만 보여집니다. </h4>
+            <div class="${styles.userDashboard__approvalContainer}">
+              
+              <div class="${styles["adminDashboard__approval-title"]}">
+                <div class="${styles["adminDashboard__approval-title--left"]}">
+                  <h2>전자결재</h2>
+                  <h4>미처리 결재만 보여집니다.</h4>
+                </div>
+                <h4 class="${styles["adminDashboard__approval-title--right"]}">
+                  <a href="/admin/approval">전자결제 페이지로 이동</a>
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 16 16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8.78112 8.00047L5.48126 4.70062L6.42408 3.75781L10.6667 8.00047L6.42408 12.2431L5.48126 11.3003L8.78112 8.00047Z"
+                    />
+                  </svg>
+                </h4>
               </div>
-              <h4 class="${styles["adminDashboard__approval-title--right"]}">
-                <a href="/admin/approval">전자결제페이지로 이동</a>
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 16 16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M8.78112 8.00047L5.48126 4.70062L6.42408 3.75781L10.6667 8.00047L6.42408 12.2431L5.48126 11.3003L8.78112 8.00047Z"
-                  />
-                </svg>
-              </h4>
+
             </div>
             <table class="${styles.approvalTable}">
               <thead>
@@ -72,6 +79,8 @@ const renderAdminDashboard = (container) => {
             </table>
           </div>
         </div>
+
+
         <div class="${styles.adminDashboard__mileage} ${styles.card}">
           <div class="${styles["adminDashboard__mileage-title"]}">
             <div class="${styles["adminDashboard__mileage-title--left"]}">
@@ -79,7 +88,7 @@ const renderAdminDashboard = (container) => {
               <h4>미확인 신청 내역만 보여집니다.</h4>
             </div>
             <h4 class="${styles["adminDashboard__mileage-title--right"]}">
-              <a href="/admin/mileage">마일리지페이지로 이동</a>
+              <a href="/admin/mileage">마일리지 페이지로 이동</a>
               <svg
                 width="20"
                 height="20"
@@ -100,6 +109,8 @@ const renderAdminDashboard = (container) => {
             </li>
           </ul>
         </div>
+
+
         <div class="${styles.adminDashboard__notice} ${styles.card}">
           <div class="${styles["adminDashboard__notice-title"]}">
               <div class="${styles["adminDashboard__notice-title--left"]}">
@@ -137,10 +148,14 @@ const renderAdminDashboard = (container) => {
       </div>
     </div>`;
 
-  fetchMileageData();
+  mileageData();
   approvalData();
   noticesData();
   fetchUserData();
+
+  const currentDate = getTodayDate();
+  document.querySelector(`.${styles.adminDashboard__today}`).textContent =
+    currentDate;
 };
 
 export default renderAdminDashboard;

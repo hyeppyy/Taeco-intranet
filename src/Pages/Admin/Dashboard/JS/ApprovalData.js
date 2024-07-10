@@ -5,7 +5,7 @@ const approvalData = async () => {
   try {
     const response = await fetch("/api/approval");
     const data = await response.json();
-    console.log("Fetched approval data:", data);
+
     if (data.status === "OK") {
       ApprovalDashBoardFilter(data.data);
     } else {
@@ -48,7 +48,7 @@ const ApprovalDashBoardFilter = (data) => {
         <td>${item.submitdate}</td>
         <td>
           <p>${item.title}</p><br>
-          <p>거절사유 : ${item.refusereason}</p><br>
+          <p>${item.user}</p><br>
           <p>${item.submitdate}</p>
         </td>
     `;

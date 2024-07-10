@@ -25,8 +25,6 @@ const handleModal = (fn) => {
         modal.classList.add("active");
         modalBackground.classList.add("active");
 
-
-       
         switch (fn && fn.name) {
           case 'approvalType':
             approvalType();

@@ -170,7 +170,7 @@ const renderTime = () => {
   };
 
   initialize();
-  // localStorage.clear();
+  // localStorage.clear(); //출근, 퇴근버튼 다시 활성화시키기
 };
 
 export default renderTime;

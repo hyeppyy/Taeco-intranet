@@ -23,6 +23,33 @@ const renderNoticesList = (data) => {
       const hasAttachments = dataItem.attachments !== null;
       const hasImportant = dataItem.isImportant === 1;
 
+      const category = dataItem.category;
+      let categoryContent = "";
+
+      switch (category) {
+        case "event":
+          categoryContent = "이벤트";
+          break;
+        case "mileage":
+          categoryContent = "마일리지";
+          break;
+        case "education":
+          categoryContent = "교육";
+          break;
+        case "approval":
+          categoryContent = "전자결재";
+          break;
+        case "etc":
+          categoryContent = "기타";
+          break;
+        case "human-resource":
+          categoryContent = "인사행정";
+          break;
+        default:
+          categoryContent = "Unknown category.";
+          break;
+      }
+
       noticeRow.innerHTML = `
               <td >${
                 hasImportant
@@ -38,6 +65,20 @@ const renderNoticesList = (data) => {
                   : ""
               }</td>
               <td>${dataItem.views}</td>
+              <td>
+              <p>[${categoryContent}] ${dataItem.title}</p>
+                <div class="${styles.noticeResponsive}">
+                    <p>작성자:${dataItem.author} / </p>
+                    <p>작성일:${dataItem.createdAt} / </p>
+                    <p>첨부파일:
+                    ${
+                      hasAttachments
+                        ? `<img src="/public/icons/textfile.svg" alt="file-icon" width="20" height="20" />`
+                        : `없음`
+                    }
+                    </p>
+                </div>
+          </td>
         `;
 
       tableBody.appendChild(noticeRow);

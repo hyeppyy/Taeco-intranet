@@ -50,8 +50,8 @@
   border-radius: 50%;
 }
 .imgbtn {
-  margin-top: 20px;
-  display: flex;
+  /* margin-top: 20px;
+  display: flex; */
 }
 form {
   display: flex;

@@ -5,7 +5,7 @@ import fetchUserList from "./FetchUserList";
 const renderUserEditPage = (container) => {
   container.innerHTML = `
   <!-- 페이지 타이틀 -->
-<h1 class=${styles.page__title}">마이 페이지</h1>
+<h1 class=${styles.page__title}">마이페이지</h1>
 
 <div class="${styles.page}">
 <div class="${styles.page__header}">

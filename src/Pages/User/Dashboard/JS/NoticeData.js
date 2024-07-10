@@ -34,63 +34,75 @@ const filter = (data) => {
   // 테이블 본문 초기화
   tableBody.innerHTML = "";
 
-  topThreeItems.forEach((item) => {
-    const noticerow = document.createElement("tr");
-    const hasAttachments = item.attachments === 1;
+  if (data.length === 0) {
+    // 테이블에 데이터가 없을 때
+    const noticeTableRow = document.createElement("tr");
+    const noticeTableCell = document.createElement("td");
+    noticeTableCell.colSpan = 6;
+    noticeTableCell.textContent = "공지사항이 없습니다.";
+    noticeTableCell.style.textAlign = "center";
+    noticeTableCell.style.padding = "20px";
+    noticeTableRow.appendChild(noticeTableCell);
+    tableBody.appendChild(noticeTableRow);
+  } else {
+    topThreeItems.forEach((item) => {
+      const noticerow = document.createElement("tr");
+      const hasAttachments = item.attachments === 1;
 
-    const category = item.category;
-    let categoryContent = "";
+      const category = item.category;
+      let categoryContent = "";
 
-    switch (category) {
-      case "event":
-        categoryContent = "이벤트";
-        break;
-      case "mileage":
-        categoryContent = "마일리지";
-        break;
-      case "education":
-        categoryContent = "교육";
-        break;
-      case "approval":
-        categoryContent = "전자결재";
-        break;
-      case "etc":
-        categoryContent = "기타";
-        break;
-      case "human-resource":
-        categoryContent = "인사행정";
-        break;
-      default:
-        categoryContent = "Unknown category.";
-        break;
-    }
+      switch (category) {
+        case "event":
+          categoryContent = "이벤트";
+          break;
+        case "mileage":
+          categoryContent = "마일리지";
+          break;
+        case "education":
+          categoryContent = "교육";
+          break;
+        case "approval":
+          categoryContent = "전자결재";
+          break;
+        case "etc":
+          categoryContent = "기타";
+          break;
+        case "human-resource":
+          categoryContent = "인사행정";
+          break;
+        default:
+          categoryContent = "Unknown category.";
+          break;
+      }
 
-    noticerow.innerHTML = `
-        <td>${categoryContent}</td>
-        <td>${item.title}</td>
-        <td>${item.author}</td>
-        <td>${item.createdAt}</td>
-        <td>${
-          hasAttachments
-            ? `<img src="/public/icons/textfile.svg" alt="file-icon" width="20" height="20" />`
-            : `없음`
-        }</td>
-        <td>${item.views}</td>
-        <td>
-            <p>[${categoryContent}] ${item.title}</p>
-              <div class="${styles.noticeResponsive}">
-                  <p>작성자:${item.author} / </p>
-                  <p>작성일:${item.createdAt} / </p>
-                  <p>첨부파일:
-                  ${
-                    hasAttachments
-                      ? `<img src="/public/icons/textfile.svg" alt="file-icon" width="20" height="20" />`
-                      : `없음`
-                  }
-                  </p>
-              </div>
-        </td>
-  `;
-    tableBody.appendChild(noticerow);
-  });
+      noticerow.innerHTML = `
+          <td>${categoryContent}</td>
+          <td>${item.title}</td>
+          <td>${item.author}</td>
+          <td>${item.createdAt}</td>
+          <td>${
+            hasAttachments
+              ? `<img src="/public/icons/textfile.svg" alt="file-icon" width="20" height="20" />`
+              : `없음`
+          }</td>
+          <td>${item.views}</td>
+          <td>
+              <p>[${categoryContent}] ${item.title}</p>
+                <div class="${styles.noticeResponsive}">
+                    <p>작성자:${item.author} / </p>
+                    <p>작성일:${item.createdAt} / </p>
+                    <p>첨부파일:
+                    ${
+                      hasAttachments
+                        ? `<img src="/public/icons/textfile.svg" alt="file-icon" width="20" height="20" />`
+                        : `없음`
+                    }
+                    </p>
+                </div>
+          </td>
+    `;
+      tableBody.appendChild(noticerow);
+    });
+  }
 };

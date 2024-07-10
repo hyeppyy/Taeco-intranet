@@ -5,7 +5,6 @@ const approvalData = async () => {
   try {
     const response = await fetch("/api/approval");
     const data = await response.json();
-    console.log("Fetched approval data:", data);
     if (data.status === "OK") {
       ApprovalDashBoardFilter(data.data);
 

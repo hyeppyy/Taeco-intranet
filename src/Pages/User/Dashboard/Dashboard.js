@@ -5,7 +5,6 @@ import renderModal from "../../../Components/Modal/RenderModal";
 import { showCheckTimeContent } from "./Modal/TimerModalContent";
 import renderTime from "./JS/RenderTime";
 import fetchUserData from "/src/Pages/User/Mypage/FetchUserData";
-// import { stopTimeUpdate } from './JS/UpdateTimer';
 
 const renderUserDashboard = (container) => {
   container.innerHTML = `
@@ -113,6 +112,19 @@ const renderUserDashboard = (container) => {
                 <h2>공지사항</h2>
                 <h4>최근 3개만 보여집니다.</h4>
               </div>
+              <h4 class=${styles.userDashboard__noticeRight}>
+                <a href="/user/notices">공지사항페이지로 이동</a>
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 16 16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8.78112 8.00047L5.48126 4.70062L6.42408 3.75781L10.6667 8.00047L6.42408 12.2431L5.48126 11.3003L8.78112 8.00047Z"
+                  />
+                </svg>
+              </h4>
             </div>
             <table class="${styles.noticeTable}">
               <thead>

@@ -147,6 +147,62 @@ app.delete("/api/users/:id", (req, res) => {
   });
 });
 
+// 유저 정보 업데이트
+app.put("/api/users/:id", upload.single("profileImage"), (req, res) => {
+  const { id } = req.params;
+  const { name, email, position, birthday, startDate, phone } = req.body;
+  const profileImage = req.file ? `/uploads/${req.file.filename}` : null;
+
+  let sql = `UPDATE Users SET 
+              name = COALESCE(?, name),
+              email = COALESCE(?, email),
+              position = COALESCE(?, position),
+              birthday = COALESCE(?, birthday),
+              startDate = COALESCE(?, startDate),
+              phone = COALESCE(?, phone)`;
+
+  let params = [name, email, position, birthday, startDate, phone];
+
+  if (profileImage) {
+    sql += ", profileImage = ?";
+    params.push(profileImage);
+  }
+
+  sql += " WHERE id = ?";
+  params.push(id);
+
+  db.run(sql, params, function (err) {
+    if (err) {
+      return res.status(500).json({
+        status: "Error",
+        error: err.message,
+      });
+    }
+
+    if (this.changes === 0) {
+      return res.status(404).json({
+        status: "Error",
+        message: "User not found",
+      });
+    }
+
+    // 업데이트된 사용자 정보를 조회
+    db.get("SELECT * FROM Users WHERE id = ?", [id], (err, row) => {
+      if (err) {
+        return res.status(500).json({
+          status: "Error",
+          error: err.message,
+        });
+      }
+
+      res.json({
+        status: "OK",
+        data: row,
+      });
+    });
+  });
+});
+
 // 공지사항 목록 조회
 app.get("/api/notices", (req, res) => {
   //Notices 테이블의 모든 데이터를 가져오되, 생성일(createdAt)을 기준으로 최신순으로 정렬
@@ -306,14 +362,11 @@ app.post("/api/mileage", mileageUpload.single("image"), (req, res) => {
 
   const sql = `INSERT INTO Mileage (category, score, employee, date, image, isApprove)
                VALUES (?, ?, ?, ?, ?, ?)`;
-  const params = [category, score, employee, date, image, null]; // isApprove를 null(미승인)으로 설정
+  const params = [category, score, employee, date, image, null]; // isApprove를 0(심사중)으로 설정
 
   db.run(sql, params, function (err) {
     if (err) {
-      return res.status(500).json({
-        status: "Error",
-        error: err.message,
-      });
+      return res.status(500).json({ status: "Error", error: err.message });
     }
     res.status(201).json({
       status: "OK",
@@ -353,8 +406,10 @@ app.put("/api/mileage/:id/approve", (req, res) => {
     });
   });
 });
+
 // 전자결제 multer
 const uploadApprovalMiddleware = multer();
+
 //전자결제 목록 조회
 app.get("/api/approval", (req, res) => {
   const sql = "SELECT * FROM Approval ORDER BY submitdate DESC";

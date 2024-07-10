@@ -30,6 +30,7 @@ const handleMileageSubmit = () => {
       try {
         const response = await submitMileageData(formData);
         if (response.status === 'OK') {
+          console.log('asdf');
           alert('마일리지 신청이 완료되었습니다.');
 
           // 모달 닫기
@@ -40,8 +41,8 @@ const handleMileageSubmit = () => {
             .querySelector('#modal__background')
             .classList.remove('active');
 
-          //   fetchMileageData(); // 업데이트된 데이터 호출 후 렌더링
-          location.reload();
+            fetchMileageData(); // 업데이트된 데이터 호출 후 렌더링
+          // location.reload();
         }
       } catch (error) {
         alert('마일리지 신청 중 오류가 발생했습니다.');

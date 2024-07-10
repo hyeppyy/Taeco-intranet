@@ -23,7 +23,7 @@ const renderAddEmployeePage = (container) => {
             <button data-e-delete data-shape="line" data-color="neutral" class="${styles.info__fileDelete}">이미지 삭제</button>
             <label for="fileInput" class="${styles.info__fileLabel}">이미지 등록</label>
         </div>
-        <input id="fileInput" class="${styles.info__fileInput}" type="file" name="image" accept="image/*">
+        <input data-e-input id="fileInput" class="${styles.info__fileInput}" type="file" name="profileImage" accept="image/*">
         <button class="${styles.uploadProfile}" type="submit">이미지 업로드</button>
       </div>
             <ul class="${styles.user__info}">
@@ -46,7 +46,7 @@ const renderAddEmployeePage = (container) => {
 
               <li class="${styles.info__email}">
                 <label for="email"><h5>이메일</h5></label>
-<input data-e-email data-shape="line" type="email" name="email" id="email" placeholder="eco@taeco.com" required/>
+                <input data-e-email data-shape="line" type="email" name="email" id="email" placeholder="eco@taeco.com" required/>
               </li>
 
               <li class="${styles.info__phonenumber}">
@@ -68,19 +68,6 @@ const renderAddEmployeePage = (container) => {
   `;
 
   AddEmployee(); //직원추가
-  moveBack();
-};
-
-// 뒤로가기 버튼
-const moveBack = () => {
-  const backButton = document.querySelector("[data-e-back]");
-
-  if (backButton) {
-    backButton.addEventListener("click", () => {
-      history.pushState(null, null, "/admin/employee");
-      route();
-    });
-  }
 };
 
 export default renderAddEmployeePage;

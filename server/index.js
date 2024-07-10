@@ -425,14 +425,23 @@ app.post("/api/approval", uploadApprovalMiddleware.none(), (req, res) => {
 
 // 전자결제 승인/거절 처리
 app.put("/api/approval/:id", uploadApprovalMiddleware.none(), (req, res) => {
-  const { id } = req.params;
-  const { isApprove, refusereason } = req.body;
+  const id = req.params.id;
+  const isApprove = req.body.isApprove === "true";
+  const refusereason = req.body.refusereason || "";
 
-  const sql = `UPDATE Approval 
-               SET isApprove = ?, refusereason = ? 
-               WHERE id = ?`;
+  let sql, params;
 
-  db.run(sql, [isApprove, refusereason, id], function (err) {
+  if (isApprove) {
+    // 승인 처리
+    sql = `UPDATE Approval SET isApprove = 1 WHERE id = ?`;
+    params = [id];
+  } else {
+    // 거절 처리
+    sql = `UPDATE Approval SET isApprove = 0, refusereason = ? WHERE id = ?`;
+    params = [refusereason, id];
+  }
+
+  db.run(sql, params, function (err) {
     if (err) {
       return res.status(500).json({
         status: "Error",
@@ -443,18 +452,26 @@ app.put("/api/approval/:id", uploadApprovalMiddleware.none(), (req, res) => {
     if (this.changes === 0) {
       return res.status(404).json({
         status: "Error",
-        error: "Approval request not found",
+        error: "해당 ID의 전자결제를 찾을 수 없습니다.",
       });
     }
 
-    res.json({
-      status: "OK",
-      message: "Approval request updated successfully",
-      data: {
-        id,
-        isApprove,
-        refusereason,
-      },
+    // 업데이트된 데이터 조회
+    db.get(`SELECT * FROM Approval WHERE id = ?`, [id], (err, row) => {
+      if (err) {
+        return res.status(500).json({
+          status: "Error",
+          error: err.message,
+        });
+      }
+
+      res.json({
+        status: "OK",
+        message: isApprove
+          ? "전자결제가 승인되었습니다."
+          : "전자결제가 거절되었습니다.",
+        data: row,
+      });
     });
   });
 });

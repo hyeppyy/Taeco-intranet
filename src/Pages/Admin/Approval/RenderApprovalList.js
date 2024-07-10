@@ -76,6 +76,10 @@ const renderApprovalList = (data) => {
         modalContent.header,
         modalContent.content
       );
+      const modal = document.querySelector(
+        `#modal-approvaladminnull_${item.id}`
+      );
+      modalApprovalDenied(modal);
     });
 
     data.forEach((item) => {
@@ -94,7 +98,6 @@ const renderApprovalList = (data) => {
         modalContent.content
       );
     });
-    modalApprovalDenied();
   }
 };
 

@@ -1,149 +1,83 @@
-/*
-const modalApprovalDenied = () => {
-  const submitButton = document.querySelector("[data-approvalapproval-btn]");
-  const refuseButton = document.querySelector("[data-approvalreject-btn]");
-  const refuse = document.querySelector("[data-a-refusereason]");
-  const approvalId = document.querySelector("[data-a-id]");
+import fetchApprovalData from "./../FetchApprovalData";
 
-  const modal = document.querySelector(".modal-box.active");
-  const modalBackground = document.querySelector("#modal__background");
-
+const modalApprovalDenied = (modal) => {
+  //이미 함수가 호출되었으면 종료한다.
+  if (modal.hasAttribute("data-event-attached")) {
+    return;
+  }
   const closeModal = () => {
-    if (modal && modal.classList.contains("active")) {
-      modal.classList.remove("active");
-    }
-    if (modalBackground && modalBackground.classList.contains("active")) {
-      modalBackground.classList.remove("active");
-    }
+    const modalBackground = document.querySelector("#modal__background");
+    modal.classList.remove("active");
+    modalBackground?.classList.remove("active");
+    // 모달이 닫힐 때 이벤트 리스너 제거
+    document.removeEventListener("click", handleClick);
   };
 
-  const removeEventListeners = () => {
-    submitButton.removeEventListener("click", submitEventListener);
-    refuseButton.removeEventListener("click", refuseEventListener);
-  };
-
-  const submitEventListener = async (event) => {
-    event.preventDefault();
-
+  const sendRequest = async (isApprove, approvalID, refuseReason) => {
     const formData = new FormData();
-    formData.append("id", approvalId.value);
-    formData.append("refusereason", "");
-    formData.append("isApprove", "true");
+    formData.append("id", approvalID);
+    formData.append("isApprove", isApprove.toString());
+    if (!isApprove) {
+      formData.append("refusereason", refuseReason);
+    }
 
     try {
-      await sendRequest(formData);
-      alert("전자결제가 성공적으로 승인되었습니다.");
-      closeModal();
-      removeEventListeners();
-      fetchApprovalData();
-    } catch (error) {
-      console.error("Failed to approve:", error);
-      alert(`전자결제 승인 중 오류가 발생했습니다: ${error.message}`);
-    }
-  };
-
-  const refuseEventListener = async (event) => {
-    event.preventDefault();
-
-    const formData = new FormData();
-    formData.append("id", approvalId.value);
-    formData.append("refusereason", refuse.value);
-    formData.append("isApprove", "false");
-
-    try {
-      await sendRequest(formData);
-      alert("전자결제가 성공적으로 거부되었습니다.");
-      closeModal();
-      removeEventListeners();
-      fetchApprovalData();
-    } catch (error) {
-      console.error("Failed to refuse:", error);
-      alert(`전자결제 거부 중 오류가 발생했습니다: ${error.message}`);
-    }
-  };
-
-  const sendRequest = async (formData) => {
-    const response = await fetch("/api/approval", {
-      method: "PUT",
-      body: formData,
-    });
-
-    if (!response.ok) {
-      const errorText = await response.text();
-      throw new Error(
-        `HTTP error! status: ${response.status}, message: ${errorText}`
-      );
-    }
-
-    const result = await response.json();
-
-    if (result.status !== "OK") {
-      throw new Error(result.error || "알 수 없는 오류");
-    }
-
-    return result;
-  };
-
-  submitButton.addEventListener("click", submitEventListener);
-  refuseButton.addEventListener("click", refuseEventListener);
-};
-
-export default modalApprovalDenied;
-*/
-
-const modalApprovalDenied = () => {
-  const submitButton = document.querySelector("[data-approvalapproval-btn]");
-  const refuseButton = document.querySelector("[data-approvalreject-btn]");
-  const refuse = document.querySelector("[data-a-refusereason]");
-  const approvalId = document.querySelector("[data-a-id]");
-  const modal = document.querySelector(".modal-box.active");
-  const modalBackground = document.querySelector("#modal__background");
-
-  const closeModal = () => {
-    if (modal && modal.classList.contains("active")) {
-      modal.classList.remove("active");
-    }
-    if (modalBackground && modalBackground.classList.contains("active")) {
-      modalBackground.classList.remove("active");
-    }
-  };
-
-  const updateApproval = (isApprove, refusereason) => {
-    const id = approvalId.value;
-    fetch(`/api/approval/${id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ isApprove, refusereason }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("Success:", data);
-        closeModal();
-        removeEventListeners();
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-        removeEventListeners();
+      const response = await fetch(`/api/approval/${approvalID}`, {
+        method: "PUT",
+        body: formData,
       });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const result = await response.json();
+      console.log(result.message);
+      if (isApprove) {
+        alert("전자결제가 승인되었습니다.");
+      } else {
+        alert("전자결제가 거절되었습니다.");
+      }
+      // 여기에 UI 업데이트 로직을 추가할 수 있습니다.
+      closeModal();
+      fetchApprovalData();
+    } catch (error) {
+      console.error("Error updating approval:", error);
+      alert("승인/거절 처리 중 오류가 발생했습니다.");
+    }
   };
 
-  const handleSubmit = () => {
-    updateApproval(true, "");
+  const handleClick = async (event) => {
+    const target = event.target;
+
+    if (target.matches("[data-approvalapproval-btn]")) {
+      event.preventDefault();
+      const approvalID = modal.querySelector("[data-a-id]").value;
+      await sendRequest(true, approvalID);
+    } else if (target.matches("[data-approvalreject-btn]")) {
+      event.preventDefault();
+      const approvalID = modal.querySelector("[data-a-id]").value;
+      const refuseReason = modal.querySelector("[data-a-refusereason]").value;
+      await sendRequest(false, approvalID, refuseReason);
+    }
   };
 
-  const handleRefuse = () => {
-    updateApproval(false, refuse.value);
-  };
+  // 모달에 이벤트 리스너 추가
+  modal.addEventListener("click", handleClick);
 
-  const removeEventListeners = () => {
-    submitButton.removeEventListener("click", handleSubmit);
-    refuseButton.removeEventListener("click", handleRefuse);
-  };
+  // 모달 닫기 버튼에 이벤트 리스너 추가
+  const closeButton = modal.querySelector(".close-modal");
+  if (closeButton) {
+    closeButton.addEventListener("click", closeModal);
+  }
 
-  submitButton.addEventListener("click", handleSubmit);
-  refuseButton.addEventListener("click", handleRefuse);
+  // 모달 배경에 이벤트 리스너 추가
+  const modalBackground = document.querySelector("#modal__background");
+  if (modalBackground) {
+    modalBackground.addEventListener("click", closeModal);
+  }
+  // 함수가 호출되었음을 표시
+  modal.setAttribute("data-event-attached", "true");
 };
 
 export default modalApprovalDenied;

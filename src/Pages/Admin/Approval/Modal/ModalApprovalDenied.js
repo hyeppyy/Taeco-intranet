@@ -1,28 +1,28 @@
 import fetchApprovalData from "./../FetchApprovalData";
 
-const modalApprovalDenied = () => {
-  const submitBtn = document.querySelector("[data-approvalapproval-btn]");
-  const refuseBtn = document.querySelector("[data-approvalreject-btn]");
-  const approvalID = document.querySelector("[data-a-id]");
-  const refuse = document.querySelector("[data-a-refusereason]");
-
+const modalApprovalDenied = (modal) => {
+  //이미 함수가 호출되었으면 종료한다.
+  if (modal.hasAttribute("data-event-attached")) {
+    return;
+  }
   const closeModal = () => {
-    const modal = document.querySelector(".modal-box.active");
     const modalBackground = document.querySelector("#modal__background");
-    modal?.classList.remove("active");
+    modal.classList.remove("active");
     modalBackground?.classList.remove("active");
+    // 모달이 닫힐 때 이벤트 리스너 제거
+    document.removeEventListener("click", handleClick);
   };
 
-  const sendRequest = async (isApprove) => {
+  const sendRequest = async (isApprove, approvalID, refuseReason) => {
     const formData = new FormData();
-    formData.append("id", approvalID.value);
+    formData.append("id", approvalID);
     formData.append("isApprove", isApprove.toString());
     if (!isApprove) {
-      formData.append("refusereason", refuse.value);
+      formData.append("refusereason", refuseReason);
     }
 
     try {
-      const response = await fetch(`/api/approval/${approvalID.value}`, {
+      const response = await fetch(`/api/approval/${approvalID}`, {
         method: "PUT",
         body: formData,
       });
@@ -47,13 +47,37 @@ const modalApprovalDenied = () => {
     }
   };
 
-  const handleClick = (isApprove) => async (event) => {
-    event.preventDefault();
-    await sendRequest(isApprove);
+  const handleClick = async (event) => {
+    const target = event.target;
+
+    if (target.matches("[data-approvalapproval-btn]")) {
+      event.preventDefault();
+      const approvalID = modal.querySelector("[data-a-id]").value;
+      await sendRequest(true, approvalID);
+    } else if (target.matches("[data-approvalreject-btn]")) {
+      event.preventDefault();
+      const approvalID = modal.querySelector("[data-a-id]").value;
+      const refuseReason = modal.querySelector("[data-a-refusereason]").value;
+      await sendRequest(false, approvalID, refuseReason);
+    }
   };
 
-  submitBtn.addEventListener("click", handleClick(true));
-  refuseBtn.addEventListener("click", handleClick(false));
+  // 모달에 이벤트 리스너 추가
+  modal.addEventListener("click", handleClick);
+
+  // 모달 닫기 버튼에 이벤트 리스너 추가
+  const closeButton = modal.querySelector(".close-modal");
+  if (closeButton) {
+    closeButton.addEventListener("click", closeModal);
+  }
+
+  // 모달 배경에 이벤트 리스너 추가
+  const modalBackground = document.querySelector("#modal__background");
+  if (modalBackground) {
+    modalBackground.addEventListener("click", closeModal);
+  }
+  // 함수가 호출되었음을 표시
+  modal.setAttribute("data-event-attached", "true");
 };
 
 export default modalApprovalDenied;

@@ -143,7 +143,17 @@
 .approvalTable > tbody > tr > td:nth-child(4) {
   display: none;
 }
-
+.no-data-message {
+  text-align: center;
+  font-size: 1.2em;
+  color: var(--gray-08);
+}
+.userDashboard__approval-title--right a,
+.userDashboard__approval-title--right a svg {
+  color: var(--gray-06);
+  text-decoration: none;
+  align-items: center;
+}
 /* 공지사항 영역 */
 .userDashboard__notice {
   display: flex;

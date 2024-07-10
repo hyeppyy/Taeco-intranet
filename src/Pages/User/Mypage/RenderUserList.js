@@ -7,7 +7,12 @@ const renderUserList = (userData) => {
   profileName.innerHTML = userData.name;
   profilePosition.innerHTML = userData.position;
   profileEmail.innerHTML = userData.email;
-  profilePhone.innerHTML = userData.phone;
+
+  const cleanedPhoneNumber = userData.phone.replace(/\D/g, ""); // 입력된 문자열에서 숫자만 추출
+  profilePhone.innerHTML = cleanedPhoneNumber.replace(
+    /(\d{3})(\d{4})(\d{4})/,
+    "$1-$2-$3"
+  ); // 전화번호 형식으로 변환
 };
 
 export default renderUserList;

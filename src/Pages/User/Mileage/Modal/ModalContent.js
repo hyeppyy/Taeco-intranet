@@ -104,11 +104,6 @@ export const showMileageApproveContent = () => {
             </div>
 
             <div class="form-group">
-              <h5>신청자</h5>
-              <input data-shape="line" type="text" placeholder="대리/홍길동" />
-            </div>
-
-            <div class="form-group">
               <h5>신청일자</h5>
               <input id="mileage-date" data-shape="line" type="date" />
             </div>

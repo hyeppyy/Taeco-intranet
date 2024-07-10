@@ -23,13 +23,6 @@ const renderNoticesList = (data) => {
       const noticeRow = document.createElement("tr");
       const hasAttachments = dataItem.attachments !== null;
       const hasImportant = dataItem.isImportant === 1;
-      const currentDate = new Date();
-      const yyyy = currentDate.getFullYear();
-      const mm = String(currentDate.getMonth() + 1).padStart(2, "0");
-      const dd = String(currentDate.getDate()).padStart(2, "0");
-      const hh = String(currentDate.getHours()).padStart(2, "0");
-      const min = String(currentDate.getMinutes()).padStart(2, "0");
-      const createdAt = `${yyyy}-${mm}-${dd} ${hh}:${min}`;
 
       noticeRow.innerHTML = `
               <td >${
@@ -39,7 +32,7 @@ const renderNoticesList = (data) => {
               }</td>
               <td>${dataItem.title}</td>
               <td>${currentUserName}</td>
-              <td>${createdAt}</td>
+              <td>${dataItem.createdAt}</td>
               <td>${
                 hasAttachments
                   ? `<img src="/public/icons/textfile.svg" alt="file-icon" width="20" height="20" />`
@@ -54,7 +47,7 @@ const renderNoticesList = (data) => {
       noticeRow.dataset.id = dataItem.id;
       noticeRow.dataset.title = dataItem.title;
       noticeRow.dataset.author = currentUserName;
-      noticeRow.dataset.createdAt = createdAt;
+      noticeRow.dataset.createdAt = dataItem.createdAt;
       noticeRow.dataset.attachments = dataItem.attachments ? "true" : "false";
       noticeRow.dataset.views = dataItem.views;
       noticeRow.dataset.description = dataItem.description;

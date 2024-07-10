@@ -129,6 +129,7 @@ const renderEditList = (userdata) => {
     );
 
     if (selectedFile) {
+      sessionStorage.setItem("userProfileImage", selectedFile);
       formData.append("profileImage", selectedFile);
     }
 

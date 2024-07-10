@@ -5,7 +5,7 @@ const rejectMileage = async (id, reason) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ isApprove: false, reason }),
+      body: JSON.stringify({ isApprove: false }), //일단 사유 삭제
     });
     const data = await response.json();
     if (data.status === "OK") {

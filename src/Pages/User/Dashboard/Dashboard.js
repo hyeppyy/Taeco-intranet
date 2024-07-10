@@ -70,11 +70,11 @@ const renderUserDashboard = (container) => {
           <div class="${styles.userDashboard__approval} ${styles.card}">
             <div class="${styles.userDashboard__approvalContainer}">
               <div class="${styles.userDashboard__approvalTitle}">
-                <h2>전자결제</h2>
+                <h2>전자결재</h2>
                 <h4>최근 3개만 보여집니다.</h4>
               </div>
               <h4 class="${styles["userDashboard__approval-title--right"]}">
-                <a href="/user/approval">전자결제페이지로 이동</a>
+                <a href="/user/approval">전자결재페이지로 이동</a>
                 <svg
                   width="20"
                   height="20"

@@ -51,7 +51,7 @@ const renderAdminDashboard = (container) => {
                   <h4>미처리 결재만 보여집니다.</h4>
                 </div>
                 <h4 class="${styles["adminDashboard__approval-title--right"]}">
-                  <a href="/admin/approval">전자결제 페이지로 이동</a>
+                  <a href="/admin/approval">전자결재 페이지로 이동</a>
                   <svg
                     width="20"
                     height="20"

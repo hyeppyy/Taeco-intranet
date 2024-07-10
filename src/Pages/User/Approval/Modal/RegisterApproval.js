@@ -49,7 +49,7 @@ const registerApproval = () => {
       const result = await response.json();
 
       if (result.status === "OK") {
-        alert("전자결제가 성공적으로 등록되었습니다.");
+        alert("전자결재가 성공적으로 등록되었습니다.");
         // 모달 닫기
         if (modal && modal.classList.contains("active")) {
           modal.classList.remove("active");
@@ -63,12 +63,12 @@ const registerApproval = () => {
         fetchApprovalData();
       } else {
         alert(
-          `전자결제 등록에 실패했습니다: ${result.error || "알 수 없는 오류"}`
+          `전자결재 등록에 실패했습니다: ${result.error || "알 수 없는 오류"}`
         );
       }
     } catch (error) {
       console.error("Failed to register approval:", error);
-      alert(`전자결제 등록 중 오류가 발생했습니다: ${error.message}`);
+      alert(`전자결재 등록 중 오류가 발생했습니다: ${error.message}`);
     }
   };
 

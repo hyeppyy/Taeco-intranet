@@ -85,13 +85,7 @@ const renderAdminNavBar = (nav, menuList) => {
         <!-- 하단 부분 -->
         <div class="${styles.layout__bottom} ${styles.h4}">
           <div class="${styles.layout__item}" href="/">
-            <img
-              data-nav-img
-              alt="logout-icon"
-              width="24"
-              height="24"
-              class="${styles.layout__profile}"
-            /><h4 data-nav-name><h4>
+            <h4><span data-nav-position></span> <span data-nav-name></span><h4>
           </div>
           <a class="${styles.layout__item}" href="#" id="logout">
             <svg

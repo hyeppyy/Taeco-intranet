@@ -3,7 +3,7 @@ import approvalData from "./JS/ApprovalData";
 import noticesData from "./JS/NoticeData";
 import mileageData from "./JS/MileageData";
 import fetchUserData from "/src/Pages/User/Mypage/FetchUserData";
-import { getTodayDate } from '/src/Pages/User/Dashboard/JS/CurrentDate';
+import { getTodayDate } from "/src/Pages/User/Dashboard/JS/CurrentDate";
 
 const renderAdminDashboard = (container) => {
   if (!container) {

@@ -25,7 +25,7 @@
 }
 
 .adminDashboard__approval {
-  flex-grow: 1
+  flex-grow: 1;
 }
 
 .dashboardCon {
@@ -106,7 +106,6 @@
   padding: 16px;
 }
 
-.adminDashboard__approval-title,
 .adminDashboard__mileage-title,
 .adminDashboard__notice-title {
   display: flex;
@@ -114,7 +113,6 @@
   align-items: center;
 }
 
-.adminDashboard__approval-title h4,
 .adminDashboard__mileage-title h4,
 .adminDashboard__notice-title h4 {
   color: var(--gray-06);
@@ -123,7 +121,6 @@
   align-items: center;
 }
 
-.adminDashboard__approval-title--left,
 .adminDashboard__mileage-title--left,
 .adminDashboard__notice-title--left {
   display: flex;
@@ -131,7 +128,10 @@
   gap: 12px;
 }
 
-.adminDashboard__approval-title--right a,
+.adminDashboard__mileage-title--right:hover {
+  cursor: pointer;
+}
+
 .adminDashboard__mileage-title--right a,
 .adminDashboard__notice-title--right a {
   color: var(--gray-06);
@@ -174,8 +174,6 @@
   padding: 0 10px;
   display: flex;
   align-items: center;
-<<<<<<< Updated upstream
-=======
 }
 
 /*전자결제페이지*/
@@ -243,7 +241,6 @@
 .no-data-message {
   text-align: center;
   font-size: 1.2em;
->>>>>>> Stashed changes
   color: var(--gray-08);
 }
 
@@ -255,10 +252,10 @@
   line-height: 2.1rem;
 }
 
-.approvalTable>thead>tr,
-.approvalTable>tbody>tr,
-.noticeTable>thead>tr,
-.noticeTable>tbody>tr {
+.approvalTable > thead > tr,
+.approvalTable > tbody > tr,
+.noticeTable > thead > tr,
+.noticeTable > tbody > tr {
   border-bottom: 1px solid var(--gray-04);
 }
 
@@ -267,68 +264,66 @@
   color: var(--gray-08);
 }
 
-.approvalTable>thead>tr>th,
-.approvalTable>tbody>tr>td,
-.noticeTable>thead>tr>th,
-.noticeTable>tbody>tr>td {
+.approvalTable > thead > tr > th,
+.approvalTable > tbody > tr > td,
+.noticeTable > thead > tr > th,
+.noticeTable > tbody > tr > td {
   text-align: left;
   padding: 12px 8px;
 }
 
-.approvalTable>thead>tr>th:first-child,
-.approvalTable>tbody>tr>td:first-child {
+.approvalTable > thead > tr > th:first-child,
+.approvalTable > tbody > tr > td:first-child {
   width: 15%;
 }
 
-.noticeTable>thead>tr>th:first-child,
-.noticeTable>tbody>tr>td:first-child {
+.noticeTable > thead > tr > th:first-child,
+.noticeTable > tbody > tr > td:first-child {
   width: 10%;
 }
 
-.approvalTable>thead>tr>th:nth-child(2),
-.approvalTable>thead>tr>td:nth-child(2) {
+.approvalTable > thead > tr > th:nth-child(2),
+.approvalTable > thead > tr > td:nth-child(2) {
   width: 20%;
-
 }
 
-.noticeTable>thead>tr>th:nth-child(2),
-.noticeTable>tbody>tr>td:nth-child(2) {
+.noticeTable > thead > tr > th:nth-child(2),
+.noticeTable > tbody > tr > td:nth-child(2) {
   width: 35%;
 }
 
-.approvalTable>thead>tr>th:nth-child(3),
-.approvalTable>thead>tr>td:nth-child(3) {
+.approvalTable > thead > tr > th:nth-child(3),
+.approvalTable > thead > tr > td:nth-child(3) {
   width: 20%;
-
 }
 
-.noticeTable>thead>tr>th:nth-child(3),
-.noticeTable>tbody>tr>td:nth-child(3) {
+.noticeTable > thead > tr > th:nth-child(3),
+.noticeTable > tbody > tr > td:nth-child(3) {
   width: 15%;
 }
 
-.approvalTable>thead>tr>th:nth-child(4),
-.approvalTable>tbody>tr>td:nth-child(4) {
+.approvalTable > thead > tr > th:nth-child(4),
+.approvalTable > tbody > tr > td:nth-child(4) {
   display: none;
 }
 
-.noticeTable>thead>tr>th:nth-child(4),
-.noticeTable>tbody>tr>td:nth-child(4) {
+.noticeTable > thead > tr > th:nth-child(4),
+.noticeTable > tbody > tr > td:nth-child(4) {
   width: 15%;
 }
 
-.noticeTable>thead>tr>th:nth-child(5),
-.noticeTable>tbody>tr>td:nth-child(5) {
+.noticeTable > thead > tr > th:nth-child(5),
+.noticeTable > tbody > tr > td:nth-child(5) {
   width: 15%;
 }
 
-.noticeTable>thead>tr>th:nth-child(6),
-.noticeTable>tbody>tr>td:nth-child(6) {
+.noticeTable > thead > tr > th:nth-child(6),
+.noticeTable > tbody > tr > td:nth-child(6) {
   width: 10%;
 }
 
-.noticeTable>thead>tr>th:nth-child(7),
-.noticeTable>tbody>tr>td:nth-child(7) {
+.noticeTable > thead > tr > th:nth-child(7),
+.noticeTable > tbody > tr > td:nth-child(7) {
   display: none;
 }
 
@@ -343,6 +338,73 @@
   gap: 12px;
 }
 
+.noticeTable {
+  width: 100%;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 2.1rem;
+}
+
+.noticeTable > thead > tr,
+.noticeTable > tbody > tr {
+  border-bottom: 1px solid var(--gray-04);
+}
+
+.noticeTable__tbody {
+  color: var(--gray-08);
+}
+
+.noticeTable > thead > tr > th,
+.noticeTable > tbody > tr > td {
+  text-align: left;
+  padding: 12px 8px;
+}
+
+.noticeTable > thead > tr > th:first-child,
+.noticeTable > tbody > tr > td:first-child {
+  width: 10%;
+}
+
+.noticeTable > thead > tr > th:nth-child(2),
+.noticeTable > tbody > tr > td:nth-child(2) {
+  width: 35%;
+}
+
+.noticeTable > thead > tr > th:nth-child(3),
+.noticeTable > tbody > tr > td:nth-child(3) {
+  width: 15%;
+}
+
+.noticeTable > thead > tr > th:nth-child(4),
+.noticeTable > tbody > tr > td:nth-child(4) {
+  width: 15%;
+}
+
+.noticeTable > thead > tr > th:nth-child(5),
+.noticeTable > tbody > tr > td:nth-child(5) {
+  width: 15%;
+}
+
+.noticeTable > thead > tr > th:nth-child(6),
+.noticeTable > tbody > tr > td:nth-child(6) {
+  width: 10%;
+}
+
+.noticeTable > thead > tr > th:nth-child(7),
+.noticeTable > tbody > tr > td:nth-child(7) {
+  display: none;
+}
+
+.noticeResponsive {
+  display: flex;
+  width: 100%;
+}
+
+.adminDashboard__notice {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
 /* 테블릿 버전 */
 @media screen and (max-width: 900px) {
   .mileage__requester {
@@ -352,21 +414,18 @@
   .mileage__request-date {
     width: 120px;
   }
-
-  .noticeTable>thead {
+  .noticeTable > thead {
     display: none;
   }
-
-  .noticeTable>tbody>tr>td:nth-child(1),
-  .noticeTable>tbody>tr>td:nth-child(2),
-  .noticeTable>tbody>tr>td:nth-child(3),
-  .noticeTable>tbody>tr>td:nth-child(4),
-  .noticeTable>tbody>tr>td:nth-child(5),
-  .noticeTable>tbody>tr>td:nth-child(6) {
+  .noticeTable > tbody > tr > td:nth-child(1),
+  .noticeTable > tbody > tr > td:nth-child(2),
+  .noticeTable > tbody > tr > td:nth-child(3),
+  .noticeTable > tbody > tr > td:nth-child(4),
+  .noticeTable > tbody > tr > td:nth-child(5),
+  .noticeTable > tbody > tr > td:nth-child(6) {
     display: none;
   }
-
-  .noticeTable>tbody>tr>td:nth-child(7) {
+  .noticeTable > tbody > tr > td:nth-child(7) {
     display: flex;
     flex-direction: column;
     gap: 4px;
@@ -384,27 +443,25 @@
   .mileage__request-date {
     width: 70px;
   }
-
-  .adminDashboard__approval-title--left h4,
   .adminDashboard__mileage-title--left h4,
   .adminDashboard__notice-title--left h4 {
     display: none;
   }
 
-  .approvalTable>thead>tr>th:nth-child(2),
-  .approvalTable>tbody>tr>td:nth-child(2),
-  .approvalTable>thead>tr>th:nth-child(3),
-  .approvalTable>tbody>tr>td:nth-child(3) {
+  .approvalTable > thead > tr > th:nth-child(2),
+  .approvalTable > tbody > tr > td:nth-child(2),
+  .approvalTable > thead > tr > th:nth-child(3),
+  .approvalTable > tbody > tr > td:nth-child(3) {
     display: none;
   }
 
-  .approvalTable>thead>tr>th:first-child,
-  .approvalTable>tbody>tr>td:first-child {
+  .approvalTable > thead > tr > th:first-child,
+  .approvalTable > tbody > tr > td:first-child {
     width: 40%;
   }
 
-  .approvalTable>thead>tr>th:nth-child(4),
-  .approvalTable>tbody>tr>td:nth-child(4) {
+  .approvalTable > thead > tr > th:nth-child(4),
+  .approvalTable > tbody > tr > td:nth-child(4) {
     width: 60%;
     display: block;
   }

@@ -4,10 +4,10 @@
 
 ![사용자페이지IA](/public/images/company_logo_user.png)
 
-- user id: u
-- user password: 1
-- admin id: a
-- admin password: 1
+- user id: user2@taeco.com
+- user password: 1234
+- admin id: admin@taeco.com
+- admin password: 1234
 
 ## 목차
 

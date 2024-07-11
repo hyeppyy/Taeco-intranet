@@ -49,6 +49,7 @@ const handleFileSelect = (event) => {
     reader.readAsDataURL(file);
   } else {
     // 기본 이미지 설정 및 로컬 저장소에 저장
+    localStorage.removeItem("profileImage");
     setDefaultImage(imageContainer);
   }
 };
@@ -84,6 +85,17 @@ const handleFileDelete = (event) => {
 
   // 기본 이미지 설정
   setDefaultImage(imageContainer);
+
+  resetFileInput();
+};
+
+// 파일 입력 필드 리셋 함수
+const resetFileInput = () => {
+  const fileInput = document.querySelector(`.${styles.info__fileInput}`);
+  // 새로운 FileList 객체 생성 (비어있음)
+  fileInput.value = "";
+  // 파일 입력 필드의 change 이벤트 발생시키기
+  fileInput.dispatchEvent(new Event("change", { bubbles: true }));
 };
 
 // 기본 이미지 설정 함수
@@ -132,6 +144,7 @@ const handleAddEmployee = async (event) => {
     formData.append("position", position);
     formData.append("birthday", birthday);
     formData.append("startDate", startDate);
+    formData.append("password", "1234"); // 기본 비밀번호 설정
     if (phone) formData.append("phone", phone);
     if (profileImage) formData.append("profileImage", profileImage);
 

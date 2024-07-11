@@ -58,6 +58,17 @@
   visibility: hidden;
 }
 
+.info__value {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  display: inline-block;
+  width: 50%;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
 form {
   display: flex;
   width: 100%;
@@ -72,7 +83,7 @@ form {
 
 .user__info label {
   display: flex;
-  width: 190.667px;
+  width: 170px;
   padding: 16px;
   align-items: center;
   flex-direction: row;
@@ -135,5 +146,13 @@ form {
 
   .page__button {
     margin: 12px 8px;
+  }
+
+  .user__info label {
+    width: 120px;
+  }
+
+  :global(#contents) {
+    margin-bottom: 20px;
   }
 }

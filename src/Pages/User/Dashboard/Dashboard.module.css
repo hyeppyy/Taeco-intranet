@@ -265,6 +265,10 @@
   width: 100%;
 }
 
+.dashboard__attachments {
+  display: flex;
+}
+
 /* 오늘의 출근 영역 */
 .userDashboard__todayAttendance {
   width: 50%;

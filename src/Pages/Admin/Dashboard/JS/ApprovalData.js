@@ -47,9 +47,8 @@ const ApprovalDashBoardFilter = (data) => {
         <td>${item.title}</td>
         <td>${item.submitdate}</td>
         <td>
-          <p>${item.title}</p><br>
-          <p>${item.user}</p><br>
-          <p>${item.submitdate}</p>
+        ${item.title}<br>
+        ${item.user} / ${item.submitdate}</p>
         </td>
     `;
       tableBody.appendChild(approvalRow);

@@ -79,9 +79,9 @@ const ApprovalDashBoardFilter = (data) => {
         <td>${item.title}</td>
         <td>${item.submitdate}</td>
         <td>
-            <p>${item.title}</p><br>
-            <p>거절사유 : ${item.refusereason}</p><br>
-            <p>${item.submitdate}</p>
+            ${item.title}<br>
+            거절사유 : ${item.refusereason}<br>
+            ${item.submitdate}
         </td>
     `;
       tableBody.appendChild(approvalRow);

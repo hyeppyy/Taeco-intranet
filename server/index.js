@@ -451,7 +451,7 @@ app.post("/api/approval", uploadApprovalMiddleware.none(), (req, res) => {
   const yyyy = currentDate.getFullYear();
   const mm = String(currentDate.getMonth() + 1).padStart(2, "0");
   const dd = String(currentDate.getDate()).padStart(2, "0");
-  const submitdate = `${yyyy}-${mm}-${dd}`;
+  const submitdate = `${yyyy}.${mm}.${dd}`;
 
   const sql = ` INSERT INTO Approval (user, title, category, startdate, enddate, submitdate, submitreason, refusereason, isApprove)
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`;

@@ -128,9 +128,22 @@ const renderEditList = (userdata) => {
       document.querySelector("[data-profile-password]").value
     );
 
+    // selectedFile이 null이면 현재 이미지 컨테이너의 src 값을 사용
+    if (!selectedFile) {
+      const currentImage = imageContainer.querySelector("img");
+      if (currentImage) {
+        selectedFile = currentImage.src;
+      }
+    }
+
     if (selectedFile) {
+      // selectedFile이 문자열(URL)인 경우와 File 객체인 경우를 구분
+      if (typeof selectedFile === "string") {
+        formData.append("profileImage", selectedFile);
+      } else {
+        formData.append("profileImage", selectedFile, selectedFile.name);
+      }
       sessionStorage.setItem("userProfileImage", selectedFile);
-      formData.append("profileImage", selectedFile);
     }
 
     try {

@@ -81,11 +81,14 @@ app.get("/api/users", (req, res) => {
 
 // 유저 추가
 app.post("/api/users", upload.single("profileImage"), (req, res) => {
-  const { name, email, position, birthday, startDate, phone } = req.body;
-  const profileImage = req.file ? `/uploads/${req.file.filename}` : null; // Get uploaded image path if available
+  const { name, email, position, birthday, startDate, phone, password } =
+    req.body;
+  const profileImage = req.file
+    ? `/uploads/${req.file.filename}`
+    : "/public/images/defaultProfile.png"; // Get uploaded image path if available
 
-  const sql = `INSERT INTO Users (name, email, profileImage, position, birthday, startDate, phone)
-               VALUES (?, ?, ?, ?, ?, ?, ?)`;
+  const sql = `INSERT INTO Users (name, email, profileImage, position, birthday, startDate, phone, password)
+               VALUES (?, ?, ?, ?, ?, ?, ?, ?)`;
   const params = [
     name,
     email,
@@ -94,6 +97,7 @@ app.post("/api/users", upload.single("profileImage"), (req, res) => {
     birthday,
     startDate,
     phone,
+    password,
   ];
 
   db.run(sql, params, function (err) {
@@ -115,6 +119,7 @@ app.post("/api/users", upload.single("profileImage"), (req, res) => {
         birthday,
         startDate,
         phone,
+        password,
       },
     });
   });

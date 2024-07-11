@@ -47,7 +47,7 @@ const filter = (data) => {
   } else {
     topThreeItems.forEach((item) => {
       const noticerow = document.createElement("tr");
-      const hasAttachments = item.attachments === 1;
+      const hasAttachments = item.attachments !== null;
 
       const category = item.category;
       let categoryContent = "";
@@ -92,7 +92,7 @@ const filter = (data) => {
                 <div class="${styles.noticeResponsive}">
                     <p>작성자:${item.author} / </p>
                     <p>작성일:${item.createdAt} / </p>
-                    <p>첨부파일:
+                    <p class="${styles.dashboard__attachments}">첨부파일:
                     ${
                       hasAttachments
                         ? `<img src="/public/icons/textfile.svg" alt="file-icon" width="20" height="20" />`

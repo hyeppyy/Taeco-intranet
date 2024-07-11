@@ -409,6 +409,10 @@
   flex-direction: column;
   gap: 12px;
 }
+
+.noticeResponsive__attachment {
+  display: flex;
+}
 /* 테블릿 버전 */
 @media screen and (max-width: 900px) {
   .mileage__requester {

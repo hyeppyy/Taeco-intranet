@@ -1,5 +1,5 @@
-import route from '../../Router/Router';
-import styles from './Login.module.css';
+import styles from "./Login.module.css";
+import validateLogin from "./ValidateLogin";
 
 const login = (container) => {
   // return으로 하면, 바로 종료가 되므로 추가 로직 구현 불가능
@@ -8,6 +8,7 @@ const login = (container) => {
       <div class="${styles.loginContainer}">
         <img src="/public/images/company_logo_user.png" alt="logo img" />
         <form class="${styles.loginContainer__form}">
+        <h5>아이디</h5>
           <input
             type="text"
             id="username"
@@ -17,6 +18,7 @@ const login = (container) => {
             autocomplete="off"
             required
           />
+        <h5>비밀번호</h5>
           <input
             type="password"
             id="password"
@@ -28,6 +30,7 @@ const login = (container) => {
           />
           <button
             id="login__button"
+            class="${styles.loginBtn}"
             type="button"
             data-shape="block"
             data-color="positive"
@@ -39,44 +42,17 @@ const login = (container) => {
     </section>
   `;
 
-  SUBMIT_LOGIN_FORM();
-};
-
-const SUBMIT_LOGIN_FORM = () => {
   document
-    .querySelector('#login__button')
-    .addEventListener('click', validateLogin);
-};
+    .querySelector("#login__button")
+    .addEventListener("click", validateLogin);
 
-const validateLogin = () => {
-  const username = document.querySelector('#username').value;
-  const password = document.querySelector('#password').value;
-
-  const userCredentials = {
-    username: 'user',
-    password: '1234',
-  };
-  const adminCredentials = {
-    username: 'admin',
-    password: '1234',
-  };
-
-  // Check credentials
-  if (
-    username === userCredentials.username &&
-    password === userCredentials.password
-  ) {
-    window.history.pushState(null, null, '/user/dashboard');
-    route();
-  } else if (
-    username === adminCredentials.username &&
-    password === adminCredentials.password
-  ) {
-    window.history.pushState(null, null, '/admin/dashboard');
-    route();
-  } else {
-    alert('잘못된 아이디 또는 비밀번호입니다.');
-  }
+  const form = document.querySelector(`.${styles.loginContainer__form}`);
+  form.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      validateLogin();
+    }
+  });
 };
 
 export default login;

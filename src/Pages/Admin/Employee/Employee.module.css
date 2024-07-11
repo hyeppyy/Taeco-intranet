@@ -1,0 +1,210 @@
+:global(#contents) {
+  overflow: hidden;
+}
+
+.page__event {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 16px;
+}
+
+.page__event img {
+  width: 18px;
+  height: 18px;
+  align-self: center;
+}
+
+.page__event > .birthdayinfo {
+  display: flex;
+  margin-right: 25px;
+  gap: 5px;
+}
+
+.page__event > .joindayinfo {
+  display: flex;
+  gap: 5px;
+}
+
+.page__header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.total__info {
+  color: rgb(120, 115, 115);
+  margin-bottom: 16px;
+}
+
+.table {
+  width: 100%;
+  font-size: 14px;
+  text-align: center;
+  width: 100%;
+  height: calc(100% - 194px);
+  overflow-y: auto;
+}
+
+.table__container {
+  width: 100%;
+  display: table;
+}
+
+.table__head {
+  position: sticky;
+  top: 0;
+  background-color: var(--color-white);
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 셀 아래 그림자 */
+}
+
+.table__content {
+  box-shadow: 10px 10px 5px var(--gray-05);
+}
+
+.employeeTable__body > tr > td {
+  vertical-align: middle;
+  padding: 10px;
+  border-bottom: 1px solid var(--gray-05);
+}
+
+.head__profileimg,
+.head__name,
+.head__position,
+.head__email,
+.head__birthday,
+.head__joinday,
+.head__contact,
+.head__button {
+  vertical-align: middle;
+  text-align: center;
+  height: 30px;
+}
+
+.profileimg,
+.name,
+.position,
+.email,
+.birthday,
+.joinday,
+.contact,
+.button {
+  vertical-align: middle;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.employeeListRow {
+  display: flex;
+  height: 38px;
+  padding: 0px 12px;
+  align-items: center;
+  text-align: left;
+  border-radius: 6px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.06);
+}
+.table > table > tbody > tr:hover {
+  background-color: var(--gray-02);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.employeeListRow td {
+  padding: 12px;
+}
+
+.employeeListTable,
+.employeeListThead,
+.employeeListTbody {
+  width: 100%;
+}
+
+.employeeListImg {
+  width: 15%;
+}
+
+.employeeListInfo {
+  width: 85%;
+  display: none;
+}
+
+/* 반응형 */
+/* 모바일 */
+@media (max-width: 599px) {
+  .page__event {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .page__header > input {
+    width: auto;
+  }
+
+  .head__birthday,
+  .birthday {
+    display: none;
+  }
+
+  .head__joinday,
+  .joinday {
+    display: none;
+  }
+
+  .head__contact,
+  .contact {
+    display: none;
+  }
+
+  .employeeListInfo {
+    display: block;
+    width: 100%;
+  }
+
+  .employeeListRow {
+    height: 70px;
+  }
+}
+
+/* 타블렛 */
+@media (min-width: 600px) and (max-width: 1023px) {
+  .table > table > thead > tr > th:nth-child(6),
+  .table > table > tbody > tr > td:nth-child(6) {
+    display: none; /* 입사일 감추기 */
+  }
+
+  .table > table > thead > tr > th:nth-child(5),
+  .table > table > tbody > tr > td:nth-child(5) {
+    display: none; /* 생일 감추기 */
+  }
+
+  .table__content > .profileimg {
+    width: 80px;
+    height: 80px;
+  }
+}
+/* 모바일 */
+@media (max-width: 599px) {
+  .table > table > thead > tr > th:nth-child(7),
+  .table > table > tbody > tr > td:nth-child(7) {
+    display: none; /* 핸드폰 번호 감추기 */
+  }
+  .table > table > thead > tr > th:nth-child(6),
+  .table > table > tbody > tr > td:nth-child(6) {
+    display: none; /* 입사일 감추기 */
+  }
+
+  .table > table > thead > tr > th:nth-child(5),
+  .table > table > tbody > tr > td:nth-child(5) {
+    display: none; /* 생일 감추기 */
+  }
+
+  .table__content > .profileimg {
+    width: 80px;
+    height: 80px;
+  }
+
+  .employeeTable__body > tr > td {
+    padding: 5px;
+  }
+}

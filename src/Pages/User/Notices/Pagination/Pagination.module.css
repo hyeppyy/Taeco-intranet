@@ -1,0 +1,14 @@
+.pagination {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.pagination button {
+  background: none;
+  border: none;
+}
+.pageNumber__btn.active {
+  background: var(--color-pri-normal);
+  color: var(--gray-01);
+}

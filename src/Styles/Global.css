@@ -16,16 +16,21 @@ input {
   color: var(--gray-06);
 }
 
-input[data-shape='line'] {
+input[data-shape="line"] {
   border: 1.5px solid var(--gray-05);
   border-radius: 4px;
   background: transparent;
 }
 
-input[data-shape='underline'] {
+input[data-shape="underline"] {
   border: none;
   border-bottom: 1.5px solid var(--gray-05);
   border-radius: 0;
+  background: transparent;
+}
+
+input[data-shape="transparent"] {
+  border: none;
   background: transparent;
 }
 
@@ -51,18 +56,18 @@ textarea {
   resize: none;
 }
 
-textarea[data-shape='line'] {
+textarea[data-shape="line"] {
   border: 1.5px solid var(--gray-05);
   border-radius: 4px;
   background: transparent;
 }
 
-textarea[data-shape='underline'] {
+textarea[data-shape="underline"] {
   border-bottom: 1.5px solid var(--gray-05);
   background: transparent;
 }
 
-textarea[data-shape='transparent'] {
+textarea[data-shape="transparent"] {
   border: none;
   background: transparent;
 }
@@ -96,68 +101,90 @@ button:hover {
 }
 
 /* positive button */
-button[data-color='positive'][data-shape='block'] {
+button[data-color="positive"][data-shape="block"] {
   background-color: var(--color-pri-normal);
   border: 1px solid var(--color-pri-normal);
   color: var(--color-white);
 }
 
-button[data-color='positive'][data-shape='block']:hover {
+button[data-color="positive"][data-shape="block"]:hover {
   background: var(--color-pri-dark);
 }
 
-button[data-color='positive'][data-shape='line'] {
+button[data-color="positive"][data-shape="line"] {
   background-color: transparent;
   border: 1px solid var(--color-pri-normal);
   color: var(--color-pri-normal);
 }
 
-button[data-color='positive'][data-shape='line']:hover {
+button[data-color="positive"][data-shape="line"]:hover {
   background: var(--color-pri-dark);
   color: var(--color-white);
 }
 
 /* error button */
-button[data-color='warning'][data-shape='block'] {
+button[data-color="warning"][data-shape="block"] {
   background-color: var(--color-tar-normal);
   border: 1px solid var(--color-tar-normal);
   color: var(--color-white);
 }
 
-button[data-color='warning'][data-shape='block']:hover {
+button[data-color="warning"][data-shape="block"]:hover {
   background: var(--color-tar-dark);
 }
 
-button[data-color='warning'][data-shape='line'] {
+button[data-color="warning"][data-shape="line"] {
   background-color: transparent;
   border: 1px solid var(--color-tar-normal);
   color: var(--color-tar-normal);
 }
 
-button[data-color='warning'][data-shape='line']:hover {
+button[data-color="warning"][data-shape="line"]:hover {
   background: var(--color-tar-dark);
   color: var(--color-white);
 }
 
 /* neutral button: 화면의 변화가 없는 버튼, 화면으로 되돌아가는 버튼 (예를 들면 "뒤로가기"버튼을 말합니다.) */
-button[data-color='neutral'][data-shape='block'] {
+button[data-color="neutral"][data-shape="block"] {
   background-color: var(--gray-08);
   border: 1px solid var(--gray-08);
   color: var(--color-white);
 }
 
-button[data-color='neutral'][data-shape='block']:hover {
+button[data-color="neutral"][data-shape="block"]:hover {
   background: var(--gray-09);
 }
 
-button[data-color='neutral'][data-shape='line'] {
+button[data-color="neutral"][data-shape="line"] {
   background-color: transparent;
   border: 1px solid var(--gray-08);
   color: var(--gray-08);
 }
 
-button[data-color='neutral'][data-shape='line']:hover {
+button[data-color="neutral"][data-shape="line"]:hover {
   background: var(--gray-09);
+  color: var(--color-white);
+}
+
+/* secondary button: 관리자 페이지 메인컬러 버튼 */
+button[data-color="secondary"][data-shape="block"] {
+  background-color: var(--color-sec-light);
+  border: 1px solid var(--color-sec-light);
+  color: var(--color-white);
+}
+
+button[data-color="secondary"][data-shape="block"]:hover {
+  background: var(--color-sec-normal);
+}
+
+button[data-color="secondary"][data-shape="line"] {
+  background-color: transparent;
+  border: 1px solid var(--color-sec-light);
+  color: var(--color-sec-light);
+}
+
+button[data-color="secondary"][data-shape="line"]:hover {
+  background: var(--color-sec-normal);
   color: var(--color-white);
 }
 
@@ -187,10 +214,11 @@ button[data-color='neutral'][data-shape='line']:hover {
   justify-content: space-between;
 }
 
-.modal__header>img:hover {
+.modal__header > img:hover {
   transition: 0.2s;
   cursor: pointer;
-  filter: invert(69%) sepia(12%) saturate(193%) hue-rotate(193deg) brightness(92%) contrast(89%);
+  filter: invert(69%) sepia(12%) saturate(193%) hue-rotate(193deg)
+    brightness(92%) contrast(89%);
 }
 
 .modal__content {
@@ -208,12 +236,32 @@ button[data-color='neutral'][data-shape='line']:hover {
 }
 
 /* 추가!!!!!! */
-#root {
+body {
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
+}
+
+#root {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+}
+
+/* 반응형 네비게이션 헤더 */
+#responsive-nav {
+  display: none;
+  width: 100%;
+  height: 44px;
+}
+
+/* 총 컨테이너 */
+#container {
+  display: flex;
+  height: 100%;
+  width: 100%;
 }
 
 #nav {
@@ -221,9 +269,20 @@ button[data-color='neutral'][data-shape='line']:hover {
 }
 
 #contents {
-  box-sizing: border-box;
-  width: 100%;
-  height: 100%;
+  /* box-sizing: border-box; */
   flex: 1;
+  overflow: hidden;
   padding: 16px 24px;
+  /* overflow: auto; */
+}
+
+@media screen and (max-width: 600px) {
+  #responsive-nav {
+    display: flex;
+    z-index: 3;
+  }
+
+  #contents {
+    padding: 16px;
+  }
 }

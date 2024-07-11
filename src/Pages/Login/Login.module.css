@@ -4,33 +4,34 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('/public/images/root_background.jpg');
+  background-image: url("/public/images/root_background.jpg");
   background-size: cover;
 }
 
 .loginContainer {
   border-radius: 10px;
-  background-color: white;
+  background: rgba(255, 255, 255, 0.1);
+  border: 0.5px solid var(--color-white);
+  backdrop-filter: blur(15px);
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
   width: 400px;
-  height: 250px;
   padding: 36px;
 }
 
 .loginContainer img {
   height: 60px;
   width: auto;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
-.loginContainer>a {
+.loginContainer > a {
   width: 100%;
 }
 
-.loginContainer>a>h4 {
+.loginContainer > a > h4 {
   width: 100%;
   text-align: end;
 }
@@ -42,11 +43,21 @@
   width: 100%;
 }
 
-.loginContainer__form>input {
+.loginContainer__form > input[data-shape="line"] {
   width: 100%;
   box-sizing: border-box;
+  color: var(--color-white);
+  border: 1px solid var(--gray-05);
 }
 
-.loginContainer__form>a>button {
+.loginContainer__form > h5 {
+  color: var(--color-white);
+}
+
+.loginContainer__form > input::placeholder {
+  color: var(--gray-04);
+}
+
+.loginBtn {
   width: 100%;
 }

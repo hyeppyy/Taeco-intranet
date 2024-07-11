@@ -1134,6 +1134,36 @@ database.serialize(() => {
               "https://jpassets.jobplanet.co.kr/production/uploads/company_story/contents/2023/09/06/bdc946a8-7e6d-4767-b467-47763855c085.jpg",
             isApprove: null,
           },
+          {
+            id: 16,
+            user: "권혁준",
+            category: "재활용 및 분리수거",
+            score: 3,
+            date: "2024-07-02",
+            image:
+              "https://lh3.googleusercontent.com/proxy/oLcycr-SJ__AuukCJ6ry5f_4iKWij98LMzgm0885Q34zKnhEEUxbGFvRlQK5Ui52gzK4nIK6as0UXCbNcR8idp2crfdsN1Svjco98pHC141N-Q",
+            isApprove: true,
+          },
+          {
+            id: 17,
+            user: "권혁준",
+            category: "재사용 및 업사이클링",
+            score: 1,
+            date: "2024-01-04",
+            image:
+              "https://www.koreaittimes.com/news/photo/202010/100899_46719_042.jpg",
+            isApprove: true,
+          },
+          {
+            id: 18,
+            user: "권혁준",
+            category: "대중교통 및 자전거 이용",
+            score: 1,
+            date: "2024-01-07",
+            image:
+              "https://res.heraldm.com/content/image/2016/12/01/20161201000069_0.jpg",
+            isApprove: true,
+          },
         ];
 
         // 각 항목을 개별적으로 삽입

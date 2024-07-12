@@ -18,6 +18,8 @@
   - [기능정의서](#기능정의서)
   - [요구사항정의서](#요구사항정의서)
   - [와이어프레임](#와이어프레임)
+  - [디자인](#디자인)
+  - [데이터베이스](#데이터베이스)
 - [개발 환경](#개발-환경)
 - [컨벤션](#컨벤션)
 - [팀원 구성 및 역할 분담](#팀원-구성-및-역할-분담)
@@ -131,6 +133,25 @@ ESG 경영 기업 TAECO 사내 인트라넷 서비스
 
 ![와이어프레임](/public/images/wireframe_01.png)
 ![와이어프레임](/public/images/wireframe_02.png)
+
+### 디자인
+
+#### **대시보드 페이지**
+<img width="450" alt="image" src="https://github.com/red-dev-Mark/TIL/assets/93127663/315c6b71-8fc7-4733-90a7-943ff063147d">
+<img width="450" alt="image" src="https://github.com/red-dev-Mark/TIL/assets/93127663/31289383-2eaa-4e81-9a63-00816aebce71">
+
+#### **전자결재 페이지**
+<img width="450" alt="image" src="https://github.com/red-dev-Mark/TIL/assets/93127663/969e5b71-5c71-4348-b95b-1c77c092a5be">
+<img width="450" alt="image" src="https://github.com/red-dev-Mark/TIL/assets/93127663/89f76652-e8e0-4da4-9995-32903eab442c">
+
+#### **마일리지 페이지**
+<img width="450" alt="image" src="https://github.com/red-dev-Mark/TIL/assets/93127663/63b36ac9-32ad-4a03-9cf2-aa730bfb5f2f">
+<img width="450" alt="image" src="https://github.com/red-dev-Mark/TIL/assets/93127663/cec28f70-539d-4d6e-9ed4-e712c18b394f">
+
+
+### 데이터베이스
+
+![데이터베이스 테이블](https://github.com/user-attachments/assets/67ee2202-c024-4006-8f77-c995c25f7b0a)
 
 ## 개발 환경
 

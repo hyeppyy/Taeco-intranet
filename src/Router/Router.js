@@ -23,7 +23,6 @@ import renderUserApproval from "../Pages/User/Approval/Approval";
 import renderAdminNoticesDetail from "../Pages/Admin/Notices/Detail/Detail";
 import renderUserNoticesDetail from "../Pages/User/Notices/Detail/Detail";
 import renderAdminAddNotices from "../Pages/Admin/Notices/Add/Add";
-import renderAdminTest from "../Pages/Admin/TestServer/TestServer";
 
 const route = () => {
   let path = window.location.pathname;
@@ -128,9 +127,6 @@ const route = () => {
       break;
     case "/admin/notices/add":
       renderAdminAddNotices(contents);
-      break;
-    case "/admin/testserver":
-      renderAdminTest(contents);
       break;
     case "/unauthorized":
       renderPageNotFound(root);

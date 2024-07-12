@@ -5,7 +5,7 @@ const renderUserMileageHistory = (container) => {
   container.innerHTML = `
     <div class="${styles.contents}">
       <h1 class="${styles.title}">마일리지 > 마일리지 적립목록</h1>
-      <h2>마일리지 적립목록(12)</h2>
+      <h2>마일리지 적립목록</h2>
 
       <ul class="${styles.details} ${styles.h5}">
         <li class="${styles['details__header']}">

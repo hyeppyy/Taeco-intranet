@@ -17,6 +17,10 @@
   width: 100%;
 }
 
+.count {
+  color: black;
+}
+
 .details__header,
 .details__row {
   height: 56px;

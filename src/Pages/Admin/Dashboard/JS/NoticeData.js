@@ -47,7 +47,7 @@ const filter = (data) => {
   } else {
     topThreeItems.forEach((item) => {
       const noticerow = document.createElement("tr");
-      const hasAttachments = item.attachments === 1;
+      const hasAttachments = item.attachments !== null;
 
       const category = item.category;
       let categoryContent = "";

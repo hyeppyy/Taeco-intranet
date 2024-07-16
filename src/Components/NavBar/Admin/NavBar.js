@@ -7,10 +7,7 @@ const renderAdminNavBar = (nav, menuList) => {
     console.error("navBar element not found");
     return;
   }
-  const userName = sessionStorage.getItem("userName") || "사용자"; // 기본값 설정
-  const userProfileImage =
-    sessionStorage.getItem("userProfileImage") || "/public/images/_Avatar_.png";
-
+  
   nav.innerHTML = `
   <div class="${styles.layout}">
     <div class="${styles.layout__top}">

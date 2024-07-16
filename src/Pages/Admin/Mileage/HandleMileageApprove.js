@@ -1,5 +1,5 @@
-import approveMileage from "./ApproveMileage";
-import rejectMileage from "./RejectMileage";
+import approveMileageRequest from "./ApproveMileage";
+import rejectMileageRequest from "./RejectMileage";
 import fetchMileageData from "./FetchMileageData";
 
 const handleMileageApprove = (item) => {
@@ -8,7 +8,7 @@ const handleMileageApprove = (item) => {
 
   const approveHandler = async () => {
     try {
-      const success = await approveMileage(item.id);
+      const success = await approveMileageRequest(item.id);
       if (success) {
         document.querySelector(".modal-box.active").classList.remove("active");
         document.querySelector("#modal__background").classList.remove("active");
@@ -30,7 +30,7 @@ const handleMileageApprove = (item) => {
     // }
 
     try {
-      const success = await rejectMileage(item.id, reason);
+      const success = await rejectMileageRequest(item.id, reason);
       if (success) {
         document.querySelector(".modal-box.active").classList.remove("active");
         document.querySelector("#modal__background").classList.remove("active");

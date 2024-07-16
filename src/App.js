@@ -1,9 +1,9 @@
-import route from './Router/Router';
+import route from "./Router/Router";
 
 const navigate = (event) => {
-  const anchor = event.target.closest('a');
+  const anchor = event.target.closest("a");
 
-  if (anchor && anchor.href) {
+  if (anchor?.href) {
     event.preventDefault();
     history.pushState(null, null, anchor.href);
     route();
@@ -11,8 +11,8 @@ const navigate = (event) => {
 };
 
 const initApp = () => {
-  window.addEventListener('popstate', route);
-  document.body.addEventListener('click', navigate);
+  window.addEventListener("popstate", route);
+  document.body.addEventListener("click", navigate);
 
   route();
 };

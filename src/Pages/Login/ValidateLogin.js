@@ -28,15 +28,15 @@ const validateLogin = async () => {
       sessionStorage.setItem("userId", user.id);
       sessionStorage.setItem("userName", user.name);
       route();
-      return true;
+      return;
     } else {
       alert("잘못된 이메일 또는 비밀번호입니다.");
-      return false;
+      return;
     }
   } catch (error) {
     console.error("Login error:", error);
     alert("로그인 중 오류가 발생했습니다. 나중에 다시 시도해주세요.");
-    return false;
+    return;
   }
 };
 

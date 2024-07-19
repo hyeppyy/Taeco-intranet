@@ -57,9 +57,6 @@
   margin-top: 12px;
 }
 
-.pagination button {
-  /* border: none; */
-}
 
 .pagination button.active {
   background-color: var(--color-pri-normal);

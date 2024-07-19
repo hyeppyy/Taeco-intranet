@@ -1,36 +1,37 @@
-import renderMileageList from "./RenderMileageList";
+import { renderMileageList } from "./index";
 import initPagination from "/src/Components/Pagination/Pagination";
-import spinner from "/src/Components/Spinner/Spinner";
+import createLoadingSpinner from "/src/Components/Spinner/Spinner";
 
-// 로딩 스피너
-const loadingSpinner = spinner();
+const loadingSpinner = createLoadingSpinner();
 
-// 서버 데이터 요청 함수
-const fetchMileageData = async () => {
-  // const response = await fetch('/server/data/mileage.json');
-  // const data = await response.json();
-  // initPagination(data, renderMileageList);
+export const fetchAndRenderUserApprovedMileage = async () => {
   try {
     loadingSpinner.show();
-    const response = await fetch("/api/mileage");
-    if (!response.ok) {
-      throw new Error("Network response was not ok");
-    }
-    const data = await response.json();
-    const approvedMileage = data.data.filter(
-      (item) =>
-        item.user === sessionStorage.getItem("userName") && item.isApprove == 1
-    );
-    if (data.status === "OK") {
-      initPagination(approvedMileage, renderMileageList);
-    } else {
-      console.error("Error fetching mileage data:", data.error);
-    }
+    const mileageData = await fetchMileageDataFromServer();
+    const approvedMileage = filterUserApprovedMileage(mileageData);
+    initPagination(approvedMileage, renderMileageList);
   } catch (error) {
-    console.error("Error fetching mileage data:", error);
+    console.error("마일리지 데이터 조회 중 오류 발생:", error);
   } finally {
     loadingSpinner.hide();
   }
 };
 
-export default fetchMileageData;
+const fetchMileageDataFromServer = async () => {
+  const response = await fetch("/api/mileage");
+  if (!response.ok) {
+    throw new Error("서버 응답이 정상적이지 않습니다");
+  }
+  const data = await response.json();
+  if (data.status !== "OK") {
+    throw new Error(data.error || "마일리지 데이터 조회 실패");
+  }
+  return data.data;
+};
+
+const filterUserApprovedMileage = (mileageData) => {
+  const userName = sessionStorage.getItem("userName");
+  return mileageData.filter(
+    (item) => item.user === userName && item.isApprove === 1
+  );
+};

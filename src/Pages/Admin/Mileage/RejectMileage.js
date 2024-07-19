@@ -1,4 +1,4 @@
-const rejectMileage = async (id, reason) => {
+const rejectMileageRequest = async (id, rejectionReason) => {
   try {
     const response = await fetch(`/api/mileage/${id}/approve`, {
       method: "PUT",
@@ -20,4 +20,4 @@ const rejectMileage = async (id, reason) => {
   }
 };
 
-export default rejectMileage;
+export default rejectMileageRequest;

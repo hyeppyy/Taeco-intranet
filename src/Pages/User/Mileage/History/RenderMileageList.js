@@ -1,6 +1,6 @@
 import styles from "./History.module.css";
 
-const renderMileageList = (data) => {
+export const renderMileageList = (data) => {
   const container = document.querySelector(`.${styles.details}`);
   container.innerHTML = "";
 
@@ -22,4 +22,3 @@ const renderMileageList = (data) => {
   });
 };
 
-export default renderMileageList;

@@ -2,37 +2,37 @@
   overflow: hidden;
 }
 
-.page__event {
+.pageEvent {
   display: flex;
   gap: 20px;
   margin-bottom: 16px;
 }
 
-.page__event img {
+.pageEvent img {
   width: 18px;
   height: 18px;
   align-self: center;
 }
 
-.page__event > .birthdayinfo {
+.pageEvent > .birthdayInfo {
   display: flex;
   margin-right: 25px;
   gap: 5px;
 }
 
-.page__event > .joindayinfo {
+.pageEvent > .joindayInfo {
   display: flex;
   gap: 5px;
 }
 
-.page__header {
+.pageHeader {
   width: 100%;
   display: flex;
   justify-content: space-between;
   margin-bottom: 16px;
 }
 
-.total__info {
+.totalInfo {
   color: rgb(120, 115, 115);
   margin-bottom: 16px;
 }
@@ -46,42 +46,42 @@
   overflow-y: auto;
 }
 
-.table__container {
+.tableContainer {
   width: 100%;
   display: table;
 }
 
-.table__head {
+.tableHead {
   position: sticky;
   top: 0;
   background-color: var(--color-white);
   /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 셀 아래 그림자 */
 }
 
-.table__content {
+.tableContent {
   box-shadow: 10px 10px 5px var(--gray-05);
 }
 
-.employeeTable__body > tr > td {
+.employeeTableBody > tr > td {
   vertical-align: middle;
   padding: 10px;
   border-bottom: 1px solid var(--gray-05);
 }
 
-.head__profileimg,
-.head__name,
-.head__position,
-.head__email,
-.head__birthday,
-.head__joinday,
-.head__contact,
-.head__button {
+.headProfileImage,
+.headName,
+.headPosition,
+.headEmail,
+.headBirthday,
+.headJoinday,
+.headContact,
+.headButton {
   vertical-align: middle;
   text-align: center;
   height: 30px;
 }
 
-.profileimg,
+.profileImage,
 .name,
 .position,
 .email,
@@ -131,27 +131,27 @@
 /* 반응형 */
 /* 모바일 */
 @media (max-width: 599px) {
-  .page__event {
+  .pageEvent {
     display: flex;
     flex-direction: column;
     gap: 0;
   }
 
-  .page__header > input {
+  .pageHeader > input {
     width: auto;
   }
 
-  .head__birthday,
+  .headBirthday,
   .birthday {
     display: none;
   }
 
-  .head__joinday,
+  .headJoinday,
   .joinday {
     display: none;
   }
 
-  .head__contact,
+  .headContact,
   .contact {
     display: none;
   }
@@ -178,7 +178,7 @@
     display: none; /* 생일 감추기 */
   }
 
-  .table__content > .profileimg {
+  .tableContent > .profileImage {
     width: 80px;
     height: 80px;
   }
@@ -199,12 +199,12 @@
     display: none; /* 생일 감추기 */
   }
 
-  .table__content > .profileimg {
+  .tableContent > .profileImage {
     width: 80px;
     height: 80px;
   }
 
-  .employeeTable__body > tr > td {
+  .employeeTableBody > tr > td {
     padding: 5px;
   }
 }

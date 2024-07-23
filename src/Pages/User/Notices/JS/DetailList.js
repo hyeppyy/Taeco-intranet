@@ -41,7 +41,7 @@ const detailList = () => {
     />
     `;
   } else {
-    ("없음");
+    attachedFile.innerHTML = `("없음")`;
   }
 };
 

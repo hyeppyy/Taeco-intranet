@@ -1,4 +1,4 @@
-const approveMileage = async (id) => {
+const approveMileageRequest = async (id) => {
   try {
     const response = await fetch(`/api/mileage/${id}/approve`, {
       method: "PUT",
@@ -26,4 +26,4 @@ const approveMileage = async (id) => {
   }
 };
 
-export default approveMileage;
+export default approveMileageRequest;

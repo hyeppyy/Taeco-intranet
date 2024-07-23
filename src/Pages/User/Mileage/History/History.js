@@ -1,5 +1,5 @@
-import styles from './History.module.css';
-import fetchMileageData from './FetchMileageData';
+import styles from "./History.module.css";
+import { fetchAndRenderUserApprovedMileage } from "./";
 
 const renderUserMileageHistory = (container) => {
   container.innerHTML = `
@@ -8,10 +8,10 @@ const renderUserMileageHistory = (container) => {
       <h2>마일리지 적립목록</h2>
 
       <ul class="${styles.details} ${styles.h5}">
-        <li class="${styles['details__header']}">
-          <div class="${styles['details__title']}">제목</div>
-          <div class="${styles['details__registration-date']}">등록일</div>
-          <div class="${styles['details__mileage']}">마일리지</div>
+        <li class="${styles["details__header"]}">
+          <div class="${styles["details__title"]}">제목</div>
+          <div class="${styles["details__registration-date"]}">등록일</div>
+          <div class="${styles["details__mileage"]}">마일리지</div>
         </li>
       </ul>
 
@@ -19,7 +19,7 @@ const renderUserMileageHistory = (container) => {
     </div>
   `;
 
-  fetchMileageData();
+  fetchAndRenderUserApprovedMileage();
 };
 
 export default renderUserMileageHistory;

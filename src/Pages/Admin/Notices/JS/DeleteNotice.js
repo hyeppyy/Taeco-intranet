@@ -1,9 +1,7 @@
-import styles from "./../Notice.module.css";
+const initNoticeDeleteHandler = () => {
+  const noticeDeleteButton = document.querySelector("[data-n-delete]");
 
-const deleteNotice = () => {
-  const deleteBtn = document.querySelector("[data-n-delete]");
-
-  deleteBtn.addEventListener("click", async () => {
+  noticeDeleteButton.addEventListener("click", async () => {
     const urlParams = new URLSearchParams(window.location.search);
     const noticeId = urlParams.get("id");
 
@@ -38,4 +36,4 @@ const deleteNotice = () => {
   });
 };
 
-export default deleteNotice;
+export default initNoticeDeleteHandler;

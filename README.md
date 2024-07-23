@@ -87,54 +87,54 @@ ESG 경영 기업 TAECO 사내 인트라넷 서비스
 
 #### 대시보드 페이지
 
-<img width="420" alt="image" src="https://github.com/red-dev-Mark/TIL/assets/93127663/315c6b71-8fc7-4733-90a7-943ff063147d">
-<img width="420" alt="image" src="https://github.com/red-dev-Mark/TIL/assets/93127663/31289383-2eaa-4e81-9a63-00816aebce71">
+<img width="400" alt="image" src="https://github.com/red-dev-Mark/TIL/assets/93127663/315c6b71-8fc7-4733-90a7-943ff063147d">
+<img width="400" alt="image" src="https://github.com/red-dev-Mark/TIL/assets/93127663/31289383-2eaa-4e81-9a63-00816aebce71">
 
 #### 마이페이지
 
-<img width="420" alt="image" src="https://github.com/red-dev-Mark/TIL/assets/93127663/82632c0a-eab2-4eca-90c7-1f27ff12b435">
-<img width="420" alt="image" src="https://github.com/red-dev-Mark/TIL/assets/93127663/35db3dfd-6020-452c-9c92-a895662a68a6">
+<img width="400" alt="image" src="https://github.com/red-dev-Mark/TIL/assets/93127663/82632c0a-eab2-4eca-90c7-1f27ff12b435">
+<img width="400" alt="image" src="https://github.com/red-dev-Mark/TIL/assets/93127663/35db3dfd-6020-452c-9c92-a895662a68a6">
 
 #### 전자결재 페이지
 
-<img width="420" alt="image" src="https://github.com/red-dev-Mark/TIL/assets/93127663/969e5b71-5c71-4348-b95b-1c77c092a5be">
-<img width="420" alt="image" src="https://github.com/red-dev-Mark/TIL/assets/93127663/89f76652-e8e0-4da4-9995-32903eab442c">
+<img width="400" alt="image" src="https://github.com/red-dev-Mark/TIL/assets/93127663/969e5b71-5c71-4348-b95b-1c77c092a5be">
+<img width="400" alt="image" src="https://github.com/red-dev-Mark/TIL/assets/93127663/89f76652-e8e0-4da4-9995-32903eab442c">
 
 #### 마일리지 페이지
 
-<img width="420" alt="image" src="https://github.com/red-dev-Mark/TIL/assets/93127663/63b36ac9-32ad-4a03-9cf2-aa730bfb5f2f">
-<img width="420" alt="image" src="https://github.com/red-dev-Mark/TIL/assets/93127663/cec28f70-539d-4d6e-9ed4-e712c18b394f">
+<img width="400" alt="image" src="https://github.com/red-dev-Mark/TIL/assets/93127663/63b36ac9-32ad-4a03-9cf2-aa730bfb5f2f">
+<img width="400" alt="image" src="https://github.com/red-dev-Mark/TIL/assets/93127663/cec28f70-539d-4d6e-9ed4-e712c18b394f">
 
 #### 공지(갤러리) 페이지
 
-<img width="420" alt="image" src="https://github.com/red-dev-Mark/TIL/assets/93127663/7db16cf8-d701-40b7-b9be-01d5efc4b923">
-<img width="420" alt="image" src="https://github.com/red-dev-Mark/TIL/assets/93127663/6dc08403-04de-428a-8de5-b7b2ac1264b8">
+<img width="400" alt="image" src="https://github.com/red-dev-Mark/TIL/assets/93127663/7db16cf8-d701-40b7-b9be-01d5efc4b923">
+<img width="400" alt="image" src="https://github.com/red-dev-Mark/TIL/assets/93127663/6dc08403-04de-428a-8de5-b7b2ac1264b8">
 
 ### 관리자 페이지 화면
 
 #### 대시보드 페이지
 
-<img width="420" alt="image" src="https://github.com/red-dev-Mark/TIL/assets/93127663/c6684d94-862d-4273-aaf9-15a714d5c9e8">
+<img width="400" alt="image" src="https://github.com/red-dev-Mark/TIL/assets/93127663/c6684d94-862d-4273-aaf9-15a714d5c9e8">
 
 #### 직원관리 페이지
 
-<img width="420" alt="image" src="https://github.com/red-dev-Mark/TIL/assets/93127663/169e000f-e8a9-485e-bb6e-4b25a4f28fa0">
-<img width="420" alt="image" src="https://github.com/red-dev-Mark/TIL/assets/93127663/7019c5aa-ef98-461a-a14a-1bcbcc66176c">
+<img width="400" alt="image" src="https://github.com/red-dev-Mark/TIL/assets/93127663/169e000f-e8a9-485e-bb6e-4b25a4f28fa0">
+<img width="400" alt="image" src="https://github.com/red-dev-Mark/TIL/assets/93127663/7019c5aa-ef98-461a-a14a-1bcbcc66176c">
 
 #### 전자결재 페이지
 
-<img width="420" alt="image" src="https://github.com/red-dev-Mark/TIL/assets/93127663/83d62b15-9283-4345-8eb6-62b2ad272a16">
-<img width="420" alt="image" src="https://github.com/red-dev-Mark/TIL/assets/93127663/b65a3320-b029-4c3b-b056-9d05ea5e4d7c">
+<img width="400" alt="image" src="https://github.com/red-dev-Mark/TIL/assets/93127663/83d62b15-9283-4345-8eb6-62b2ad272a16">
+<img width="400" alt="image" src="https://github.com/red-dev-Mark/TIL/assets/93127663/b65a3320-b029-4c3b-b056-9d05ea5e4d7c">
 
 #### 마일리지 페이지
 
-<img width="420" alt="image" src="https://github.com/red-dev-Mark/TIL/assets/93127663/95e8b414-71bf-4990-ba7d-5809612c8a23">
-<img width="420" alt="image" src="https://github.com/red-dev-Mark/TIL/assets/93127663/ac51b93f-ce05-4027-b431-06890a8a1928">
+<img width="400" alt="image" src="https://github.com/red-dev-Mark/TIL/assets/93127663/95e8b414-71bf-4990-ba7d-5809612c8a23">
+<img width="400" alt="image" src="https://github.com/red-dev-Mark/TIL/assets/93127663/ac51b93f-ce05-4027-b431-06890a8a1928">
 
 #### 공지사항 페이지
 
-<img width="420" alt="image" src="https://github.com/red-dev-Mark/TIL/assets/93127663/3ac517aa-0719-43ce-afa0-90760609a72a">
-<img width="420" alt="image" src="https://github.com/red-dev-Mark/TIL/assets/93127663/5e4e1ef1-7eff-4457-9042-bc942b028531">
+<img width="400" alt="image" src="https://github.com/red-dev-Mark/TIL/assets/93127663/3ac517aa-0719-43ce-afa0-90760609a72a">
+<img width="400" alt="image" src="https://github.com/red-dev-Mark/TIL/assets/93127663/5e4e1ef1-7eff-4457-9042-bc942b028531">
 
 ---
 

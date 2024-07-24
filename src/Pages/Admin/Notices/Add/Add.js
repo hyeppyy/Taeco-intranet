@@ -45,7 +45,7 @@ const renderAdminAddNotices = (container) => {
                         <input data-n-file type="file" class="${styles.fileInput}" class="hidden">
                         <div data-n-file-info></div>
                         <button data-n-remove-file class="${styles.removeFileButton}" style="display:none;">파일 삭제
-                            <img src="https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/icons/close.svg" />
+                            <img src="icons/close.svg" />
                         </button>
                     </div>
                 </li>

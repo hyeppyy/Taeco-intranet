@@ -35,8 +35,7 @@ database.serialize(() => {
             password: "1234",
             name: "김민태",
             email: "admin@taeco.com",
-            profileImage:
-              "https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/images/kimmintae.jpeg",
+            profileImage: "images/kimmintae.jpeg",
             position: "사장",
             birthday: "1972.05.24",
             startDate: "2002.07.08",
@@ -47,8 +46,7 @@ database.serialize(() => {
             password: "1234",
             name: "권혁준",
             email: "user2@taeco.com",
-            profileImage:
-              "https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/images/red-dev-Mark.png",
+            profileImage: "images/red-dev-Mark.png",
             position: "차장",
             birthday: "1985.09.17",
             startDate: "2005.07.09",
@@ -59,8 +57,7 @@ database.serialize(() => {
             password: "1234",
             name: "권혜지",
             email: "user3@taeco.com",
-            profileImage:
-              "https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/images/hyeppyy.png",
+            profileImage: "images/hyeppyy.png",
             position: "과장",
             birthday: "1990.06.12",
             startDate: "2011.09.08",
@@ -71,8 +68,7 @@ database.serialize(() => {
             password: "1234",
             name: "김승민",
             email: "user4@taeco.com",
-            profileImage:
-              "https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/images/miniseung.png",
+            profileImage: "images/miniseung.png",
             position: "부장",
             birthday: "1995.04.10",
             startDate: "2017.03.04",
@@ -83,8 +79,7 @@ database.serialize(() => {
             password: "1234",
             name: "박수현",
             email: "user5@taeco.com",
-            profileImage:
-              "https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/images/suhyun9892.png",
+            profileImage: "images/suhyun9892.png",
             position: "사원",
             birthday: "1999.07.16",
             startDate: "2020.03.04",

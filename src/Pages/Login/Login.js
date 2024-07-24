@@ -6,7 +6,7 @@ const login = (container) => {
   container.innerHTML = `
       <section class="${styles.loginLayout}">
       <div class="${styles.loginContainer}">
-        <img src="https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/images/company_logo_user.png" alt="logo img" />
+        <img src="images/company_logo_user.png" alt="logo img" />
         <form class="${styles.loginContainer__form}">
         <h5>아이디</h5>
           <input

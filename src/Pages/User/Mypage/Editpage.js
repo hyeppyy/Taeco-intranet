@@ -80,7 +80,7 @@ const renderUserEditPage = (container) => {
 <!-- 정보 수정 완료 토스트 부분입니다. -->
 <div class="${styles.pageFooter}">
     <div class="${styles.toastMessage}" id="toastMessage">
-      <img src="https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/icons/check.svg" alt="check">
+      <img src="icons/check.svg" alt="check">
       <div class="${styles.toastText}" id="toastText">
         <h4>정보 수정</h4>
         <h5>수정이 완료되었습니다.</h5>

@@ -83,7 +83,7 @@ const filter = (data) => {
           <td>${item.createdAt}</td>
           <td>${
             hasAttachments
-              ? `<img src="https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/icons/textfile.svg" alt="file-icon" width="20" height="20" />`
+              ? `<img src="icons/textfile.svg" alt="file-icon" width="20" height="20" />`
               : `없음`
           }</td>
           <td>${item.views}</td>
@@ -95,7 +95,7 @@ const filter = (data) => {
                     <p class="${styles.noticeResponsive__attachment}">첨부파일:
                     ${
                       hasAttachments
-                        ? `<img src="https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/icons/textfile.svg" alt="file-icon" width="20" height="20" />`
+                        ? `<img src="icons/textfile.svg" alt="file-icon" width="20" height="20" />`
                         : `없음`
                     }
                     </p>

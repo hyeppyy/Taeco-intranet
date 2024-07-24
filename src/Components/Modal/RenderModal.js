@@ -10,7 +10,7 @@ const renderModal = (id, header, content, event = null) => {
           <h2>${header}</h2>
           <img
             class="close-modal"
-            src="https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/icons/close.svg"
+            src="icons/close.svg"
             alt="close-modal"
             width="24"
             height="24"

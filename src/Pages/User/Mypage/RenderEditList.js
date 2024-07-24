@@ -59,9 +59,7 @@ const renderEditList = (userdata) => {
 
   // 기본 이미지 설정 함수
   const setDefaultImage = () => {
-    setImage(
-      "https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/images/defaultProfile.png"
-    );
+    setImage("images/defaultProfile.png");
   };
 
   // 저장된 이미지 로드 함수
@@ -88,8 +86,7 @@ const renderEditList = (userdata) => {
     event.preventDefault();
     setDefaultImage();
     //selectedFile = null; // 선택된 파일 초기화
-    selectedFile =
-      "https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/images/defaultProfile.png";
+    selectedFile = "images/defaultProfile.png";
   };
 
   fileInput.addEventListener("change", handleFileSelect); //프로필 이미지 변경

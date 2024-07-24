@@ -26,11 +26,11 @@ const renderAdminDashboard = (container) => {
           </div>
           <div class="${styles.infoSecond}">
               <div class="${styles.emailInfo}">
-              <img src="https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/icons/email.svg" alt="email" />
+              <img src="icons/email.svg" alt="email" />
               <h4 data-m-email class="${styles.email}"></h4>
               </div>
               <div class="${styles.callInfo}">
-              <img src="https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/icons/call.svg" alt="call" />
+              <img src="icons/call.svg" alt="call" />
               <h4 data-m-phone class="${styles.call}"></h4>
             </div>
           </div>

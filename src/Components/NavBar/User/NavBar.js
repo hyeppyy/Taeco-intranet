@@ -14,7 +14,7 @@ const renderUserNavBar = (nav, menuList) => {
     <div class="${styles.layout__top}">
       <div class="${styles.layout__logo}">
         <a href="/user/dashboard">
-          <img src="https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/images/company_logo_user.png" />
+          <img src="images/company_logo_user.png" />
         <a>
       </div>
 

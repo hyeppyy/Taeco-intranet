@@ -1,4 +1,5 @@
-const defaultImagePath = "/public/images/_Avatar_.png"; // 디폴트 이미지, 이미지 삭제되었을 때 이 이미지로 돌아갑니다.
+const defaultImagePath =
+  "https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/images/_Avatar_.png"; // 디폴트 이미지, 이미지 삭제되었을 때 이 이미지로 돌아갑니다.
 
 export function loadFile(input) {
   const file = input.files[0]; // 선택한 첫 번째 파일을 가져옵니다.

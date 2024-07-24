@@ -4,7 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("/public/images/root_background.jpg");
+  background-image: url("https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/images/root_background.jpg");
   background-size: cover;
 }
 

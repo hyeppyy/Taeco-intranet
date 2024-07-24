@@ -85,7 +85,7 @@ app.post("/api/users", upload.single("profileImage"), (req, res) => {
     req.body;
   const profileImage = req.file
     ? `/uploads/${req.file.filename}`
-    : "/public/images/defaultProfile.png"; // Get uploaded image path if available
+    : "https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/images/defaultProfile.png"; // Get uploaded image path if available
 
   const sql = `INSERT INTO Users (name, email, profileImage, position, birthday, startDate, phone, password)
                VALUES (?, ?, ?, ?, ?, ?, ?, ?)`;

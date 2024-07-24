@@ -1164,11 +1164,11 @@
   
   <div class="${k.pageEvent}">
     <div class="${k.birthdayInfo}">
-    <img src="icons/cake.svg" alt="cake" />
+    <img src="/icons/cake.svg" alt="cake" />
     <h3><span class="${k.eventBirthday}" id="todayBirthday">금일의 생일자: 로딩 중 ...</span></h3>
     </div>
     <div class="${k.joindayInfo}">
-    <img src="icons/seedling.svg" alt="seedling" />
+    <img src="/icons/seedling.svg" alt="seedling" />
     <h3><span class="${k.eventJoinday}" id="todayJoinDay">금일의 입사자: 로딩 중 ...</span></h3>
     </div>
   </div>

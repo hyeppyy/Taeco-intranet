@@ -15,7 +15,7 @@
         <nav id="nav"></nav>
         <div id="contents"></div>
       </div>
-      `},rt="_loginLayout_cfez9_1",lt="_loginContainer_cfez9_11",ct="_loginContainer__form_cfez9_39",dt="_loginBtn_cfez9_61",K={loginLayout:rt,loginContainer:lt,loginContainer__form:ct,loginBtn:dt},_t=e=>{e.innerHTML=`
+      `},rt="_loginLayout_16cc7_1",lt="_loginContainer_16cc7_11",ct="_loginContainer__form_16cc7_39",dt="_loginBtn_16cc7_61",K={loginLayout:rt,loginContainer:lt,loginContainer__form:ct,loginBtn:dt},_t=e=>{e.innerHTML=`
       <section class="${K.loginLayout}">
       <div class="${K.loginContainer}">
         <img src="images/company_logo_user.png" alt="logo img" />
@@ -55,14 +55,14 @@
   `,document.querySelector("#login__button").addEventListener("click",$e),document.querySelector(`.${K.loginContainer__form}`).addEventListener("keydown",n=>{n.key==="Enter"&&(n.preventDefault(),$e())})},pt="_logo_1hpvu_7",ut="_hamburger_1hpvu_17",X={"responsive-nav__container":"_responsive-nav__container_1hpvu_1",logo:pt,hamburger:ut},ht="_h4_14he3_1",mt="_layout_14he3_7",vt="_layout__top_14he3_17",gt="_layout__logo_14he3_25",bt="_layout__nav_14he3_38",yt="_layout__item_14he3_43",ft="_layout__bottom_14he3_44",$t="_open_14he3_103",x={h4:ht,layout:mt,layout__top:vt,layout__logo:gt,layout__nav:bt,layout__item:yt,layout__bottom:ft,"layout--profile":"_layout--profile_14he3_69",open:$t},wt=()=>{const e=document.querySelector(`.${X.hamburger}`),t=document.querySelector(`.${x.layout}`);e&&t?e.addEventListener("click",()=>{t.classList.toggle(`${x.open}`)}):console.error("Element not found:",{hamburgerElement:e,layoutElement:t})},Ct=e=>{e.innerHTML=`
           <div class=${X["responsive-nav__container"]}>
             <a href="/admin/dashboard" class=${X.logo}>
-                <img src="images/company_logo_admin.png" />
+                <img src="/images/company_logo_admin.png" />
             </a>
             <button class=${X.hamburger}>&#9776;</button>
           </div>
             `,wt()},Dt="_logo_3owf9_8",St="_hamburger_3owf9_17",ee={"responsive-nav__container":"_responsive-nav__container_3owf9_1",logo:Dt,hamburger:St},Lt="_h4_1xtps_1",Tt="_layout_1xtps_7",kt="_layout__top_1xtps_18",xt="_layout__logo_1xtps_26",Et="_layout__nav_1xtps_39",It="_layout__item_1xtps_44",Ht="_layout__bottom_1xtps_45",qt="_layout__profile_1xtps_67",Mt="_open_1xtps_98",E={h4:Lt,layout:Tt,layout__top:kt,layout__logo:xt,layout__nav:Et,layout__item:It,layout__bottom:Ht,layout__profile:qt,open:Mt},Bt=()=>{const e=document.querySelector(`.${ee.hamburger}`),t=document.querySelector(`.${E.layout}`);e&&t?e.addEventListener("click",()=>{t.classList.toggle(`${E.open}`)}):console.error("Element not found:",{hamburgerElement:e,layoutElement:t})},At=e=>{e.innerHTML=`
           <div class=${ee["responsive-nav__container"]}>
             <a href="/user/dashboard" class=${ee.logo}>
-                <img src="images/company_logo_user.png" />
+                <img src="/images/company_logo_user.png" />
             </a>
             <button class=${ee.hamburger}>&#9776;</button>
           </div>
@@ -71,7 +71,7 @@
     <div class="${x.layout__top}">
       <div class="${x.layout__logo}">
         <a href="/admin/dashboard">
-          <img src="images/company_logo_admin.png" />
+          <img src="/images/company_logo_admin.png" />
         <a>
       </div>
 
@@ -163,7 +163,7 @@
     <div class="${E.layout__top}">
       <div class="${E.layout__logo}">
         <a href="/user/dashboard">
-          <img src="images/company_logo_user.png" />
+          <img src="/images/company_logo_user.png" />
         <a>
       </div>
 
@@ -266,7 +266,7 @@
           <td>${a.title}</td>
           <td>${a.author}</td>
           <td>${a.createdAt}</td>
-          <td>${i?'<img src="icons/textfile.svg" alt="file-icon" width="20" height="20" />':"없음"}</td>
+          <td>${i?'<img src="/icons/textfile.svg" alt="file-icon" width="20" height="20" />':"없음"}</td>
           <td>${a.views}</td>
           <td>
               <p>[${r}] ${a.title}</p>
@@ -274,7 +274,7 @@
                     <p>작성자:${a.author} / </p>
                     <p>작성일:${a.createdAt} / </p>
                     <p class="${c.noticeResponsive__attachment}">첨부파일:
-                    ${i?'<img src="icons/textfile.svg" alt="file-icon" width="20" height="20" />':"없음"}
+                    ${i?'<img src="/icons/textfile.svg" alt="file-icon" width="20" height="20" />':"없음"}
                     </p>
                 </div>
           </td>
@@ -348,7 +348,7 @@
           </div>
           <div class="${c.infoSecond}">
               <div class="${c.emailInfo}">
-              <img src="icons/email.svg" alt="email" />
+              <img src="/icons/email.svg" alt="email" />
               <h4 data-m-email class="${c.email}"></h4>
               </div>
               <div class="${c.callInfo}">
@@ -473,7 +473,7 @@
           <td>${a.title}</td>
           <td>${a.author}</td>
           <td>${a.createdAt}</td>
-          <td>${i?'<img src="icons/textfile.svg" alt="file-icon" width="20" height="20" />':"없음"}</td>
+          <td>${i?'<img src="/icons/textfile.svg" alt="file-icon" width="20" height="20" />':"없음"}</td>
           <td>${a.views}</td>
           <td>
               <p>[${r}] ${a.title}</p>
@@ -481,7 +481,7 @@
                     <p>작성자:${a.author} / </p>
                     <p>작성일:${a.createdAt} / </p>
                     <p class="${d.dashboard__attachments}">첨부파일:
-                    ${i?'<img src="icons/textfile.svg" alt="file-icon" width="20" height="20" />':"없음"}
+                    ${i?'<img src="/icons/textfile.svg" alt="file-icon" width="20" height="20" />':"없음"}
                     </p>
                 </div>
           </td>
@@ -682,7 +682,7 @@
           <h2>${t}</h2>
           <img
             class="close-modal"
-            src="icons/close.svg"
+            src="/icons/close.svg"
             alt="close-modal"
             width="24"
             height="24"
@@ -718,7 +718,7 @@
               </div>
               <div class="${d.infoSecond}">
                 <div class="${d.emailInfo}">
-                <img src="icons/email.svg" alt="email" />
+                <img src="/icons/email.svg" alt="email" />
                 <h4 data-m-email class="${d.email}"></h4>
                 </div>
                 <div class="${d.callInfo}">
@@ -1200,7 +1200,7 @@
     <div class="${k.employeeList}"></div>
 
   </div> 
-  `,_s(),ls()},ls=async()=>{const e=await is();e&&e.length&&(cs(e.length),ds(e))},cs=e=>{document.getElementById("totalEmployeeCount").innerText=`총 인원: ${e}명`},ds=e=>{const t=new Date,n=(t.getMonth()+1).toString().padStart(2,"0"),o=t.getDate().toString().padStart(2,"0"),a=e.filter(r=>{const[m,h,g]=r.birthday.split(/[-.]/);return h===n&&g===o}),s=e.filter(r=>{const[m,h,g]=r.startDate.split(/[-.]/);return h===n&&g===o}),i=a.map(r=>r.name).join(", "),l=s.map(r=>r.name).join(", ");document.getElementById("todayBirthday").innerText=`금일의 생일자: ${i||"없음"}`,document.getElementById("todayJoinDay").innerText=`금일의 입사자: ${l||"없음"}`},_s=()=>{const e=document.getElementById("addEmployeeButton");e&&e.addEventListener("click",ps)},ps=()=>{history.pushState(null,null,"/admin/employee/add"),H()},us="_page_cpm69_4",hs="_page__content_cpm69_13",ms="_page__button_cpm69_24",vs="_page__edit_cpm69_33",gs="_edit__btn_cpm69_48",bs="_uploadProfile_cpm69_56",ys="_user__info_cpm69_69",fs="_info__position_cpm69_90",$s="_info__birthday_cpm69_95",ws="_info__joinday_cpm69_96",Cs="_table__container_cpm69_101",Ds="_imageContainer_cpm69_107",Ss="_imageContainer__image_cpm69_113",Ls="_info__fileInput_cpm69_126",Ts="_imgBtnContainer_cpm69_130",ks="_info__fileLabel_cpm69_137",xs="_page__title_cpm69_156",D={page:us,page__content:hs,page__button:ms,page__edit:vs,edit__btn:gs,uploadProfile:bs,user__info:ys,info__position:fs,info__birthday:$s,info__joinday:ws,table__container:Cs,imageContainer:Ds,imageContainer__image:Ss,info__fileInput:Ls,imgBtnContainer:Ts,info__fileLabel:ks,page__title:xs},Es=()=>{const e=container.querySelector("[data-e-add]"),t=document.querySelector(`.${D.info__fileInput}`),n=container.querySelector("[data-e-delete]"),o=container.querySelector("[data-e-back]");e.addEventListener("click",As),t.addEventListener("change",Hs),n.addEventListener("click",Ms),o.addEventListener("click",Is),qs()},Is=()=>{localStorage.removeItem("profileImage"),history.pushState(null,null,"/admin/employee"),H()},Hs=e=>{const t=e.target.files[0],n=document.querySelector(`.${D.imageContainer__image}`);if(t){const o=new FileReader;o.onload=a=>{n.innerHTML="";const s=document.createElement("img");s.setAttribute("src",a.target.result),n.appendChild(s),localStorage.setItem("profileImage",a.target.result)},o.readAsDataURL(t)}else localStorage.removeItem("profileImage"),ye(n)},qs=()=>{const e=document.querySelector(`.${D.imageContainer__image}`),t=localStorage.getItem("profileImage");if(t){e.innerHTML="";const n=document.createElement("img");n.setAttribute("src",t),e.appendChild(n)}else ye(e)},Ms=e=>{e.preventDefault();const t=document.querySelector(`.${D.imageContainer__image}`);t.innerHTML="",localStorage.removeItem("profileImage"),ye(t),Bs()},Bs=()=>{const e=document.querySelector(`.${D.info__fileInput}`);e.value="",e.dispatchEvent(new Event("change",{bubbles:!0}))},ye=e=>{const t=document.createElement("img");t.setAttribute("src","images/defaultProfile.png"),t.style.display="block",e.appendChild(t),localStorage.setItem("profileImage","images/defaultProfile.png")},As=async e=>{if(e){e.preventDefault();const t=document.querySelector("[data-e-name]").value,n=document.querySelector("[data-e-positions]").value,o=document.querySelector("[data-e-email]").value,a=document.querySelector("[data-e-phone]").value,s=document.querySelector("[data-e-birthday]").value,i=document.querySelector("[data-e-joinday]").value,r=document.querySelector("[data-e-input]").files[0];if(!t||!o||!n||!s||!i){alert("이름, 이메일, 직함, 생일, 입사일은 필수 입력 항목입니다.");return}if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(o)){alert("올바른 이메일 형식을 입력해주세요.");return}const h=new FormData;h.append("name",t),h.append("email",o),h.append("position",n),h.append("birthday",s),h.append("startDate",i),h.append("password","1234"),a&&h.append("phone",a),r&&h.append("profileImage",r);try{const g=await fetch("/api/users",{method:"POST",body:h});if(!g.ok)throw new Error(`HTTP 오류! 상태: ${g.status}`);const C=await g.json();C.status==="OK"?(alert("직원 추가에 성공했습니다."),localStorage.removeItem("profileImage"),setTimeout(()=>{history.pushState(null,null,"/admin/employee"),H()},2e3)):(console.error("직원 추가 오류:",C.error),alert("직원 추가 중 오류가 발생했습니다."))}catch(g){console.error("직원 추가 실패:",g),alert("직원 추가에 실패했습니다.")}}},js=e=>{e.innerHTML=`
+  `,_s(),ls()},ls=async()=>{const e=await is();e&&e.length&&(cs(e.length),ds(e))},cs=e=>{document.getElementById("totalEmployeeCount").innerText=`총 인원: ${e}명`},ds=e=>{const t=new Date,n=(t.getMonth()+1).toString().padStart(2,"0"),o=t.getDate().toString().padStart(2,"0"),a=e.filter(r=>{const[m,h,g]=r.birthday.split(/[-.]/);return h===n&&g===o}),s=e.filter(r=>{const[m,h,g]=r.startDate.split(/[-.]/);return h===n&&g===o}),i=a.map(r=>r.name).join(", "),l=s.map(r=>r.name).join(", ");document.getElementById("todayBirthday").innerText=`금일의 생일자: ${i||"없음"}`,document.getElementById("todayJoinDay").innerText=`금일의 입사자: ${l||"없음"}`},_s=()=>{const e=document.getElementById("addEmployeeButton");e&&e.addEventListener("click",ps)},ps=()=>{history.pushState(null,null,"/admin/employee/add"),H()},us="_page_cpm69_4",hs="_page__content_cpm69_13",ms="_page__button_cpm69_24",vs="_page__edit_cpm69_33",gs="_edit__btn_cpm69_48",bs="_uploadProfile_cpm69_56",ys="_user__info_cpm69_69",fs="_info__position_cpm69_90",$s="_info__birthday_cpm69_95",ws="_info__joinday_cpm69_96",Cs="_table__container_cpm69_101",Ds="_imageContainer_cpm69_107",Ss="_imageContainer__image_cpm69_113",Ls="_info__fileInput_cpm69_126",Ts="_imgBtnContainer_cpm69_130",ks="_info__fileLabel_cpm69_137",xs="_page__title_cpm69_156",D={page:us,page__content:hs,page__button:ms,page__edit:vs,edit__btn:gs,uploadProfile:bs,user__info:ys,info__position:fs,info__birthday:$s,info__joinday:ws,table__container:Cs,imageContainer:Ds,imageContainer__image:Ss,info__fileInput:Ls,imgBtnContainer:Ts,info__fileLabel:ks,page__title:xs},Es=()=>{const e=container.querySelector("[data-e-add]"),t=document.querySelector(`.${D.info__fileInput}`),n=container.querySelector("[data-e-delete]"),o=container.querySelector("[data-e-back]");e.addEventListener("click",As),t.addEventListener("change",Hs),n.addEventListener("click",Ms),o.addEventListener("click",Is),qs()},Is=()=>{localStorage.removeItem("profileImage"),history.pushState(null,null,"/admin/employee"),H()},Hs=e=>{const t=e.target.files[0],n=document.querySelector(`.${D.imageContainer__image}`);if(t){const o=new FileReader;o.onload=a=>{n.innerHTML="";const s=document.createElement("img");s.setAttribute("src",a.target.result),n.appendChild(s),localStorage.setItem("profileImage",a.target.result)},o.readAsDataURL(t)}else localStorage.removeItem("profileImage"),ye(n)},qs=()=>{const e=document.querySelector(`.${D.imageContainer__image}`),t=localStorage.getItem("profileImage");if(t){e.innerHTML="";const n=document.createElement("img");n.setAttribute("src",t),e.appendChild(n)}else ye(e)},Ms=e=>{e.preventDefault();const t=document.querySelector(`.${D.imageContainer__image}`);t.innerHTML="",localStorage.removeItem("profileImage"),ye(t),Bs()},Bs=()=>{const e=document.querySelector(`.${D.info__fileInput}`);e.value="",e.dispatchEvent(new Event("change",{bubbles:!0}))},ye=e=>{const t=document.createElement("img");t.setAttribute("src","/images/defaultProfile.png"),t.style.display="block",e.appendChild(t),localStorage.setItem("profileImage","/images/defaultProfile.png")},As=async e=>{if(e){e.preventDefault();const t=document.querySelector("[data-e-name]").value,n=document.querySelector("[data-e-positions]").value,o=document.querySelector("[data-e-email]").value,a=document.querySelector("[data-e-phone]").value,s=document.querySelector("[data-e-birthday]").value,i=document.querySelector("[data-e-joinday]").value,r=document.querySelector("[data-e-input]").files[0];if(!t||!o||!n||!s||!i){alert("이름, 이메일, 직함, 생일, 입사일은 필수 입력 항목입니다.");return}if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(o)){alert("올바른 이메일 형식을 입력해주세요.");return}const h=new FormData;h.append("name",t),h.append("email",o),h.append("position",n),h.append("birthday",s),h.append("startDate",i),h.append("password","1234"),a&&h.append("phone",a),r&&h.append("profileImage",r);try{const g=await fetch("/api/users",{method:"POST",body:h});if(!g.ok)throw new Error(`HTTP 오류! 상태: ${g.status}`);const C=await g.json();C.status==="OK"?(alert("직원 추가에 성공했습니다."),localStorage.removeItem("profileImage"),setTimeout(()=>{history.pushState(null,null,"/admin/employee"),H()},2e3)):(console.error("직원 추가 오류:",C.error),alert("직원 추가 중 오류가 발생했습니다."))}catch(g){console.error("직원 추가 실패:",g),alert("직원 추가에 실패했습니다.")}}},js=e=>{e.innerHTML=`
   <div class="${D.page}">
   <h1 class="${D.page__title}">직원 관리 >직원 추가</h1>
 
@@ -1274,7 +1274,7 @@
 
   <!-- 직원 프로필 이미지 업로드 부분입니다. -->
   <div class="${w.page__edit}">
-    <img src="images/_Avatar_.png" alt="profileimg">
+    <img src="/images/_Avatar_.png" alt="profileimg">
   </div>
 
   <form class="infoform"action="#" method="post">
@@ -1327,7 +1327,7 @@
       </div>
       <div class="${F.info__second}">
         <div class="${F.section1}">
-          <img src="icons/email.svg" alt="email">
+          <img src="/icons/email.svg" alt="email">
           <h4 data-m-email class="${F.email}"></h4>
         </div>
         <div class="${F.section2}">
@@ -1336,7 +1336,7 @@
         </div>
       </div>
   </div>
-  `,ge(),document.getElementById("editButton").addEventListener("click",()=>{history.pushState(null,null,"/user/mypage/editpage"),H()})},Xs="_page_14v0o_1",ei="_page__title_14v0o_6",ti="_page__header_14v0o_10",ai="_page__body_14v0o_19",oi="_body__img_14v0o_27",ni="_profileimg_14v0o_37",si="_background_14v0o_1",ii="_profileImg_14v0o_46",ri="_imgbtn_14v0o_52",li="_user__info_14v0o_63",ci="_pageFooter_14v0o_100",di="_toastMessage_14v0o_105",_i="_toastText_14v0o_123",pi="_active_14v0o_132",ui="_imageContainer_14v0o_140",hi="_imageContainer__image_14v0o_146",mi="_info__fileInput_14v0o_159",vi="_imgBtnContainer_14v0o_163",gi="_info__fileLabel_14v0o_170",bi="_uploadProfile_14v0o_186",b={page:Xs,page__title:ei,page__header:ti,page__body:ai,body__img:oi,profileimg:ni,background:si,profileImg:ii,imgbtn:ri,user__info:li,pageFooter:ci,toastMessage:di,toastText:_i,active:pi,imageContainer:ui,imageContainer__image:hi,info__fileInput:mi,imgBtnContainer:vi,info__fileLabel:gi,uploadProfile:bi};function yi(){const e=document.querySelector(`.${b.toastMessage}`);e?(e.classList.add(b.active),setTimeout(()=>{e.classList.remove(b.active)},2e3)):console.error("toastMessage 요소를 찾을 수 없습니다.")}const fi=e=>{const t=document.querySelector("[data-profile-input]"),n=container.querySelector("[data-profile-delete]"),o=q=>{if(!q)return"";if(q.includes("-"))return q;const T=q.split(".");if(T.length!==3)return console.error("Invalid date format:",q),"";const[j,O,tt]=T,at=O.padStart(2,"0"),ot=tt.padStart(2,"0"),fe=`${j}-${at}-${ot}`;return console.log("Formatted date:",fe),fe},a=document.querySelector("[data-profile-name]"),s=document.querySelector("[data-profile-positions]"),i=document.querySelector("[data-profile-email]"),l=document.querySelector("[data-profile-phone]"),r=document.querySelector("[data-profile-birthday]"),m=document.querySelector("[data-profile-joinday]"),h=document.querySelector("[data-profile-password]"),g=document.querySelector("[data-profile-add-img]");let C=null;a.value=e.name||a.placeholder,s.value=e.position,i.value=e.email||i.placeholder,l.value=e.phone||l.placeholder,r.value=o(e.birthday),m.value=o(e.startDate),h.value=e.password;const I=(q,T)=>{g.innerHTML=`<img src="${q}" alt="Profile" style="width: 100%; height: 100%; object-fit: cover;">`,C=T},M=()=>{I("images/defaultProfile.png")},P=()=>{e.profileImage?I(e.profileImage):M()},p=q=>{const T=q.target.files[0];if(T){const j=new FileReader;j.onload=O=>I(O.target.result,T),j.readAsDataURL(T)}},$=q=>{q.preventDefault(),M(),C="images/defaultProfile.png"};t.addEventListener("change",p),n.addEventListener("click",$),P(),document.getElementById("saveButton").addEventListener("click",async()=>{const q=sessionStorage.getItem("userId"),T=new FormData;if(T.append("name",document.querySelector("[data-profile-name]").value),T.append("email",document.querySelector("[data-profile-email]").value),T.append("position",document.querySelector("[data-profile-positions]").value),T.append("phone",document.querySelector("[data-profile-phone]").value),T.append("birthday",document.querySelector("[data-profile-birthday]").value),T.append("startDate",document.querySelector("[data-profile-joinday]").value),T.append("password",document.querySelector("[data-profile-password]").value),!C){const j=g.querySelector("img");j&&(C=j.src)}C&&(typeof C=="string"?T.append("profileImage",C):T.append("profileImage",C,C.name),sessionStorage.setItem("userProfileImage",C));try{const j=await fetch(`/api/users/${q}`,{method:"PUT",body:T});if(!j.ok)throw new Error("Failed to update user data");const O=await j.json();O.status==="OK"?(yi(),C=null,setTimeout(()=>{history.pushState(null,null,"/user/mypage"),H()},2e3)):(console.error("직원 추가 오류:",O.error),alert("직원 추가 중 오류가 발생했습니다."))}catch(j){console.error("Error updating user data:",j),alert("사용자 정보 업데이트에 실패했습니다. 다시 시도해 주세요.")}})},Be=V(),$i=async()=>{const e=sessionStorage.getItem("userId");try{Be.show();const t=await fetch("/api/users");if(!t.ok)throw new Error("Failed to fetch user data");const o=(await t.json()).data.find(a=>a.id.toString()===e);if(fi(o),!o)throw new Error("User not found")}catch(t){console.error("Error fetching user data:",t),container.innerHTML="<p>사용자 정보를 불러오는 데 실패했습니다.</p>"}finally{Be.hide()}},wi=e=>{e.innerHTML=`
+  `,ge(),document.getElementById("editButton").addEventListener("click",()=>{history.pushState(null,null,"/user/mypage/editpage"),H()})},Xs="_page_14v0o_1",ei="_page__title_14v0o_6",ti="_page__header_14v0o_10",ai="_page__body_14v0o_19",oi="_body__img_14v0o_27",ni="_profileimg_14v0o_37",si="_background_14v0o_1",ii="_profileImg_14v0o_46",ri="_imgbtn_14v0o_52",li="_user__info_14v0o_63",ci="_pageFooter_14v0o_100",di="_toastMessage_14v0o_105",_i="_toastText_14v0o_123",pi="_active_14v0o_132",ui="_imageContainer_14v0o_140",hi="_imageContainer__image_14v0o_146",mi="_info__fileInput_14v0o_159",vi="_imgBtnContainer_14v0o_163",gi="_info__fileLabel_14v0o_170",bi="_uploadProfile_14v0o_186",b={page:Xs,page__title:ei,page__header:ti,page__body:ai,body__img:oi,profileimg:ni,background:si,profileImg:ii,imgbtn:ri,user__info:li,pageFooter:ci,toastMessage:di,toastText:_i,active:pi,imageContainer:ui,imageContainer__image:hi,info__fileInput:mi,imgBtnContainer:vi,info__fileLabel:gi,uploadProfile:bi};function yi(){const e=document.querySelector(`.${b.toastMessage}`);e?(e.classList.add(b.active),setTimeout(()=>{e.classList.remove(b.active)},2e3)):console.error("toastMessage 요소를 찾을 수 없습니다.")}const fi=e=>{const t=document.querySelector("[data-profile-input]"),n=container.querySelector("[data-profile-delete]"),o=q=>{if(!q)return"";if(q.includes("-"))return q;const T=q.split(".");if(T.length!==3)return console.error("Invalid date format:",q),"";const[j,O,tt]=T,at=O.padStart(2,"0"),ot=tt.padStart(2,"0"),fe=`${j}-${at}-${ot}`;return console.log("Formatted date:",fe),fe},a=document.querySelector("[data-profile-name]"),s=document.querySelector("[data-profile-positions]"),i=document.querySelector("[data-profile-email]"),l=document.querySelector("[data-profile-phone]"),r=document.querySelector("[data-profile-birthday]"),m=document.querySelector("[data-profile-joinday]"),h=document.querySelector("[data-profile-password]"),g=document.querySelector("[data-profile-add-img]");let C=null;a.value=e.name||a.placeholder,s.value=e.position,i.value=e.email||i.placeholder,l.value=e.phone||l.placeholder,r.value=o(e.birthday),m.value=o(e.startDate),h.value=e.password;const I=(q,T)=>{g.innerHTML=`<img src="${q}" alt="Profile" style="width: 100%; height: 100%; object-fit: cover;">`,C=T},M=()=>{I("/images/defaultProfile.png")},P=()=>{e.profileImage?I(e.profileImage):M()},p=q=>{const T=q.target.files[0];if(T){const j=new FileReader;j.onload=O=>I(O.target.result,T),j.readAsDataURL(T)}},$=q=>{q.preventDefault(),M(),C="/images/defaultProfile.png"};t.addEventListener("change",p),n.addEventListener("click",$),P(),document.getElementById("saveButton").addEventListener("click",async()=>{const q=sessionStorage.getItem("userId"),T=new FormData;if(T.append("name",document.querySelector("[data-profile-name]").value),T.append("email",document.querySelector("[data-profile-email]").value),T.append("position",document.querySelector("[data-profile-positions]").value),T.append("phone",document.querySelector("[data-profile-phone]").value),T.append("birthday",document.querySelector("[data-profile-birthday]").value),T.append("startDate",document.querySelector("[data-profile-joinday]").value),T.append("password",document.querySelector("[data-profile-password]").value),!C){const j=g.querySelector("img");j&&(C=j.src)}C&&(typeof C=="string"?T.append("profileImage",C):T.append("profileImage",C,C.name),sessionStorage.setItem("userProfileImage",C));try{const j=await fetch(`/api/users/${q}`,{method:"PUT",body:T});if(!j.ok)throw new Error("Failed to update user data");const O=await j.json();O.status==="OK"?(yi(),C=null,setTimeout(()=>{history.pushState(null,null,"/user/mypage"),H()},2e3)):(console.error("직원 추가 오류:",O.error),alert("직원 추가 중 오류가 발생했습니다."))}catch(j){console.error("Error updating user data:",j),alert("사용자 정보 업데이트에 실패했습니다. 다시 시도해 주세요.")}})},Be=V(),$i=async()=>{const e=sessionStorage.getItem("userId");try{Be.show();const t=await fetch("/api/users");if(!t.ok)throw new Error("Failed to fetch user data");const o=(await t.json()).data.find(a=>a.id.toString()===e);if(fi(o),!o)throw new Error("User not found")}catch(t){console.error("Error fetching user data:",t),container.innerHTML="<p>사용자 정보를 불러오는 데 실패했습니다.</p>"}finally{Be.hide()}},wi=e=>{e.innerHTML=`
   <!-- 페이지 타이틀 -->
 <h1 class=${b.page__title}">마이페이지</h1>
 
@@ -1426,7 +1426,7 @@
               <td>${o.title}</td>
               <td>${n}</td>
               <td>${o.createdAt}</td>
-              <td>${s?'<img src="icons/textfile.svg" alt="file-icon" width="20" height="20" />':""}</td>
+              <td>${s?'<img src="/icons/textfile.svg" alt="file-icon" width="20" height="20" />':""}</td>
               <td>${o.views}</td>
               <td>
               <p>[${r}] ${o.title}</p>
@@ -1434,7 +1434,7 @@
                     <p>작성자:${o.author} / </p>
                     <p>작성일:${o.createdAt} / </p>
                     <p class="${y.noticeResponsive__attachment}">첨부파일:
-                    ${s?'<img src="icons/textfile.svg" alt="file-icon" width="20" height="20" />':"없음"}
+                    ${s?'<img src="/icons/textfile.svg" alt="file-icon" width="20" height="20" />':"없음"}
                     </p>
                 </div>
           </td>
@@ -1525,7 +1525,7 @@
               <td>${n.title}</td>
               <td>${n.author}</td>
               <td>${n.createdAt}</td>
-              <td>${a?'<img src="icons/textfile.svg" alt="file-icon" width="20" height="20" />':""}</td>
+              <td>${a?'<img src="/icons/textfile.svg" alt="file-icon" width="20" height="20" />':""}</td>
               <td>${n.views}</td>
               <td>
               <p>[${l}] ${n.title}</p>
@@ -1533,7 +1533,7 @@
                     <p>작성자:${n.author} / </p>
                     <p>작성일:${n.createdAt} / </p>
                     <p class="${f.noticeResponsive__attachment}">첨부파일:
-                    ${a?'<img src="icons/textfile.svg" alt="file-icon" width="20" height="20" />':"없음"}
+                    ${a?'<img src="/icons/textfile.svg" alt="file-icon" width="20" height="20" />':"없음"}
                     </p>
                 </div>
           </td>
@@ -1925,7 +1925,7 @@
         <div id="pagination" class="${u.pagination}"></div>
   </div>`,Qe(),N(se().modal_id,se().header,se().content,We);const t=document.querySelectorAll("[data-approve-tab]"),n=document.querySelector("[data-approve-tabs]");t.forEach(o=>{o.addEventListener("click",()=>{t.forEach(a=>a.classList.remove("active")),o.classList.add("active"),n.classList.remove(u["active-undetermined"],u["active-approved"],u["active-rejected"]),n.classList.add(u[`active-${o.id}`])})})},pr="_noticeDetail_1wfaz_1",ur="_noticeDetail__description_1wfaz_7",hr="_noticeDetail__btnContainer_1wfaz_11",mr="_noticeDetail__backBtn_1wfaz_18",vr="_noticeDetail__info_1wfaz_22",gr="_noticeDetail__items_1wfaz_28",br="_attachedFile_1wfaz_36",yr="_noticeTitle_1wfaz_46",fr="_registrationDate_1wfaz_50",$r="_writer_1wfaz_51",wr="_views_1wfaz_52",S={noticeDetail:pr,noticeDetail__description:ur,noticeDetail__btnContainer:hr,noticeDetail__backBtn:mr,noticeDetail__info:vr,noticeDetail__items:gr,attachedFile:br,noticeTitle:yr,registrationDate:fr,writer:$r,views:wr},Cr=()=>{const e=new URLSearchParams(window.location.search),t={id:e.get("id"),title:e.get("title"),author:e.get("author"),createdAt:e.get("createdAt"),attachments:e.get("attachments"),views:e.get("views"),description:e.get("description")},n=document.querySelector(`.${S.noticeTitle}`),o=document.querySelector(`.${S.registrationDate}`),a=document.querySelector(`.${S.writer}`),s=document.querySelector(`.${S.views}`),i=document.querySelector(`.${S.attachedFile}`),l=document.querySelector(`.${S.noticeDetail__description}`);n.textContent=t.title,o.textContent=t.createdAt,a.textContent=t.author,s.textContent=t.views,l.textContent=t.description,t.attachments==="true"&&(i.innerHTML=`
     <img
-      src="icons/textfile.svg"
+      src="/icons/textfile.svg"
       alt="file-icon"
       width="20"
       height="20"
@@ -1959,7 +1959,7 @@
         </div>
   `,Cr(),Dr(),Lr()},Lr=()=>{document.querySelector(`.${S.noticeDetail__backBtn}`).addEventListener("click",()=>{history.back()})},Tr="_noticeDetail_irjmh_1",kr="_noticeDetail__description_irjmh_7",xr="_noticeDetail__btnContainer_irjmh_11",Er="_noticeDetail__backBtn_irjmh_17",Ir="_noticeDetail__info_irjmh_21",Hr="_noticeDetail__items_irjmh_27",qr="_attachedFile_irjmh_35",Mr="_noticeTitle_irjmh_45",Br="_registrationDate_irjmh_49",Ar="_writer_irjmh_50",jr="_views_irjmh_51",L={noticeDetail:Tr,noticeDetail__description:kr,noticeDetail__btnContainer:xr,noticeDetail__backBtn:Er,noticeDetail__info:Ir,noticeDetail__items:Hr,attachedFile:qr,noticeTitle:Mr,registrationDate:Br,writer:Ar,views:jr},Fr=()=>{const e=new URLSearchParams(window.location.search),t={id:e.get("id"),title:e.get("title"),author:e.get("author"),createdAt:e.get("createdAt"),attachments:e.get("attachments"),views:e.get("views"),description:e.get("description")},n=document.querySelector(`.${L.noticeTitle}`),o=document.querySelector(`.${L.registrationDate}`),a=document.querySelector(`.${L.writer}`),s=document.querySelector(`.${L.views}`),i=document.querySelector(`.${L.attachedFile}`),l=document.querySelector(`.${L.noticeDetail__description}`);n.textContent=t.title,o.textContent=t.createdAt,a.textContent=t.author,s.textContent=t.views,l.textContent=t.description,t.attachments==="true"?i.innerHTML=`
     <img
-      src="icons/textfile.svg"
+      src="/icons/textfile.svg"
       alt="file-icon"
       width="20"
       height="20"

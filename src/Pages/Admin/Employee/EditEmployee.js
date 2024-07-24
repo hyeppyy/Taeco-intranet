@@ -58,7 +58,7 @@ const renderEditEmployeePage = (container) => {
 
   <!-- 직원 프로필 이미지 업로드 부분입니다. -->
   <div class="${styles.page__edit}">
-    <img src="images/_Avatar_.png" alt="profileimg">
+    <img src="/images/_Avatar_.png" alt="profileimg">
   </div>
 
   <form class="infoform"action="#" method="post">

@@ -5,7 +5,7 @@ const renderResponsiveNavBar = (container) => {
   container.innerHTML = `
           <div class=${styles["responsive-nav__container"]}>
             <a href="/user/dashboard" class=${styles.logo}>
-                <img src="images/company_logo_user.png" />
+                <img src="/images/company_logo_user.png" />
             </a>
             <button class=${styles.hamburger}>&#9776;</button>
           </div>

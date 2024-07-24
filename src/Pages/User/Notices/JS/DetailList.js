@@ -34,7 +34,7 @@ const detailList = () => {
   if (noticeData.attachments === "true") {
     attachedFile.innerHTML = `
     <img
-      src="icons/textfile.svg"
+      src="/icons/textfile.svg"
       alt="file-icon"
       width="20"
       height="20"

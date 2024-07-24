@@ -24,7 +24,7 @@ const renderUserDashboard = (container) => {
               </div>
               <div class="${styles.infoSecond}">
                 <div class="${styles.emailInfo}">
-                <img src="icons/email.svg" alt="email" />
+                <img src="/icons/email.svg" alt="email" />
                 <h4 data-m-email class="${styles.email}"></h4>
                 </div>
                 <div class="${styles.callInfo}">

@@ -13,7 +13,7 @@ const renderAdminNavBar = (nav, menuList) => {
     <div class="${styles.layout__top}">
       <div class="${styles.layout__logo}">
         <a href="/admin/dashboard">
-          <img src="images/company_logo_admin.png" />
+          <img src="/images/company_logo_admin.png" />
         <a>
       </div>
 

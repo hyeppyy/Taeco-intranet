@@ -18,7 +18,7 @@
       `},rt="_loginLayout_rcxap_1",lt="_loginContainer_rcxap_11",ct="_loginContainer__form_rcxap_39",dt="_loginBtn_rcxap_61",K={loginLayout:rt,loginContainer:lt,loginContainer__form:ct,loginBtn:dt},_t=e=>{e.innerHTML=`
       <section class="${K.loginLayout}">
       <div class="${K.loginContainer}">
-        <img src="/public/images/company_logo_user.png" alt="logo img" />
+        <img src="https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/images/company_logo_user.png" alt="logo img" />
         <form class="${K.loginContainer__form}">
         <h5>아이디</h5>
           <input
@@ -52,17 +52,17 @@
         </form>
       </div>
     </section>
-  `,document.querySelector("#login__button").addEventListener("click",$e),document.querySelector(`.${K.loginContainer__form}`).addEventListener("keydown",n=>{n.key==="Enter"&&(n.preventDefault(),$e())})},pt="_logo_1hpvu_7",ut="_hamburger_1hpvu_17",X={"responsive-nav__container":"_responsive-nav__container_1hpvu_1",logo:pt,hamburger:ut},ht="_h4_14he3_1",mt="_layout_14he3_7",vt="_layout__top_14he3_17",gt="_layout__logo_14he3_25",bt="_layout__nav_14he3_38",yt="_layout__item_14he3_43",ft="_layout__bottom_14he3_44",$t="_open_14he3_103",x={h4:ht,layout:mt,layout__top:vt,layout__logo:gt,layout__nav:bt,layout__item:yt,layout__bottom:ft,"layout--profile":"_layout--profile_14he3_69",open:$t},wt=()=>{const e=document.querySelector(`.${X.hamburger}`),t=document.querySelector(`.${x.layout}`);e&&t?e.addEventListener("click",()=>{t.classList.toggle(`${x.open}`)}):console.error("Element not found:",{hamburgerElement:e,layoutElement:t})},Ct=e=>{e.innerHTML=`
+  `,document.querySelector("#login__button").addEventListener("click",$e),document.querySelector(`.${K.loginContainer__form}`).addEventListener("keydown",n=>{n.key==="Enter"&&(n.preventDefault(),$e())})},pt="_logo_1hpvu_7",ut="_hamburger_1hpvu_17",X={"responsive-nav__container":"_responsive-nav__container_1hpvu_1",logo:pt,hamburger:ut},ht="_h4_14he3_1",mt="_layout_14he3_7",vt="_layout__top_14he3_17",gt="_layout__logo_14he3_25",yt="_layout__nav_14he3_38",bt="_layout__item_14he3_43",ft="_layout__bottom_14he3_44",$t="_open_14he3_103",x={h4:ht,layout:mt,layout__top:vt,layout__logo:gt,layout__nav:yt,layout__item:bt,layout__bottom:ft,"layout--profile":"_layout--profile_14he3_69",open:$t},wt=()=>{const e=document.querySelector(`.${X.hamburger}`),t=document.querySelector(`.${x.layout}`);e&&t?e.addEventListener("click",()=>{t.classList.toggle(`${x.open}`)}):console.error("Element not found:",{hamburgerElement:e,layoutElement:t})},Ct=e=>{e.innerHTML=`
           <div class=${X["responsive-nav__container"]}>
             <a href="/admin/dashboard" class=${X.logo}>
-                <img src="/public/images/company_logo_admin.png" />
+                <img src="https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/images/company_logo_admin.png" />
             </a>
             <button class=${X.hamburger}>&#9776;</button>
           </div>
             `,wt()},Dt="_logo_3owf9_8",St="_hamburger_3owf9_17",ee={"responsive-nav__container":"_responsive-nav__container_3owf9_1",logo:Dt,hamburger:St},Lt="_h4_1xtps_1",Tt="_layout_1xtps_7",kt="_layout__top_1xtps_18",xt="_layout__logo_1xtps_26",Et="_layout__nav_1xtps_39",It="_layout__item_1xtps_44",Ht="_layout__bottom_1xtps_45",qt="_layout__profile_1xtps_67",Mt="_open_1xtps_98",E={h4:Lt,layout:Tt,layout__top:kt,layout__logo:xt,layout__nav:Et,layout__item:It,layout__bottom:Ht,layout__profile:qt,open:Mt},Bt=()=>{const e=document.querySelector(`.${ee.hamburger}`),t=document.querySelector(`.${E.layout}`);e&&t?e.addEventListener("click",()=>{t.classList.toggle(`${E.open}`)}):console.error("Element not found:",{hamburgerElement:e,layoutElement:t})},At=e=>{e.innerHTML=`
           <div class=${ee["responsive-nav__container"]}>
             <a href="/user/dashboard" class=${ee.logo}>
-                <img src="/public/images/company_logo_user.png" />
+                <img src="https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/images/company_logo_user.png" />
             </a>
             <button class=${ee.hamburger}>&#9776;</button>
           </div>
@@ -71,7 +71,7 @@
     <div class="${x.layout__top}">
       <div class="${x.layout__logo}">
         <a href="/admin/dashboard">
-          <img src="/public/images/company_logo_admin.png" />
+          <img src="https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/images/company_logo_admin.png" />
         <a>
       </div>
 
@@ -163,7 +163,7 @@
     <div class="${E.layout__top}">
       <div class="${E.layout__logo}">
         <a href="/user/dashboard">
-          <img src="/public/images/company_logo_user.png" />
+          <img src="https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/images/company_logo_user.png" />
         <a>
       </div>
 
@@ -249,7 +249,7 @@
             >로그아웃
           </a>
         </div>
-    `,Ue(),document.querySelector("#logout").addEventListener("click",Oe)},Vt="_h5_1514y_2",Pt="_card_1514y_8",Rt="_adminDashboard_1514y_16",Zt="_adminDashboard__container_1514y_22",zt="_adminDashboard__approval_1514y_27",Ot="_dashboardCon_1514y_31",Ut="_adminDashboard__profileCard_1514y_37",Wt="_profileImg_1514y_46",Kt="_infoFirst_1514y_67",Jt="_infoFirst__name_1514y_73",Qt="_infoSecond_1514y_77",Gt="_email_1514y_87",Yt="_emailInfo_1514y_91",Xt="_callInfo_1514y_92",ea="_adminDashboard__today_1514y_97",ta="_adminDashboard__mileage_1514y_105",aa="_mileage__contents_1514y_145",oa="_mileage__header_1514y_149",na="_mileage__row_1514y_150",sa="_mileage__title_1514y_160",ia="_mileage__requester_1514y_168",ra="_userDashboard__approvalFilter_1514y_184",la="_adminDashboard__approvalContainer_1514y_187",ca="_adminDashboard__approvalTitle_1514y_192",da="_approvalTable_1514y_207",_a="_approvalTable__tbody_1514y_210",pa="_noticeTable_1514y_252",ua="_noticeTable__tbody_1514y_267",ha="_noticeResponsive_1514y_334",ma="_adminDashboard__notice_1514y_111",va="_noticeResponsive__attachment_1514y_413",c={h5:Vt,card:Pt,adminDashboard:Rt,adminDashboard__container:Zt,adminDashboard__approval:zt,dashboardCon:Ot,adminDashboard__profileCard:Ut,profileImg:Wt,infoFirst:Kt,infoFirst__name:Jt,infoSecond:Qt,email:Gt,emailInfo:Yt,callInfo:Xt,adminDashboard__today:ea,adminDashboard__mileage:ta,"adminDashboard__approval-title":"_adminDashboard__approval-title_1514y_109","adminDashboard__mileage-title":"_adminDashboard__mileage-title_1514y_110","adminDashboard__notice-title":"_adminDashboard__notice-title_1514y_111","adminDashboard__approval-title--left":"_adminDashboard__approval-title--left_1514y_126","adminDashboard__mileage-title--left":"_adminDashboard__mileage-title--left_1514y_127","adminDashboard__notice-title--left":"_adminDashboard__notice-title--left_1514y_128","adminDashboard__mileage-title--right":"_adminDashboard__mileage-title--right_1514y_134","adminDashboard__approval-title--right":"_adminDashboard__approval-title--right_1514y_138","adminDashboard__notice-title--right":"_adminDashboard__notice-title--right_1514y_140",mileage__contents:aa,mileage__header:oa,mileage__row:na,mileage__title:sa,mileage__requester:ia,"mileage__request-date":"_mileage__request-date_1514y_176",userDashboard__approvalFilter:ra,adminDashboard__approvalContainer:la,adminDashboard__approvalTitle:ca,approvalTable:da,approvalTable__tbody:_a,"no-data-message":"_no-data-message_1514y_245",noticeTable:pa,noticeTable__tbody:ua,noticeResponsive:ha,adminDashboard__notice:ma,noticeResponsive__attachment:va},ga=async()=>{try{const t=await(await fetch("/api/approval")).json();t.status==="OK"?ba(t.data):console.error("Error in Approval DashBoard data:",t.error)}catch(e){console.error("Failed to fetch Approval DashBoard data:",e)}},ba=e=>{const n=e.filter(a=>a.isApprove!==0&&a.isApprove!==1).slice(0,3),o=document.querySelector(`.${c.approvalTable__tbody}`);if(o.innerHTML="",n.length===0){const a=document.createElement("tr");a.className=c["no-data-message"],a.innerHTML=`
+    `,Ue(),document.querySelector("#logout").addEventListener("click",Oe)},Vt="_h5_1514y_2",Pt="_card_1514y_8",Rt="_adminDashboard_1514y_16",Zt="_adminDashboard__container_1514y_22",zt="_adminDashboard__approval_1514y_27",Ot="_dashboardCon_1514y_31",Ut="_adminDashboard__profileCard_1514y_37",Wt="_profileImg_1514y_46",Kt="_infoFirst_1514y_67",Jt="_infoFirst__name_1514y_73",Qt="_infoSecond_1514y_77",Gt="_email_1514y_87",Yt="_emailInfo_1514y_91",Xt="_callInfo_1514y_92",ea="_adminDashboard__today_1514y_97",ta="_adminDashboard__mileage_1514y_105",aa="_mileage__contents_1514y_145",oa="_mileage__header_1514y_149",na="_mileage__row_1514y_150",sa="_mileage__title_1514y_160",ia="_mileage__requester_1514y_168",ra="_userDashboard__approvalFilter_1514y_184",la="_adminDashboard__approvalContainer_1514y_187",ca="_adminDashboard__approvalTitle_1514y_192",da="_approvalTable_1514y_207",_a="_approvalTable__tbody_1514y_210",pa="_noticeTable_1514y_252",ua="_noticeTable__tbody_1514y_267",ha="_noticeResponsive_1514y_334",ma="_adminDashboard__notice_1514y_111",va="_noticeResponsive__attachment_1514y_413",c={h5:Vt,card:Pt,adminDashboard:Rt,adminDashboard__container:Zt,adminDashboard__approval:zt,dashboardCon:Ot,adminDashboard__profileCard:Ut,profileImg:Wt,infoFirst:Kt,infoFirst__name:Jt,infoSecond:Qt,email:Gt,emailInfo:Yt,callInfo:Xt,adminDashboard__today:ea,adminDashboard__mileage:ta,"adminDashboard__approval-title":"_adminDashboard__approval-title_1514y_109","adminDashboard__mileage-title":"_adminDashboard__mileage-title_1514y_110","adminDashboard__notice-title":"_adminDashboard__notice-title_1514y_111","adminDashboard__approval-title--left":"_adminDashboard__approval-title--left_1514y_126","adminDashboard__mileage-title--left":"_adminDashboard__mileage-title--left_1514y_127","adminDashboard__notice-title--left":"_adminDashboard__notice-title--left_1514y_128","adminDashboard__mileage-title--right":"_adminDashboard__mileage-title--right_1514y_134","adminDashboard__approval-title--right":"_adminDashboard__approval-title--right_1514y_138","adminDashboard__notice-title--right":"_adminDashboard__notice-title--right_1514y_140",mileage__contents:aa,mileage__header:oa,mileage__row:na,mileage__title:sa,mileage__requester:ia,"mileage__request-date":"_mileage__request-date_1514y_176",userDashboard__approvalFilter:ra,adminDashboard__approvalContainer:la,adminDashboard__approvalTitle:ca,approvalTable:da,approvalTable__tbody:_a,"no-data-message":"_no-data-message_1514y_245",noticeTable:pa,noticeTable__tbody:ua,noticeResponsive:ha,adminDashboard__notice:ma,noticeResponsive__attachment:va},ga=async()=>{try{const t=await(await fetch("/api/approval")).json();t.status==="OK"?ya(t.data):console.error("Error in Approval DashBoard data:",t.error)}catch(e){console.error("Failed to fetch Approval DashBoard data:",e)}},ya=e=>{const n=e.filter(a=>a.isApprove!==0&&a.isApprove!==1).slice(0,3),o=document.querySelector(`.${c.approvalTable__tbody}`);if(o.innerHTML="",n.length===0){const a=document.createElement("tr");a.className=c["no-data-message"],a.innerHTML=`
         <td>!!</td>
         <td>미처리 전자결재가</td>
         <td>없습니다.</td>
@@ -261,12 +261,12 @@
         ${a.title}<br>
         ${a.user} / ${a.submitdate}</p>
         </td>
-    `,o.appendChild(s)})},ya=async()=>{try{const e=await fetch("/api/notices");if(!e.ok)throw new Error(`HTTP error! status: ${e.status}`);const t=await e.json();t.status==="OK"?fa(t.data):console.error("Error fetching notices:",t.error)}catch(e){console.error("Failed to fetch notices:",e)}},fa=e=>{const n=e.slice().sort((a,s)=>new Date(s.date)-new Date(a.date)).slice(0,3),o=document.querySelector(`.${c.noticeTable__tbody}`);if(o.innerHTML="",e.length===0){const a=document.createElement("tr"),s=document.createElement("td");s.colSpan=6,s.textContent="공지사항이 없습니다.",s.style.textAlign="center",s.style.padding="20px",a.appendChild(s),o.appendChild(a)}else n.forEach(a=>{const s=document.createElement("tr"),i=a.attachments!==null,l=a.category;let r="";switch(l){case"event":r="이벤트";break;case"mileage":r="마일리지";break;case"education":r="교육";break;case"approval":r="전자결재";break;case"etc":r="기타";break;case"human-resource":r="인사행정";break;default:r="Unknown category.";break}s.innerHTML=`
+    `,o.appendChild(s)})},ba=async()=>{try{const e=await fetch("/api/notices");if(!e.ok)throw new Error(`HTTP error! status: ${e.status}`);const t=await e.json();t.status==="OK"?fa(t.data):console.error("Error fetching notices:",t.error)}catch(e){console.error("Failed to fetch notices:",e)}},fa=e=>{const n=e.slice().sort((a,s)=>new Date(s.date)-new Date(a.date)).slice(0,3),o=document.querySelector(`.${c.noticeTable__tbody}`);if(o.innerHTML="",e.length===0){const a=document.createElement("tr"),s=document.createElement("td");s.colSpan=6,s.textContent="공지사항이 없습니다.",s.style.textAlign="center",s.style.padding="20px",a.appendChild(s),o.appendChild(a)}else n.forEach(a=>{const s=document.createElement("tr"),i=a.attachments!==null,l=a.category;let r="";switch(l){case"event":r="이벤트";break;case"mileage":r="마일리지";break;case"education":r="교육";break;case"approval":r="전자결재";break;case"etc":r="기타";break;case"human-resource":r="인사행정";break;default:r="Unknown category.";break}s.innerHTML=`
           <td>${r}</td>
           <td>${a.title}</td>
           <td>${a.author}</td>
           <td>${a.createdAt}</td>
-          <td>${i?'<img src="/public/icons/textfile.svg" alt="file-icon" width="20" height="20" />':"없음"}</td>
+          <td>${i?'<img src="https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/icons/textfile.svg" alt="file-icon" width="20" height="20" />':"없음"}</td>
           <td>${a.views}</td>
           <td>
               <p>[${r}] ${a.title}</p>
@@ -274,7 +274,7 @@
                     <p>작성자:${a.author} / </p>
                     <p>작성일:${a.createdAt} / </p>
                     <p class="${c.noticeResponsive__attachment}">첨부파일:
-                    ${i?'<img src="/public/icons/textfile.svg" alt="file-icon" width="20" height="20" />':"없음"}
+                    ${i?'<img src="https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/icons/textfile.svg" alt="file-icon" width="20" height="20" />':"없음"}
                     </p>
                 </div>
           </td>
@@ -332,7 +332,7 @@
                 />
               </svg>
               </div> 
-                `,e.style.display="none",document.body.append(e),{show:()=>{e.style.display="flex"},hide:()=>{e.style.display="none"}}},De=V(),ge=async()=>{try{De.show();const e=st();if(!e)throw new Error("User not logged in");const t=await fetch("/api/users");if(!t.ok)throw new Error(`HTTP error! status: ${t.status}`);const o=(await t.json()).data.find(a=>a.id.toString()===e);if(o)Ce(o);else throw new Error("User not found")}catch(e){console.error("Failed to fetch user data:",e),Ce(null)}finally{De.hide()}},oe=()=>{const e=new Date,t=e.getFullYear(),n=("0"+(e.getMonth()+1)).slice(-2),o=("0"+e.getDate()).slice(-2),a=e.getDay(),i=["일","월","화","수","목","금","토"][a];return`${t}.${n}.${o} (${i})`},be=()=>{const e=new Date,t=e.getHours(),n=e.getMinutes(),o=e.getSeconds(),a=t<10?`0${t}`:t,s=n<10?`0${n}`:n,i=o<10?`0${o}`:o;return`${a}:${s}:${i}`},Da=e=>{if(!e){console.error("container element not found");return}e.innerHTML=`
+                `,e.style.display="none",document.body.append(e),{show:()=>{e.style.display="flex"},hide:()=>{e.style.display="none"}}},De=V(),ge=async()=>{try{De.show();const e=st();if(!e)throw new Error("User not logged in");const t=await fetch("/api/users");if(!t.ok)throw new Error(`HTTP error! status: ${t.status}`);const o=(await t.json()).data.find(a=>a.id.toString()===e);if(o)Ce(o);else throw new Error("User not found")}catch(e){console.error("Failed to fetch user data:",e),Ce(null)}finally{De.hide()}},oe=()=>{const e=new Date,t=e.getFullYear(),n=("0"+(e.getMonth()+1)).slice(-2),o=("0"+e.getDate()).slice(-2),a=e.getDay(),i=["일","월","화","수","목","금","토"][a];return`${t}.${n}.${o} (${i})`},ye=()=>{const e=new Date,t=e.getHours(),n=e.getMinutes(),o=e.getSeconds(),a=t<10?`0${t}`:t,s=n<10?`0${n}`:n,i=o<10?`0${o}`:o;return`${a}:${s}:${i}`},Da=e=>{if(!e){console.error("container element not found");return}e.innerHTML=`
   <div class="${c.contents}">
       <h1 class="${c.title}">대시보드</h1>
       <div class="${c.adminDashboard}">
@@ -348,11 +348,11 @@
           </div>
           <div class="${c.infoSecond}">
               <div class="${c.emailInfo}">
-              <img src="/public/icons/email.svg" alt="email" />
+              <img src="https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/icons/email.svg" alt="email" />
               <h4 data-m-email class="${c.email}"></h4>
               </div>
               <div class="${c.callInfo}">
-              <img src="/public/icons/call.svg" alt="call" />
+              <img src="https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/icons/call.svg" alt="call" />
               <h4 data-m-phone class="${c.call}"></h4>
             </div>
           </div>
@@ -468,12 +468,12 @@
             </table>  
         </div>
       </div>
-    </div>`,$a(),ga(),ya(),ge();const t=oe();document.querySelector(`.${c.adminDashboard__today}`).textContent=t},Sa="_userDashboard_cn9sy_3",La="_userDashboard__attendance_cn9sy_9",Ta="_card_cn9sy_15",ka="_dashboardCon_cn9sy_21",xa="_userDashboard__profileCard_cn9sy_27",Ea="_profileImg_cn9sy_36",Ia="_infoFirst_cn9sy_57",Ha="_infoFirst__name_cn9sy_63",qa="_infoSecond_cn9sy_67",Ma="_email_cn9sy_77",Ba="_emailInfo_cn9sy_81",Aa="_callInfo_cn9sy_82",ja="_userDashboard__approvalFilter_cn9sy_89",Fa="_userDashboard__approvalContainer_cn9sy_93",Na="_userDashboard__approvalTitle_cn9sy_99",Va="_approvalTable_cn9sy_109",Pa="_approvalTable__tbody_cn9sy_116",Ra="_userDashboard__notice_cn9sy_174",Za="_userDashboard__noticeContainer_cn9sy_180",za="_userDashboard__noticeTitle_cn9sy_186",Oa="_noticeTable_cn9sy_196",Ua="_userDashboard__noticeRight_cn9sy_203",Wa="_noticeTable__tbody_cn9sy_218",Ka="_noticeResponsive_cn9sy_263",Ja="_dashboard__attachments_cn9sy_268",Qa="_userDashboard__todayAttendance_cn9sy_273",Ga="_userDashboard__todayAttendanceWrap_cn9sy_280",Ya="_userDashboard__stamp_cn9sy_287",Xa="_userDashboard__today_cn9sy_273",eo="_userDashboard__state_cn9sy_317",to="_userDashboard__attendanceHistory_cn9sy_323",ao="_userDashboard__attendanceTime_cn9sy_329",oo="_userDashboard__todayTag_cn9sy_336",no="_recordStartTimeBtn_cn9sy_343",so="_recordEndTimeBtn_cn9sy_344",io="_userDashboard__currentTime_cn9sy_350",d={userDashboard:Sa,userDashboard__attendance:La,card:Ta,dashboardCon:ka,userDashboard__profileCard:xa,profileImg:Ea,infoFirst:Ia,infoFirst__name:Ha,infoSecond:qa,email:Ma,emailInfo:Ba,callInfo:Aa,userDashboard__approvalFilter:ja,userDashboard__approvalContainer:Fa,userDashboard__approvalTitle:Na,approvalTable:Va,approvalTable__tbody:Pa,"no-data-message":"_no-data-message_cn9sy_158","userDashboard__approval-title--right":"_userDashboard__approval-title--right_cn9sy_163",userDashboard__notice:Ra,userDashboard__noticeContainer:Za,userDashboard__noticeTitle:za,noticeTable:Oa,userDashboard__noticeRight:Ua,noticeTable__tbody:Wa,noticeResponsive:Ka,dashboard__attachments:Ja,userDashboard__todayAttendance:Qa,userDashboard__todayAttendanceWrap:Ga,userDashboard__stamp:Ya,userDashboard__today:Xa,userDashboard__state:eo,userDashboard__attendanceHistory:to,userDashboard__attendanceTime:ao,userDashboard__todayTag:oo,recordStartTimeBtn:no,recordEndTimeBtn:so,userDashboard__currentTime:io},ro=async()=>{try{const e=await fetch("/api/notices");if(!e.ok)throw new Error(`HTTP error! status: ${e.status}`);const t=await e.json();t.status==="OK"?lo(t.data):console.error("Error fetching notices:",t.error)}catch(e){console.error("Failed to fetch notices:",e)}},lo=e=>{const n=e.slice().sort((a,s)=>new Date(s.date)-new Date(a.date)).slice(0,3),o=document.querySelector(`.${d.noticeTable__tbody}`);if(o.innerHTML="",e.length===0){const a=document.createElement("tr"),s=document.createElement("td");s.colSpan=6,s.textContent="공지사항이 없습니다.",s.style.textAlign="center",s.style.padding="20px",a.appendChild(s),o.appendChild(a)}else n.forEach(a=>{const s=document.createElement("tr"),i=a.attachments!==null,l=a.category;let r="";switch(l){case"event":r="이벤트";break;case"mileage":r="마일리지";break;case"education":r="교육";break;case"approval":r="전자결재";break;case"etc":r="기타";break;case"human-resource":r="인사행정";break;default:r="Unknown category.";break}s.innerHTML=`
+    </div>`,$a(),ga(),ba(),ge();const t=oe();document.querySelector(`.${c.adminDashboard__today}`).textContent=t},Sa="_userDashboard_cn9sy_3",La="_userDashboard__attendance_cn9sy_9",Ta="_card_cn9sy_15",ka="_dashboardCon_cn9sy_21",xa="_userDashboard__profileCard_cn9sy_27",Ea="_profileImg_cn9sy_36",Ia="_infoFirst_cn9sy_57",Ha="_infoFirst__name_cn9sy_63",qa="_infoSecond_cn9sy_67",Ma="_email_cn9sy_77",Ba="_emailInfo_cn9sy_81",Aa="_callInfo_cn9sy_82",ja="_userDashboard__approvalFilter_cn9sy_89",Fa="_userDashboard__approvalContainer_cn9sy_93",Na="_userDashboard__approvalTitle_cn9sy_99",Va="_approvalTable_cn9sy_109",Pa="_approvalTable__tbody_cn9sy_116",Ra="_userDashboard__notice_cn9sy_174",Za="_userDashboard__noticeContainer_cn9sy_180",za="_userDashboard__noticeTitle_cn9sy_186",Oa="_noticeTable_cn9sy_196",Ua="_userDashboard__noticeRight_cn9sy_203",Wa="_noticeTable__tbody_cn9sy_218",Ka="_noticeResponsive_cn9sy_263",Ja="_dashboard__attachments_cn9sy_268",Qa="_userDashboard__todayAttendance_cn9sy_273",Ga="_userDashboard__todayAttendanceWrap_cn9sy_280",Ya="_userDashboard__stamp_cn9sy_287",Xa="_userDashboard__today_cn9sy_273",eo="_userDashboard__state_cn9sy_317",to="_userDashboard__attendanceHistory_cn9sy_323",ao="_userDashboard__attendanceTime_cn9sy_329",oo="_userDashboard__todayTag_cn9sy_336",no="_recordStartTimeBtn_cn9sy_343",so="_recordEndTimeBtn_cn9sy_344",io="_userDashboard__currentTime_cn9sy_350",d={userDashboard:Sa,userDashboard__attendance:La,card:Ta,dashboardCon:ka,userDashboard__profileCard:xa,profileImg:Ea,infoFirst:Ia,infoFirst__name:Ha,infoSecond:qa,email:Ma,emailInfo:Ba,callInfo:Aa,userDashboard__approvalFilter:ja,userDashboard__approvalContainer:Fa,userDashboard__approvalTitle:Na,approvalTable:Va,approvalTable__tbody:Pa,"no-data-message":"_no-data-message_cn9sy_158","userDashboard__approval-title--right":"_userDashboard__approval-title--right_cn9sy_163",userDashboard__notice:Ra,userDashboard__noticeContainer:Za,userDashboard__noticeTitle:za,noticeTable:Oa,userDashboard__noticeRight:Ua,noticeTable__tbody:Wa,noticeResponsive:Ka,dashboard__attachments:Ja,userDashboard__todayAttendance:Qa,userDashboard__todayAttendanceWrap:Ga,userDashboard__stamp:Ya,userDashboard__today:Xa,userDashboard__state:eo,userDashboard__attendanceHistory:to,userDashboard__attendanceTime:ao,userDashboard__todayTag:oo,recordStartTimeBtn:no,recordEndTimeBtn:so,userDashboard__currentTime:io},ro=async()=>{try{const e=await fetch("/api/notices");if(!e.ok)throw new Error(`HTTP error! status: ${e.status}`);const t=await e.json();t.status==="OK"?lo(t.data):console.error("Error fetching notices:",t.error)}catch(e){console.error("Failed to fetch notices:",e)}},lo=e=>{const n=e.slice().sort((a,s)=>new Date(s.date)-new Date(a.date)).slice(0,3),o=document.querySelector(`.${d.noticeTable__tbody}`);if(o.innerHTML="",e.length===0){const a=document.createElement("tr"),s=document.createElement("td");s.colSpan=6,s.textContent="공지사항이 없습니다.",s.style.textAlign="center",s.style.padding="20px",a.appendChild(s),o.appendChild(a)}else n.forEach(a=>{const s=document.createElement("tr"),i=a.attachments!==null,l=a.category;let r="";switch(l){case"event":r="이벤트";break;case"mileage":r="마일리지";break;case"education":r="교육";break;case"approval":r="전자결재";break;case"etc":r="기타";break;case"human-resource":r="인사행정";break;default:r="Unknown category.";break}s.innerHTML=`
           <td>${r}</td>
           <td>${a.title}</td>
           <td>${a.author}</td>
           <td>${a.createdAt}</td>
-          <td>${i?'<img src="/public/icons/textfile.svg" alt="file-icon" width="20" height="20" />':"없음"}</td>
+          <td>${i?'<img src="https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/icons/textfile.svg" alt="file-icon" width="20" height="20" />':"없음"}</td>
           <td>${a.views}</td>
           <td>
               <p>[${r}] ${a.title}</p>
@@ -481,7 +481,7 @@
                     <p>작성자:${a.author} / </p>
                     <p>작성일:${a.createdAt} / </p>
                     <p class="${d.dashboard__attachments}">첨부파일:
-                    ${i?'<img src="/public/icons/textfile.svg" alt="file-icon" width="20" height="20" />':"없음"}
+                    ${i?'<img src="https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/icons/textfile.svg" alt="file-icon" width="20" height="20" />':"없음"}
                     </p>
                 </div>
           </td>
@@ -520,7 +520,7 @@
         </select>`:t.innerHTML=`
           <input data-approvalstart-day type="date" id="startDate"/>
           <span> - </span>
-          <input data-approvalend-day type="date" id="endDate"/>`})},Ke=()=>{const e=()=>{const n=document.querySelectorAll("[data-time-element]");n&&n.forEach(o=>o.textContent=be())};return e(),setInterval(e,1e3)},te=()=>{const e=document.querySelector(`.${d.recordStartTimeBtn}`),t=document.querySelector(`.${d.recordEndTimeBtn}`),n=document.querySelector(`.${d.userDashboard__today}`),o=document.querySelector(`.${d.userDashboard__todayTag}`),a=document.querySelector(`.${d.userDashboard__attendanceTime} h3`),s={get:p=>localStorage.getItem(p),set:(p,$)=>localStorage.setItem(p,$),remove:p=>localStorage.removeItem(p),clear:()=>localStorage.clear()},i={disable:(p,$)=>{p.disabled=!0,p.style.pointerEvents="none",p.style.opacity="0.5",p.removeAttribute("data-modal-target"),p.querySelector("h2").textContent=$||"-"},enable:(p,$)=>{p.disabled=!1,p.style.pointerEvents="auto",p.style.opacity="1",p.setAttribute("data-modal-target",$),p.querySelector("h2").textContent="-"}},l=()=>{const p=s.get("isCheckedIn")==="true",$=s.get("isCheckedOut")==="true";p&&!$?(o.textContent="근무 중",o.style.backgroundColor="#40b883"):$?(o.textContent="퇴근",o.style.backgroundColor="#212635"):o.textContent="출근 전"},r=()=>{const p=s.get("isCheckedIn")==="true",$=s.get("isCheckedOut")==="true";p&&!$?(i.disable(e,s.get("checkInTime")),i.enable(t,"#modal-dashboard_2")):p?$&&(i.disable(e,s.get("checkInTime")),i.disable(t,s.get("checkOutTime"))):(i.enable(e,"#modal-dashboard_1"),i.disable(t)),l()},m=()=>{const p=s.get("checkInTime"),$=s.get("checkOutTime");if(p&&$){const q=new Date(`1970-01-01T${p}`);return(new Date(`1970-01-01T${$}`)-q)/(1e3*60*60)}return 0},h=()=>{let p=parseInt(s.get("weeklyWorkHours")||"8");p+=Math.round(m()),s.set("weeklyWorkHours",p.toString()),a.textContent=`총 ${p}시간 근무`},g=p=>{const $=be();p?(s.set("checkInTime",$),s.set("isCheckedIn","true"),Ke()):(s.set("checkOutTime",$),s.set("isCheckedOut","true"),h()),r()},C=()=>{var p,$;(p=document.querySelector("#checkInBtn"))==null||p.addEventListener("click",()=>g(!0)),($=document.querySelector("#checkOutBtn"))==null||$.addEventListener("click",()=>g(!1))},I=()=>{h(),s.remove("checkInTime"),s.remove("checkOutTime"),s.remove("isCheckedIn"),s.remove("isCheckedOut"),r()},M=()=>{const p=oe(),$=s.get("currentDate");p!==$&&(n.textContent=p,s.set("currentDate",p),I(),new Date().getDay()===1&&(s.set("weeklyWorkHours","8"),a.textContent="총 8시간 근무"))};(()=>{const p=oe();n.textContent=p,s.set("currentDate",p),M(),r(),C();const $=parseInt(s.get("weeklyWorkHours")||"8");a.textContent=`총 ${$}시간 근무`,setInterval(M,6e4)})()},_o="_contents_11t90_1",po="_content__row_11t90_9",uo="_content__selectboxrow_11t90_17",ho="_paymentRequest_11t90_24",mo="_active_11t90_61",u={contents:_o,content__row:po,content__selectboxrow:uo,paymentRequest:ho,"approval-approve__tabs":"_approval-approve__tabs_11t90_43","approval-approve__tab":"_approval-approve__tab_11t90_43",active:mo,"active-undetermined":"_active-undetermined_11t90_76","active-approved":"_active-approved_11t90_80","active-rejected":"_active-rejected_11t90_84","approval-list":"_approval-list_11t90_88","approval-table":"_approval-table_11t90_97","approval-table__thead":"_approval-table__thead_11t90_110","approval-list__row":"_approval-list__row_11t90_136","approval-list__table":"_approval-list__table_11t90_150","approval-list__tbody":"_approval-list__tbody_11t90_151","approval-list__category":"_approval-list__category_11t90_155","approval-list__title":"_approval-list__title_11t90_158","approval-list__submitdate":"_approval-list__submitdate_11t90_162","approval-list__meida":"_approval-list__meida_11t90_165","approval-tr__date":"_approval-tr__date_11t90_168"},vo="_pagination_syljj_1",go="_pageNumber__btn_syljj_9",bo="_active_syljj_13",ae={pagination:vo,pageNumber__btn:go,active:bo},ue=5,Le=5;let Z=1,Q=0;const J=(e,t,n)=>{e<1?e=1:e>Q?e=Q:Z=e,R(t,n)},yo=(e,t)=>{const n=(Z-1)*ue,o=n+ue,a=e.slice(n,o);t(a)},fo=(e,t)=>{Q=Math.ceil(e.length/ue);const n=document.getElementById("pagination");n.className=`${ae.pagination}`,n.innerHTML="";const o=(i,l,r="")=>{const m=document.createElement("button");return m.innerHTML=i,m.className=`${ae.pageNumber__btn} ${r}`,m.onclick=l,m};n.appendChild(o("&laquo;",()=>J(1,e,t))),n.appendChild(o("&lt;",()=>J(Z-1,e,t)));const a=Math.max(1,Z-Math.floor(Le/2)),s=Math.min(Q,a+Le-1);for(let i=a;i<=s;i++){const l=i===Z?ae.active:"";n.appendChild(o(i,()=>J(i,e,t),l))}n.appendChild(o("&gt;",()=>J(Z+1,e,t))),n.appendChild(o("&raquo;",()=>J(Q,e,t)))},R=(e,t)=>{yo(e,t),fo(e,t)},ne=()=>{Z=1},se=()=>({modal_id:"approval_1",header:"결재 신청",content:`
+          <input data-approvalend-day type="date" id="endDate"/>`})},Ke=()=>{const e=()=>{const n=document.querySelectorAll("[data-time-element]");n&&n.forEach(o=>o.textContent=ye())};return e(),setInterval(e,1e3)},te=()=>{const e=document.querySelector(`.${d.recordStartTimeBtn}`),t=document.querySelector(`.${d.recordEndTimeBtn}`),n=document.querySelector(`.${d.userDashboard__today}`),o=document.querySelector(`.${d.userDashboard__todayTag}`),a=document.querySelector(`.${d.userDashboard__attendanceTime} h3`),s={get:p=>localStorage.getItem(p),set:(p,$)=>localStorage.setItem(p,$),remove:p=>localStorage.removeItem(p),clear:()=>localStorage.clear()},i={disable:(p,$)=>{p.disabled=!0,p.style.pointerEvents="none",p.style.opacity="0.5",p.removeAttribute("data-modal-target"),p.querySelector("h2").textContent=$||"-"},enable:(p,$)=>{p.disabled=!1,p.style.pointerEvents="auto",p.style.opacity="1",p.setAttribute("data-modal-target",$),p.querySelector("h2").textContent="-"}},l=()=>{const p=s.get("isCheckedIn")==="true",$=s.get("isCheckedOut")==="true";p&&!$?(o.textContent="근무 중",o.style.backgroundColor="#40b883"):$?(o.textContent="퇴근",o.style.backgroundColor="#212635"):o.textContent="출근 전"},r=()=>{const p=s.get("isCheckedIn")==="true",$=s.get("isCheckedOut")==="true";p&&!$?(i.disable(e,s.get("checkInTime")),i.enable(t,"#modal-dashboard_2")):p?$&&(i.disable(e,s.get("checkInTime")),i.disable(t,s.get("checkOutTime"))):(i.enable(e,"#modal-dashboard_1"),i.disable(t)),l()},m=()=>{const p=s.get("checkInTime"),$=s.get("checkOutTime");if(p&&$){const q=new Date(`1970-01-01T${p}`);return(new Date(`1970-01-01T${$}`)-q)/(1e3*60*60)}return 0},h=()=>{let p=parseInt(s.get("weeklyWorkHours")||"8");p+=Math.round(m()),s.set("weeklyWorkHours",p.toString()),a.textContent=`총 ${p}시간 근무`},g=p=>{const $=ye();p?(s.set("checkInTime",$),s.set("isCheckedIn","true"),Ke()):(s.set("checkOutTime",$),s.set("isCheckedOut","true"),h()),r()},C=()=>{var p,$;(p=document.querySelector("#checkInBtn"))==null||p.addEventListener("click",()=>g(!0)),($=document.querySelector("#checkOutBtn"))==null||$.addEventListener("click",()=>g(!1))},I=()=>{h(),s.remove("checkInTime"),s.remove("checkOutTime"),s.remove("isCheckedIn"),s.remove("isCheckedOut"),r()},M=()=>{const p=oe(),$=s.get("currentDate");p!==$&&(n.textContent=p,s.set("currentDate",p),I(),new Date().getDay()===1&&(s.set("weeklyWorkHours","8"),a.textContent="총 8시간 근무"))};(()=>{const p=oe();n.textContent=p,s.set("currentDate",p),M(),r(),C();const $=parseInt(s.get("weeklyWorkHours")||"8");a.textContent=`총 ${$}시간 근무`,setInterval(M,6e4)})()},_o="_contents_11t90_1",po="_content__row_11t90_9",uo="_content__selectboxrow_11t90_17",ho="_paymentRequest_11t90_24",mo="_active_11t90_61",u={contents:_o,content__row:po,content__selectboxrow:uo,paymentRequest:ho,"approval-approve__tabs":"_approval-approve__tabs_11t90_43","approval-approve__tab":"_approval-approve__tab_11t90_43",active:mo,"active-undetermined":"_active-undetermined_11t90_76","active-approved":"_active-approved_11t90_80","active-rejected":"_active-rejected_11t90_84","approval-list":"_approval-list_11t90_88","approval-table":"_approval-table_11t90_97","approval-table__thead":"_approval-table__thead_11t90_110","approval-list__row":"_approval-list__row_11t90_136","approval-list__table":"_approval-list__table_11t90_150","approval-list__tbody":"_approval-list__tbody_11t90_151","approval-list__category":"_approval-list__category_11t90_155","approval-list__title":"_approval-list__title_11t90_158","approval-list__submitdate":"_approval-list__submitdate_11t90_162","approval-list__meida":"_approval-list__meida_11t90_165","approval-tr__date":"_approval-tr__date_11t90_168"},vo="_pagination_syljj_1",go="_pageNumber__btn_syljj_9",yo="_active_syljj_13",ae={pagination:vo,pageNumber__btn:go,active:yo},ue=5,Le=5;let Z=1,Q=0;const J=(e,t,n)=>{e<1?e=1:e>Q?e=Q:Z=e,R(t,n)},bo=(e,t)=>{const n=(Z-1)*ue,o=n+ue,a=e.slice(n,o);t(a)},fo=(e,t)=>{Q=Math.ceil(e.length/ue);const n=document.getElementById("pagination");n.className=`${ae.pagination}`,n.innerHTML="";const o=(i,l,r="")=>{const m=document.createElement("button");return m.innerHTML=i,m.className=`${ae.pageNumber__btn} ${r}`,m.onclick=l,m};n.appendChild(o("&laquo;",()=>J(1,e,t))),n.appendChild(o("&lt;",()=>J(Z-1,e,t)));const a=Math.max(1,Z-Math.floor(Le/2)),s=Math.min(Q,a+Le-1);for(let i=a;i<=s;i++){const l=i===Z?ae.active:"";n.appendChild(o(i,()=>J(i,e,t),l))}n.appendChild(o("&gt;",()=>J(Z+1,e,t))),n.appendChild(o("&raquo;",()=>J(Q,e,t)))},R=(e,t)=>{bo(e,t),fo(e,t)},ne=()=>{Z=1},se=()=>({modal_id:"approval_1",header:"결재 신청",content:`
     <div class="approval-modalbox__form">
       <label for="category"><h4>카테고리</h4></label>
       <select data-a-select name="approvalcategory" id="category" required>
@@ -682,7 +682,7 @@
           <h2>${t}</h2>
           <img
             class="close-modal"
-            src="/public/icons/close.svg"
+            src="https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/icons/close.svg"
             alt="close-modal"
             width="24"
             height="24"
@@ -695,7 +695,7 @@
   `,i=document.createElement("div");i.innerHTML=s,a.appendChild(i),Ao(o)},jo="_checkTimeModal_tabkc_6",Fo={"modal-dashboard_1":"_modal-dashboard_1_tabkc_1","modal-box__container":"_modal-box__container_tabkc_1","modal-dashboard_2":"_modal-dashboard_2_tabkc_1",checkTimeModal:jo},U=e=>{const t=e==="in";return{modal_id:t?"dashboard_1":"dashboard_2",header:t?"출근":"퇴근",content:`
       <div class="${Fo.checkTimeModal}">
         <h4>${oe()}</h4>
-        <span data-time-element>${be()}</span>
+        <span data-time-element>${ye()}</span>
         <h3>${t?"출근":"퇴근"}하시겠습니까?</h3>
         <button id="${t?"checkInBtn":"checkOutBtn"}" data-shape="block" data-color="positive">
           ${t?"출근":"퇴근"}하기
@@ -718,11 +718,11 @@
               </div>
               <div class="${d.infoSecond}">
                 <div class="${d.emailInfo}">
-                <img src="/public/icons/email.svg" alt="email" />
+                <img src="https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/icons/email.svg" alt="email" />
                 <h4 data-m-email class="${d.email}"></h4>
                 </div>
                 <div class="${d.callInfo}">
-                <img src="/public/icons/call.svg" alt="call" />
+                <img src="https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/icons/call.svg" alt="call" />
                 <h4 data-m-phone class="${d.call}"></h4>
                 </div>
               </div>
@@ -1151,7 +1151,7 @@
 
       <div id="pagination" class="${B.pagination}"></div>
     </div>
-  `,cn()},un="_pageEvent_czic3_5",hn="_birthdayInfo_czic3_17",mn="_joindayInfo_czic3_23",vn="_pageHeader_czic3_28",gn="_totalInfo_czic3_35",bn="_table_czic3_40",yn="_tableContainer_czic3_49",fn="_tableHead_czic3_54",$n="_tableContent_czic3_61",wn="_employeeTableBody_czic3_65",Cn="_headProfileImage_czic3_71",Dn="_headName_czic3_72",Sn="_headPosition_czic3_73",Ln="_headEmail_czic3_74",Tn="_headBirthday_czic3_75",kn="_headJoinday_czic3_76",xn="_headContact_czic3_77",En="_headButton_czic3_78",In="_profileImage_czic3_84",Hn="_name_czic3_85",qn="_position_czic3_86",Mn="_email_czic3_87",Bn="_birthday_czic3_17",An="_joinday_czic3_23",jn="_contact_czic3_90",Fn="_button_czic3_91",Nn="_employeeListRow_czic3_97",Vn="_employeeListTable_czic3_116",Pn="_employeeListThead_czic3_117",Rn="_employeeListTbody_czic3_118",Zn="_employeeListImg_czic3_122",zn="_employeeListInfo_czic3_126",k={pageEvent:un,birthdayInfo:hn,joindayInfo:mn,pageHeader:vn,totalInfo:gn,table:bn,tableContainer:yn,tableHead:fn,tableContent:$n,employeeTableBody:wn,headProfileImage:Cn,headName:Dn,headPosition:Sn,headEmail:Ln,headBirthday:Tn,headJoinday:kn,headContact:xn,headButton:En,profileImage:In,name:Hn,position:qn,email:Mn,birthday:Bn,joinday:An,contact:jn,button:Fn,employeeListRow:Nn,employeeListTable:Vn,employeeListThead:Pn,employeeListTbody:Rn,employeeListImg:Zn,employeeListInfo:zn},On="_page_zpako_1",Un="_page__content_zpako_10",Wn="_page__button_zpako_21",Kn="_page__edit_zpako_30",Jn="_edit__btn_zpako_45",Qn="_chooseFile_zpako_1",Gn="_info__value_zpako_63",Yn="_user__info_zpako_79",Xn="_info__position_zpako_100",es="_info__birthday_zpako_105",ts="_info__joinday_zpako_106",as="_table__container_zpako_111",os="_profileimg_zpako_117",ns="_page__title_zpako_126",w={page:On,page__content:Un,page__button:Wn,page__edit:Kn,edit__btn:Jn,chooseFile:Qn,info__value:Gn,user__info:Yn,info__position:Xn,info__birthday:es,info__joinday:ts,table__container:as,profileimg:os,page__title:ns},qe=e=>{const t=document.getElementById("employeeTableBody");if(t.innerHTML="",e.length===0){const n=document.createElement("tr"),o=document.createElement("td");o.colSpan=7,o.textContent="직원목록이 없습니다. 직원을 추가해주세요.",o.style.textAlign="center",o.style.padding="20px",n.appendChild(o),t.appendChild(n)}else e.forEach(n=>{const o=document.createElement("tr");o.innerHTML=`
+  `,cn()},un="_pageEvent_czic3_5",hn="_birthdayInfo_czic3_17",mn="_joindayInfo_czic3_23",vn="_pageHeader_czic3_28",gn="_totalInfo_czic3_35",yn="_table_czic3_40",bn="_tableContainer_czic3_49",fn="_tableHead_czic3_54",$n="_tableContent_czic3_61",wn="_employeeTableBody_czic3_65",Cn="_headProfileImage_czic3_71",Dn="_headName_czic3_72",Sn="_headPosition_czic3_73",Ln="_headEmail_czic3_74",Tn="_headBirthday_czic3_75",kn="_headJoinday_czic3_76",xn="_headContact_czic3_77",En="_headButton_czic3_78",In="_profileImage_czic3_84",Hn="_name_czic3_85",qn="_position_czic3_86",Mn="_email_czic3_87",Bn="_birthday_czic3_17",An="_joinday_czic3_23",jn="_contact_czic3_90",Fn="_button_czic3_91",Nn="_employeeListRow_czic3_97",Vn="_employeeListTable_czic3_116",Pn="_employeeListThead_czic3_117",Rn="_employeeListTbody_czic3_118",Zn="_employeeListImg_czic3_122",zn="_employeeListInfo_czic3_126",k={pageEvent:un,birthdayInfo:hn,joindayInfo:mn,pageHeader:vn,totalInfo:gn,table:yn,tableContainer:bn,tableHead:fn,tableContent:$n,employeeTableBody:wn,headProfileImage:Cn,headName:Dn,headPosition:Sn,headEmail:Ln,headBirthday:Tn,headJoinday:kn,headContact:xn,headButton:En,profileImage:In,name:Hn,position:qn,email:Mn,birthday:Bn,joinday:An,contact:jn,button:Fn,employeeListRow:Nn,employeeListTable:Vn,employeeListThead:Pn,employeeListTbody:Rn,employeeListImg:Zn,employeeListInfo:zn},On="_page_zpako_1",Un="_page__content_zpako_10",Wn="_page__button_zpako_21",Kn="_page__edit_zpako_30",Jn="_edit__btn_zpako_45",Qn="_chooseFile_zpako_1",Gn="_info__value_zpako_63",Yn="_user__info_zpako_79",Xn="_info__position_zpako_100",es="_info__birthday_zpako_105",ts="_info__joinday_zpako_106",as="_table__container_zpako_111",os="_profileimg_zpako_117",ns="_page__title_zpako_126",w={page:On,page__content:Un,page__button:Wn,page__edit:Kn,edit__btn:Jn,chooseFile:Qn,info__value:Gn,user__info:Yn,info__position:Xn,info__birthday:es,info__joinday:ts,table__container:as,profileimg:os,page__title:ns},qe=e=>{const t=document.getElementById("employeeTableBody");if(t.innerHTML="",e.length===0){const n=document.createElement("tr"),o=document.createElement("td");o.colSpan=7,o.textContent="직원목록이 없습니다. 직원을 추가해주세요.",o.style.textAlign="center",o.style.padding="20px",n.appendChild(o),t.appendChild(n)}else e.forEach(n=>{const o=document.createElement("tr");o.innerHTML=`
         <td class="${w.profileimg}"><img src="${n.profileImage}" alt="profileimg"></td>
         <td data-label="이름" class="${w.name}">${n.name}</td>
         <td data-label="직함" class="${w.position}">${n.position}</td>
@@ -1164,11 +1164,11 @@
   
   <div class="${k.pageEvent}">
     <div class="${k.birthdayInfo}">
-    <img src="/public/icons/cake.svg" alt="cake" />
+    <img src="https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/icons/cake.svg" alt="cake" />
     <h3><span class="${k.eventBirthday}" id="todayBirthday">금일의 생일자: 로딩 중 ...</span></h3>
     </div>
     <div class="${k.joindayInfo}">
-    <img src="/public/icons/seedling.svg" alt="seedling" />
+    <img src="https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/icons/seedling.svg" alt="seedling" />
     <h3><span class="${k.eventJoinday}" id="todayJoinDay">금일의 입사자: 로딩 중 ...</span></h3>
     </div>
   </div>
@@ -1200,7 +1200,7 @@
     <div class="${k.employeeList}"></div>
 
   </div> 
-  `,_s(),ls()},ls=async()=>{const e=await is();e&&e.length&&(cs(e.length),ds(e))},cs=e=>{document.getElementById("totalEmployeeCount").innerText=`총 인원: ${e}명`},ds=e=>{const t=new Date,n=(t.getMonth()+1).toString().padStart(2,"0"),o=t.getDate().toString().padStart(2,"0"),a=e.filter(r=>{const[m,h,g]=r.birthday.split(/[-.]/);return h===n&&g===o}),s=e.filter(r=>{const[m,h,g]=r.startDate.split(/[-.]/);return h===n&&g===o}),i=a.map(r=>r.name).join(", "),l=s.map(r=>r.name).join(", ");document.getElementById("todayBirthday").innerText=`금일의 생일자: ${i||"없음"}`,document.getElementById("todayJoinDay").innerText=`금일의 입사자: ${l||"없음"}`},_s=()=>{const e=document.getElementById("addEmployeeButton");e&&e.addEventListener("click",ps)},ps=()=>{history.pushState(null,null,"/admin/employee/add"),H()},us="_page_cpm69_4",hs="_page__content_cpm69_13",ms="_page__button_cpm69_24",vs="_page__edit_cpm69_33",gs="_edit__btn_cpm69_48",bs="_uploadProfile_cpm69_56",ys="_user__info_cpm69_69",fs="_info__position_cpm69_90",$s="_info__birthday_cpm69_95",ws="_info__joinday_cpm69_96",Cs="_table__container_cpm69_101",Ds="_imageContainer_cpm69_107",Ss="_imageContainer__image_cpm69_113",Ls="_info__fileInput_cpm69_126",Ts="_imgBtnContainer_cpm69_130",ks="_info__fileLabel_cpm69_137",xs="_page__title_cpm69_156",D={page:us,page__content:hs,page__button:ms,page__edit:vs,edit__btn:gs,uploadProfile:bs,user__info:ys,info__position:fs,info__birthday:$s,info__joinday:ws,table__container:Cs,imageContainer:Ds,imageContainer__image:Ss,info__fileInput:Ls,imgBtnContainer:Ts,info__fileLabel:ks,page__title:xs},Es=()=>{const e=container.querySelector("[data-e-add]"),t=document.querySelector(`.${D.info__fileInput}`),n=container.querySelector("[data-e-delete]"),o=container.querySelector("[data-e-back]");e.addEventListener("click",As),t.addEventListener("change",Hs),n.addEventListener("click",Ms),o.addEventListener("click",Is),qs()},Is=()=>{localStorage.removeItem("profileImage"),history.pushState(null,null,"/admin/employee"),H()},Hs=e=>{const t=e.target.files[0],n=document.querySelector(`.${D.imageContainer__image}`);if(t){const o=new FileReader;o.onload=a=>{n.innerHTML="";const s=document.createElement("img");s.setAttribute("src",a.target.result),n.appendChild(s),localStorage.setItem("profileImage",a.target.result)},o.readAsDataURL(t)}else localStorage.removeItem("profileImage"),ye(n)},qs=()=>{const e=document.querySelector(`.${D.imageContainer__image}`),t=localStorage.getItem("profileImage");if(t){e.innerHTML="";const n=document.createElement("img");n.setAttribute("src",t),e.appendChild(n)}else ye(e)},Ms=e=>{e.preventDefault();const t=document.querySelector(`.${D.imageContainer__image}`);t.innerHTML="",localStorage.removeItem("profileImage"),ye(t),Bs()},Bs=()=>{const e=document.querySelector(`.${D.info__fileInput}`);e.value="",e.dispatchEvent(new Event("change",{bubbles:!0}))},ye=e=>{const t=document.createElement("img");t.setAttribute("src","/public/images/defaultProfile.png"),t.style.display="block",e.appendChild(t),localStorage.setItem("profileImage","/public/images/defaultProfile.png")},As=async e=>{if(e){e.preventDefault();const t=document.querySelector("[data-e-name]").value,n=document.querySelector("[data-e-positions]").value,o=document.querySelector("[data-e-email]").value,a=document.querySelector("[data-e-phone]").value,s=document.querySelector("[data-e-birthday]").value,i=document.querySelector("[data-e-joinday]").value,r=document.querySelector("[data-e-input]").files[0];if(!t||!o||!n||!s||!i){alert("이름, 이메일, 직함, 생일, 입사일은 필수 입력 항목입니다.");return}if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(o)){alert("올바른 이메일 형식을 입력해주세요.");return}const h=new FormData;h.append("name",t),h.append("email",o),h.append("position",n),h.append("birthday",s),h.append("startDate",i),h.append("password","1234"),a&&h.append("phone",a),r&&h.append("profileImage",r);try{const g=await fetch("/api/users",{method:"POST",body:h});if(!g.ok)throw new Error(`HTTP 오류! 상태: ${g.status}`);const C=await g.json();C.status==="OK"?(alert("직원 추가에 성공했습니다."),localStorage.removeItem("profileImage"),setTimeout(()=>{history.pushState(null,null,"/admin/employee"),H()},2e3)):(console.error("직원 추가 오류:",C.error),alert("직원 추가 중 오류가 발생했습니다."))}catch(g){console.error("직원 추가 실패:",g),alert("직원 추가에 실패했습니다.")}}},js=e=>{e.innerHTML=`
+  `,_s(),ls()},ls=async()=>{const e=await is();e&&e.length&&(cs(e.length),ds(e))},cs=e=>{document.getElementById("totalEmployeeCount").innerText=`총 인원: ${e}명`},ds=e=>{const t=new Date,n=(t.getMonth()+1).toString().padStart(2,"0"),o=t.getDate().toString().padStart(2,"0"),a=e.filter(r=>{const[m,h,g]=r.birthday.split(/[-.]/);return h===n&&g===o}),s=e.filter(r=>{const[m,h,g]=r.startDate.split(/[-.]/);return h===n&&g===o}),i=a.map(r=>r.name).join(", "),l=s.map(r=>r.name).join(", ");document.getElementById("todayBirthday").innerText=`금일의 생일자: ${i||"없음"}`,document.getElementById("todayJoinDay").innerText=`금일의 입사자: ${l||"없음"}`},_s=()=>{const e=document.getElementById("addEmployeeButton");e&&e.addEventListener("click",ps)},ps=()=>{history.pushState(null,null,"/admin/employee/add"),H()},us="_page_cpm69_4",hs="_page__content_cpm69_13",ms="_page__button_cpm69_24",vs="_page__edit_cpm69_33",gs="_edit__btn_cpm69_48",ys="_uploadProfile_cpm69_56",bs="_user__info_cpm69_69",fs="_info__position_cpm69_90",$s="_info__birthday_cpm69_95",ws="_info__joinday_cpm69_96",Cs="_table__container_cpm69_101",Ds="_imageContainer_cpm69_107",Ss="_imageContainer__image_cpm69_113",Ls="_info__fileInput_cpm69_126",Ts="_imgBtnContainer_cpm69_130",ks="_info__fileLabel_cpm69_137",xs="_page__title_cpm69_156",D={page:us,page__content:hs,page__button:ms,page__edit:vs,edit__btn:gs,uploadProfile:ys,user__info:bs,info__position:fs,info__birthday:$s,info__joinday:ws,table__container:Cs,imageContainer:Ds,imageContainer__image:Ss,info__fileInput:Ls,imgBtnContainer:Ts,info__fileLabel:ks,page__title:xs},Es=()=>{const e=container.querySelector("[data-e-add]"),t=document.querySelector(`.${D.info__fileInput}`),n=container.querySelector("[data-e-delete]"),o=container.querySelector("[data-e-back]");e.addEventListener("click",As),t.addEventListener("change",Hs),n.addEventListener("click",Ms),o.addEventListener("click",Is),qs()},Is=()=>{localStorage.removeItem("profileImage"),history.pushState(null,null,"/admin/employee"),H()},Hs=e=>{const t=e.target.files[0],n=document.querySelector(`.${D.imageContainer__image}`);if(t){const o=new FileReader;o.onload=a=>{n.innerHTML="";const s=document.createElement("img");s.setAttribute("src",a.target.result),n.appendChild(s),localStorage.setItem("profileImage",a.target.result)},o.readAsDataURL(t)}else localStorage.removeItem("profileImage"),be(n)},qs=()=>{const e=document.querySelector(`.${D.imageContainer__image}`),t=localStorage.getItem("profileImage");if(t){e.innerHTML="";const n=document.createElement("img");n.setAttribute("src",t),e.appendChild(n)}else be(e)},Ms=e=>{e.preventDefault();const t=document.querySelector(`.${D.imageContainer__image}`);t.innerHTML="",localStorage.removeItem("profileImage"),be(t),Bs()},Bs=()=>{const e=document.querySelector(`.${D.info__fileInput}`);e.value="",e.dispatchEvent(new Event("change",{bubbles:!0}))},be=e=>{const t=document.createElement("img");t.setAttribute("src","https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/images/defaultProfile.png"),t.style.display="block",e.appendChild(t),localStorage.setItem("profileImage","https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/images/defaultProfile.png")},As=async e=>{if(e){e.preventDefault();const t=document.querySelector("[data-e-name]").value,n=document.querySelector("[data-e-positions]").value,o=document.querySelector("[data-e-email]").value,a=document.querySelector("[data-e-phone]").value,s=document.querySelector("[data-e-birthday]").value,i=document.querySelector("[data-e-joinday]").value,r=document.querySelector("[data-e-input]").files[0];if(!t||!o||!n||!s||!i){alert("이름, 이메일, 직함, 생일, 입사일은 필수 입력 항목입니다.");return}if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(o)){alert("올바른 이메일 형식을 입력해주세요.");return}const h=new FormData;h.append("name",t),h.append("email",o),h.append("position",n),h.append("birthday",s),h.append("startDate",i),h.append("password","1234"),a&&h.append("phone",a),r&&h.append("profileImage",r);try{const g=await fetch("/api/users",{method:"POST",body:h});if(!g.ok)throw new Error(`HTTP 오류! 상태: ${g.status}`);const C=await g.json();C.status==="OK"?(alert("직원 추가에 성공했습니다."),localStorage.removeItem("profileImage"),setTimeout(()=>{history.pushState(null,null,"/admin/employee"),H()},2e3)):(console.error("직원 추가 오류:",C.error),alert("직원 추가 중 오류가 발생했습니다."))}catch(g){console.error("직원 추가 실패:",g),alert("직원 추가에 실패했습니다.")}}},js=e=>{e.innerHTML=`
   <div class="${D.page}">
   <h1 class="${D.page__title}">직원 관리 >직원 추가</h1>
 
@@ -1274,7 +1274,7 @@
 
   <!-- 직원 프로필 이미지 업로드 부분입니다. -->
   <div class="${w.page__edit}">
-    <img src="/public/images/_Avatar_.png" alt="profileimg">
+    <img src="https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/images/_Avatar_.png" alt="profileimg">
   </div>
 
   <form class="infoform"action="#" method="post">
@@ -1327,50 +1327,50 @@
       </div>
       <div class="${F.info__second}">
         <div class="${F.section1}">
-          <img src="/public/icons/email.svg" alt="email">
+          <img src="https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/icons/email.svg" alt="email">
           <h4 data-m-email class="${F.email}"></h4>
         </div>
         <div class="${F.section2}">
-          <img src="/public/icons/call.svg" alt="call">
+          <img src="https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/icons/call.svg" alt="call">
           <h4 data-m-phone class="${F.phone}"></h4>
         </div>
       </div>
   </div>
-  `,ge(),document.getElementById("editButton").addEventListener("click",()=>{history.pushState(null,null,"/user/mypage/editpage"),H()})},Xs="_page_14v0o_1",ei="_page__title_14v0o_6",ti="_page__header_14v0o_10",ai="_page__body_14v0o_19",oi="_body__img_14v0o_27",ni="_profileimg_14v0o_37",si="_background_14v0o_1",ii="_profileImg_14v0o_46",ri="_imgbtn_14v0o_52",li="_user__info_14v0o_63",ci="_pageFooter_14v0o_100",di="_toastMessage_14v0o_105",_i="_toastText_14v0o_123",pi="_active_14v0o_132",ui="_imageContainer_14v0o_140",hi="_imageContainer__image_14v0o_146",mi="_info__fileInput_14v0o_159",vi="_imgBtnContainer_14v0o_163",gi="_info__fileLabel_14v0o_170",bi="_uploadProfile_14v0o_186",b={page:Xs,page__title:ei,page__header:ti,page__body:ai,body__img:oi,profileimg:ni,background:si,profileImg:ii,imgbtn:ri,user__info:li,pageFooter:ci,toastMessage:di,toastText:_i,active:pi,imageContainer:ui,imageContainer__image:hi,info__fileInput:mi,imgBtnContainer:vi,info__fileLabel:gi,uploadProfile:bi};function yi(){const e=document.querySelector(`.${b.toastMessage}`);e?(e.classList.add(b.active),setTimeout(()=>{e.classList.remove(b.active)},2e3)):console.error("toastMessage 요소를 찾을 수 없습니다.")}const fi=e=>{const t=document.querySelector("[data-profile-input]"),n=container.querySelector("[data-profile-delete]"),o=q=>{if(!q)return"";if(q.includes("-"))return q;const T=q.split(".");if(T.length!==3)return console.error("Invalid date format:",q),"";const[j,O,tt]=T,at=O.padStart(2,"0"),ot=tt.padStart(2,"0"),fe=`${j}-${at}-${ot}`;return console.log("Formatted date:",fe),fe},a=document.querySelector("[data-profile-name]"),s=document.querySelector("[data-profile-positions]"),i=document.querySelector("[data-profile-email]"),l=document.querySelector("[data-profile-phone]"),r=document.querySelector("[data-profile-birthday]"),m=document.querySelector("[data-profile-joinday]"),h=document.querySelector("[data-profile-password]"),g=document.querySelector("[data-profile-add-img]");let C=null;a.value=e.name||a.placeholder,s.value=e.position,i.value=e.email||i.placeholder,l.value=e.phone||l.placeholder,r.value=o(e.birthday),m.value=o(e.startDate),h.value=e.password;const I=(q,T)=>{g.innerHTML=`<img src="${q}" alt="Profile" style="width: 100%; height: 100%; object-fit: cover;">`,C=T},M=()=>{I("/public/images/defaultProfile.png")},P=()=>{e.profileImage?I(e.profileImage):M()},p=q=>{const T=q.target.files[0];if(T){const j=new FileReader;j.onload=O=>I(O.target.result,T),j.readAsDataURL(T)}},$=q=>{q.preventDefault(),M(),C="/public/images/defaultProfile.png"};t.addEventListener("change",p),n.addEventListener("click",$),P(),document.getElementById("saveButton").addEventListener("click",async()=>{const q=sessionStorage.getItem("userId"),T=new FormData;if(T.append("name",document.querySelector("[data-profile-name]").value),T.append("email",document.querySelector("[data-profile-email]").value),T.append("position",document.querySelector("[data-profile-positions]").value),T.append("phone",document.querySelector("[data-profile-phone]").value),T.append("birthday",document.querySelector("[data-profile-birthday]").value),T.append("startDate",document.querySelector("[data-profile-joinday]").value),T.append("password",document.querySelector("[data-profile-password]").value),!C){const j=g.querySelector("img");j&&(C=j.src)}C&&(typeof C=="string"?T.append("profileImage",C):T.append("profileImage",C,C.name),sessionStorage.setItem("userProfileImage",C));try{const j=await fetch(`/api/users/${q}`,{method:"PUT",body:T});if(!j.ok)throw new Error("Failed to update user data");const O=await j.json();O.status==="OK"?(yi(),C=null,setTimeout(()=>{history.pushState(null,null,"/user/mypage"),H()},2e3)):(console.error("직원 추가 오류:",O.error),alert("직원 추가 중 오류가 발생했습니다."))}catch(j){console.error("Error updating user data:",j),alert("사용자 정보 업데이트에 실패했습니다. 다시 시도해 주세요.")}})},Be=V(),$i=async()=>{const e=sessionStorage.getItem("userId");try{Be.show();const t=await fetch("/api/users");if(!t.ok)throw new Error("Failed to fetch user data");const o=(await t.json()).data.find(a=>a.id.toString()===e);if(fi(o),!o)throw new Error("User not found")}catch(t){console.error("Error fetching user data:",t),container.innerHTML="<p>사용자 정보를 불러오는 데 실패했습니다.</p>"}finally{Be.hide()}},wi=e=>{e.innerHTML=`
+  `,ge(),document.getElementById("editButton").addEventListener("click",()=>{history.pushState(null,null,"/user/mypage/editpage"),H()})},Xs="_page_14v0o_1",ei="_page__title_14v0o_6",ti="_page__header_14v0o_10",ai="_page__body_14v0o_19",oi="_body__img_14v0o_27",ni="_profileimg_14v0o_37",si="_background_14v0o_1",ii="_profileImg_14v0o_46",ri="_imgbtn_14v0o_52",li="_user__info_14v0o_63",ci="_pageFooter_14v0o_100",di="_toastMessage_14v0o_105",_i="_toastText_14v0o_123",pi="_active_14v0o_132",ui="_imageContainer_14v0o_140",hi="_imageContainer__image_14v0o_146",mi="_info__fileInput_14v0o_159",vi="_imgBtnContainer_14v0o_163",gi="_info__fileLabel_14v0o_170",yi="_uploadProfile_14v0o_186",y={page:Xs,page__title:ei,page__header:ti,page__body:ai,body__img:oi,profileimg:ni,background:si,profileImg:ii,imgbtn:ri,user__info:li,pageFooter:ci,toastMessage:di,toastText:_i,active:pi,imageContainer:ui,imageContainer__image:hi,info__fileInput:mi,imgBtnContainer:vi,info__fileLabel:gi,uploadProfile:yi};function bi(){const e=document.querySelector(`.${y.toastMessage}`);e?(e.classList.add(y.active),setTimeout(()=>{e.classList.remove(y.active)},2e3)):console.error("toastMessage 요소를 찾을 수 없습니다.")}const fi=e=>{const t=document.querySelector("[data-profile-input]"),n=container.querySelector("[data-profile-delete]"),o=q=>{if(!q)return"";if(q.includes("-"))return q;const T=q.split(".");if(T.length!==3)return console.error("Invalid date format:",q),"";const[j,O,tt]=T,at=O.padStart(2,"0"),ot=tt.padStart(2,"0"),fe=`${j}-${at}-${ot}`;return console.log("Formatted date:",fe),fe},a=document.querySelector("[data-profile-name]"),s=document.querySelector("[data-profile-positions]"),i=document.querySelector("[data-profile-email]"),l=document.querySelector("[data-profile-phone]"),r=document.querySelector("[data-profile-birthday]"),m=document.querySelector("[data-profile-joinday]"),h=document.querySelector("[data-profile-password]"),g=document.querySelector("[data-profile-add-img]");let C=null;a.value=e.name||a.placeholder,s.value=e.position,i.value=e.email||i.placeholder,l.value=e.phone||l.placeholder,r.value=o(e.birthday),m.value=o(e.startDate),h.value=e.password;const I=(q,T)=>{g.innerHTML=`<img src="${q}" alt="Profile" style="width: 100%; height: 100%; object-fit: cover;">`,C=T},M=()=>{I("/public/images/defaultProfile.png")},P=()=>{e.profileImage?I(e.profileImage):M()},p=q=>{const T=q.target.files[0];if(T){const j=new FileReader;j.onload=O=>I(O.target.result,T),j.readAsDataURL(T)}},$=q=>{q.preventDefault(),M(),C="/public/images/defaultProfile.png"};t.addEventListener("change",p),n.addEventListener("click",$),P(),document.getElementById("saveButton").addEventListener("click",async()=>{const q=sessionStorage.getItem("userId"),T=new FormData;if(T.append("name",document.querySelector("[data-profile-name]").value),T.append("email",document.querySelector("[data-profile-email]").value),T.append("position",document.querySelector("[data-profile-positions]").value),T.append("phone",document.querySelector("[data-profile-phone]").value),T.append("birthday",document.querySelector("[data-profile-birthday]").value),T.append("startDate",document.querySelector("[data-profile-joinday]").value),T.append("password",document.querySelector("[data-profile-password]").value),!C){const j=g.querySelector("img");j&&(C=j.src)}C&&(typeof C=="string"?T.append("profileImage",C):T.append("profileImage",C,C.name),sessionStorage.setItem("userProfileImage",C));try{const j=await fetch(`/api/users/${q}`,{method:"PUT",body:T});if(!j.ok)throw new Error("Failed to update user data");const O=await j.json();O.status==="OK"?(bi(),C=null,setTimeout(()=>{history.pushState(null,null,"/user/mypage"),H()},2e3)):(console.error("직원 추가 오류:",O.error),alert("직원 추가 중 오류가 발생했습니다."))}catch(j){console.error("Error updating user data:",j),alert("사용자 정보 업데이트에 실패했습니다. 다시 시도해 주세요.")}})},Be=V(),$i=async()=>{const e=sessionStorage.getItem("userId");try{Be.show();const t=await fetch("/api/users");if(!t.ok)throw new Error("Failed to fetch user data");const o=(await t.json()).data.find(a=>a.id.toString()===e);if(fi(o),!o)throw new Error("User not found")}catch(t){console.error("Error fetching user data:",t),container.innerHTML="<p>사용자 정보를 불러오는 데 실패했습니다.</p>"}finally{Be.hide()}},wi=e=>{e.innerHTML=`
   <!-- 페이지 타이틀 -->
-<h1 class=${b.page__title}">마이페이지</h1>
+<h1 class=${y.page__title}">마이페이지</h1>
 
-<div class="${b.page}">
-<div class="${b.page__header}">
+<div class="${y.page}">
+<div class="${y.page__header}">
   <h2>내정보</h2>
   <div>
-  <button class="${b.backButton}" data-color='warning' data-shape='block' id="backButton">뒤로가기</button>
-  <button class="${b.saveButton}" data-color='positive' data-shape='block' id="saveButton">변경사항 저장</button>
+  <button class="${y.backButton}" data-color='warning' data-shape='block' id="backButton">뒤로가기</button>
+  <button class="${y.saveButton}" data-color='positive' data-shape='block' id="saveButton">변경사항 저장</button>
   </div>
 </div>
 
 <!-- 내 정보 사진 수정 부분입니다. -->
-<div class="${b.page__body}">
+<div class="${y.page__body}">
   <!-- 내 정보 입력 부분입니다. -->
-  <div class="${b.imageContainer}">
-      <span data-profile-add-img class="${b.imageContainer__image}"></span>
+  <div class="${y.imageContainer}">
+      <span data-profile-add-img class="${y.imageContainer__image}"></span>
     </div>
     <div data-e-form>
-      <div class="${b.imgBtnContainer}">
-        <button data-profile-delete data-shape="line" data-color="neutral" class="${b.info__fileDelete}">이미지 삭제</button>
-        <label for="fileInput" class="${b.info__fileLabel}">이미지 등록</label>
+      <div class="${y.imgBtnContainer}">
+        <button data-profile-delete data-shape="line" data-color="neutral" class="${y.info__fileDelete}">이미지 삭제</button>
+        <label for="fileInput" class="${y.info__fileLabel}">이미지 등록</label>
       </div>
-    <input data-profile-input id="fileInput" class="${b.info__fileInput}" type="file" name="profileImage" accept="image/*">
-  <button class="${b.uploadProfile}" type="submit">이미지 업로드</button>
+    <input data-profile-input id="fileInput" class="${y.info__fileInput}" type="file" name="profileImage" accept="image/*">
+  <button class="${y.uploadProfile}" type="submit">이미지 업로드</button>
   </div>
   <form action="/submit-user-info" method="post">
-    <ul class="${b.user__info}">
-      <li class="${b.info__name}">
+    <ul class="${y.user__info}">
+      <li class="${y.info__name}">
         <label for="name"><span>이름</span></label>
         <input data-profile-name data-shape="line" type="name" id="name" placeholder=""/>
       </li>
       
-      <li class="${b.info__position}">
+      <li class="${y.info__position}">
         <label for="positions"><span>직함</span></label>
         <select data-profile-positions name="positions" id="positions" required>
           <option value="사장">사장</option>
@@ -1382,27 +1382,27 @@
         </select>
       </li>
       
-      <li class="${b.info__email}">
+      <li class="${y.info__email}">
         <label for="email"><span>이메일</span></label>
         <input data-profile-email data-shape="line" type="email" id="email" placeholder="taeco@gmail.com"/>
       </li>
       
-      <li class="${b.info__password}">
+      <li class="${y.info__password}">
         <label for="password"><span>비밀번호</span></label>
         <input data-profile-password data-shape="line" type="password" id="password" placeholder=""/>
       </li>
 
-      <li class="${b.info__number}">
+      <li class="${y.info__number}">
         <label for="phone"><span>전화 번호</span></label>
         <input data-profile-phone data-shape="line" type="text" id="phone" placeholder="010-0000-0000"/>
       </li>
 
-      <li class="${b.info__birthday}">
+      <li class="${y.info__birthday}">
         <label for="birthday"><span>생일</span></label>
         <input data-profile-birthday data-shape="line" type="date" id="birthday" required/>
       </li>
       
-      <li class="${b.info__joinday}">
+      <li class="${y.info__joinday}">
         <label for="joinday"><span>입사일</span></label>
         <input data-profile-joinday data-shape="line" type="date" id="joinday" required/>
       </li>
@@ -1411,82 +1411,82 @@
 </div>
 
 <!-- 정보 수정 완료 토스트 부분입니다. -->
-<div class="${b.pageFooter}">
-    <div class="${b.toastMessage}" id="toastMessage">
-      <img src="/public/icons/check.svg" alt="check">
-      <div class="${b.toastText}" id="toastText">
+<div class="${y.pageFooter}">
+    <div class="${y.toastMessage}" id="toastMessage">
+      <img src="https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/icons/check.svg" alt="check">
+      <div class="${y.toastText}" id="toastText">
         <h4>정보 수정</h4>
         <h5>수정이 완료되었습니다.</h5>
       </div>
     </div>
     </div>
 </div>
-  `,$i(),document.querySelector(`.${b.backButton}`).addEventListener("click",()=>{history.pushState(null,null,"/user/mypage"),H()})},Ci="_noticeContainer_trv3d_1",Di="_contents__newBtnWrap_trv3d_7",Si="_noticeContainer__filterWrap_trv3d_17",Li="_adminNoticeTable_trv3d_24",Ti="_noticeResponsive_trv3d_83",ki="_importantTag_trv3d_88",xi="_notices__tabs_trv3d_98",Ei="_notices__tab_trv3d_98",Ii="_active_trv3d_118",Hi="_noticeContainer__filter_trv3d_17",qi="_noticeResponsive__attachment_trv3d_165",y={noticeContainer:Ci,contents__newBtnWrap:Di,noticeContainer__filterWrap:Si,adminNoticeTable:Li,noticeResponsive:Ti,importantTag:ki,notices__tabs:xi,notices__tab:Ei,active:Ii,noticeContainer__filter:Hi,noticeResponsive__attachment:qi},Ae=e=>{const t=document.querySelector("[data-n-table-body]"),n=sessionStorage.getItem("userName")||"";if(t.innerHTML="",e.length===0){const o=document.createElement("tr"),a=document.createElement("td");a.colSpan=6,a.textContent="공지사항이 없습니다.",a.style.textAlign="center",a.style.padding="20px",o.appendChild(a),t.appendChild(o)}else e.forEach(o=>{const a=document.createElement("tr"),s=o.attachments!==null,i=o.isImportant===1,l=o.category;let r="";switch(l){case"event":r="이벤트";break;case"mileage":r="마일리지";break;case"education":r="교육";break;case"approval":r="전자결재";break;case"etc":r="기타";break;case"human-resource":r="인사행정";break;default:r="Unknown category.";break}a.innerHTML=`
-              <td >${i?`<span class="${y.importantTag}">중요</span> `:o.id}</td>
+  `,$i(),document.querySelector(`.${y.backButton}`).addEventListener("click",()=>{history.pushState(null,null,"/user/mypage"),H()})},Ci="_noticeContainer_trv3d_1",Di="_contents__newBtnWrap_trv3d_7",Si="_noticeContainer__filterWrap_trv3d_17",Li="_adminNoticeTable_trv3d_24",Ti="_noticeResponsive_trv3d_83",ki="_importantTag_trv3d_88",xi="_notices__tabs_trv3d_98",Ei="_notices__tab_trv3d_98",Ii="_active_trv3d_118",Hi="_noticeContainer__filter_trv3d_17",qi="_noticeResponsive__attachment_trv3d_165",b={noticeContainer:Ci,contents__newBtnWrap:Di,noticeContainer__filterWrap:Si,adminNoticeTable:Li,noticeResponsive:Ti,importantTag:ki,notices__tabs:xi,notices__tab:Ei,active:Ii,noticeContainer__filter:Hi,noticeResponsive__attachment:qi},Ae=e=>{const t=document.querySelector("[data-n-table-body]"),n=sessionStorage.getItem("userName")||"";if(t.innerHTML="",e.length===0){const o=document.createElement("tr"),a=document.createElement("td");a.colSpan=6,a.textContent="공지사항이 없습니다.",a.style.textAlign="center",a.style.padding="20px",o.appendChild(a),t.appendChild(o)}else e.forEach(o=>{const a=document.createElement("tr"),s=o.attachments!==null,i=o.isImportant===1,l=o.category;let r="";switch(l){case"event":r="이벤트";break;case"mileage":r="마일리지";break;case"education":r="교육";break;case"approval":r="전자결재";break;case"etc":r="기타";break;case"human-resource":r="인사행정";break;default:r="Unknown category.";break}a.innerHTML=`
+              <td >${i?`<span class="${b.importantTag}">중요</span> `:o.id}</td>
               <td>${o.title}</td>
               <td>${n}</td>
               <td>${o.createdAt}</td>
-              <td>${s?'<img src="/public/icons/textfile.svg" alt="file-icon" width="20" height="20" />':""}</td>
+              <td>${s?'<img src="https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/icons/textfile.svg" alt="file-icon" width="20" height="20" />':""}</td>
               <td>${o.views}</td>
               <td>
               <p>[${r}] ${o.title}</p>
-                <div class="${y.noticeResponsive}">
+                <div class="${b.noticeResponsive}">
                     <p>작성자:${o.author} / </p>
                     <p>작성일:${o.createdAt} / </p>
-                    <p class="${y.noticeResponsive__attachment}">첨부파일:
-                    ${s?'<img src="/public/icons/textfile.svg" alt="file-icon" width="20" height="20" />':"없음"}
+                    <p class="${b.noticeResponsive__attachment}">첨부파일:
+                    ${s?'<img src="https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/icons/textfile.svg" alt="file-icon" width="20" height="20" />':"없음"}
                     </p>
                 </div>
           </td>
-        `,t.appendChild(a),a.dataset.id=o.id,a.dataset.title=o.title,a.dataset.author=n,a.dataset.createdAt=o.createdAt,a.dataset.attachments=o.attachments?"true":"false",a.dataset.views=o.views,a.dataset.description=o.description,a.addEventListener("click",()=>{const m={id:a.dataset.id,title:a.dataset.title,author:a.dataset.author,createdAt:a.dataset.createdAt,attachments:a.dataset.attachments,views:a.dataset.views,description:a.dataset.description},h=new URLSearchParams(m).toString();history.pushState(null,null,`/admin/notices/detail?${h}`),H()})})};let je=[],Fe="event",ce="latest",G="";const Mi=e=>{je=e;const t=document.querySelector(`.${y.notices__tabs}`),n=document.querySelector("#noticeFilter"),o=document.querySelector("#noticeSearchBox");document.getElementById("event").classList.add(y.active),n.value=ce;const a=()=>{let s=je.filter(i=>i.category===Fe);G&&(s=s.filter(i=>i.title.toLowerCase().includes(G)||i.author.toLowerCase().includes(G))),s=Ai(s,ce),Bi(s),ne(),Ae(s),R(s,Ae)};t.addEventListener("click",s=>{const i=s.target.id;i&&(document.querySelectorAll(`.${y.notices__tab}`).forEach(l=>{l.classList.remove(y.active)}),s.target.classList.add(y.active),Fe=i,a())}),n.addEventListener("change",()=>{ce=n.value,a()}),o.addEventListener("input",()=>{G=o.value.trim().toLowerCase(),a()}),a()},Bi=e=>{const t=document.querySelector("#noticeTotalPostsNum");t.innerText=`총 게시글 수 ${e.length}개`,t.style.color="var(--gray-07)"},Ai=(e,t)=>{const n=e.filter(s=>s.isImportant===1),o=e.filter(s=>s.isImportant===0),a=t==="latest"?(s,i)=>new Date(i.createdAt)-new Date(s.createdAt):(s,i)=>new Date(s.createdAt)-new Date(i.createdAt);return n.sort(a),o.sort(a),[...n,...o]},Ne=V(),ji=async()=>{try{Ne.show();const e=await fetch("/api/notices");if(!e.ok)throw new Error(`HTTP error! status: ${e.status}`);const t=await e.json();t.status==="OK"?Mi(t.data):console.error("Error fetching notices:",t.error)}catch(e){console.error("Failed to fetch notices:",e)}finally{Ne.hide()}},Fi=e=>{e.innerHTML=`
-    <div class="${y.contents__notice}">
+        `,t.appendChild(a),a.dataset.id=o.id,a.dataset.title=o.title,a.dataset.author=n,a.dataset.createdAt=o.createdAt,a.dataset.attachments=o.attachments?"true":"false",a.dataset.views=o.views,a.dataset.description=o.description,a.addEventListener("click",()=>{const m={id:a.dataset.id,title:a.dataset.title,author:a.dataset.author,createdAt:a.dataset.createdAt,attachments:a.dataset.attachments,views:a.dataset.views,description:a.dataset.description},h=new URLSearchParams(m).toString();history.pushState(null,null,`/admin/notices/detail?${h}`),H()})})};let je=[],Fe="event",ce="latest",G="";const Mi=e=>{je=e;const t=document.querySelector(`.${b.notices__tabs}`),n=document.querySelector("#noticeFilter"),o=document.querySelector("#noticeSearchBox");document.getElementById("event").classList.add(b.active),n.value=ce;const a=()=>{let s=je.filter(i=>i.category===Fe);G&&(s=s.filter(i=>i.title.toLowerCase().includes(G)||i.author.toLowerCase().includes(G))),s=Ai(s,ce),Bi(s),ne(),Ae(s),R(s,Ae)};t.addEventListener("click",s=>{const i=s.target.id;i&&(document.querySelectorAll(`.${b.notices__tab}`).forEach(l=>{l.classList.remove(b.active)}),s.target.classList.add(b.active),Fe=i,a())}),n.addEventListener("change",()=>{ce=n.value,a()}),o.addEventListener("input",()=>{G=o.value.trim().toLowerCase(),a()}),a()},Bi=e=>{const t=document.querySelector("#noticeTotalPostsNum");t.innerText=`총 게시글 수 ${e.length}개`,t.style.color="var(--gray-07)"},Ai=(e,t)=>{const n=e.filter(s=>s.isImportant===1),o=e.filter(s=>s.isImportant===0),a=t==="latest"?(s,i)=>new Date(i.createdAt)-new Date(s.createdAt):(s,i)=>new Date(s.createdAt)-new Date(i.createdAt);return n.sort(a),o.sort(a),[...n,...o]},Ne=V(),ji=async()=>{try{Ne.show();const e=await fetch("/api/notices");if(!e.ok)throw new Error(`HTTP error! status: ${e.status}`);const t=await e.json();t.status==="OK"?Mi(t.data):console.error("Error fetching notices:",t.error)}catch(e){console.error("Failed to fetch notices:",e)}finally{Ne.hide()}},Fi=e=>{e.innerHTML=`
+    <div class="${b.contents__notice}">
         <h1>공지사항</h1>
-        <div class="${y.noticeContainer}">
-        <div class="${y.contents__newBtnWrap}">
+        <div class="${b.noticeContainer}">
+        <div class="${b.contents__newBtnWrap}">
           <button id="moveNewNoticeBtn" data-color="secondary" data-shape="block">
                 새 공지 등록
           </button>
         </div>
-          <div class="${y.notices__tabs}">
+          <div class="${b.notices__tabs}">
             <button
               id = "event"
-              class="${y.notices__tab} ${y["notices-tab-event"]}"
+              class="${b.notices__tab} ${b["notices-tab-event"]}"
             >
               이벤트
             </button>
             <button
               id = "mileage"
-              class="${y.notices__tab} ${y["notices-tab-mileage"]}"
+              class="${b.notices__tab} ${b["notices-tab-mileage"]}"
             >
               마일리지
             </button>
             <button
               id = "approval"
-              class="${y.notices__tab} ${y["notices-tab-approval"]}"
+              class="${b.notices__tab} ${b["notices-tab-approval"]}"
             >
               전자결재
             </button>
             <button
               id = "human-resource"
-              class="${y.notices__tab} ${y["notices-tab-human-resource"]}"
+              class="${b.notices__tab} ${b["notices-tab-human-resource"]}"
             >
               인사행정
             </button>
             <button
               id = "education"
-              class="${y.notices__tab} ${y["notices-tab-education"]}"
+              class="${b.notices__tab} ${b["notices-tab-education"]}"
             >
               교육
             </button>
             <button
               id = "etc"
-              class="${y.notices__tab} ${y["notices-tab-etc"]}"
+              class="${b.notices__tab} ${b["notices-tab-etc"]}"
             >
               기타
             </button>
           </div>
-          <div class="${y.noticeContainer__filterWrap}">
-            <div class="${y.noticeContainer__filter}">
+          <div class="${b.noticeContainer__filterWrap}">
+            <div class="${b.noticeContainer__filter}">
               <input
                 type="search"
                 id="noticeSearchBox"
@@ -1501,7 +1501,7 @@
             </div>
             <h5 id="noticeTotalPostsNum"></h5>
           </div>
-          <div class="${y.adminNoticeTable}">
+          <div class="${b.adminNoticeTable}">
               <table>
                 <thead>
                   <tr>
@@ -1525,7 +1525,7 @@
               <td>${n.title}</td>
               <td>${n.author}</td>
               <td>${n.createdAt}</td>
-              <td>${a?'<img src="/public/icons/textfile.svg" alt="file-icon" width="20" height="20" />':""}</td>
+              <td>${a?'<img src="https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/icons/textfile.svg" alt="file-icon" width="20" height="20" />':""}</td>
               <td>${n.views}</td>
               <td>
               <p>[${l}] ${n.title}</p>
@@ -1533,7 +1533,7 @@
                     <p>작성자:${n.author} / </p>
                     <p>작성일:${n.createdAt} / </p>
                     <p class="${f.noticeResponsive__attachment}">첨부파일:
-                    ${a?'<img src="/public/icons/textfile.svg" alt="file-icon" width="20" height="20" />':"없음"}
+                    ${a?'<img src="https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/icons/textfile.svg" alt="file-icon" width="20" height="20" />':"없음"}
                     </p>
                 </div>
           </td>
@@ -1923,9 +1923,9 @@
         
         <!-- 페이지네이션 구현하기 -->
         <div id="pagination" class="${u.pagination}"></div>
-  </div>`,Qe(),N(se().modal_id,se().header,se().content,We);const t=document.querySelectorAll("[data-approve-tab]"),n=document.querySelector("[data-approve-tabs]");t.forEach(o=>{o.addEventListener("click",()=>{t.forEach(a=>a.classList.remove("active")),o.classList.add("active"),n.classList.remove(u["active-undetermined"],u["active-approved"],u["active-rejected"]),n.classList.add(u[`active-${o.id}`])})})},pr="_noticeDetail_1wfaz_1",ur="_noticeDetail__description_1wfaz_7",hr="_noticeDetail__btnContainer_1wfaz_11",mr="_noticeDetail__backBtn_1wfaz_18",vr="_noticeDetail__info_1wfaz_22",gr="_noticeDetail__items_1wfaz_28",br="_attachedFile_1wfaz_36",yr="_noticeTitle_1wfaz_46",fr="_registrationDate_1wfaz_50",$r="_writer_1wfaz_51",wr="_views_1wfaz_52",S={noticeDetail:pr,noticeDetail__description:ur,noticeDetail__btnContainer:hr,noticeDetail__backBtn:mr,noticeDetail__info:vr,noticeDetail__items:gr,attachedFile:br,noticeTitle:yr,registrationDate:fr,writer:$r,views:wr},Cr=()=>{const e=new URLSearchParams(window.location.search),t={id:e.get("id"),title:e.get("title"),author:e.get("author"),createdAt:e.get("createdAt"),attachments:e.get("attachments"),views:e.get("views"),description:e.get("description")},n=document.querySelector(`.${S.noticeTitle}`),o=document.querySelector(`.${S.registrationDate}`),a=document.querySelector(`.${S.writer}`),s=document.querySelector(`.${S.views}`),i=document.querySelector(`.${S.attachedFile}`),l=document.querySelector(`.${S.noticeDetail__description}`);n.textContent=t.title,o.textContent=t.createdAt,a.textContent=t.author,s.textContent=t.views,l.textContent=t.description,t.attachments==="true"&&(i.innerHTML=`
+  </div>`,Qe(),N(se().modal_id,se().header,se().content,We);const t=document.querySelectorAll("[data-approve-tab]"),n=document.querySelector("[data-approve-tabs]");t.forEach(o=>{o.addEventListener("click",()=>{t.forEach(a=>a.classList.remove("active")),o.classList.add("active"),n.classList.remove(u["active-undetermined"],u["active-approved"],u["active-rejected"]),n.classList.add(u[`active-${o.id}`])})})},pr="_noticeDetail_1wfaz_1",ur="_noticeDetail__description_1wfaz_7",hr="_noticeDetail__btnContainer_1wfaz_11",mr="_noticeDetail__backBtn_1wfaz_18",vr="_noticeDetail__info_1wfaz_22",gr="_noticeDetail__items_1wfaz_28",yr="_attachedFile_1wfaz_36",br="_noticeTitle_1wfaz_46",fr="_registrationDate_1wfaz_50",$r="_writer_1wfaz_51",wr="_views_1wfaz_52",S={noticeDetail:pr,noticeDetail__description:ur,noticeDetail__btnContainer:hr,noticeDetail__backBtn:mr,noticeDetail__info:vr,noticeDetail__items:gr,attachedFile:yr,noticeTitle:br,registrationDate:fr,writer:$r,views:wr},Cr=()=>{const e=new URLSearchParams(window.location.search),t={id:e.get("id"),title:e.get("title"),author:e.get("author"),createdAt:e.get("createdAt"),attachments:e.get("attachments"),views:e.get("views"),description:e.get("description")},n=document.querySelector(`.${S.noticeTitle}`),o=document.querySelector(`.${S.registrationDate}`),a=document.querySelector(`.${S.writer}`),s=document.querySelector(`.${S.views}`),i=document.querySelector(`.${S.attachedFile}`),l=document.querySelector(`.${S.noticeDetail__description}`);n.textContent=t.title,o.textContent=t.createdAt,a.textContent=t.author,s.textContent=t.views,l.textContent=t.description,t.attachments==="true"&&(i.innerHTML=`
     <img
-      src="/public/icons/textfile.svg"
+      src="https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/icons/textfile.svg"
       alt="file-icon"
       width="20"
       height="20"
@@ -1959,7 +1959,7 @@
         </div>
   `,Cr(),Dr(),Lr()},Lr=()=>{document.querySelector(`.${S.noticeDetail__backBtn}`).addEventListener("click",()=>{history.back()})},Tr="_noticeDetail_irjmh_1",kr="_noticeDetail__description_irjmh_7",xr="_noticeDetail__btnContainer_irjmh_11",Er="_noticeDetail__backBtn_irjmh_17",Ir="_noticeDetail__info_irjmh_21",Hr="_noticeDetail__items_irjmh_27",qr="_attachedFile_irjmh_35",Mr="_noticeTitle_irjmh_45",Br="_registrationDate_irjmh_49",Ar="_writer_irjmh_50",jr="_views_irjmh_51",L={noticeDetail:Tr,noticeDetail__description:kr,noticeDetail__btnContainer:xr,noticeDetail__backBtn:Er,noticeDetail__info:Ir,noticeDetail__items:Hr,attachedFile:qr,noticeTitle:Mr,registrationDate:Br,writer:Ar,views:jr},Fr=()=>{const e=new URLSearchParams(window.location.search),t={id:e.get("id"),title:e.get("title"),author:e.get("author"),createdAt:e.get("createdAt"),attachments:e.get("attachments"),views:e.get("views"),description:e.get("description")},n=document.querySelector(`.${L.noticeTitle}`),o=document.querySelector(`.${L.registrationDate}`),a=document.querySelector(`.${L.writer}`),s=document.querySelector(`.${L.views}`),i=document.querySelector(`.${L.attachedFile}`),l=document.querySelector(`.${L.noticeDetail__description}`);n.textContent=t.title,o.textContent=t.createdAt,a.textContent=t.author,s.textContent=t.views,l.textContent=t.description,t.attachments==="true"?i.innerHTML=`
     <img
-      src="/public/icons/textfile.svg"
+      src="https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/icons/textfile.svg"
       alt="file-icon"
       width="20"
       height="20"
@@ -2027,7 +2027,7 @@
                         <input data-n-file type="file" class="${A.fileInput}" class="hidden">
                         <div data-n-file-info></div>
                         <button data-n-remove-file class="${A.removeFileButton}" style="display:none;">파일 삭제
-                            <img src="/public/icons/close.svg" />
+                            <img src="https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/icons/close.svg" />
                         </button>
                     </div>
                 </li>

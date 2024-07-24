@@ -8,11 +8,11 @@ const renderAdminEmployee = (container) => {
   
   <div class="${styles.pageEvent}">
     <div class="${styles.birthdayInfo}">
-    <img src="/public/icons/cake.svg" alt="cake" />
+    <img src="https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/icons/cake.svg" alt="cake" />
     <h3><span class="${styles.eventBirthday}" id="todayBirthday">금일의 생일자: 로딩 중 ...</span></h3>
     </div>
     <div class="${styles.joindayInfo}">
-    <img src="/public/icons/seedling.svg" alt="seedling" />
+    <img src="https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/icons/seedling.svg" alt="seedling" />
     <h3><span class="${styles.eventJoinday}" id="todayJoinDay">금일의 입사자: 로딩 중 ...</span></h3>
     </div>
   </div>

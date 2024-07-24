@@ -101,12 +101,18 @@ const resetFileInput = () => {
 // 기본 이미지 설정 함수
 const setDefaultImage = (imageContainer) => {
   const img = document.createElement("img");
-  img.setAttribute("src", "/public/images/defaultProfile.png");
+  img.setAttribute(
+    "src",
+    "https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/images/defaultProfile.png"
+  );
   img.style.display = "block"; // 이미지가 보이도록 설정
   imageContainer.appendChild(img);
 
   // 기본 이미지 데이터 로컬 저장소에 저장
-  localStorage.setItem("profileImage", "/public/images/defaultProfile.png");
+  localStorage.setItem(
+    "profileImage",
+    "https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/images/defaultProfile.png"
+  );
 };
 
 // 직원 추가 함수

@@ -1,7 +1,7 @@
 [
   {
     "id": "1",
-    "img": "/public/images/_Avatar_.png",
+    "img": "https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/images/_Avatar_.png",
     "name": "홍길동",
     "email": "honggildong@naver.com",
     "position": "부장",
@@ -11,7 +11,7 @@
   },
   {
     "id": "2",
-    "img": "/public/images/_Avatar_.png",
+    "img": "https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/images/_Avatar_.png",
     "name": "김철수",
     "email": "chulsoo@company.com",
     "position": "과장",
@@ -21,7 +21,7 @@
   },
   {
     "id": "3",
-    "img": "/public/images/_Avatar_.png",
+    "img": "https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/images/_Avatar_.png",
     "name": "이영희",
     "email": "younghee@company.com",
     "position": "대리",
@@ -31,7 +31,7 @@
   },
   {
     "id": "4",
-    "img": "/public/images/_Avatar_.png",
+    "img": "https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/images/_Avatar_.png",
     "name": "박민수",
     "email": "minsoo@company.com",
     "position": "사원",
@@ -41,7 +41,7 @@
   },
   {
     "id": "5",
-    "img": "/public/images/_Avatar_.png",
+    "img": "https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/images/_Avatar_.png",
     "name": "최수영",
     "email": "sooyoung@company.com",
     "position": "팀장",
@@ -51,7 +51,7 @@
   },
   {
     "id": "6",
-    "img": "/public/images/_Avatar_.png",
+    "img": "https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/images/_Avatar_.png",
     "name": "정희진",
     "email": "heejin@company.com",
     "position": "사원",
@@ -61,7 +61,7 @@
   },
   {
     "id": "7",
-    "img": "/public/images/_Avatar_.png",
+    "img": "https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/images/_Avatar_.png",
     "name": "강민호",
     "email": "minho@company.com",
     "position": "대리",
@@ -71,7 +71,7 @@
   },
   {
     "id": "8",
-    "img": "/public/images/_Avatar_.png",
+    "img": "https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/images/_Avatar_.png",
     "name": "배수진",
     "email": "soojin@company.com",
     "position": "부장",
@@ -81,7 +81,7 @@
   },
   {
     "id": "9",
-    "img": "/public/images/_Avatar_.png",
+    "img": "https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/images/_Avatar_.png",
     "name": "윤지후",
     "email": "jihuu@company.com",
     "position": "차장",
@@ -91,7 +91,7 @@
   },
   {
     "id": "10",
-    "img": "/public/images/_Avatar_.png",
+    "img": "https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/images/_Avatar_.png",
     "name": "서지민",
     "email": "jimin@company.com",
     "position": "과장",
@@ -101,7 +101,7 @@
   },
   {
     "id": "11",
-    "img": "/public/images/_Avatar_.png",
+    "img": "https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/images/_Avatar_.png",
     "name": "문수빈",
     "email": "subin@company.com",
     "position": "사원",
@@ -111,7 +111,7 @@
   },
   {
     "id": "12",
-    "img": "/public/images/_Avatar_.png",
+    "img": "https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/images/_Avatar_.png",
     "name": "장한나",
     "email": "hanna@company.com",
     "position": "대리",

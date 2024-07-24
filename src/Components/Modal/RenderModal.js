@@ -1,8 +1,7 @@
 import handleModal from "./HandleModal";
 
 const renderModal = (id, header, content, event = null) => {
-
-  const contents = document.querySelector('#contents');
+  const contents = document.querySelector("#contents");
 
   const modalHTML = `
     <div id="modal-${id}" class="modal-box">
@@ -11,7 +10,7 @@ const renderModal = (id, header, content, event = null) => {
           <h2>${header}</h2>
           <img
             class="close-modal"
-            src="/public/icons/close.svg"
+            src="https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/icons/close.svg"
             alt="close-modal"
             width="24"
             height="24"
@@ -32,4 +31,3 @@ const renderModal = (id, header, content, event = null) => {
 };
 
 export default renderModal;
-

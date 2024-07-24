@@ -34,7 +34,7 @@ const detailList = () => {
   if (noticeData.attachments === "true") {
     attachedFile.innerHTML = `
     <img
-      src="/public/icons/textfile.svg"
+      src="https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/icons/textfile.svg"
       alt="file-icon"
       width="20"
       height="20"

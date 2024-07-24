@@ -20,11 +20,11 @@ const renderUserMypage = (container) => {
       </div>
       <div class="${styles.info__second}">
         <div class="${styles.section1}">
-          <img src="/public/icons/email.svg" alt="email">
+          <img src="https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/icons/email.svg" alt="email">
           <h4 data-m-email class="${styles.email}"></h4>
         </div>
         <div class="${styles.section2}">
-          <img src="/public/icons/call.svg" alt="call">
+          <img src="https://github.com/hyeppyy/Taeco-intranet/tree/gh-pages/icons/call.svg" alt="call">
           <h4 data-m-phone class="${styles.phone}"></h4>
         </div>
       </div>
